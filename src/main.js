@@ -14,10 +14,12 @@ import 'admin-lte/dist/css/skins/_all-skins.min.css'
 import 'font-awesome/css/font-awesome.css'
 
 import App from './App'
+import store from './vuex'
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   template: '<App/>',
+  store,
   components: { App }
 })

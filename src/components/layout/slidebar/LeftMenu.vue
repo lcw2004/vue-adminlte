@@ -174,6 +174,6 @@
 
 <script>
 export default {
-  name: 'Menu'
+  name: 'LeftMenu'
 }
 </script>

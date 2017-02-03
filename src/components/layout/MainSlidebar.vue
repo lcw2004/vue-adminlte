@@ -3,7 +3,7 @@
     <section class="sidebar">
       <UserPanel/>
       <SearchForm/>
-      <Menu/>
+      <LeftMenu/>
     </section>
   </aside>
 </template>
@@ -11,14 +11,14 @@
 <script>
   import UserPanel from './slidebar/UserPanel'
   import SearchForm from './slidebar/SearchForm'
-  import Menu from './slidebar/Menu'
+  import LeftMenu from './slidebar/LeftMenu'
 
   export default {
     name: 'MainSlidebar',
     components: {
       UserPanel,
       SearchForm,
-      Menu
+      LeftMenu
     }
   }
 </script>
