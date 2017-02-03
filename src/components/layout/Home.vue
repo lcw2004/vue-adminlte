@@ -1,16 +1,12 @@
 <template>
-  <div id="app">
-    <div class="wrapper">
-      <MainHead></MainHead>
-      <MainSlidebar></MainSlidebar>
-      <MainContent></MainContent>
-      <MainFooter><MainFooter>
-
-      <!-- Control Sidebar -->
-      <ControlSidebar></ControlSidebar>
-      <!-- Add the sidebar's background. This div must be placed immediately after the control sidebar -->
-      <div class="control-sidebar-bg"></div>
-    </div>
+  <div class="wrapper">
+    <MainHead></MainHead>
+    <MainSlidebar></MainSlidebar>
+    <MainContent></MainContent>
+    <MainFooter><MainFooter>
+    <ControlSidebar></ControlSidebar>
+    <!-- Add the sidebar's background. This div must be placed immediately after the control sidebar -->
+    <div class="control-sidebar-bg"></div>
   </div>
 </template>
 
