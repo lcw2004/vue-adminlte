@@ -1,6 +1,6 @@
 <template>
-  <li class="dropdown user user-menu">
-    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+  <li class="dropdown user user-menu" :class="{ open: isOpen }">
+    <a class="dropdown-toggle" data-toggle="dropdown" @click="toggole()">
       <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
       <span class="hidden-xs">Alexander Pierce</span>
     </a>
@@ -43,7 +43,17 @@
 </template>
 
 <script>
-  export default{
-    name: 'UserInfoMenu'
+  export default {
+    name: 'UserInfoMenu',
+    data: function () {
+      return {
+        isOpen: false
+      }
+    },
+    methods: {
+      toggole: function () {
+        this.isOpen = !this.isOpen
+      }
+    }
   }
 </script>

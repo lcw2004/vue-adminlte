@@ -1,6 +1,6 @@
 <template>
-  <li class="dropdown messages-menu">
-    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+  <li class="dropdown messages-menu" :class="{ open: isOpen }">
+    <a class="dropdown-toggle" data-toggle="dropdown" @click="toggole()">
       <i class="fa fa-envelope-o"></i>
       <span class="label label-success">4</span>
     </a>
@@ -79,6 +79,16 @@
 
 <script>
   export default{
-    name: 'MessagesMenu'
+    name: 'MessagesMenu',
+    data: function () {
+      return {
+        isOpen: false
+      }
+    },
+    methods: {
+      toggole: function () {
+        this.isOpen = !this.isOpen
+      }
+    }
   }
 </script>

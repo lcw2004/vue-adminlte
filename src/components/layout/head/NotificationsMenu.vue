@@ -1,6 +1,6 @@
 <template>
-  <li class="dropdown notifications-menu">
-    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+  <li class="dropdown notifications-menu" :class="{ open: isOpen }">
+    <a class="dropdown-toggle" data-toggle="dropdown" @click="toggole()">
       <i class="fa fa-bell-o"></i>
       <span class="label label-warning">10</span>
     </a>
@@ -43,7 +43,17 @@
 </template>
 
 <script>
-  export default{
-    name: 'NotificationsMenu'
+  export default {
+    name: 'NotificationsMenu',
+    data: function () {
+      return {
+        isOpen: false
+      }
+    },
+    methods: {
+      toggole: function () {
+        this.isOpen = !this.isOpen
+      }
+    }
   }
 </script>

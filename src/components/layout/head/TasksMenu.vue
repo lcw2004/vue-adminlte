@@ -1,6 +1,6 @@
 <template>
-  <li class="dropdown tasks-menu">
-    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+  <li class="dropdown tasks-menu" :class="{ open: isOpen }">
+    <a class="dropdown-toggle" data-toggle="dropdown" @click="toggole()">
       <i class="fa fa-flag-o"></i>
       <span class="label label-danger">9</span>
     </a>
@@ -75,7 +75,17 @@
 </template>
 
 <script>
-  export default{
-    name: 'TasksMenu'
+  export default {
+    name: 'TasksMenu',
+    data: function () {
+      return {
+        isOpen: false
+      }
+    },
+    methods: {
+      toggole: function () {
+        this.isOpen = !this.isOpen
+      }
+    }
   }
 </script>
