@@ -15,11 +15,13 @@ import 'font-awesome/css/font-awesome.css'
 
 import App from './App'
 import store from './vuex'
+import router from './router'
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   template: '<App/>',
+  router: new VueRouter(router),
   store,
   components: { App }
 })
