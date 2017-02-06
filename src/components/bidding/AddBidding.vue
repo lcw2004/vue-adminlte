@@ -1,23 +1,56 @@
 <template>
   <section class="content">
     <div class="row">
-      <li class="pubdeta_sub">
-        <div class="pubdeta_sub_twig"><p style="width:42%;"></p></div>
-        <ul class="pubdeta_sub_dot">
-          <!-- 
-              li：完成的状态-pubdeta_sub_dotover，当前的状态-pubdeta_sub_dotnow；
-              p：class='pubdeta_subword[n]'，有几个字，[n]就写几；
-          -->
-          <li><p class="pubdeta_subword4">招标基本信息</p></li>
-          <li><p class="pubdeta_subword4">标的信息</p></li>
-          <li><p class="pubdeta_subword4">投标单位</p></li>
-          <li><p class="pubdeta_subword4">招标概要</p></li>
-          <li class="pubdeta_sub_dotnow"><p class="pubdeta_subword4">投标须知</p></li>
-          <li><p class="pubdeta_subword4">标书文件</p></li>
-          <li><p class="pubdeta_subword4">投标文件</p></li>
-        </ul>
-      </li>
-    </div
+      <div class="col-md-12">
+        <div class="box box-primary">
+          <div class="box-header with-border">
+            <div class="row">
+              <div class="puastep_tab">
+                <a>1.基本信息</a>
+                <span>&gt;</span>
+                <a class="puastep_tab_now">2.标的信息</a>
+                <span>&gt;</span>
+                <a>3.投标单位</a>
+                <span>&gt;</span>
+                <a>4.招标概要</a>
+                <span>&gt;</span>
+                <a>5.投标须知</a>
+                <span>&gt;</span>
+                <a>6.标书文件</a>
+                <span>&gt;</span>
+                <a>7.投标文件</a>
+              </div>
+            </div>
+          </div>
+          <form class="form-horizontal">
+            <div class="box-body">
+              <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+                <div class="col-sm-10">
+                  <input type="email" id="inputEmail3" placeholder="Email" class="form-control"></div>
+              </div>
+              <div class="form-group">
+                <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+                <div class="col-sm-10">
+                  <input type="password" id="inputPassword3" placeholder="Password" class="form-control"></div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox">Remember me</label></div>
+                </div>
+              </div>
+            </div>
+            <div class="box-footer">
+              <div class="col-md-4 col-sm-0"></div>
+              <div class="col-md-2 col-sm-2"><button type="submit" class="btn btn-block btn-default">上一步</button></div>
+              <div class="col-md-2 col-sm-2"><button type="submit" class="btn btn-block btn-primary">下一步</button></div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
   </section>
 </template>
 
@@ -28,98 +61,33 @@ export default {
 </script>
 
 <style>
-.pubdeta_sub {
-    font-size: 12px;
-    list-style: none;
-    margin: 20px 40px 60px 40px;
-    position: relative;
-}
-.pubdeta_sub_twig {
+.puastep_tab {
     width: 100%;
-    height: 2px;
-    margin: 5px auto;
-    background-color: #e5e5e5;
-    overflow: hidden;
+    border-bottom: 1px solid #e5e5e5;
 }
-.pubdeta_sub_twig p {
-    height: 2px;
-    background-color: #467cd4;
-}
-.pubdeta_sub_dot {
-    list-style: none;
-    width: 100%;
-    position: absolute;
-    top: -5px;
-    left: -0.5%;
-}
-.pubdeta_sub_dot li {
-    width: 12px;
-    height: 12px;
-    box-sizing: border-box;
-    border-radius: 50%;
-    background-color: #ffffff;
-    border: 2px solid #e5e5e5;
-    position: absolute;
-    top: 0;
-    z-index: 2;
-}
-.pubdeta_sub_dot li:nth-child(1) {left: 0%;}
-.pubdeta_sub_dot li:nth-child(2) {left: 16.6%;}
-.pubdeta_sub_dot li:nth-child(3) {left: 33.2%;}
-.pubdeta_sub_dot li:nth-child(4) {left: 50%;}
-.pubdeta_sub_dot li:nth-child(5) {left: 66.6%;}
-.pubdeta_sub_dot li:nth-child(6) {left: 83.2%;}
-.pubdeta_sub_dot li:nth-child(7) {left: 100%;}
-.pubdeta_subword1 {left: -11px;}
-.pubdeta_subword2 {left: -18px;}
-.pubdeta_subword3 {left: -24px;}
-.pubdeta_subword4 {left: -30px;}
-.pubdeta_subword5 {left: -36px;}
-.pubdeta_subword6 {left: -44px;}
-.pubdeta_subword7 {left: -48px;}
-.pubdeta_sub_dot li:after {
+.puastep_tab:after {
     content: "";
-    display: block;
-    width: 2px;
-    height: 8px;
-    background-color: #e5e5e5;
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    margin: 0 0 0 -1px;
-    z-index: 1;
+    display: table;
+    clear: both;
 }
-.pubdeta_sub_dot li p {
-    height: 22px;
-    padding: 0 8px;
-    box-sizing: border-box;
-    background-color: #ffffff;
-    border-radius: 11px;
-    border: 2px solid #e5e5e5;
-    white-space: nowrap;
+.puastep_tab a {
+    float: left;
+    font-size: 14px;
+    color: #9c9c9c;
     cursor: default;
-    position: absolute;
-    top: 18px;
-    z-index: 2;
+    padding: 0 20px 15px 20px;
 }
-.pubdeta_sub_dot .pubdeta_sub_dotover {
-    background-color: #467cd4;
-    border: 2px solid #467cd4;
+.puastep_tab .puastep_tab_now {
+    color: #3c8dbc;
+    border-bottom: 3px solid #3c8dbc;
 }
-.pubdeta_sub_dot .pubdeta_sub_dotnow {
-    background-color: #467cd4;
-    border: 2px solid #467cd4;
+.puastep_tab span {
+    float: left;
+    font-size: 14px;
+    color: #9c9c9c;
+    cursor: default;
 }
-.pubdeta_sub_dotnow:before {
-    content: "";
-    display: block;
-    width: 18px;
-    height: 18px;
-    background-color: rgba(70,124,212,0.3);
-    border-radius: 50%;
-    position: absolute;
-    left: -5px;
-    top: -5px;
-    z-index: -1;
+.puastep_box {
+    margin: 20px 0 0 0;
 }
 </style>
