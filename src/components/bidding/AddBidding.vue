@@ -4,7 +4,7 @@
       <li class="pubdeta_sub">
         <div class="pubdeta_sub_twig"><p style="width:42%;"></p></div>
         <ul class="pubdeta_sub_dot">
-          <!--
+          <!-- 
               li：完成的状态-pubdeta_sub_dotover，当前的状态-pubdeta_sub_dotnow；
               p：class='pubdeta_subword[n]'，有几个字，[n]就写几；
           -->
