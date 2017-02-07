@@ -140,7 +140,11 @@
 </template>
 
 <script>
+import Editor from '../../../base/Editor'
 export default {
-  name: 'BaseInfo'
+  name: 'BaseInfo',
+  components: {
+    Editor
+  }
 }
 </script>
