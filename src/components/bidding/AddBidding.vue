@@ -6,19 +6,19 @@
           <div class="box-header with-border">
             <div class="col-md-12">
               <div class="puastep_tab">
-                <a :class="{puastep_tab_now : step == 1}">1.基本信息</a>
+                <a :class="{puastep_tab_now : step == 1}" @click="step = 1">1.基本信息</a>
                 <span>&gt;</span>
-                <a :class="{puastep_tab_now : step == 2}">2.标的信息</a>
+                <a :class="{puastep_tab_now : step == 2}" @click="step = 2">2.标的信息</a>
                 <span>&gt;</span>
-                <a :class="{puastep_tab_now : step == 3}">3.投标单位</a>
+                <a :class="{puastep_tab_now : step == 3}" @click="step = 3">3.投标单位</a>
                 <span>&gt;</span>
-                <a :class="{puastep_tab_now : step == 4}">4.招标概要</a>
+                <a :class="{puastep_tab_now : step == 4}" @click="step = 4">4.招标概要</a>
                 <span>&gt;</span>
-                <a :class="{puastep_tab_now : step == 5}">5.投标须知</a>
+                <a :class="{puastep_tab_now : step == 5}" @click="step = 5">5.投标须知</a>
                 <span>&gt;</span>
-                <a :class="{puastep_tab_now : step == 6}">6.标书文件</a>
+                <a :class="{puastep_tab_now : step == 6}" @click="step = 6">6.标书文件</a>
                 <span>&gt;</span>
-                <a :class="{puastep_tab_now : step == 7}">7.投标文件</a>
+                <a :class="{puastep_tab_now : step == 7}" @click="step = 7">7.投标文件</a>
               </div>
             </div>
           </div>
