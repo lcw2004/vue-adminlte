@@ -2,8 +2,8 @@
   <header class="main-header">
     <!-- Logo -->
     <a href="index2.html" class="logo">
-      <span class="logo-mini">{{ config.productShortName }}</span>
-      <span class="logo-lg">{{ config.productName }}</span>
+      <span class="logo-mini">{{ setting.productShortName }}</span>
+      <span class="logo-lg">{{ setting.productName }}</span>
     </a>
 
     <nav class="navbar navbar-static-top">
@@ -43,8 +43,8 @@
       UserInfoMenu
     },
     computed: {
-      config: function () {
-        return this.$store.state.config
+      setting: function () {
+        return this.$store.state.setting
       }
     }
   }
