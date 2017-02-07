@@ -136,11 +136,22 @@
         </div>
       </div>
     </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label class="control-label col-md-3">备注</label>
+          <div class="col-md-9">
+            <Editor></Editor>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import Editor from '../../../base/Editor'
+import Editor from '../../base/Editor'
 export default {
   name: 'BaseInfo',
   components: {

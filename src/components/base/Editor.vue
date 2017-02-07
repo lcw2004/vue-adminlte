@@ -1,17 +1,12 @@
 <template>
-  <textarea>
-    {{ value }}
-  </textarea>
+  <textarea style="width:800px" rows="5"></textarea>
 </template>
 
 <script>
 export default {
-  name: 'Editor'
-  props: ['value']
-  data: function() {
-    return {
-
-    }
+  name: 'Editor',
+  props: ['value'],
+  beforeCreate: function () {
   }
 }
 </script>
