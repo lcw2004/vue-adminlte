@@ -11,7 +11,7 @@ import moment from 'moment'
 import $ from 'jquery'
 
 export default {
-  name: 'TimePicker',
+  name: 'TimeRangePicker',
   data: function () {
     return {
       id: new Date().getTime()
