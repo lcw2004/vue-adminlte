@@ -4,7 +4,7 @@
       <TimeRangePicker></TimeRangePicker>
     </div>
     <div class="row">
-      <TimePicker></TimePicker>
+      <TimePicker></TimePicker  zX>
     </div>
   </section>
 </template>

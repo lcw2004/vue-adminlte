@@ -12,6 +12,8 @@ import 'admin-lte/bootstrap/css/bootstrap.css'
 import 'admin-lte/dist/css/AdminLTE.css'
 import 'admin-lte/dist/css/skins/_all-skins.min.css'
 import 'font-awesome/css/font-awesome.css'
+import 'eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css'
+import 'bootstrap-daterangepicker/daterangepicker.css'
 
 import App from './App'
 import store from './vuex'

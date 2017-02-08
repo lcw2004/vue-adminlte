@@ -7,8 +7,8 @@
 
 <script>
 import $ from 'jquery'
-import datetimepicker from 'eonasdan-bootstrap-datetimepicker'
-$.fn.datetimepicker = datetimepicker
+import 'moment'
+import 'eonasdan-bootstrap-datetimepicker'
 
 export default {
   name: 'TimePicker',
@@ -18,11 +18,9 @@ export default {
     }
   },
   mounted: function () {
-    $(this.$el).datetimepicker({
-      locale: 'zh-CN',
-      format: 'YYYY-MM-DD HH:mm:00',
-      viewMode: 'days'
-    })
+    // $(this.$el).datetimepicker()
+    this.picker = $('#' + this.id)
+    this.picker.datetimepicker()
   }
 }
 </script>
