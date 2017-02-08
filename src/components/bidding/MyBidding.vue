@@ -1,11 +1,15 @@
 <template>
   <section class="content">
-      我的招标项目
-    </section>
+    <TimePicker></TimePicker>
+  </section>
 </template>
 
 <script>
+import TimePicker from '../base/TimePicker'
 export default {
-  name: 'MyBidding'
+  name: 'MyBidding',
+  components: {
+    TimePicker
+  }
 }
 </script>
