@@ -4,10 +4,10 @@
       <TimeRangePicker></TimeRangePicker>
     </div>
     <div class="row">
-      <TimePicker></TimePicker>
+      <Editor v-model="content" ></Editor>
     </div>
     <div class="row">
-      <Ckeditor v-model="content"></Ckeditor>
+     <!-- <ckeditor v-model="content" id="editor" :height="'300px'" :toolbar="[['Format']]"></ckeditor> -->
     </div>
     <div class="row">
       {{ content }}

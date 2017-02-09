@@ -9,36 +9,67 @@ export default {
   name: 'Editor',
   props: {
     value: {},
-    config: {}
+    toolbar: {
+      type: Array,
+      default: () => [
+        ['Format'],
+        ['Bold', 'Italic'],
+        ['Undo', 'Redo']
+      ]
+    },
+    language: {
+      type: String,
+      default: 'en'
+    },
+    extraplugins: {
+      type: String,
+      default: ''
+    }
   },
   data: function () {
     return {
-      id: new Date().getTime()
+      id: new Date().getTime() + ''
     }
   },
-  beforeCreate: function () {
-    this.ckeditor = CKEDITOR.instances[this.id]
+  beforeUpdate () {
+    const ckeditorId = this.id
+
+    if (this.value !== CKEDITOR.instances[ckeditorId].getData()) {
+      CKEDITOR.instances[ckeditorId].setData(this.value)
+    }
   },
-  mounted: function () {
+  mounted () {
     this.init()
   },
-  destroyed: function () {
-    if (this.ckeditor) {
-      this.ckeditor.destroy()
+  destroyed () {
+    const ckeditor = CKEDITOR.instances[this.id]
+    if (ckeditor) {
+      ckeditor.destroy()
     }
   },
   methods: {
     init: function () {
-      var self = this
-      // 设置初始值
-      self.ckeditor.setData(self.value)
+      const ckeditorId = this.id
+      const ckeditor = CKEDITOR.instances[ckeditorId]
+      const ckeditorConfig = {
+        toolbar: this.toolbar,
+        language: this.language,
+        height: this.height,
+        extraPlugins: this.extraplugins
+      }
 
       // 替换掉textarea
-      self.ckeditor.replace(self.id)
+      CKEDITOR.inline(ckeditorId, ckeditorConfig)
+
+      // 设置初始值
+      ckeditor.setData(this.value)
 
       // 绑定修改事件
-      self.ckeditor.on('change', () => {
-        self.$emit('input', self.ckeditor.getData())
+      ckeditor.on('change', () => {
+        let ckeditorData = ckeditor.getData()
+        if (ckeditorData !== this.value) {
+          this.$emit('input', ckeditorData)
+        }
       })
     }
   }
