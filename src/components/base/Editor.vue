@@ -1,11 +1,5 @@
 <template>
-  <div>
-    <div :id="id">
-      <h1>Hello world!</h1>
-      <p>I'm an instance of <a href="http://ckeditor.com">CKEditor</a>.</p>
-    </div>
-    <input type="button" @click="getData" value="测试">
-  </div>
+  <textarea :id="id" :value="value"></textarea>
 </template>
 
 <script>
@@ -39,24 +33,22 @@ export default {
   },
   beforeUpdate () {
     const ckeditorId = this.id
-
     if (this.value !== CKEDITOR.instances[ckeditorId].getData()) {
-      // CKEDITOR.instances[ckeditorId].setData(this.value)
+      CKEDITOR.instances[ckeditorId].setData(this.value)
     }
   },
   mounted () {
     this.init()
   },
   destroyed () {
-    const ckeditor = CKEDITOR.instances[this.id]
-    if (ckeditor) {
-      ckeditor.destroy()
+    const ckeditorId = this.id
+    if (CKEDITOR.instances[ckeditorId]) {
+      CKEDITOR.instances[ckeditorId].destroy()
     }
   },
   methods: {
     init: function () {
       const ckeditorId = this.id
-      const ckeditor = CKEDITOR.instances[ckeditorId]
       const ckeditorConfig = {
         toolbar: this.toolbar,
         language: this.language,
@@ -64,23 +56,18 @@ export default {
         extraPlugins: this.extraplugins
       }
 
-      // 替换掉textarea
-      CKEDITOR.inline(ckeditorId, ckeditorConfig)
+      CKEDITOR.replace(ckeditorId, ckeditorConfig)
 
-      // 设置初始值
-      // ckeditor.setData(this.value)
-
-      // 绑定修改事件
-      ckeditor.on('change', () => {
-        let ckeditorData = ckeditor.getData()
+      CKEDITOR.instances[ckeditorId].on('change', () => {
+        let ckeditorData = CKEDITOR.instances[ckeditorId].getData()
         if (ckeditorData !== this.value) {
           this.$emit('input', ckeditorData)
         }
       })
     },
     getData: function () {
-      const ckeditor = CKEDITOR.instances[this.id]
-      console.log(ckeditor.getData())
+      const data = CKEDITOR.instances[this.id].getData()
+      console.log(data)
     }
   }
 }
