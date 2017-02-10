@@ -4,10 +4,11 @@
       <TimeRangePicker></TimeRangePicker>
     </div>
     <div class="row">
-      <Editor v-model="content" ></Editor>
+      <!-- <Editor v-model="content" :height="'300px'" :toolbar="[['Format']]"></Editor> -->
     </div>
     <div class="row">
      <!-- <ckeditor v-model="content" id="editor" :height="'300px'" :toolbar="[['Format']]"></ckeditor> -->
+     <InlineEditor v-model="content" ></InlineEditor>
     </div>
     <div class="row">
       {{ content }}
@@ -19,6 +20,7 @@
 import TimeRangePicker from '../base/TimeRangePicker'
 import TimePicker from '../base/TimePicker'
 import Editor from '../base/Editor'
+import InlineEditor from '../base/InlineEditor'
 import Ckeditor from '../base/ckeditor.vue'
 
 export default {
@@ -27,6 +29,7 @@ export default {
     TimeRangePicker,
     TimePicker,
     Editor,
+    InlineEditor,
     Ckeditor
   },
   data: function () {

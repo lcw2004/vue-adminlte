@@ -48,20 +48,21 @@ export default {
   },
   methods: {
     init: function () {
-      const ckeditorId = this.id
+      var self = this
+      const ckeditorId = self.id
       const ckeditorConfig = {
-        toolbar: this.toolbar,
-        language: this.language,
-        height: this.height,
-        extraPlugins: this.extraplugins
+        toolbar: self.toolbar,
+        language: self.language,
+        height: self.height,
+        extraPlugins: self.extraplugins
       }
 
-      CKEDITOR.replace(ckeditorId, ckeditorConfig)
+      CKEDITOR.inline(ckeditorId, ckeditorConfig)
 
       CKEDITOR.instances[ckeditorId].on('change', () => {
         let ckeditorData = CKEDITOR.instances[ckeditorId].getData()
-        if (ckeditorData !== this.value) {
-          this.$emit('input', ckeditorData)
+        if (ckeditorData !== self.value) {
+          self.$emit('input', ckeditorData)
         }
       })
     },

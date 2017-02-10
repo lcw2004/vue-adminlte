@@ -21,6 +21,9 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 ## src/components
   存放一些公共组件，每个组件一个文件夹
 
+## src/view
+  存放业务组件
+
 ## src/filters
   存放一些公共过滤器
 
