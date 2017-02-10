@@ -16,11 +16,11 @@
 </template>
 
 <script>
-import TimeRangePicker from '../base/TimeRangePicker'
-import TimePicker from '../base/TimePicker'
-import Editor from '../base/Editor'
-import InlineEditor from '../base/InlineEditor'
-import Ckeditor from '../base/ckeditor.vue'
+import TimeRangePicker from '../../components/base/TimeRangePicker'
+import TimePicker from '../../components/base/TimePicker'
+import Editor from '../../components/base/Editor'
+import InlineEditor from '../../components/base/InlineEditor'
+import Ckeditor from '../../components/base/ckeditor'
 
 export default {
   name: 'MyBidding',

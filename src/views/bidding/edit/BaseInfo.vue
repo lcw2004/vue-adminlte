@@ -151,7 +151,7 @@
 </template>
 
 <script>
-import Editor from '../../base/Editor'
+import Editor from '../../../components/base/Editor'
 export default {
   name: 'BaseInfo',
   components: {

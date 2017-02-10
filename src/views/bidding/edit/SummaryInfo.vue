@@ -128,7 +128,7 @@
 </template>
 
 <script>
-import TimePicker from '../../base/TimePicker'
+import TimePicker from '../../../components/base/TimePicker'
 
 export default {
   name: 'SummaryInfo',

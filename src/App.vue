@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import Home from 'components/layout/Home'
+import Home from './views/layout/Home'
 
 export default {
   name: 'app',
