@@ -24,6 +24,10 @@ export default {
     extraplugins: {
       type: String,
       default: ''
+    },
+    type: {
+      type: String,
+      default: 'nomal'
     }
   },
   data: function () {
@@ -57,6 +61,11 @@ export default {
         extraPlugins: self.extraplugins
       }
 
+      if (self.type === 'inline') {
+        CKEDITOR.inline(ckeditorId, ckeditorConfig)
+      } else if (self.type === 'nomal') {
+        CKEDITOR.replace(ckeditorId, ckeditorConfig)
+      }
       CKEDITOR.inline(ckeditorId, ckeditorConfig)
 
       CKEDITOR.instances[ckeditorId].on('change', () => {
