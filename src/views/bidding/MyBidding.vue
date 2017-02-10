@@ -7,7 +7,7 @@
       <Editor v-model="content" :height="'300px'" :toolbar="[['Format']]"></Editor>
     </div>
     <div class="row">
-     <InlineEditor v-model="content" ></InlineEditor>
+      <!-- <InlineEditor v-model="content" ></InlineEditor> -->
     </div>
     <div class="row">
       {{ content }}
@@ -20,7 +20,6 @@ import TimeRangePicker from '../../components/base/TimeRangePicker'
 import TimePicker from '../../components/base/TimePicker'
 import Editor from '../../components/base/Editor'
 import InlineEditor from '../../components/base/InlineEditor'
-import Ckeditor from '../../components/base/ckeditor'
 
 export default {
   name: 'MyBidding',
@@ -28,8 +27,7 @@ export default {
     TimeRangePicker,
     TimePicker,
     Editor,
-    InlineEditor,
-    Ckeditor
+    InlineEditor
   },
   data: function () {
     return {

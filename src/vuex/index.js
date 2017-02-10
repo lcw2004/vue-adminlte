@@ -4,6 +4,8 @@ Vue.use(Vuex)
 
 import mutations from './mutations'
 import actions from './actions'
+
+// 模块
 import setting from './setting'
 
 const state = {

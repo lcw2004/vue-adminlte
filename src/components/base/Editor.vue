@@ -32,7 +32,7 @@ export default {
   },
   data: function () {
     return {
-      id: new Date().getTime() + ''
+      id: Math.random() + ''
     }
   },
   beforeUpdate () {
@@ -66,7 +66,6 @@ export default {
       } else if (self.type === 'nomal') {
         CKEDITOR.replace(ckeditorId, ckeditorConfig)
       }
-      CKEDITOR.inline(ckeditorId, ckeditorConfig)
 
       CKEDITOR.instances[ckeditorId].on('change', () => {
         let ckeditorData = CKEDITOR.instances[ckeditorId].getData()
