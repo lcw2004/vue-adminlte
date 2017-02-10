@@ -1,5 +1,5 @@
 <template>
-  <Editor v-model="data"></Editor>
+  <Editor v-model="data" type="inline"></Editor>
 </template>
 
 <script>

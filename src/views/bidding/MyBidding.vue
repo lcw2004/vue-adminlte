@@ -7,7 +7,7 @@
       <Editor v-model="content" :height="'300px'" :toolbar="[['Format']]"></Editor>
     </div>
     <div class="row">
-      <!-- <InlineEditor v-model="content" ></InlineEditor> -->
+      <InlineEditor v-model="content" type="inline"></InlineEditor>
     </div>
     <div class="row">
       {{ content }}
