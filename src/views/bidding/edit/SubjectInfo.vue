@@ -4,9 +4,10 @@
       <div class="col-md-6">
         <div class="form-group">
             <label class="control-label col-md-3">报价响应率</label>
-            <div class="col-md-7">
+            <div class="col-md-5">
               <div class="input-group">
                 <input type="text" class="form-control">
+                <span class="input-group-addon">%</span>
               </div>
             </div>
         </div>
@@ -24,8 +25,7 @@
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-md-12">
+    <div class="col-md-12">
         <table class="table table-bordered">
           <tbody>
             <tr>
@@ -51,7 +51,7 @@
               </td>
             </tr>
             <tr>
-              <td>1</td>
+              <td>2</td>
               <td>001</td>
               <td>钢铁</td>
               <td>1000</td>
@@ -63,24 +63,24 @@
               </td>
             </tr>
             <tr>
-              <td>1</td>
+              <td>3</td>
               <td>
-                <div class="col-md-12"><input type="text" class="form-control" style="width: 80px"></div>
+                <div class="col-md-12"><input type="text" class="form-control input-sm" style="width: 80px"></div>
               </td>
               <td>
-                <div class="col-md-12"><input type="text" class="form-control"></div>
+                <div class="col-md-12"><input type="text" class="form-control input-sm"></div>
               </td>
               <td>
-                <div class="col-md-12"><input type="text" class="form-control" style="width: 80px"></div>
+                <div class="col-md-12"><input type="text" class="form-control input-sm" style="width: 80px"></div>
               </td>
               <td>
-                <div class="col-md-12"><input type="text" class="form-control" style="width: 80px"></div>
+                <div class="col-md-12"><input type="text" class="form-control input-sm" style="width: 80px"></div>
               </td>
               <td>
-                <div class="col-md-12"><input type="text" class="form-control" style="width: 80px"></div>
+                <div class="col-md-12"><input type="text" class="form-control input-sm" style="width: 80px"></div>
               </td>
               <td>
-                <div class="col-md-12"><input type="text" class="form-control"></div>
+                <div class="col-md-12"><input type="text" class="form-control input-sm"></div>
               </td>
               <td>
                 <a>删除</a> | <a>编辑</a>
@@ -89,7 +89,6 @@
           </tbody>
         </table>
       </div>
-    </div>
   </div>
 </template>
 
