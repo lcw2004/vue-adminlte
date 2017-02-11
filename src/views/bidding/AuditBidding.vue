@@ -1,11 +1,65 @@
 <template>
   <section class="content">
-      招标项目审核
-    </section>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="box">
+          <div class="box-header">
+            <form class="form-inline">
+              <div class="col-md-3"><label class="control-label">项目</label> <input type="text" placeholder="项目编号/项目名称" class="form-control inline-block"></div>
+            </form>
+          </div>
+
+          <div class="box-body">
+            <table class="table table-bordered">
+              <tbody>
+                <tr>
+                  <th style="width: 10px">#</th>
+                  <th>项目编号</th>
+                  <th>项目名称</th>
+                  <th>项目类型</th>
+                  <th>发布日期</th>
+                  <th>状态</th>
+                  <th>操作</th>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td><a>ZB201701160009</a></td>
+                  <td>测试3</td>
+                  <td>邀请招标</td>
+                  <td>2017-01-16</td>
+                  <td>已提交审核
+                    <span class="label label-default">待审核</span>
+                  </td>
+                  <td>
+                    <a>通过</a>
+                    <a @click="config.show = true">驳回</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <AuditReject :config="config">
+  </section>
 </template>
 
 <script>
+import AuditReject from '../modal/AuditReject'
 export default {
-  name: 'AuditBidding'
+  name: 'AuditBidding',
+  components: {
+    AuditReject
+  },
+  data: function () {
+    return {
+      config: {
+        show: true,
+        title: '驳回原因'
+      }
+    }
+  }
 }
 </script>
