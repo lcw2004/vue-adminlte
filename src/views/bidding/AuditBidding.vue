@@ -31,7 +31,7 @@
                     <span class="label label-default">待审核</span>
                   </td>
                   <td>
-                    <a>通过</a>
+                    <a @click="alertConfig.show = true">通过</a>
                     <a @click="config.show = true">驳回</a>
                   </td>
                 </tr>
@@ -42,22 +42,30 @@
       </div>
     </div>
 
-    <AuditReject :config="config">
+    <AuditReject :config="config"></AuditReject>
+    <Alert :config="alertConfig"></Alert>
   </section>
 </template>
 
 <script>
 import AuditReject from '../modal/AuditReject'
+import Alert from '../../components/alerts/Alert'
+
 export default {
   name: 'AuditBidding',
   components: {
-    AuditReject
+    AuditReject,
+    Alert
   },
   data: function () {
     return {
       config: {
-        show: true,
+        show: false,
         title: '驳回原因'
+      },
+      alertConfig: {
+        show: true,
+        msg: '驳回原因'
       }
     }
   }
