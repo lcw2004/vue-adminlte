@@ -37,8 +37,8 @@
                 <button type="submit" v-show="step > 1" @click="lastStep" class="btn btn-block btn-default">上一步</button>
               </div>
               <div class="col-md-2 col-sm-2">
-                <button type="submit" v-show="step < maxStep" @click="nextStep" class="btn btn-block btn-primary">下一步</button>
-                <button type="submit" v-show="step == maxStep" @click="save" class="btn btn-block btn-primary">保存</button>
+                <button type="submit" v-if="step < maxStep" @click="nextStep" class="btn btn-block btn-primary">下一步</button>
+                <button type="submit" v-if="step == maxStep" @click="save" class="btn btn-block btn-primary">保存</button>
               </div>
             </div>
           </form>
