@@ -1,4 +1,4 @@
-# vue-common
+# vue-adminlte
 
 > vue common components
 
