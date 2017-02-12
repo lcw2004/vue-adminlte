@@ -1,8 +1,8 @@
-import Alert from './Alert'
+import AlertBox from './AlertBox'
 
 /* istanbul ignore next */
-Alert.install = function (Vue) {
-  Vue.component(Alert.name, Alert)
+AlertBox.install = function (Vue) {
+  Vue.component(AlertBox.name, AlertBox)
 }
 
-export default Alert
+export default AlertBox

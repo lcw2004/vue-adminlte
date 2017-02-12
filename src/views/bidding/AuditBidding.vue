@@ -43,29 +43,22 @@
     </div>
 
     <AuditReject :config="config"></AuditReject>
-    <AlertBox></AlertBox>
   </section>
 </template>
 
 <script>
 import AuditReject from '../modal/AuditReject'
-import AlertBox from '../../components/alerts/AlertBox'
 
 export default {
   name: 'AuditBidding',
   components: {
-    AuditReject,
-    AlertBox
+    AuditReject
   },
   data: function () {
     return {
       config: {
         show: false,
         title: '驳回原因'
-      },
-      alertConfig: {
-        show: true,
-        msg: '驳回原因'
       }
     }
   }
