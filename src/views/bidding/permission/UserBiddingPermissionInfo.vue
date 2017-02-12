@@ -49,6 +49,7 @@
             <div class="form-group">
               <label for="inputEmail3" class="col-md-2 control-label">投标保证金</label>
               <div class="col-md-2">
+                <BSwitch></BSwitch>
                 <div class="controls">
                   <div class="radio inline">
                     <label><input type="radio" value="1">已收</label>
@@ -87,7 +88,12 @@
 </template>
 
 <script>
+import BSwitch from '../../../components/base/BSwitch'
+
 export default {
-  name: 'UserBiddingPermissionInfo'
+  name: 'UserBiddingPermissionInfo',
+  components: {
+    BSwitch
+  }
 }
 </script>
