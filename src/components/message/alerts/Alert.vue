@@ -1,5 +1,5 @@
 <template>
-  <div class="alert alert-success alert-dismissible" v-show="config.show" style="position: fixed; right: 10px; z-index: 1000; width:300px" :style="styleTop">
+  <div class="alert alert-success alert-dismissible" v-show="config.show" style="position: fixed; top: 100px; right: 10px; z-index: 1000; width:300px">
     <button type="button" class="close" data-dismiss="alert" aria-hidden="true" @click="config.show = false">×</button>
     <i class="icon fa fa-check"></i>
     {{ config.msg }}
@@ -14,20 +14,15 @@ export default {
     config: {
       type: Object,
       required: true
-    },
-    top: {
-
     }
   },
   data: function () {
     return {
     }
   },
-  computed: {
-    styleTop: function () {
-      return {
-        top: this.top + 'px'
-      }
+  methods: {
+    select: function () {
+
     }
   }
 }

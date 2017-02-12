@@ -43,19 +43,19 @@
     </div>
 
     <AuditReject :config="config"></AuditReject>
-    <Alert :config="alertConfig"></Alert>
+    <AlertBox></AlertBox>
   </section>
 </template>
 
 <script>
 import AuditReject from '../modal/AuditReject'
-import Alert from '../../components/alerts/Alert'
+import AlertBox from '../../components/alerts/AlertBox'
 
 export default {
   name: 'AuditBidding',
   components: {
     AuditReject,
-    Alert
+    AlertBox
   },
   data: function () {
     return {

@@ -19,6 +19,9 @@ import App from './App'
 import store from './vuex'
 import router from './router'
 
+// import Alert from './components/alerts'
+// Alert.install(Vue)
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
