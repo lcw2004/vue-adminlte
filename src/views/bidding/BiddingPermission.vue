@@ -29,7 +29,7 @@
                   <td>2017-01-16</td>
                   <td>审核通过，等待开标</td>
                   <td>
-                    <a>权限管理</a>
+                    <router-link to='/bidding-permission-info'>权限管理</router-link>
                   </td>
                 </tr>
                 <tr>
@@ -40,7 +40,7 @@
                   <td>2017-01-16</td>
                   <td>开标中</td>
                   <td>
-                    <a>权限管理</a>
+                    <router-link to='/bidding-permission-info'>权限管理</router-link>
                   </td>
                 </tr>
                 <tr>
@@ -51,7 +51,7 @@
                   <td>2017-01-16</td>
                   <td>开标结束，预售标</td>
                   <td>
-                    <a>权限管理</a>
+                    <router-link to='/bidding-permission-info'>权限管理</router-link>
                   </td>
                 </tr>
                 <tr>
@@ -62,7 +62,7 @@
                   <td>2017-01-16</td>
                   <td>授标结束，待归档</td>
                   <td>
-                    <a>权限管理</a>
+                    <router-link to='/bidding-permission-info'>权限管理</router-link>
                   </td>
                 </tr>
               </tbody>
@@ -71,7 +71,7 @@
         </div>
       </div>
     </div>
-    
+
     <div class="row">
       <div class="col-md-12">
         <div class="box box-solid">
@@ -90,6 +90,6 @@
 
 <script>
 export default {
-  name: 'ManageBiddingPerm'
+  name: 'BiddingPermission'
 }
 </script>
