@@ -2,7 +2,12 @@
   <div class="box box-solid">
     <div class="box-header with-border">
       <h3 class="box-title">安徽三联泵业股份有限公司</h3>
+      <div class="box-tools pull-right">
+        <button type="button" class="btn btn-info btn-sm">保存
+        </button>
+      </div>
     </div>
+
     <form class="form-horizontal">
       <div class="box-body">
 
