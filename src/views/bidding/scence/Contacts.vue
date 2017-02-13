@@ -25,8 +25,8 @@
 <script>
 export default {
   name: 'Contacts',
-  data () {
+  data: function () {
     return {}
   }
 }
-</script
+</script>

@@ -19,8 +19,8 @@
 <script>
 export default {
   name: 'ChatMessage',
-  data () {
+  data: function () {
     return {}
   }
 }
-</script
+</script>

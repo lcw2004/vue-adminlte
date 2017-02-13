@@ -60,7 +60,7 @@ export default {
     ChatMessages,
     Contacts
   },
-  data () {
+  data: function () {
     return {}
   }
 }

@@ -1,6 +1,6 @@
 <template>
   <div class="direct-chat-messages">
-
+    1111
   </div>
 </template>
 
@@ -12,8 +12,8 @@ export default {
   components: {
     ChatMessage
   },
-  data () {
+  data: function () {
     return {}
   }
 }
-</script
+</script>
