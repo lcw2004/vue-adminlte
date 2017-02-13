@@ -1,11 +1,11 @@
 <template>
-<div class="box box-primary box-solid direct-chat direct-chat-primary">
+<div class="box box-primary box-solid direct-chat direct-chat-primary " :class="{'direct-chat-contacts-open' : showContacts}" >
   <div class="box-header">
     <h3 class="box-title">消息</h3>
     <div class="box-tools pull-right">
       <span data-toggle="tooltip" title="3 New Messages" class="badge bg-light-blue">3</span>
       <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-      <button class="btn btn-box-tool" data-toggle="tooltip" title="Contacts" data-widget="chat-pane-toggle"><i class="fa fa-comments"></i></button>
+      <button class="btn btn-box-tool" data-toggle="tooltip" title="Contacts" data-widget="chat-pane-toggle" @click="toggoleContacts()"><i class="fa fa-comments"></i></button>
       <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
     </div>
   </div>
@@ -37,7 +37,14 @@ export default {
     Contacts
   },
   data: function () {
-    return {}
+    return {
+      showContacts: false
+    }
+  },
+  methods: {
+    toggoleContacts: function () {
+      this.showContacts = !this.showContacts
+    }
   }
 }
 </script>

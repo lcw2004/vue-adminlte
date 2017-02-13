@@ -1,30 +1,23 @@
 <template>
-  <!-- Contacts are loaded here -->
-  <div class="direct-chat-contacts">
-    <ul class="contacts-list">
-      <li>
-        <a href="#">
-          <img class="contacts-list-img" src="static/adminlte/img/user1-128x128.jpg" alt="Contact Avatar">
-          <div class="contacts-list-info">
-            <span class="contacts-list-name">
-              Count Dracula
-              <small class="contacts-list-date pull-right">2/28/2015</small>
-            </span>
-            <span class="contacts-list-msg">How have you been? I was...</span>
-          </div>
-          <!-- /.contacts-list-info -->
-        </a>
-      </li>
-      <!-- End Contact Item -->
-    </ul>
-    <!-- /.contatcts-list -->
-  </div>
-  <!-- /.direct-chat-pane -->
+<div class="direct-chat-contacts">
+  <ul class="contacts-list">
+    <Contact></Contact>
+    <Contact></Contact>
+    <Contact></Contact>
+    <Contact></Contact>
+    <Contact></Contact>
+  </ul>
+</div>
 </template>
 
 <script>
+import Contact from './Contact'
+
 export default {
   name: 'Contacts',
+  components: {
+    Contact
+  },
   data: function () {
     return {}
   }
