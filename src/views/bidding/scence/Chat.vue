@@ -9,44 +9,20 @@
       <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
     </div>
   </div>
-  <!-- /.box-header -->
   <div class="box-body">
-    <!-- Conversations are loaded here -->
-    <div class="direct-chat-messages">
-      <ChatMessage></ChatMessage>
-
-      <!-- Message to the right -->
-      <div class="direct-chat-msg right">
-        <div class="direct-chat-info clearfix">
-          <span class="direct-chat-name pull-right">Sarah Bullock</span>
-          <span class="direct-chat-timestamp pull-left">23 Jan 2:05 pm</span>
-        </div>
-        <!-- /.direct-chat-info -->
-        <img class="direct-chat-img" src="static/adminlte/img/user3-128x128.jpg" alt="message user image">
-        <!-- /.direct-chat-img -->
-        <div class="direct-chat-text">
-          You better believe it!
-        </div>
-        <!-- /.direct-chat-text -->
-      </div>
-      <!-- /.direct-chat-msg -->
-    </div>
-    <!--/.direct-chat-messages-->
-
+    <ChatMessages></ChatMessages>
     <Contacts></Contacts>
   </div>
-  <!-- /.box-body -->
   <div class="box-footer">
     <form action="#" method="post">
       <div class="input-group">
-        <input type="text" name="message" placeholder="Type Message ..." class="form-control">
+        <input type="text" name="message" placeholder="输入 ..." class="form-control">
         <span class="input-group-btn">
           <button type="button" class="btn btn-primary btn-flat">发送</button>
         </span>
       </div>
     </form>
   </div>
-  <!-- /.box-footer-->
 </div>
 </template>
 

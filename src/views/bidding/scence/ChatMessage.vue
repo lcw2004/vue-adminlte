@@ -1,24 +1,28 @@
 <template>
-  <!-- Message. Default to the left -->
-  <div class="direct-chat-msg">
+  <div class="direct-chat-msg" :class="{right : slide == 'right'}">
     <div class="direct-chat-info clearfix">
-      <span class="direct-chat-name pull-left">Alexander Pierce</span>
-      <span class="direct-chat-timestamp pull-right">23 Jan 2:00 pm</span>
+      <span class="direct-chat-name" :class="[ slide == 'right' ? 'pull-right' : 'pull-left' ]">Sarah Bullock</span>
+      <span class="direct-chat-timestamp" :class="[ slide == 'right' ? 'pull-left' : 'pull-right' ]">23 Jan 2:05 pm</span>
     </div>
-    <!-- /.direct-chat-info -->
-    <img class="direct-chat-img" src="static/adminlte/img/user1-128x128.jpg" alt="message user image">
-    <!-- /.direct-chat-img -->
+    <img class="direct-chat-img" src="static/adminlte/img/user3-128x128.jpg" alt="message user image">
     <div class="direct-chat-text">
-      Is this template really for free? That's unbelievable!
+      {{ message }}
     </div>
-    <!-- /.direct-chat-text -->
   </div>
-  <!-- /.direct-chat-msg -->
 </template>
 
 <script>
 export default {
   name: 'ChatMessage',
+  props: {
+    slide: {
+      default: 'left'
+    },
+    message: {
+      required: true,
+      type: String
+    }
+  },
   data: function () {
     return {}
   }

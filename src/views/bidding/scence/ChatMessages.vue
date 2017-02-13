@@ -1,6 +1,7 @@
 <template>
   <div class="direct-chat-messages">
-    1111
+    <ChatMessage message="你好，你叫什么!"></ChatMessage>
+    <ChatMessage message="你好，我是张三！" slide="right"></ChatMessage>
   </div>
 </template>
 
