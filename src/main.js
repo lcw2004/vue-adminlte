@@ -19,8 +19,9 @@ import App from './App'
 import store from './vuex'
 import router from './router'
 
-// import Alert from './components/alerts'
-// Alert.install(Vue)
+Vue.prototype.$alert = function (msg) {
+  console.log(msg)
+}
 
 /* eslint-disable no-new */
 new Vue({

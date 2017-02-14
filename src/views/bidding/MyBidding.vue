@@ -94,7 +94,7 @@
                   <td>2017-01-16</td>
                   <td>授标结束，待归档</td>
                   <td>
-                    <a>归档</a>
+                    <a @click="test">归档</a>
                   </td>
                 </tr>
                 <tr>
@@ -151,6 +151,11 @@ export default {
   },
   data: function () {
     return {
+    }
+  },
+  methods: {
+    test: function () {
+      this.$alert('123123')
     }
   }
 }
