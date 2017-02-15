@@ -12,9 +12,11 @@ import BiddingInfo from '../views/bidding/BiddingInfo'
 import BiddingPreAward from '../views/bidding/BiddingPreAward'
 import BiddingScene from '../views/bidding/BiddingScene'
 
+import ClarifyInfo from '../views/bidding/clarify/ClarifyInfo'
+
 const router = {
   routes: [
-    {path: '/', component: Desktop},
+    { path: '/', component: Desktop },
     { path: '/add-bidding', component: AddBidding },
     { path: '/audit-bidding', component: AuditBidding },
     { path: '/manage-bidding', component: ManageBidding },
@@ -23,6 +25,7 @@ const router = {
     { path: '/bidding-permission-info', component: BiddingPermissionInfo },
     { path: '/audit-progress', component: AuditProgress },
     { path: '/bidding-clarify', component: BiddingClarify },
+    { path: '/bidding-clarify-info', component: ClarifyInfo },
     { path: '/bidding-info', component: BiddingInfo },
     { path: '/bidding-pre-award', component: BiddingPreAward },
     { path: '/bidding-scene', component: BiddingScene }
