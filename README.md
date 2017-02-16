@@ -32,6 +32,3 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 
 ## src/utils
   存放一些公共的utils方法
-
-
-111
