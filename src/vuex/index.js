@@ -7,6 +7,7 @@ import actions from './actions'
 
 // 模块
 import setting from './setting'
+import data from './data'
 
 const state = {
 }
@@ -16,6 +17,7 @@ export default new Vuex.Store({
   mutations,
   actions,
   modules: {
-    setting
+    setting,
+    data
   }
 })
