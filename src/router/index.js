@@ -14,6 +14,8 @@ import BiddingScene from '../views/bidding/BiddingScene'
 
 import ClarifyInfo from '../views/bidding/clarify/ClarifyInfo'
 
+import PurchaseType from '../views/system/PurchaseType'
+
 const router = {
   routes: [
     { path: '/', component: Desktop },
@@ -28,7 +30,9 @@ const router = {
     { path: '/bidding-clarify-info', component: ClarifyInfo },
     { path: '/bidding-info', component: BiddingInfo },
     { path: '/bidding-pre-award', component: BiddingPreAward },
-    { path: '/bidding-scene', component: BiddingScene }
+    { path: '/bidding-scene', component: BiddingScene },
+
+    { path: '/purchase-type', component: PurchaseType }
   ]
 }
 

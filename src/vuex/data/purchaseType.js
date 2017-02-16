@@ -12,7 +12,7 @@ const data = {
   'parent': null,
   'parentIds': '0,',
   'code': '100000',
-  'name': '中国',
+  'name': '设备材料',
   'type': '1',
   'typeCN': '国家',
   'officeList': [],
