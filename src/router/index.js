@@ -1,7 +1,7 @@
 import Desktop from '../views/layout/Desktop'
 import AddBidding from '../views/bidding/AddBidding'
-import AuditBidding from '../views/bidding/AuditBidding'
-import ManageBidding from '../views/bidding/ManageBidding'
+import BiddingAudit from '../views/bidding/BiddingAudit'
+import BiddingManage from '../views/bidding/BiddingManage'
 import BiddingPermission from '../views/bidding/BiddingPermission'
 import MyBidding from '../views/bidding/MyBidding'
 
@@ -18,8 +18,8 @@ const router = {
   routes: [
     { path: '/', component: Desktop },
     { path: '/add-bidding', component: AddBidding },
-    { path: '/audit-bidding', component: AuditBidding },
-    { path: '/manage-bidding', component: ManageBidding },
+    { path: '/bidding-audit', component: BiddingAudit },
+    { path: '/bidding-manage', component: BiddingManage },
     { path: '/bidding-permission', component: BiddingPermission },
     { path: '/my-bidding', component: MyBidding },
     { path: '/bidding-permission-info', component: BiddingPermissionInfo },

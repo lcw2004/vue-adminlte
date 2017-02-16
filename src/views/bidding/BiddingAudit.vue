@@ -50,7 +50,7 @@
 import AuditReject from '../modal/AuditReject'
 
 export default {
-  name: 'AuditBidding',
+  name: 'BiddingAudit',
   components: {
     AuditReject
   },

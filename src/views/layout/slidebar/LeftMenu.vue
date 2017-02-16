@@ -21,9 +21,9 @@
       <ul class="treeview-menu">
         <li class="active"><a><i class="fa fa-circle-o"></i><router-link to='/my-bidding'>我的招标项目</router-link></a></li>
         <li><a><i class="fa fa-circle-o"></i><router-link to='/add-bidding'>招标项目发布</router-link></a></li>
-        <li><a><i class="fa fa-circle-o"></i><router-link to='/manage-bidding'>招标项目管理</router-link></a></li>
+        <li><a><i class="fa fa-circle-o"></i><router-link to='/bidding-manage'>招标项目管理</router-link></a></li>
         <li><a><i class="fa fa-circle-o"></i><router-link to='/bidding-permission'>投标权限管理</router-link></a></li>
-        <li><a><i class="fa fa-circle-o"></i><router-link to='/audit-bidding'>招标项目审核</router-link></a></li>
+        <li><a><i class="fa fa-circle-o"></i><router-link to='/bidding-audit'>招标项目审核</router-link></a></li>
       </ul>
     </li>
     <li class="treeview">
