@@ -41,27 +41,27 @@
     </div>
   </div>
 
-  <PurchaseTypeModal :config="config"></PurchaseTypeModal>
+  <ProfessionTypeModal :config="config"></ProfessionTypeModal>
 </section>
 </template>
 
 <script>
 import TreeTableMiXin from '../../mixins/TreeTableMiXin'
 import TreeTableColPrefix from '../../components/tree/TreeTableColPrefix'
-import PurchaseTypeModal from './PurchaseTypeModal'
+import ProfessionTypeModal from './ProfessionTypeModal'
 
 export default {
   mixins: [TreeTableMiXin],
-  name: 'PurchaseType',
+  name: 'ProfessionType',
   components: {
     TreeTableColPrefix,
-    PurchaseTypeModal
+    ProfessionTypeModal
   },
   data: function () {
     return {
       config: {
         show: false,
-        title: '添加采购类别'
+        title: '添加专业类别'
       }
     }
   },

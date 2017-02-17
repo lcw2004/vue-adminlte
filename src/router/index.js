@@ -15,6 +15,7 @@ import BiddingScene from '../views/bidding/BiddingScene'
 import ClarifyInfo from '../views/bidding/clarify/ClarifyInfo'
 
 import PurchaseType from '../views/system/PurchaseType'
+import ProfessionType from '../views/system/ProfessionType'
 
 const router = {
   routes: [
@@ -32,7 +33,8 @@ const router = {
     { path: '/bidding-pre-award', component: BiddingPreAward },
     { path: '/bidding-scene', component: BiddingScene },
 
-    { path: '/purchase-type', component: PurchaseType }
+    { path: '/purchase-type', component: PurchaseType },
+    { path: '/profession-type', component: ProfessionType }
   ]
 }
 
