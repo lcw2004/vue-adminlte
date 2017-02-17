@@ -10,30 +10,35 @@
           <h4 class="modal-title" v-text="config.title"></h4>
         </div>
 
-
         <div class="modal-body">
           <form class="form-horizontal">
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
-                  <label class="control-label col-md-4">文件类型1</label>
+                  <label class="control-label col-md-4">父类别名称</label>
                   <div class="col-md-6">
-                    <select class="form-control">
-                      <option>模板 1</option>
-                      <option>模板 2</option>
-                      <option>模板 3</option>
-                      <option>模板 4</option>
-                      <option>模板 5</option>
-                    </select>
+                    <p class="form-control-static">设备材料</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="control-label col-md-4">采购类别名称</label>
+                  <div class="col-md-6">
+                    <input type="text" class="form-control" placeholder="采购类别名称">
                   </div>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
-                  <label class="control-label col-md-4">标题</label>
+                  <label class="control-label col-md-4">采购类别编码</label>
                   <div class="col-md-8">
                     <div class="input-group">
-                      <input type="text" class="form-control" placeholder="标题">
+                      <input type="text" class="form-control" placeholder="采购类别编码">
                     </div>
                   </div>
                 </div>
@@ -42,19 +47,9 @@
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group">
-                  <label class="control-label col-md-2">说明</label>
+                  <label class="control-label col-md-2">备注</label>
                   <div class="col-md-9">
                     <textarea class="form-control"></textarea>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-12">
-                <div class="form-group">
-                  <label class="control-label col-md-2">文件</label>
-                  <div class="col-md-9">
-                    <button type="button" class="btn btn-primary">上传文件文件</button>
                   </div>
                 </div>
               </div>
@@ -82,6 +77,8 @@ export default {
     }
   },
   components: {},
-  data: function () {}
+  data: function () {
+    return {}
+  }
 }
 </script>

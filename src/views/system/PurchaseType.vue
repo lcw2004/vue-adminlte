@@ -17,6 +17,7 @@
               <tr>
                 <th>名称</th>
                 <th>编码</th>
+                <th>备注</th>
                 <th>操作</th>
               </tr>
             </thead>
@@ -27,6 +28,7 @@
                   <span @click="toggle(obj)" v-text="obj.name"></span>
                 </td>
                 <td><span v-text="obj.code"></span></td>
+                <td></td>
                 <td>
                   <a :href="'${ctx}/sys/menu/form?id=' + obj.id">修改</a>
                   <a @click="deleteData(obj.id)">删除</a>
@@ -60,8 +62,8 @@ export default {
   data: function () {
     return {
       config: {
-        show: true,
-        title: '添加采购类别1'
+        show: false,
+        title: '添加采购类别'
       }
     }
   },
