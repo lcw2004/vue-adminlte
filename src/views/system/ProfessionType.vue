@@ -30,6 +30,7 @@
                 <td><span v-text="obj.code"></span></td>
                 <td></td>
                 <td>
+                  <a @click="config.show = true">添加下级元素</a>
                   <a :href="'${ctx}/sys/menu/form?id=' + obj.id">修改</a>
                   <a @click="deleteData(obj.id)">删除</a>
                 </td>
@@ -70,7 +71,7 @@ export default {
      * 需要提供给 TreeTableMiXin 调用，用于 mixin 初始化数据
      */
     topElement: function () {
-      return this.$store.state.data.purchaseType
+      return this.$store.state.data.professionType
     }
   }
 }

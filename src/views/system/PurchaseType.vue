@@ -30,6 +30,7 @@
                 <td><span v-text="obj.code"></span></td>
                 <td></td>
                 <td>
+                  <a @click="config.show = true">添加下级元素</a>
                   <a :href="'${ctx}/sys/menu/form?id=' + obj.id">修改</a>
                   <a @click="deleteData(obj.id)">删除</a>
                 </td>

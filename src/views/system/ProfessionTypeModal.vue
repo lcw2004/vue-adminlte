@@ -17,7 +17,7 @@
                 <div class="form-group">
                   <label class="control-label col-md-4">父专业名称</label>
                   <div class="col-md-6">
-                    <p class="form-control-static">设备材料</p>
+                    <p class="form-control-static">工艺类</p>
                   </div>
                 </div>
               </div>
