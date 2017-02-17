@@ -16,7 +16,6 @@ export default {
       required: true
     },
     top: {
-
     }
   },
   data: function () {

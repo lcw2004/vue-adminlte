@@ -6,6 +6,10 @@
 
 <script>
 export default {
-  name: 'Base'
+  name: 'Base',
+  components: {
+  },
+  data: function () {
+  }
 }
 </script>
