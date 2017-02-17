@@ -16,10 +16,7 @@
   						<thead>
   						<tr>
   							<th>名称</th>
-  							<th>链接</th>
-  							<th>排序</th>
-  							<th>可见</th>
-  							<th>权限标识</th>
+  							<th>编码</th>
   							<th>操作</th>
   						</tr>
   						</thead>
@@ -29,10 +26,7 @@
                   <TreeTableColPrefix :obj="obj" @toggle="toggle(obj)"></TreeTableColPrefix>
   								<span @click="toggle(obj)" v-text="obj.name"></span>
   							</td>
-  							<td><span v-text="obj.href"></span></td>
-  							<td><span v-text="obj.sort"></span></td>
-  							<td><span v-text="obj.isShowCN"></span></td>
-  							<td><span v-text="obj.permission"></span></td>
+  							<td><span v-text="obj.code"></span></td>
   							<td>
   								<a :href="'${ctx}/sys/menu/form?id=' + obj.id">修改</a>
   								<a @click="deleteData(obj.id)">删除</a>
@@ -66,7 +60,7 @@ export default {
     * 需要提供给 TreeTableMiXin 调用，用于 mixin 初始化数据
     */
     topElement: function () {
-      return this.$store.state.data.area
+      return this.$store.state.data.purchaseType
     }
   }
 }
