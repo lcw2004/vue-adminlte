@@ -56,12 +56,9 @@
 </template>
 
 <script>
-import Editor from '../../../components/base/Editor'
-
 export default {
   name: 'ClarifyInfo',
   components: {
-    Editor
   },
   props: {
   },

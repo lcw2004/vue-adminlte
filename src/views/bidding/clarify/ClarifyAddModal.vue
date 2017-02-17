@@ -55,12 +55,9 @@
 </template>
 
 <script>
-import Editor from '../../../components/base/Editor'
-
 export default {
   name: 'ClarifyAddModal',
   components: {
-    Editor
   },
   props: {
     // 模态窗属性配置

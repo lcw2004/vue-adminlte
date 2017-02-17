@@ -29,13 +29,9 @@
 </template>
 
 <script>
-import Editor from '../../../components/base/Editor'
-import InlineEditor from '../../../components/base/InlineEditor'
 export default {
   name: 'NoticeInfo',
   components: {
-    Editor,
-    InlineEditor
   },
   data: function () {
     return {

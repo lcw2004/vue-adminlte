@@ -151,11 +151,9 @@
 </template>
 
 <script>
-import Editor from '../../../components/base/Editor'
 export default {
   name: 'BaseInfo',
   components: {
-    Editor
   }
 }
 </script>
