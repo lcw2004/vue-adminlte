@@ -17,7 +17,7 @@ import ClarifyInfo from '../views/bidding/clarify/ClarifyInfo'
 import PurchaseType from '../views/system/purchase/PurchaseType'
 import ProfessionType from '../views/system/profession/ProfessionType'
 import NoticeManage from '../views/system/notice/NoticeManage'
-import NoticeForm from '../views/system/notice/NoticeForm'
+import NoticeTreeForm from '../views/system/notice/NoticeTreeForm'
 
 const router = {
   routes: [
@@ -38,7 +38,7 @@ const router = {
     { path: '/purchase-type', component: PurchaseType },
     { path: '/profession-type', component: ProfessionType },
     { path: '/notice-namage', component: NoticeManage },
-    { path: '/notice-form', component: NoticeForm }
+    { path: '/notice-tree-form', component: NoticeTreeForm }
   ]
 }
 

@@ -30,7 +30,7 @@
                   <div class="col-md-6">
                     <button type="button" class="btn btn-info btn-sm pull-right">
                         <i class="fa fa-plus"></i>
-                        <router-link to='/notice-form' tag='span'>添加模板</router-link></a>
+                        <router-link to='/notice-tree-form' tag='span'>添加模板</router-link></a>
                       </button>
                   </div>
                 </form>
@@ -49,7 +49,7 @@
                       <td>1</td>
                       <td><a>模板1</a><span class="label label-primary">默认</span></td>
                       <td>
-                        <router-link to='/notice-form'>编辑</router-link>
+                        <router-link to='/notice-tree-form'>编辑</router-link>
                         <a>删除</a>
                       </td>
                     </tr>
@@ -57,7 +57,7 @@
                       <td>2</td>
                       <td><a>模板2</a></td>
                       <td>
-                        <router-link to='/notice-form'>编辑</router-link>
+                        <router-link to='/notice-tree-form'>编辑</router-link>
                         <a>删除</a>
                       </td>
                     </tr>
@@ -65,7 +65,7 @@
                       <td>3</td>
                       <td><a>模板3</a></td>
                       <td>
-                        <router-link to='/notice-form'>编辑</router-link>
+                        <router-link to='/notice-tree-form'>编辑</router-link>
                         <a>删除</a>
                       </td>
                     </tr>

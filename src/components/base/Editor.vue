@@ -17,6 +17,10 @@ export default {
         ['Undo', 'Redo']
       ]
     },
+    height: {
+      type: String,
+      default: '200px'
+    },
     language: {
       type: String,
       default: 'en'
