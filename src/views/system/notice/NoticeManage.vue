@@ -1,85 +1,84 @@
 <template>
-  <section class="content">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="box">
-          <div class="box-header">
+<section class="content">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="nav-tabs-custom">
+        <ul class="nav nav-tabs">
+          <li :class="{active : activeNav == 1}">
+            <a data-toggle="tab" aria-expanded="false" @click="activeNav = 1">
+              <router-link to='/notice-namage' tag='span'>投标须知</router-link>
+            </a>
+          </li>
+          <li :class="{active : activeNav == 2}" class="">
+            <a data-toggle="tab" aria-expanded="true" @click="activeNav = 2">
+              <router-link to='/notice-namage' tag='span'>竞价须知</router-link>
+            </a>
+          </li>
+          <li :class="{active : activeNav == 3}" class="">
+            <a data-toggle="tab" aria-expanded="true" @click="activeNav = 3">
+              <router-link to='/notice-namage' tag='span'>供应商注册须知</router-link>
+            </a>
+          </li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane active" id="glyphicons">
             <div class="row">
               <div class="col-md-12">
                 <form class="form-inline">
                   <div class="col-md-6">
-                    <label class="control-label">须知</label>
-                    <input type="text" placeholder="编号/名称" class="form-control inline-block">
                   </div>
                   <div class="col-md-6">
                     <button type="button" class="btn btn-info btn-sm pull-right">
-                      <i class="fa fa-plus"></i>
-                      <router-link to='/notice-form' tag='span'>添加须知</router-link>
-                    </button>
+                        <i class="fa fa-plus"></i>
+                        <router-link to='/notice-form' tag='span'>添加模板</router-link></a>
+                      </button>
                   </div>
                 </form>
               </div>
             </div>
-          </div>
-
-          <div class="box-body">
-            <table class="table table-bordered">
-              <tbody>
-                <tr>
-                  <th style="width: 10px">#</th>
-                  <th>名称</th>
-                  <th>编号</th>
-                  <th>最后修改日期</th>
-                  <th>操作</th>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td><a>投标须知</a></td>
-                  <td>001</td>
-                  <td>2017-01-16</td>
-                  <td>
-                    <router-link to='/notice-form'>编辑</router-link>
-                  </td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td><a>竞价须知</a></td>
-                  <td>002</td>
-                  <td>2017-01-16</td>
-                  <td>
-                    <router-link to='/notice-form'>编辑</router-link>
-                  </td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td><a>供应商注册须知</a></td>
-                  <td>002</td>
-                  <td>2017-01-16</td>
-                  <td>
-                      <router-link to='/notice-form'>编辑</router-link>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+            <div class="row">
+              <div class="col-md-12">
+                <table class="table table-bordered">
+                  <tbody>
+                    <tr>
+                      <th style="width: 10px">#</th>
+                      <th>模板名称</th>
+                      <th>操作</th>
+                    </tr>
+                    <tr>
+                      <td>1</td>
+                      <td><a>模板1</a><span class="label label-primary">默认</span></td>
+                      <td>
+                        <router-link to='/notice-form'>编辑</router-link>
+                        <a>删除</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td><a>模板2</a></td>
+                      <td>
+                        <router-link to='/notice-form'>编辑</router-link>
+                        <a>删除</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td><a>模板3</a></td>
+                      <td>
+                        <router-link to='/notice-form'>编辑</router-link>
+                        <a>删除</a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-
-    <div class="row">
-      <div class="col-md-12">
-        <div class="box box-solid">
-          <div class="box-header with-border">
-            <i class="fa fa-text-width"></i>
-            <h3 class="box-title">备注</h3>
-          </div>
-          <div class="box-body">
-            <p class="text-muted">该模块功能与我的招标项目相同，这个地方显示所有的可查看的数据，按钮不再单独列出</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  </div>
+</section>
 </template>
 
 <script>
@@ -89,6 +88,7 @@ export default {
   },
   data: function () {
     return {
+      activeNav: 1
     }
   }
 }

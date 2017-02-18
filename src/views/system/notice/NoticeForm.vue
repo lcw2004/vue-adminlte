@@ -8,17 +8,11 @@
               <div class="col-md-12">
                 <form class="form-inline">
                   <div class="col-md-6">
-                    <label class="control-label">须知模板</label>
-                    <select class="form-control">
-                      <option>模板 1</option>
-                      <option>模板 2</option>
-                      <option>模板 3</option>
-                      <option>模板 4</option>
-                      <option>模板 5</option>
-                    </select>
+                    <label class="control-label">模板名称</label>
+                    <input type="text" class="form-control" value="模板1">
                   </div>
                   <div class="col-md-6">
-                    <button type="button" class="btn btn-info btn-sm pull-right">
+                    <button type="button" class="btn btn-info pull-right">
                       <router-link to='/notice-form' tag='span'>保存</router-link>
                     </button>
                   </div>
