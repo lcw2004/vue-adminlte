@@ -12,10 +12,10 @@
                     <input type="text" placeholder="编号/名称" class="form-control inline-block">
                   </div>
                   <div class="col-md-6">
-                      <button type="button" class="btn btn-info btn-sm pull-right">
-                        <i class="fa fa-plus"></i>
-                        <router-link to='/notice-form' tag='span'>添加须知</router-link>
-                      </button>
+                    <button type="button" class="btn btn-info btn-sm pull-right">
+                      <i class="fa fa-plus"></i>
+                      <router-link to='/notice-form' tag='span'>添加须知</router-link>
+                    </button>
                   </div>
                 </form>
               </div>
