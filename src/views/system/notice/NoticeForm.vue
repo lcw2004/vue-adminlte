@@ -19,8 +19,7 @@
                   </div>
                   <div class="col-md-6">
                     <button type="button" class="btn btn-info btn-sm pull-right">
-                      <i class="fa fa-plus"></i>
-                      <router-link to='/notice-form' tag='span'>添加须知</router-link>
+                      <router-link to='/notice-form' tag='span'>保存</router-link>
                     </button>
                   </div>
                 </form>
