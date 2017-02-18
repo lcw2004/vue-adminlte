@@ -17,21 +17,17 @@
     </div>
   </div>
 
-  <div class="row" v-for="chapter of notice.chapterList">
-    <div class="col-md-12">
-      <section>
-        <h4 class="page-header">{{ chapter.title }}</h4>
-        <Editor :toolbar="[['Format']]" v-model="chapter.content"></Editor>
-      </section>
-    </div>
-  </div>
+  <NoticeChapterInfo></NoticeChapterInfo>
 </div>
 </template>
 
 <script>
+import NoticeChapterInfo from '../../system/notice/NoticeChapterInfo'
+
 export default {
   name: 'NoticeInfo',
   components: {
+    NoticeChapterInfo
   },
   data: function () {
     return {
