@@ -63,7 +63,7 @@
       <ul class="treeview-menu">
         <li><a><i class="fa fa-circle-o"></i><router-link to='/purchase-type'>采购类别管理</router-link></a></li>
         <li><a><i class="fa fa-circle-o"></i><router-link to='/profession-type'>专业类别管理</router-link></a></li>
-        <li><a><i class="fa fa-circle-o"></i>须知文件管理（投标、注册）</a></li>
+        <li><a><i class="fa fa-circle-o"></i><router-link to='/notice-namage'>须知文件管理（投标、注册）</router-link></a></li>
       </ul>
     </li>
     <li class="treeview">

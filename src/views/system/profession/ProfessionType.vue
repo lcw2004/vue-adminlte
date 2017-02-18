@@ -47,8 +47,8 @@
 </template>
 
 <script>
-import TreeTableMiXin from '../../mixins/TreeTableMiXin'
-import TreeTableColPrefix from '../../components/tree/TreeTableColPrefix'
+import TreeTableMiXin from '../../../mixins/TreeTableMiXin'
+import TreeTableColPrefix from '../../../components/tree/TreeTableColPrefix'
 import ProfessionTypeModal from './ProfessionTypeModal'
 
 export default {
