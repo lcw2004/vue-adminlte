@@ -1,17 +1,16 @@
 <template>
   <div>
-    Base
+    NoticeForm
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Base',
+  name: 'NoticeForm',
   components: {
   },
   data: function () {
-    return {
-    }
+    return {}
   }
 }
 </script>
