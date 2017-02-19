@@ -1,17 +1,24 @@
 <template>
-  <section class="content" id="scence">
+  <section class="content" :id="id">
     <div class="row" >
       <div class="col-md-8">
-        <button type="button" class="btn btn-info btn-sm pull-right" @click="toggoleFullScreen">
-          <i class="fa fa-plus"></i> 全屏显示
-        </button>
+
       </div>
       <div class="col-md-4">
         <div class="row">
-          <ProjectInfo></ProjectInfo>
+          <div class="col-md-12">
+            <FullScreenBtn :id="id"></FullScreenBtn>
+          </div>
         </div>
         <div class="row">
-          <Chat></Chat>
+          <div class="col-md-12">
+            <ProjectInfo></ProjectInfo>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <Chat></Chat>
+          </div>
         </div>
       </div>
     </div>
@@ -21,20 +28,18 @@
 <script>
 import Chat from './scence/chat/Chat'
 import ProjectInfo from './scence/ProjectInfo'
-import toggoleFullScreen from '../../utils/fullscreen'
+import FullScreenBtn from './scence/FullScreenBtn'
 
 export default {
   name: 'BiddingScene',
   components: {
     Chat,
-    ProjectInfo
+    ProjectInfo,
+    FullScreenBtn
   },
   data () {
-    return {}
-  },
-  methods: {
-    toggoleFullScreen: function () {
-      toggoleFullScreen(document.getElementById('scence'))
+    return {
+      id: Math.random() + ''
     }
   }
 }

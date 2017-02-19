@@ -37,6 +37,7 @@ function toggoleFullScreen (element) {
     fullScreen(element)
     isFullScreen = true
   }
+  return isFullScreen
 }
 
 export default toggoleFullScreen
