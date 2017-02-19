@@ -29,9 +29,9 @@
                   </div>
                   <div class="col-md-6">
                     <button type="button" class="btn btn-info btn-sm pull-right">
-                        <i class="fa fa-plus"></i>
-                        <router-link to='/notice-tree-form' tag='span'>添加模板</router-link></a>
-                      </button>
+                      <i class="fa fa-plus"></i>
+                      <router-link to='/notice-tree-form' tag='span'>添加模板</router-link>
+                    </button>
                   </div>
                 </form>
               </div>

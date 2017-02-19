@@ -11,6 +11,7 @@ import BiddingClarify from '../views/bidding/BiddingClarify'
 import BiddingInfo from '../views/bidding/BiddingInfo'
 import BiddingPreAward from '../views/bidding/BiddingPreAward'
 import BiddingScene from '../views/bidding/BiddingScene'
+import BiddingCompare from '../views/bidding/scence/BiddingCompare'
 
 import ClarifyInfo from '../views/bidding/clarify/ClarifyInfo'
 
@@ -34,6 +35,7 @@ const router = {
     { path: '/bidding-info', component: BiddingInfo },
     { path: '/bidding-pre-award', component: BiddingPreAward },
     { path: '/bidding-scene', component: BiddingScene },
+    { path: '/bidding-compare', component: BiddingCompare },
 
     { path: '/purchase-type', component: PurchaseType },
     { path: '/profession-type', component: ProfessionType },

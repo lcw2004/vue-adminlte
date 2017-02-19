@@ -1,5 +1,5 @@
 <template>
-  <div class="box">
+  <div class="box box-primary">
     <div class="box-header with-border">
       招标项目基本信息
     </div>
