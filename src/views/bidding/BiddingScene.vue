@@ -21,6 +21,7 @@
 <script>
 import Chat from './scence/chat/Chat'
 import ProjectInfo from './scence/ProjectInfo'
+import toggoleFullScreen from '../../utils/fullscreen'
 
 export default {
   name: 'BiddingScene',
@@ -31,6 +32,10 @@ export default {
   data () {
     return {}
   },
-  methods: {}
+  methods: {
+    toggoleFullScreen: function () {
+      toggoleFullScreen(document.getElementById('scence'))
+    }
+  }
 }
 </script>

@@ -2,14 +2,14 @@
 * 全屏显示
 */
 function fullScreen (element) {
-  if(element.requestFullscreen) {
-    element.requestFullscreen();
-  } else if(element.mozRequestFullScreen) {
-    element.mozRequestFullScreen();
-  } else if(element.msRequestFullscreen){
-    element.msRequestFullscreen();
-  } else if(element.webkitRequestFullscreen) {
-    element.webkitRequestFullScreen();
+  if (element.requestFullscreen) {
+    element.requestFullscreen()
+  } else if (element.mozRequestFullScreen) {
+    element.mozRequestFullScreen()
+  } else if (element.msRequestFullscreen) {
+    element.msRequestFullscreen()
+  } else if (element.webkitRequestFullscreen) {
+    element.webkitRequestFullScreen()
   }
 }
 
@@ -18,24 +18,25 @@ function fullScreen (element) {
 */
 function exitFullScreen () {
   if (document.exitFullscreen) {
-    document.exitFullscreen();
+    document.exitFullscreen()
   } else if (document.msExitFullscreen) {
-    document.msExitFullscreen();
+    document.msExitFullscreen()
   } else if (document.mozCancelFullScreen) {
-    document.mozCancelFullScreen();
+    document.mozCancelFullScreen()
   } else if (document.webkitExitFullscreen) {
-    document.webkitExitFullscreen();
+    document.webkitExitFullscreen()
   }
 }
 
-let isFullScreen = false;
+let isFullScreen = false
 function toggoleFullScreen (element) {
   if (isFullScreen) {
     exitFullScreen()
+    isFullScreen = false
   } else {
     fullScreen(element)
+    isFullScreen = true
   }
 }
 
-export fullScreen
-export exitFullScreen
+export default toggoleFullScreen
