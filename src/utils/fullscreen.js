@@ -28,16 +28,29 @@ function exitFullScreen () {
   }
 }
 
-let isFullScreen = false
-function toggoleFullScreen (element) {
-  if (isFullScreen) {
-    exitFullScreen()
-    isFullScreen = false
-  } else {
-    fullScreen(element)
-    isFullScreen = true
-  }
-  return isFullScreen
+/**
+* 获取当前全屏元素
+*/
+function getFullScreenElement () {
+  return document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement
 }
 
-export default toggoleFullScreen
+/**
+* 判断当前是否在全屏状态
+*/
+function isInFullScreen () {
+  return getFullScreenElement() != null
+}
+
+/**
+* 切换全屏状态
+*/
+function toggleFullScreen (element) {
+  if (isInFullScreen()) {
+    exitFullScreen()
+  } else {
+    fullScreen(element)
+  }
+}
+
+export {isInFullScreen, toggleFullScreen}
