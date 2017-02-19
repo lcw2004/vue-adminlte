@@ -28,8 +28,13 @@ function exitFullScreen () {
   }
 }
 
-function toggoleFullScreen () {
-
+let isFullScreen = false;
+function toggoleFullScreen (element) {
+  if (isFullScreen) {
+    exitFullScreen()
+  } else {
+    fullScreen(element)
+  }
 }
 
 export fullScreen

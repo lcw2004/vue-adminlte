@@ -1,8 +1,10 @@
 <template>
-  <section class="content">
-    <div class="row">
+  <section class="content" id="scence">
+    <div class="row" >
       <div class="col-md-8">
-
+        <button type="button" class="btn btn-info btn-sm pull-right" @click="toggoleFullScreen">
+          <i class="fa fa-plus"></i> 全屏显示
+        </button>
       </div>
       <div class="col-md-4">
         <div class="row">
@@ -28,6 +30,7 @@ export default {
   },
   data () {
     return {}
-  }
+  },
+  methods: {}
 }
 </script>
