@@ -16,97 +16,36 @@
                       <td rowspan="2">标的数量</td>
                       <td rowspan="2">计量单位</td>
                       <td rowspan="2">规格型号</td>
-                      <td colspan="4">某某公司一</td>
-                      <td colspan="4">某某公司二</td>
-                      <td colspan="4">某某公司三</td>
+
+                      <template v-for="supplier of supplierPrices.suppliers">
+                      <td colspan="4">{{ supplier.name }}</td>
+                      </template>
                     </tr>
                     <tr>
-                      <td>最终报价</td>
-                      <td>含税价</td>
-                      <td>剔税价</td>
-                      <td>税率</td>
-
-                      <td>最终报价</td>
-                      <td>含税价</td>
-                      <td>剔税价</td>
-                      <td>税率</td>
-
-                      <td>最终报价</td>
-                      <td>含税价</td>
-                      <td>剔税价</td>
-                      <td>税率</td>
+                      <template v-for="supplier of supplierPrices.suppliers">
+                        <td>最终报价</td>
+                        <td>含税价</td>
+                        <td>剔税价</td>
+                        <td>税率</td>
+                      </template>
                     </tr>
                   </thead>
+
                   <tbody>
-                    <tr>
-                      <td>1</td>
-                      <td>钢铁</td>
-                      <td>001</td>
-                      <td>123</td>
-                      <td>吨</td>
+                    <tr v-for="(supplierPrice, index) of supplierPrices.prices">
+                      <td>{{ index + 1 }}</td>
+                      <td>{{ supplierPrice.subjectInfo.name }}</td>
+                      <td>{{ supplierPrice.subjectInfo.code }}</td>
+                      <td>{{ supplierPrice.subjectInfo.number }}</td>
+                      <td>{{ supplierPrice.subjectInfo.unit }}</td>
                       <td></td>
 
-                      <td>282</td>
-                      <td>70</td>
-                      <td>10.2</td>
-                      <td>17</td>
-
-                      <td>282</td>
-                      <td>70</td>
-                      <td>10.2</td>
-                      <td>17</td>
-
-                      <td>282</td>
-                      <td>70</td>
-                      <td>10.2</td>
-                      <td>17</td>
-                    </tr>
-
-                    <tr>
-                      <td>2</td>
-                      <td>铝材</td>
-                      <td>002</td>
-                      <td>111</td>
-                      <td>吨</td>
-                      <td></td>
-                      <td>282</td>
-                      <td>70</td>
-                      <td>10.2</td>
-                      <td>17</td>
-
-                      <td>282</td>
-                      <td>70</td>
-                      <td>10.2</td>
-                      <td>17</td>
-
-                      <td>282</td>
-                      <td>70</td>
-                      <td>10.2</td>
-                      <td>17</td>
-                    </tr>
-
-                    <tr>
-                      <td>3</td>
-                      <td>木材</td>
-                      <td>003</td>
-                      <td>222</td>
-                      <td>吨</td>
-                      <td></td>
-
-                      <td>282</td>
-                      <td>70</td>
-                      <td>10.2</td>
-                      <td>17</td>
-
-                      <td>282</td>
-                      <td>70</td>
-                      <td>10.2</td>
-                      <td>17</td>
-
-                      <td>282</td>
-                      <td>70</td>
-                      <td>10.2</td>
-                      <td>17</td>
+                      <template v-for="(value, key, index) of supplierPrice.supplierPrices">
+                      <td>{{ value.containTax }}</td>
+                      <td>{{ value.containTax }}</td>
+                      <td>{{ value.notContainTax }}</td>
+                      <td>{{ value.tax }}</td>
+                      </template>
                     </tr>
 
                     <tr>
@@ -157,6 +96,12 @@ export default {
     var width = $('#flagDiv').width()
     var heigth = $('#flagDiv').height() + 20
     fixTable('myTable', 2, width, heigth)
+  },
+  computed: {
+    supplierPrices: function () {
+      return this.$store.state.data.supplierPrice
+    }
+
   }
 }
 
