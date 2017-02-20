@@ -6,8 +6,8 @@
         <div class="box-body">
           <div class="row">
             <div class="col-md-12">
-              <div style="overflow:hidden;" id="flagDiv">
-                <table id="myTable" class="table table-bordered">
+              <div style="overflow:auto;" id="flagDiv">
+                <table id="myTable" class="table table-bordered" style="width: 4500px">
                   <thead>
                     <tr>
                       <td rowspan="2">委托时间</td>
@@ -498,7 +498,7 @@
                       <td>创无限</td>
                     </tr>
                   </tbody>
-                <!-- </table> -->
+                </table>
               </div>
 
               <!-- <table class="table table-bordered">
@@ -559,7 +559,7 @@ export default {
   mounted: function () {
     var width = $('#flagDiv').width()
     var heigth = $('#flagDiv').height() + 20
-    fixTable('myTable', 7, width, heigth)
+    fixTable('myTable', 3, width, heigth)
   }
 }
 
@@ -604,22 +604,10 @@ function fixTable (tableId, fixColumnNumber, width, height) {
   tableHead.css('height', headHeight)
   tableFix.css('height', headHeight)
   var columnsWidth = 0
-  var columnsNumber = 0
   $('#' + tableId + '_tableColumn tr:last td:lt(' + fixColumnNumber + ')').each(function () {
     columnsWidth += $(this).outerWidth(true)
-    columnsNumber++
   })
-  columnsWidth += 2
-  if ($.browser.msie) {
-    switch ($.browser.version) {
-      case '7.0':
-        if (columnsNumber >= 3) columnsWidth--
-        break
-      case '8.0':
-        if (columnsNumber >= 2) columnsWidth--
-        break
-    }
-  }
+
   tableColumn.css('width', columnsWidth)
   tableFix.css('width', columnsWidth)
   tableData.scroll(function () {
@@ -631,21 +619,21 @@ function fixTable (tableId, fixColumnNumber, width, height) {
     'overflow': 'hidden',
     'position': 'relative',
     'z-index': '50',
-    'background-color': 'Silver'
+    'background-color': '#f9f9f9'
   })
   tableHead.css({
     'overflow': 'hidden',
     'width': width - 17,
     'position': 'relative',
     'z-index': '45',
-    'background-color': 'Silver'
+    'background-color': '#ffffff'
   })
   tableColumn.css({
     'overflow': 'hidden',
     'height': height - 17,
     'position': 'relative',
     'z-index': '40',
-    'background-color': 'Silver'
+    'background-color': '#f9f9f9'
   })
   tableData.css({
     'overflow-x': 'scroll',
