@@ -5,75 +5,65 @@
       <div class="box">
         <div class="box-body">
           <div class="row">
-            <div class="col-md-12">
-              <div style="overflow:auto;" id="flagDiv">
-                <table id="myTable" class="table table-bordered" style="width: 1500px">
-                  <thead>
-                    <tr>
-                      <td rowspan="2">序号</td>
-                      <td rowspan="2">标的名称</td>
-                      <td rowspan="2">标的编码</td>
-                      <td rowspan="2">标的数量</td>
-                      <td rowspan="2">计量单位</td>
-                      <td rowspan="2">规格型号</td>
+            <div class="col-md-12" style="overflow:auto;" id="flagDiv">
+              <table id="myTable" class="table table-bordered" style="width: 1500px">
+                <thead>
+                  <tr>
+                    <td rowspan="2">序号</td>
+                    <td rowspan="2">标的名称</td>
+                    <td rowspan="2">标的编码</td>
+                    <td rowspan="2">标的数量</td>
+                    <td rowspan="2">计量单位</td>
+                    <td rowspan="2">规格型号</td>
 
-                      <template v-for="supplier of supplierPrices.suppliers">
-                      <td colspan="4">{{ supplier.name }}</td>
-                      </template>
-                    </tr>
-                    <tr>
-                      <template v-for="supplier of supplierPrices.suppliers">
-                        <td>最终报价</td>
-                        <td>含税价</td>
-                        <td>剔税价</td>
-                        <td>税率</td>
-                      </template>
-                    </tr>
-                  </thead>
+                    <template v-for="supplier of supplierPrices.suppliers">
+                    <td colspan="4">{{ supplier.name }}</td>
+                    </template>
+                  </tr>
+                  <tr>
+                    <template v-for="supplier of supplierPrices.suppliers">
+                      <td>最终报价</td>
+                      <td>含税价</td>
+                      <td>剔税价</td>
+                      <td>税率</td>
+                    </template>
+                  </tr>
+                </thead>
 
-                  <tbody>
-                    <tr v-for="(supplierPrice, index) of supplierPrices.prices">
-                      <td>{{ index + 1 }}</td>
-                      <td>{{ supplierPrice.subjectInfo.name }}</td>
-                      <td>{{ supplierPrice.subjectInfo.code }}</td>
-                      <td>{{ supplierPrice.subjectInfo.number }}</td>
-                      <td>{{ supplierPrice.subjectInfo.unit }}</td>
+                <tbody>
+                  <tr v-for="(supplierPrice, index) of supplierPrices.prices">
+                    <td>{{ index + 1 }}</td>
+                    <td>{{ supplierPrice.subjectInfo.name }}</td>
+                    <td>{{ supplierPrice.subjectInfo.code }}</td>
+                    <td>{{ supplierPrice.subjectInfo.number }}</td>
+                    <td>{{ supplierPrice.subjectInfo.unit }}</td>
+                    <td></td>
+
+                    <template v-for="(value, key, index) of supplierPrice.supplierPrices">
+                    <td>{{ value.containTax }}</td>
+                    <td>{{ value.containTax }}</td>
+                    <td>{{ value.notContainTax }}</td>
+                    <td>{{ value.tax }}</td>
+                    </template>
+                  </tr>
+
+                  <tr>
+                    <td></td>
+                    <td>总金额</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+
+                    <template v-for="supplier of supplierPrices.suppliers">
+                      <td>{{ totalMoney[supplier.id].total }}</td>
                       <td></td>
-
-                      <template v-for="(value, key, index) of supplierPrice.supplierPrices">
-                      <td>{{ value.containTax }}</td>
-                      <td>{{ value.containTax }}</td>
-                      <td>{{ value.notContainTax }}</td>
-                      <td>{{ value.tax }}</td>
-                      </template>
-                    </tr>
-
-                    <tr>
-                      <td></td>
-                      <td>总金额</td>
                       <td></td>
                       <td></td>
-                      <td></td>
-                      <td></td>
-
-                      <td>1282</td>
-                      <td>70</td>
-                      <td>10.2</td>
-                      <td>17</td>
-
-                      <td>2282</td>
-                      <td>70</td>
-                      <td>10.2</td>
-                      <td>17</td>
-
-                      <td>3282</td>
-                      <td>70</td>
-                      <td>10.2</td>
-                      <td>17</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+                    </template>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
@@ -90,7 +80,8 @@ export default {
   name: 'BiddingCompare',
   components: {},
   data: function () {
-    return {}
+    return {
+    }
   },
   mounted: function () {
     var width = $('#flagDiv').width()
@@ -100,8 +91,50 @@ export default {
   computed: {
     supplierPrices: function () {
       return this.$store.state.data.supplierPrice
-    }
+    },
+    totalMoney: function () {
+      debugger
+      let prices = this.supplierPrices.prices
+      let suppliers = this.supplierPrices.suppliers
 
+      let totalMoney = []
+      for (let value of prices) {
+        let number = value.subjectInfo.number
+
+        for (let supplier of suppliers) {
+          let supplierId = supplier.id
+          let containTax = value.supplierPrices[supplierId].containTax
+          let subjectPrice = number * containTax
+          let totalMoneyOfThisSupplier = totalMoney[supplierId]
+          if (!totalMoneyOfThisSupplier) {
+            totalMoneyOfThisSupplier = {}
+            totalMoneyOfThisSupplier.total = 0
+          }
+          totalMoneyOfThisSupplier.total += subjectPrice
+          totalMoney[supplierId] = totalMoneyOfThisSupplier
+        }
+      }
+      return totalMoney
+    },
+    totalMoneySorted: function () {
+      let totalMoney = this.totalMoney
+      totalMoney.sort(function (a, b) {
+        let aTotal = a.total
+        let bTotal = b.total
+        if (aTotal < bTotal) return 1
+        if (aTotal > bTotal) return -1
+        return 0
+      })
+
+      let newTotalMoney = []
+      let index = 1
+      for (let money of totalMoney) {
+        if (money) {
+          money.sortNum = index++
+        }
+      }
+      return totalMoney
+    }
   }
 }
 
