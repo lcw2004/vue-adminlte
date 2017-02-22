@@ -58,7 +58,7 @@
                     <td></td>
 
                     <template v-for="supplier of supplierPricesSorted.suppliers">
-                      <!-- <td>{{ totalMoneySorted[supplier.id] }}<span class="label label-default">{{ totalMoneySorted[supplier.id] }}</span></td> -->
+                      <td>{{ totalMoneySorted.get(supplier.id).total }}<span class="label label-default">{{ totalMoneySorted.get(supplier.id).sortNum }}</span></td>
                       <td></td>
                       <td></td>
                       <td></td>
@@ -66,7 +66,6 @@
                   </tr>
                 </tbody>
               </table>
-              {{totalMoneySorted}}
             </div>
           </div>
         </div>
@@ -126,7 +125,7 @@ export default {
       let prices = this.supplierPrices.prices
       let suppliers = this.supplierPrices.suppliers
 
-      let totalMoney = []
+      let totalMoney = new Map()
       for (let value of prices) {
         let number = value.subjectInfo.number
 
@@ -134,20 +133,24 @@ export default {
           let supplierId = supplier.id
           let containTax = value.supplierPrices[supplierId].containTax
           let subjectPrice = number * containTax
-          let totalMoneyOfThisSupplier = totalMoney[supplierId]
+          let totalMoneyOfThisSupplier = totalMoney.get(supplierId)
           if (!totalMoneyOfThisSupplier) {
             totalMoneyOfThisSupplier = {}
             totalMoneyOfThisSupplier.total = 0
+          } else {
+            totalMoneyOfThisSupplier = totalMoney.get(supplierId)
           }
           totalMoneyOfThisSupplier.total += subjectPrice
-          totalMoney[supplierId] = totalMoneyOfThisSupplier
+          totalMoney.set(supplierId, totalMoneyOfThisSupplier)
         }
       }
       return totalMoney
     },
     totalMoneySorted: function () {
       let totalMoney = this.totalMoney
-      totalMoney.sort(function (a, b) {
+      let totalMoneyArray = Array.from(totalMoney.values())
+
+      totalMoneyArray.sort(function (a, b) {
         let aTotal = a.total
         let bTotal = b.total
         if (aTotal < bTotal) return -1
@@ -156,10 +159,8 @@ export default {
       })
 
       let index = 1
-      for (let money of totalMoney) {
-        if (money) {
-          money.sortNum = index++
-        }
+      for (let money of totalMoneyArray) {
+        money.sortNum = index++
       }
       return totalMoney
     }

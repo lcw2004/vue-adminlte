@@ -18,7 +18,7 @@ export default {
     labelClass: function () {
       let value = this.value
       return {
-        'label-danger': value === 1,
+        'label-success': value === 1,
         'label-warning': value === 2,
         'label-default': value === 3
       }
