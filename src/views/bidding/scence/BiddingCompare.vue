@@ -41,7 +41,8 @@
 
                     <template v-for="(value, key, index) of supplierPrice.supplierPrices">
                     <td>
-                      {{ value.containTax }}<SupplierPriceUnit :value="value.sortNum"></SupplierPriceUnit>
+                      {{ value.containTax }}
+                      <span class="label label-success" v-if="value.sortNum == 1">低</span>
                     </td>
                     <td>{{ value.containTax }}</td>
                     <td>{{ value.notContainTax }}</td>
@@ -58,7 +59,9 @@
                     <td></td>
 
                     <template v-for="supplier of supplierPricesSorted.suppliers">
-                      <td>{{ totalMoneySorted.get(supplier.id).total }}<span class="label label-default">{{ totalMoneySorted.get(supplier.id).sortNum }}</span></td>
+                      <td>{{ totalMoneySorted.get(supplier.id).total }}
+                        <SupplierPriceUnit :value="totalMoneySorted.get(supplier.id).sortNum"></SupplierPriceUnit>
+                      </td>
                       <td></td>
                       <td></td>
                       <td></td>
@@ -100,10 +103,10 @@ export default {
     },
     supplierPricesSorted: function () {
       let prices = this.supplierPrices
-
       for (let value of prices.prices) {
         let supplierPrices = value.supplierPrices
 
+        // 排序
         let supplierPricesValues = Object.values(supplierPrices)
         supplierPricesValues.sort(function (a, b) {
           let aTotal = a.containTax
@@ -112,11 +115,10 @@ export default {
           if (aTotal > bTotal) return 1
           return 0
         })
-        let index = 1
-        for (let price of supplierPricesValues) {
-          if (price) {
-            price.sortNum = index++
-          }
+
+        // 根据顺序设置排名
+        for (let i = 0; i < supplierPricesValues.length; i++) {
+          supplierPricesValues[i].sortNum = i + 1
         }
       }
       return prices
@@ -129,6 +131,7 @@ export default {
       for (let value of prices) {
         let number = value.subjectInfo.number
 
+        // 计算产品总价，并存到map中
         for (let supplier of suppliers) {
           let supplierId = supplier.id
           let containTax = value.supplierPrices[supplierId].containTax
@@ -148,8 +151,8 @@ export default {
     },
     totalMoneySorted: function () {
       let totalMoney = this.totalMoney
+      // 对总价进行排名
       let totalMoneyArray = Array.from(totalMoney.values())
-
       totalMoneyArray.sort(function (a, b) {
         let aTotal = a.total
         let bTotal = b.total
@@ -158,9 +161,9 @@ export default {
         return 0
       })
 
-      let index = 1
-      for (let money of totalMoneyArray) {
-        money.sortNum = index++
+      // 设置名次
+      for (let i = 0; i < totalMoneyArray.length; i++) {
+        totalMoneyArray[i].sortNum = i + 1
       }
       return totalMoney
     }

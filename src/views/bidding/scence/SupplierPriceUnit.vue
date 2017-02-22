@@ -1,5 +1,5 @@
 <template>
-  <span class="label" :class="labelClass" v-if="value == 1">低</span>
+  <span class="label" :class="labelClass">{{value}}</span>
 </template>
 <script>
 export default {
