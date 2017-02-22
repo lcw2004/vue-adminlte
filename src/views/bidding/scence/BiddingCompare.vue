@@ -16,12 +16,12 @@
                     <td rowspan="2">计量单位</td>
                     <td rowspan="2">规格型号</td>
 
-                    <template v-for="supplier of supplierPrices.suppliers">
+                    <template v-for="supplier of supplierPricesSorted.suppliers">
                     <td colspan="4">{{ supplier.name }}</td>
                     </template>
                   </tr>
                   <tr>
-                    <template v-for="supplier of supplierPrices.suppliers">
+                    <template v-for="supplier of supplierPricesSorted.suppliers">
                       <td>最终报价</td>
                       <td>含税价</td>
                       <td>剔税价</td>
@@ -31,7 +31,7 @@
                 </thead>
 
                 <tbody>
-                  <tr v-for="(supplierPrice, index) of supplierPrices.prices">
+                  <tr v-for="(supplierPrice, index) of supplierPricesSorted.prices">
                     <td>{{ index + 1 }}</td>
                     <td>{{ supplierPrice.subjectInfo.name }}</td>
                     <td>{{ supplierPrice.subjectInfo.code }}</td>
@@ -40,7 +40,9 @@
                     <td></td>
 
                     <template v-for="(value, key, index) of supplierPrice.supplierPrices">
-                    <td>{{ value.containTax }}</td>
+                    <td>
+                      {{ value.containTax }}<SupplierPriceUnit :value="value.sortNum"></SupplierPriceUnit>
+                    </td>
                     <td>{{ value.containTax }}</td>
                     <td>{{ value.notContainTax }}</td>
                     <td>{{ value.tax }}</td>
@@ -55,8 +57,8 @@
                     <td></td>
                     <td></td>
 
-                    <template v-for="supplier of supplierPrices.suppliers">
-                      <td>{{ totalMoney[supplier.id].total }}</td>
+                    <template v-for="supplier of supplierPricesSorted.suppliers">
+                      <!-- <td>{{ totalMoneySorted[supplier.id] }}<span class="label label-default">{{ totalMoneySorted[supplier.id] }}</span></td> -->
                       <td></td>
                       <td></td>
                       <td></td>
@@ -64,6 +66,7 @@
                   </tr>
                 </tbody>
               </table>
+              {{totalMoneySorted}}
             </div>
           </div>
         </div>
@@ -76,10 +79,13 @@
 <script>
 import $ from 'jquery'
 import fixTable from '../../../utils/fixTable'
+import SupplierPriceUnit from './SupplierPriceUnit'
 
 export default {
   name: 'BiddingCompare',
-  components: {},
+  components: {
+    SupplierPriceUnit
+  },
   data: function () {
     return {
     }
@@ -93,8 +99,30 @@ export default {
     supplierPrices: function () {
       return this.$store.state.data.supplierPrice
     },
+    supplierPricesSorted: function () {
+      let prices = this.supplierPrices
+
+      for (let value of prices.prices) {
+        let supplierPrices = value.supplierPrices
+
+        let supplierPricesValues = Object.values(supplierPrices)
+        supplierPricesValues.sort(function (a, b) {
+          let aTotal = a.containTax
+          let bTotal = b.containTax
+          if (aTotal < bTotal) return -1
+          if (aTotal > bTotal) return 1
+          return 0
+        })
+        let index = 1
+        for (let price of supplierPricesValues) {
+          if (price) {
+            price.sortNum = index++
+          }
+        }
+      }
+      return prices
+    },
     totalMoney: function () {
-      debugger
       let prices = this.supplierPrices.prices
       let suppliers = this.supplierPrices.suppliers
 
@@ -122,8 +150,8 @@ export default {
       totalMoney.sort(function (a, b) {
         let aTotal = a.total
         let bTotal = b.total
-        if (aTotal < bTotal) return 1
-        if (aTotal > bTotal) return -1
+        if (aTotal < bTotal) return -1
+        if (aTotal > bTotal) return 1
         return 0
       })
 
