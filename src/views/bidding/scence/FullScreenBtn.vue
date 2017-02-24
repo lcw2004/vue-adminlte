@@ -1,6 +1,6 @@
 <template>
   <button type="button" class="btn btn-box-tool" data-widget="collapse" @click="toggoleFullScreen()">
-    <i class="fa" :class="faClass"></i> {{width}}
+    <i class="fa" :class="faClass"></i> {{ isFullScreen }}
   </button>
 </template>
 
@@ -27,21 +27,27 @@ export default {
   },
   mounted: function () {
     let self = this
-    let elmt = document.getElementById(self.id)
-    self.width = elmt.style.width
-    self.height = elmt.style.height
+    let elmt = $(document.getElementById(self.id))
+    self.width = elmt.width()
+    self.height = elmt.height()
 
-    // 绑定全屏切换事件，以适应esc退出全屏的情况
-    $(document).on('webkitfullscreenchange mozfullscreenchange fullscreenchange', function () {
+    let fullScreenHandler = function () {
       self.isFullScreen = isInFullScreen()
       if (self.isFullScreen) {
-        elmt.style.width = document.body.clientWidth
-        elmt.style.height = document.body.clientHeight
+        elmt.width(document.body.clientWidth - 30)
+        elmt.height(document.body.clientHeight)
       } else {
-        elmt.style.width = self.width
-        elmt.style.height = self.height
+        elmt.width(self.width)
+        elmt.height(self.height)
       }
-    })
+    }
+
+    // 绑定全屏切换事件，以适应esc退出全屏的情况
+    // BUG IE下面全屏事件没生效
+    document.addEventListener('fullscreenchange', fullScreenHandler)
+    document.addEventListener('webkitfullscreenchange', fullScreenHandler)
+    document.addEventListener('mozfullscreenchange', fullScreenHandler)
+    document.addEventListener('MSFullscreenChange', fullScreenHandler)
   },
   methods: {
     // 全屏切换

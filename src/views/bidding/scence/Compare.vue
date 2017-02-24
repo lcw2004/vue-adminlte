@@ -147,7 +147,7 @@ import fixTable from '../../../utils/fixTable'
 import SupplierPriceUnit from './SupplierPriceUnit'
 
 export default {
-  name: 'BiddingCompare',
+  name: 'Compare',
   components: {
     SupplierPriceUnit
   },
