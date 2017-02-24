@@ -130,7 +130,7 @@
         <div class="col-md-5">
         </div>
         <div class="col-md-2">
-          <button type="button" class="btn btn-info btn-sm btn-block" @click="back()">
+          <button type="button" class="btn btn-info btn-sm btn-block" @click="$router.go(-1)">
             返回
           </button>
         </div>
@@ -168,11 +168,6 @@ export default {
     },
     showPriceType: function (index) {
       return $.inArray(index, this.showPrices) !== -1
-    },
-    back: function () {
-      console.log(this.$route)
-      this.$router.go(-1)
-      console.log('go -1 ok')
     }
   },
   computed: {
