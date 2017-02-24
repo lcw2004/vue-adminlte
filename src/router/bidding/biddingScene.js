@@ -8,11 +8,11 @@ export default [
     component: BiddingScene,
     children: [
       {
-        path: '/',
+        path: '',
         component: Home
       },
       {
-        path: '/compare',
+        path: 'compare',
         component: BiddingCompare
       }
     ]

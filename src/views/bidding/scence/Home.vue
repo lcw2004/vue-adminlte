@@ -1,5 +1,5 @@
 <template>
-  <div class="row" >
+  <div class="row">
     <div class="col-md-8">
       <BiddingOpen></BiddingOpen>
     </div>

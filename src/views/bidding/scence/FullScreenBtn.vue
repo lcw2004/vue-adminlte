@@ -1,6 +1,6 @@
 <template>
   <button type="button" class="btn btn-box-tool" data-widget="collapse" @click="toggoleFullScreen()">
-    <i class="fa" :class="faClass"></i>
+    <i class="fa" :class="faClass"></i> {{width}}
   </button>
 </template>
 
