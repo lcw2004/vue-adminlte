@@ -1,12 +1,12 @@
 <template>
   <button type="button" class="btn btn-box-tool" data-widget="collapse" @click="toggoleFullScreen()">
-    <i class="fa" :class="faClass"></i> {{ isFullScreen }}
+    <i class="fa" :class="faClass"></i>
   </button>
 </template>
 
 <script>
 import $ from 'jquery'
-import {isInFullScreen, toggleFullScreen} from '../../../utils/fullscreen'
+import {isInFullScreen, toggleFullScreen, bindFullScreenEvent} from '../../../utils/fullscreen'
 
 export default {
   name: 'FullScreenBtn',
@@ -27,27 +27,22 @@ export default {
   },
   mounted: function () {
     let self = this
-    let elmt = $(document.getElementById(self.id))
-    self.width = elmt.width()
-    self.height = elmt.height()
-
-    let fullScreenHandler = function () {
-      self.isFullScreen = isInFullScreen()
-      if (self.isFullScreen) {
-        elmt.width(document.body.clientWidth - 30)
-        elmt.height(document.body.clientHeight)
-      } else {
-        elmt.width(self.width)
-        elmt.height(self.height)
-      }
-    }
+    let targetElement = $(document.getElementById(self.id))
+    self.width = targetElement.width()
+    self.height = targetElement.height()
 
     // 绑定全屏切换事件，以适应esc退出全屏的情况
-    // BUG IE下面全屏事件没生效
-    document.addEventListener('fullscreenchange', fullScreenHandler)
-    document.addEventListener('webkitfullscreenchange', fullScreenHandler)
-    document.addEventListener('mozfullscreenchange', fullScreenHandler)
-    document.addEventListener('MSFullscreenChange', fullScreenHandler)
+    // BUG IE下面全屏背景是黑色的
+    bindFullScreenEvent(function () {
+      self.isFullScreen = isInFullScreen()
+      if (self.isFullScreen) {
+        targetElement.width(document.body.clientWidth - 30)
+        targetElement.height(document.body.clientHeight)
+      } else {
+        targetElement.width(self.width)
+        targetElement.height(self.height)
+      }
+    })
   },
   methods: {
     // 全屏切换

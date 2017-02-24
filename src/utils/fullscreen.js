@@ -1,3 +1,5 @@
+// 文档 https://developer.mozilla.org/en-US/docs/Web/API/Fullscreen_API#AutoCompatibilityTable
+
 /**
 * 全屏显示
 */
@@ -36,10 +38,28 @@ function exitFullScreen () {
 }
 
 /**
+* 绑定全屏切换事件
+*/
+function bindFullScreenEvent (handler) {
+  if ('onfullscreenchange' in document) {
+    document.addEventListener('fullscreenchange', handler)
+  }
+  if ('onmozfullscreenchange' in document) {
+    document.addEventListener('mozfullscreenchange', handler)
+  }
+  if ('onwebkitfullscreenchange' in document) {
+    document.addEventListener('webkitfullscreenchange', handler)
+  }
+  if ('onmsfullscreenchange' in document) {
+    document.onmsfullscreenchange = handler
+  }
+}
+
+/**
 * 获取当前全屏元素
 */
 function getFullScreenElement () {
-  return document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement
+  return document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement || document.msFullscreenElement
 }
 
 /**
@@ -60,4 +80,4 @@ function toggleFullScreen (element) {
   }
 }
 
-export {isInFullScreen, toggleFullScreen}
+export {isInFullScreen, toggleFullScreen, bindFullScreenEvent}
