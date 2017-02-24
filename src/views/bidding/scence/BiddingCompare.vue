@@ -1,9 +1,6 @@
 <template>
-<section class="content">
   <div class="row">
     <div class="col-md-12">
-      <div class="box">
-        <div class="box-header with-border">
           <div class="row">
             <div class="col-md-6">
               <div class="box-title">
@@ -51,9 +48,7 @@
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="box-body">
           <div class="row">
             <div class="col-md-12" style="overflow:auto;" id="flagDiv">
               <table id="myTable" class="table table-bordered">
@@ -130,11 +125,8 @@
               </table>
             </div>
           </div>
-        </div>
-      </div>
     </div>
   </div>
-</section>
 </template>
 
 <script>

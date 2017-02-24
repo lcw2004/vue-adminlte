@@ -20,14 +20,27 @@ export default {
   },
   data: function () {
     return {
-      isFullScreen: false
+      isFullScreen: false,
+      width: 0,
+      height: 0
     }
   },
   mounted: function () {
-    // 绑定全屏切换事件，以适应esc退出全屏的情况
     let self = this
+    let elmt = document.getElementById(self.id)
+    self.width = elmt.style.width
+    self.height = elmt.style.height
+
+    // 绑定全屏切换事件，以适应esc退出全屏的情况
     $(document).on('webkitfullscreenchange mozfullscreenchange fullscreenchange', function () {
       self.isFullScreen = isInFullScreen()
+      if (self.isFullScreen) {
+        elmt.style.width = document.body.clientWidth
+        elmt.style.height = document.body.clientHeight
+      } else {
+        elmt.style.width = self.width
+        elmt.style.height = self.height
+      }
     })
   },
   methods: {

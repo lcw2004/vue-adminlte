@@ -11,23 +11,7 @@
           </div>
 
           <div class="box-body">
-            <div class="row" >
-              <div class="col-md-8">
-                <BiddingOpen></BiddingOpen>
-              </div>
-              <div class="col-md-4">
-                <div class="row">
-                  <div class="col-md-12">
-                    <ProjectInfo></ProjectInfo>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-12">
-                    <Chat></Chat>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <router-view></router-view>
           </div>
         </div>
       </div>
@@ -36,18 +20,14 @@
 </template>
 
 <script>
-import Chat from './scence/chat/Chat'
-import ProjectInfo from './scence/ProjectInfo'
-import BiddingOpen from './scence/BiddingOpen'
 import FullScreenBtn from './scence/FullScreenBtn'
+import Home from './scence/Home'
 
 export default {
   name: 'BiddingScene',
   components: {
-    Chat,
-    ProjectInfo,
-    BiddingOpen,
-    FullScreenBtn
+    FullScreenBtn,
+    Home
   },
   data () {
     return {
