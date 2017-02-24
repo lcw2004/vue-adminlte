@@ -44,8 +44,8 @@
         <div class="box-footer">
           <div class="col-md-2"></div>
           <div class="col-md-2">
-            <button type="submit" class="btn btn-block btn-default">
-              <router-link to="/bidding-clarify">返回</router-link>
+            <button type="submit" class="btn btn-block btn-default"  @click="$router.go(-1)">
+              返回
             </button>
           </div>
         </div>
