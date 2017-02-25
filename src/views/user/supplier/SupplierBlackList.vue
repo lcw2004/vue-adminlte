@@ -1,6 +1,6 @@
 <template>
   <div>
-    SupplierBlackList
+    预留，暂不做
   </div>
 </template>
 

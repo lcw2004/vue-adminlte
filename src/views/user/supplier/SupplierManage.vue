@@ -1,7 +1,94 @@
 <template>
-  <div>
-    SupplierManage
-  </div>
+  <section class="content">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="box">
+          <div class="box-header">
+            <form class="form-inline">
+              <div class="col-md-3"><label class="control-label">姓名</label> <input type="text" placeholder="姓名" class="form-control inline-block"></div>
+            </form>
+          </div>
+
+          <div class="box-body">
+            <table class="table table-bordered">
+              <tbody>
+                <tr>
+                  <th style="width: 10px">#</th>
+                  <th>供应商名称</th>
+                  <th>注册时间</th>
+                  <th>联系人</th>
+                  <th>状态</th>
+                  <th>操作</th>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td><a>某某有限公司</a></td>
+                  <td>2017-01-01</td>
+                  <td><a>张三</a></td>
+                  <td>
+                    <span class="label label-warning">审核驳回</span>
+                  </td>
+                  <td>
+                    <a><router-link to='/bidding/create'>编辑</router-link></a>
+                    <a>删除</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td><a>某某有限公司</a></td>
+                  <td>2017-01-01</td>
+                  <td><a>张三</a></td>
+                  <td>
+                    <span class="label label-success">正常</span>
+                  </td>
+                  <td>
+                    <a><router-link to='/bidding/create'>编辑</router-link></a>
+                    <a>删除</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td><a>某某有限公司</a></td>
+                  <td>2017-01-01</td>
+                  <td><a>张三</a></td>
+                  <td>
+                    <span class="label label-warning">待审核</span>
+                  </td>
+                  <td>
+                    <a><router-link to='/bidding/create'>编辑</router-link></a>
+                    <a>删除</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="box box-solid">
+          <div class="box-header with-border">
+            <i class="fa fa-text-width"></i>
+            <h3 class="box-title">备注</h3>
+          </div>
+          <div class="box-body">
+            <ol>
+              <li>供应商有如下几种状态
+                <ol>
+                  <li>1 - 正常（只有该状态的供应商可以参与投标）</li>
+                  <li>2 - 待审核</li>
+                  <li>3 - 审核驳回</li>
+                  <li>-1 - 已删除</li>
+                </ol>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </template>
 
 <script>
