@@ -13,12 +13,12 @@ import ClarifyInfo from '../../views/bidding/clarify/ClarifyInfo'
 
 import biddingScene from './biddingScene'
 export default [
-  { path: '/add-bidding', component: AddBidding },
-  { path: '/bidding-audit', component: BiddingAudit },
-  { path: '/bidding-manage', component: BiddingManage },
-  { path: '/bidding-permission', component: BiddingPermission },
-  { path: '/my-bidding', component: MyBidding },
-  { path: '/bidding-permission-info', component: BiddingPermissionInfo },
+  { path: '/bidding/create', component: AddBidding },
+  { path: '/bidding/audit', component: BiddingAudit },
+  { path: '/bidding/manage', component: BiddingManage },
+  { path: '/bidding/permission', component: BiddingPermission },
+  { path: '/bidding/mine', component: MyBidding },
+  { path: '/bidding/permission-info', component: BiddingPermissionInfo },
   { path: '/audit-progress', component: AuditProgress },
   { path: '/bidding-clarify', component: BiddingClarify },
   { path: '/bidding-clarify-info', component: ClarifyInfo },

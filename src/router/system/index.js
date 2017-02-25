@@ -4,8 +4,8 @@ import NoticeManage from '../../views/system/notice/NoticeManage'
 import NoticeTreeForm from '../../views/system/notice/NoticeTreeForm'
 
 export default [
-  { path: '/purchase-type', component: PurchaseType },
-  { path: '/profession-type', component: ProfessionType },
-  { path: '/notice-namage', component: NoticeManage },
+  { path: '/system/purchase-type', component: PurchaseType },
+  { path: '/system/profession-type', component: ProfessionType },
+  { path: '/system/notice-namage', component: NoticeManage },
   { path: '/notice-tree-form', component: NoticeTreeForm }
 ]

@@ -6,17 +6,17 @@
         <ul class="nav nav-tabs">
           <li :class="{active : activeNav == 1}">
             <a data-toggle="tab" aria-expanded="false" @click="activeNav = 1">
-              <router-link to='/notice-namage' tag='span'>投标须知</router-link>
+              <router-link to='/system/notice-namage' tag='span'>投标须知</router-link>
             </a>
           </li>
           <li :class="{active : activeNav == 2}" class="">
             <a data-toggle="tab" aria-expanded="true" @click="activeNav = 2">
-              <router-link to='/notice-namage' tag='span'>竞价须知</router-link>
+              <router-link to='/system/notice-namage' tag='span'>竞价须知</router-link>
             </a>
           </li>
           <li :class="{active : activeNav == 3}" class="">
             <a data-toggle="tab" aria-expanded="true" @click="activeNav = 3">
-              <router-link to='/notice-namage' tag='span'>供应商注册须知</router-link>
+              <router-link to='/system/notice-namage' tag='span'>供应商注册须知</router-link>
             </a>
           </li>
         </ul>

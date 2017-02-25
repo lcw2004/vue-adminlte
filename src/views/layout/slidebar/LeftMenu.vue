@@ -19,11 +19,11 @@
         </span>
       </a>
       <ul class="treeview-menu">
-        <li class="active"><a><i class="fa fa-circle-o"></i><router-link to='/my-bidding'>我的招标项目</router-link></a></li>
-        <li><a><i class="fa fa-circle-o"></i><router-link to='/add-bidding'>招标项目发布</router-link></a></li>
-        <li><a><i class="fa fa-circle-o"></i><router-link to='/bidding-manage'>招标项目管理</router-link></a></li>
-        <li><a><i class="fa fa-circle-o"></i><router-link to='/bidding-permission'>投标权限管理</router-link></a></li>
-        <li><a><i class="fa fa-circle-o"></i><router-link to='/bidding-audit'>招标项目审核</router-link></a></li>
+        <li class="active"><a><i class="fa fa-circle-o"></i><router-link to='/bidding/mine'>我的招标项目</router-link></a></li>
+        <li><a><i class="fa fa-circle-o"></i><router-link to='/bidding/create'>招标项目发布</router-link></a></li>
+        <li><a><i class="fa fa-circle-o"></i><router-link to='/bidding/manage'>招标项目管理</router-link></a></li>
+        <li><a><i class="fa fa-circle-o"></i><router-link to='/bidding/permission'>投标权限管理</router-link></a></li>
+        <li><a><i class="fa fa-circle-o"></i><router-link to='/bidding/audit'>招标项目审核</router-link></a></li>
       </ul>
     </li>
     <li class="treeview">
@@ -35,9 +35,9 @@
         </span>
       </a>
       <ul class="treeview-menu">
-        <li><a><i class="fa fa-circle-o"></i><router-link to='/supplier-manage'>供应商管理</router-link></a></li>
-        <li><a><i class="fa fa-circle-o"></i><router-link to='/supplier-audit'>供应商审核</router-link></a></li>
-        <li><a><i class="fa fa-circle-o"></i><router-link to='/supplier-black-list'>黑名单</router-link></a></li>
+        <li><a><i class="fa fa-circle-o"></i><router-link to='/supplier/manage'>供应商管理</router-link></a></li>
+        <li><a><i class="fa fa-circle-o"></i><router-link to='/supplier/audit'>供应商审核</router-link></a></li>
+        <li><a><i class="fa fa-circle-o"></i><router-link to='/supplier/blacklist'>黑名单</router-link></a></li>
       </ul>
     </li>
     <li class="treeview">
@@ -61,9 +61,9 @@
         </span>
       </a>
       <ul class="treeview-menu">
-        <li><a><i class="fa fa-circle-o"></i><router-link to='/purchase-type'>采购类别管理</router-link></a></li>
-        <li><a><i class="fa fa-circle-o"></i><router-link to='/profession-type'>专业类别管理</router-link></a></li>
-        <li><a><i class="fa fa-circle-o"></i><router-link to='/notice-namage'>须知文件管理（投标、注册）</router-link></a></li>
+        <li><a><i class="fa fa-circle-o"></i><router-link to='/system/purchase-type'>采购类别管理</router-link></a></li>
+        <li><a><i class="fa fa-circle-o"></i><router-link to='/system/profession-type'>专业类别管理</router-link></a></li>
+        <li><a><i class="fa fa-circle-o"></i><router-link to='/system/notice-namage'>须知文件管理（投标、注册）</router-link></a></li>
       </ul>
     </li>
     <li class="treeview">

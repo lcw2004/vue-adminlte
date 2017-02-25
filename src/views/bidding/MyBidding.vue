@@ -31,7 +31,7 @@
                     <span class="label label-warning">审核驳回</span>
                   </td>
                   <td>
-                    <a><router-link to='/add-bidding'>编辑</router-link></a>
+                    <a><router-link to='/bidding/create'>编辑</router-link></a>
                     <a>删除</a>
                   </td>
                 </tr>
