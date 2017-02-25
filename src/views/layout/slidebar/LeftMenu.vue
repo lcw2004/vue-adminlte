@@ -35,9 +35,9 @@
         </span>
       </a>
       <ul class="treeview-menu">
-        <li><a><i class="fa fa-circle-o"></i>供应商管理</a></li>
-        <li><a><i class="fa fa-circle-o"></i>供应商审核</a></li>
-        <li><a><i class="fa fa-circle-o"></i>黑名单</a></li>
+        <li><a><i class="fa fa-circle-o"></i><router-link to='/supplier-manage'>供应商管理</router-link></a></li>
+        <li><a><i class="fa fa-circle-o"></i><router-link to='/supplier-audit'>供应商审核</router-link></a></li>
+        <li><a><i class="fa fa-circle-o"></i><router-link to='/supplier-black-list'>黑名单</router-link></a></li>
       </ul>
     </li>
     <li class="treeview">
