@@ -23,7 +23,7 @@ export default [
   { path: '/bidding/clarify', component: BiddingClarify },
   { path: '/bidding/clarify/form', component: ClarifyInfo },
   { path: '/bidding/info', component: BiddingInfo },
-  { path: '/bidding-pre-award', component: BiddingPreAward },
+  { path: '/bidding/pre-award', component: BiddingPreAward },
 
   ...biddingScene
 ]

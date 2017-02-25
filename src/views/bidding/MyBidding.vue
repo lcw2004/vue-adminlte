@@ -83,7 +83,7 @@
                     <span class="label label-default">待审核</span>
                   </td>
                   <td>
-                    <a><router-link to='/bidding-pre-award'>预授标</router-link></a>
+                    <a><router-link to='/bidding/pre-award'>预授标</router-link></a>
                   </td>
                 </tr>
                 <tr>
