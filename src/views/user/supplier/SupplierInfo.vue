@@ -1,0 +1,50 @@
+<template>
+  <section class="content">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="nav-tabs-custom">
+            <ul class="nav nav-tabs">
+              <li :class="{active : step == 1}" @click="step = 1"><a>基础信息</a></li>
+              <li :class="{active : step == 2}" @click="step = 2"><a>联系人</a></li>
+              <li :class="{active : step == 3}" @click="step = 3"><a>资质文件</a></li>
+              <li :class="{active : step == 4}" @click="step = 4"><a>审核记录</a></li>
+              <li :class="{active : step == 5}" @click="step = 5"><a>项目记录</a></li>
+            </ul>
+            <div class="tab-content">
+              <div class="tab-pane active">
+                <BaseInfo v-if="step == 1"></BaseInfo>
+                <Contracts v-if="step == 2"></Contracts>
+                <Qualifications v-if="step == 3"></Qualifications>
+                <AuditLog v-if="step == 4"></AuditLog>
+                <Biddings v-if="step == 5"></Biddings>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </section>
+</template>
+
+<script>
+import BaseInfo from './info/BaseInfo'
+import Contracts from './info/Contracts'
+import AuditLog from './info/AuditLog'
+import Biddings from './info/Biddings'
+import Qualifications from './info/Qualifications'
+
+export default {
+  name: 'SupplierInfo',
+  components: {
+    BaseInfo,
+    Contracts,
+    AuditLog,
+    Biddings,
+    Qualifications
+  },
+  data: function () {
+    return {
+      step: 1
+    }
+  }
+}
+</script>

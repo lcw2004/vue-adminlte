@@ -22,7 +22,7 @@
                 </tr>
                 <tr>
                   <td>1</td>
-                  <td><a>某某有限公司</a></td>
+                  <td><router-link to="/supplier/info">某某有限公司</router-link></td>
                   <td>2017-01-01</td>
                   <td><a>张三</a></td>
                   <td>
@@ -35,7 +35,7 @@
                 </tr>
                 <tr>
                   <td>2</td>
-                  <td><a>某某有限公司</a></td>
+                  <td><router-link to="/supplier/info">某某有限公司</router-link></td>
                   <td>2017-01-01</td>
                   <td><a>张三</a></td>
                   <td>
@@ -48,7 +48,7 @@
                 </tr>
                 <tr>
                   <td>1</td>
-                  <td><a>某某有限公司</a></td>
+                  <td><router-link to="/supplier/info">某某有限公司</router-link></td>
                   <td>2017-01-01</td>
                   <td><a>张三</a></td>
                   <td>
