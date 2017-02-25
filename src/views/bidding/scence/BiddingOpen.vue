@@ -46,7 +46,7 @@
         <div class="col-md-4">
         </div>
         <div class="col-md-4">
-          <router-link to='/bidding-scene/compare' tag='button' class="btn btn-info btn-sm">开标一览表</router-link>
+          <router-link to='/bidding/scene/compare' tag='button' class="btn btn-info btn-sm">开标一览表</router-link>
           <button type="button" class="btn btn-info btn-sm">
             二次报价
           </button>

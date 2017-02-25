@@ -4,7 +4,7 @@ import Home from '../../views/bidding/scence/Home'
 
 export default [
   {
-    path: '/bidding-scene',
+    path: '/bidding/scene',
     component: BiddingScene,
     children: [
       { path: '', component: Home },

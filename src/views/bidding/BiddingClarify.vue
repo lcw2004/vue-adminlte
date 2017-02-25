@@ -35,7 +35,7 @@
                 </tr>
                 <tr>
                   <td>1</td>
-                  <td><a><router-link to="/bidding-clarify-info">关于某某项目的澄清</router-link></a></td>
+                  <td><a><router-link to="/bidding/clarify/form">关于某某项目的澄清</router-link></a></td>
                   <td>李四</td>
                   <td>2017-01-16 00:00:00</td>
                   <td>

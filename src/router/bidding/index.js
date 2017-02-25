@@ -19,10 +19,10 @@ export default [
   { path: '/bidding/permission', component: BiddingPermission },
   { path: '/bidding/mine', component: MyBidding },
   { path: '/bidding/permission-info', component: BiddingPermissionInfo },
-  { path: '/audit-progress', component: AuditProgress },
-  { path: '/bidding-clarify', component: BiddingClarify },
-  { path: '/bidding-clarify-info', component: ClarifyInfo },
-  { path: '/bidding-info', component: BiddingInfo },
+  { path: '/bidding/audit-progress', component: AuditProgress },
+  { path: '/bidding/clarify', component: BiddingClarify },
+  { path: '/bidding/clarify/form', component: ClarifyInfo },
+  { path: '/bidding/info', component: BiddingInfo },
   { path: '/bidding-pre-award', component: BiddingPreAward },
 
   ...biddingScene

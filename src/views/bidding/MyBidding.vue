@@ -47,7 +47,7 @@
                     <!-- <span class="label label-warning">审核驳回</span> -->
                   </td>
                   <td>
-                    <a><router-link to='/audit-progress'>审核进度</router-link></a>
+                    <a><router-link to='/bidding/audit-progress'>审核进度</router-link></a>
                   </td>
                 </tr>
                 <tr>
@@ -58,7 +58,7 @@
                   <td>2017-01-16</td>
                   <td>审核通过，等待开标</td>
                   <td>
-                    <a><router-link to='/bidding-clarify'>澄清</router-link></a>
+                    <a><router-link to='/bidding/clarify'>澄清</router-link></a>
                     <a>负责人签到（开标时间当天显示）</a>
                   </td>
                 </tr>
@@ -70,7 +70,7 @@
                   <td>2017-01-16</td>
                   <td>开标中</td>
                   <td>
-                    <a><router-link to='bidding-scene'>开标现场</router-link></a>
+                    <a><router-link to='bidding/scene'>开标现场</router-link></a>
                   </td>
                 </tr>
                 <tr>
@@ -105,7 +105,7 @@
                   <td>2017-01-16</td>
                   <td>已归档</td>
                   <td>
-                    <a><router-link to='/bidding-info'>查看</router-link></a>
+                    <a><router-link to='/bidding/info'>查看</router-link></a>
                   </td>
                 </tr>
               </tbody>
