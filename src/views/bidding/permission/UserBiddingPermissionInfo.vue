@@ -14,7 +14,7 @@
         <div class="row">
           <div class="col-md-12">
             <div class="form-group">
-              <label for="inputEmail3" class="col-md-2 control-label">标书费</label>
+              <label class="col-md-2 control-label">标书费</label>
               <div class="col-md-2">
                 <div class="controls">
                   <div class="radio inline">
@@ -51,7 +51,7 @@
         <div class="row">
           <div class="col-md-12">
             <div class="form-group">
-              <label for="inputEmail3" class="col-md-2 control-label">投标保证金</label>
+              <label class="col-md-2 control-label">投标保证金</label>
               <div class="col-md-2">
                 <div class="controls">
                   <div class="radio inline">

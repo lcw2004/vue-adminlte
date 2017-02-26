@@ -9,31 +9,31 @@
         <div class="box-body">
           <form class="form-horizontal">
             <div class="form-group">
-              <label for="inputEmail3" class="col-md-2 control-label">标题</label>
+              <label class="col-md-2 control-label">标题</label>
               <div class="col-md-9">
                 <p class="form-control-static">关于某某项目的澄清</p>
               </div>
             </div>
             <div class="form-group">
-              <label for="inputEmail3" class="col-md-2 control-label">发布人</label>
+              <label class="col-md-2 control-label">发布人</label>
               <div class="col-md-9">
                 <p class="form-control-static">李四</p>
               </div>
             </div>
             <div class="form-group">
-              <label for="inputEmail3" class="col-md-2 control-label">发布时间</label>
+              <label class="col-md-2 control-label">发布时间</label>
               <div class="col-md-9">
                 <p class="form-control-static">2017-01-16 00:00:00</p>
               </div>
             </div>
             <div class="form-group">
-              <label for="inputEmail3" class="col-md-2 control-label">备注</label>
+              <label class="col-md-2 control-label">备注</label>
               <div class="col-md-9">
                 <Editor></Editor>
               </div>
             </div>
             <div class="form-group">
-              <label for="inputEmail3" class="col-md-2 control-label">附件</label>
+              <label class="col-md-2 control-label">附件</label>
               <div class="col-md-9">
                 <p class="form-control-static"><a><i class="fa fa-paperclip"></i> 附件一（点击下载）</a></p>
               </div>
