@@ -31,6 +31,7 @@
                     <span class="label label-default">待审核</span>
                   </td>
                   <td>
+                    <a @click="testAlert">testAlert</a>
                     <a @click="alertConfig.show = true">通过</a>
                     <a @click="config.show = true">驳回</a>
                   </td>
@@ -60,6 +61,11 @@ export default {
         show: false,
         title: '驳回原因'
       }
+    }
+  },
+  methods: {
+    testAlert: function () {
+      this.$alert('1111111111111')
     }
   }
 }

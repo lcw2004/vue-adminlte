@@ -11,6 +11,8 @@ import TimeRangePicker from './base/TimeRangePicker'
 import Tree from './tree/Tree'
 import TreeTableColPrefix from './tree/TreeTableColPrefix'
 
+import alert from './message/alerts'
+
 function initGlobalComponents () {
   // base
   Vue.component(BSwitch.name, BSwitch)
@@ -24,11 +26,7 @@ function initGlobalComponents () {
   Vue.component(TreeTableColPrefix.name, TreeTableColPrefix)
 
   // message
-
-  // Vue.prototype
-  Vue.prototype.$alert = function (msg) {
-    console.log(msg)
-  }
+  Vue.prototype.$alert = alert
 }
 
 export default initGlobalComponents

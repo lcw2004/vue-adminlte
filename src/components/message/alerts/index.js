@@ -1,8 +1,29 @@
-import Alert from './Alert'
+import Vue from 'vue'
+import AlertBox from './AlertBox'
 
-/* istanbul ignore next */
-Alert.install = function (Vue) {
-  Vue.component(Alert.name, Alert)
+// NotifyBox单例组件
+let notifyBox
+
+// NotifyBox的消息列表
+let propsData = {
+  messages: []
 }
 
-export default Alert
+// 创建NotifyBox单例
+let installNotifyBox = function () {
+  if (!notifyBox) {
+    let AlertComponent = Vue.extend(AlertBox)
+    notifyBox = new AlertComponent({
+      el: document.createElement('div'),
+      propsData
+    })
+  }
+}
+
+let alert = function (message) {
+  propsData.messages.push(message)
+  installNotifyBox()
+  return notifyBox
+}
+
+export default alert
