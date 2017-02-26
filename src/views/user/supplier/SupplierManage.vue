@@ -29,7 +29,6 @@
                     <span class="label label-warning">审核驳回</span>
                   </td>
                   <td>
-                    <a><router-link to='/bidding/create'>编辑</router-link></a>
                     <a>删除</a>
                   </td>
                 </tr>
@@ -39,10 +38,10 @@
                   <td>2017-01-01</td>
                   <td><a>张三</a></td>
                   <td>
-                    <span class="label label-success">正常</span>
+                    <span class="label label-danger">停用</span>
                   </td>
                   <td>
-                    <a><router-link to='/bidding/create'>编辑</router-link></a>
+                    <a>启用</a>
                     <a>删除</a>
                   </td>
                 </tr>
@@ -55,7 +54,19 @@
                     <span class="label label-warning">待审核</span>
                   </td>
                   <td>
-                    <a><router-link to='/bidding/create'>编辑</router-link></a>
+                    <a>删除</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td><router-link to="/supplier/info">某某有限公司</router-link></td>
+                  <td>2017-01-01</td>
+                  <td><a>张三</a></td>
+                  <td>
+                    <span class="label label-success">正常</span>
+                  </td>
+                  <td>
+                    <a>停用</a>
                     <a>删除</a>
                   </td>
                 </tr>
