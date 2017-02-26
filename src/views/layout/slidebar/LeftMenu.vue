@@ -49,7 +49,7 @@
         </span>
       </a>
       <ul class="treeview-menu">
-        <li><a><i class="fa fa-circle-o"></i>评标专家管理</a></li>
+        <li><a><i class="fa fa-circle-o"></i><router-link to='/expert/manage'>评标专家管理</router-link></a></li>
       </ul>
     </li>
     <li class="treeview">

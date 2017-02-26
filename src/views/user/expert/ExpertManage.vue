@@ -14,17 +14,17 @@
               <tbody>
                 <tr>
                   <th style="width: 10px">#</th>
-                  <th>供应商名称</th>
-                  <th>注册时间</th>
-                  <th>联系人</th>
+                  <th>姓名</th>
+                  <th>单位</th>
+                  <th>电话</th>
                   <th>状态</th>
                   <th>操作</th>
                 </tr>
                 <tr>
                   <td>1</td>
-                  <td><router-link to="/supplier/info">某某有限公司</router-link></td>
-                  <td>2017-01-01</td>
-                  <td><a>张三</a></td>
+                  <td><router-link to="/expert/info">张三</router-link></td>
+                  <td>某某公司</td>
+                  <td>13900000000</td>
                   <td>
                     <span class="label label-warning">审核驳回</span>
                   </td>
@@ -34,39 +34,14 @@
                 </tr>
                 <tr>
                   <td>2</td>
-                  <td><router-link to="/supplier/info">某某有限公司</router-link></td>
-                  <td>2017-01-01</td>
-                  <td><a>张三</a></td>
+                  <td><router-link to="/expert/info">李四</router-link></td>
+                  <td>某某公司</td>
+                  <td>13900000000</td>
                   <td>
                     <span class="label label-danger">停用</span>
                   </td>
                   <td>
                     <a>启用</a>
-                    <a>删除</a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td><router-link to="/supplier/info">某某有限公司</router-link></td>
-                  <td>2017-01-01</td>
-                  <td><a>张三</a></td>
-                  <td>
-                    <span class="label label-warning">待审核</span>
-                  </td>
-                  <td>
-                    <a>删除</a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td><router-link to="/supplier/info">某某有限公司</router-link></td>
-                  <td>2017-01-01</td>
-                  <td><a>张三</a></td>
-                  <td>
-                    <span class="label label-success">正常</span>
-                  </td>
-                  <td>
-                    <a>停用</a>
                     <a>删除</a>
                   </td>
                 </tr>
