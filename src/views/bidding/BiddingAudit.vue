@@ -32,7 +32,7 @@
                   </td>
                   <td>
                     <a @click="testAlert">testAlert</a>
-                    <a @click="alertConfig.show = true">通过</a>
+                    <a @click="auditConfirm()">通过</a>
                     <a @click="config.show = true">驳回</a>
                   </td>
                 </tr>
@@ -66,6 +66,11 @@ export default {
   methods: {
     testAlert: function () {
       this.$alert('1111111111111')
+    },
+    auditConfirm: function () {
+      this.$confirm('确认审核通过吗？', function () {
+        this.$alert('审核成功')
+      })
     }
   }
 }
