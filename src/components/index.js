@@ -11,7 +11,7 @@ import TimeRangePicker from './base/TimeRangePicker'
 import Tree from './tree/Tree'
 import TreeTableColPrefix from './tree/TreeTableColPrefix'
 
-import alert from './message/alerts'
+import alert from './alerts'
 import confirm from './confirm'
 
 function initGlobalComponents () {

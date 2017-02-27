@@ -8,6 +8,8 @@ let confirmSimple = function (message, onOk, onCancel) {
   let propsData = {
     title: '操作确认',
     message: message,
+    type: 'default',
+    size: 'md',
     onOk: onOk,
     onCancel: onCancel
   }
