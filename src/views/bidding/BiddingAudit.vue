@@ -31,7 +31,8 @@
                     <span class="label label-default">待审核</span>
                   </td>
                   <td>
-                    <a @click="testAlert">testAlert</a>
+                    <a @click="testStart">testStart</a>
+                    <a @click="testEnd">testEnd</a>
                     <a @click="auditConfirm()">通过</a>
                     <a @click="config.show = true">驳回</a>
                   </td>
@@ -64,8 +65,11 @@ export default {
     }
   },
   methods: {
-    testAlert: function () {
-      this.$alert('1111111111111')
+    testStart: function () {
+      this.$progress.start()
+    },
+    testEnd: function () {
+      this.$progress.done()
     },
     auditConfirm: function () {
       this.$confirm('确认审核通过吗？', function () {

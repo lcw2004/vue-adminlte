@@ -13,6 +13,7 @@ import TreeTableColPrefix from './tree/TreeTableColPrefix'
 
 import alert from './alerts'
 import confirm from './confirm'
+import progress from './progress'
 
 function initGlobalComponents () {
   // base
@@ -29,6 +30,7 @@ function initGlobalComponents () {
   // message
   Vue.prototype.$alert = alert
   Vue.prototype.$confirm = confirm
+  Vue.prototype.$progress = progress
 }
 
 export default initGlobalComponents
