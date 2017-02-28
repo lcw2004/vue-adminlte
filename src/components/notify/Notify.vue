@@ -1,5 +1,5 @@
 <template>
-  <div class="alert alert-dismissible" :class="style" v-show="isShow">
+  <div class="alert alert-dismissible" :class="style" v-show="isShow" style="margin-bottom: 10px;">
     <button type="button" class="close btn-lg" data-dismiss="alert" aria-hidden="true" @click="close">×</button>
     <i class="icon fa fa-check"></i>
     {{ message }}
@@ -22,7 +22,7 @@ export default {
     duration: {
       type: Number,
       required: false,
-      default: 10000
+      default: 3000
     }
   },
   data: function () {
@@ -67,7 +67,6 @@ export default {
   top: 60px;
   right: 10px;
   width: 300px;
-  z-index: 1257;
-  pointer-events: none;
+  z-index: 999;
 }
 </style>

@@ -101,7 +101,7 @@ export default {
     },
     auditConfirm: function () {
       this.$confirm('确认审核通过吗？', function () {
-        this.$alert('审核成功')
+        this.$notify.success('审核成功')
       })
     }
   }
