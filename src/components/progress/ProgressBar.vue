@@ -1,30 +1,67 @@
 <template>
 <div class="progress" style="margin: 0px;">
-  <div class="progress-bar progress-bar-red" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+  <div class="progress-bar progress-bar-red" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" :style="progressStyle">
     <span class="sr-only">80% Complete</span>
   </div>
 </div>
 </template>
 
 <script>
+var random = function (min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min)
+}
+
 export default {
   name: 'Progress',
   components: {
   },
   data: function () {
     return {
+      width: 1
     }
   },
   beforeMount () {
-    this.init()
+    document.body.insertBefore(this.$el, document.body.firstElementChild)
+  },
+  mounted () {
+    this.walk()
   },
   methods: {
-    init () {
-      document.body.insertBefore(this.$el, document.body.firstElementChild)
-    },
     close () {
       this.$destroy()
       this.$el.remove()
+    },
+    walk () {
+      var self = this
+
+      // 随机增长长度
+      let timeout = random(50, 100)
+      self.timer = setTimeout(function () {
+        let width = self.width + random(1, 4)
+        self.width = width > 98 ? 98 : width
+        self.walk()
+      }, timeout)
+    },
+    done () {
+      var self = this
+
+      // 清除定时器
+      clearTimeout(self.timer)
+
+      // 进度条走到 100%
+      self.width = 100
+
+      // 500ms后关闭组件
+      setTimeout(function () {
+        self.close()
+      }, 500)
+    }
+  },
+  computed: {
+    progressStyle: function () {
+      return {
+        width: this.width + '%'
+      }
     }
   }
 }

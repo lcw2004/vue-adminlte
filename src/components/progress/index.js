@@ -3,8 +3,6 @@ import ProgressBar from './ProgressBar'
 
 let progressBar = null
 let start = function () {
-  console.log('start')
-
   let propsData = {
   }
   let ProgressBarComponent = Vue.extend(ProgressBar)
@@ -16,8 +14,7 @@ let start = function () {
 }
 
 let done = function () {
-  console.log('done')
-  progressBar.close()
+  progressBar.done()
 }
 
 export default {start, done}
