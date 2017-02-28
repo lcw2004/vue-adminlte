@@ -1,19 +1,19 @@
 <template>
-<div class="progress" style="margin: 0px;">
-  <div class="progress-bar progress-bar-red" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" :style="progressStyle">
+<div class="progress" style="margin: 0px;" :class="progressSize">
+  <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" :class="progressClass" :style="progressStyle">
     <span class="sr-only">80% Complete</span>
   </div>
 </div>
 </template>
 
 <script>
-var random = function (min, max) {
-  return Math.floor(Math.random() * (max - min + 1) + min)
-}
+import common from '../../utils/common'
 
 export default {
   name: 'Progress',
-  components: {
+  props: {
+    size: {},
+    class: {}
   },
   data: function () {
     return {
@@ -35,9 +35,9 @@ export default {
       var self = this
 
       // 随机增长长度
-      let timeout = random(50, 100)
+      let timeout = common.nextInt(50, 100)
       self.timer = setTimeout(function () {
-        let width = self.width + random(1, 4)
+        let width = self.width + common.nextInt(1, 4)
         self.width = width > 98 ? 98 : width
         self.walk()
       }, timeout)
@@ -62,6 +62,12 @@ export default {
       return {
         width: this.width + '%'
       }
+    },
+    progressClass: function () {
+      return this.class
+    },
+    progressSize: function () {
+      return this.size
     }
   }
 }
