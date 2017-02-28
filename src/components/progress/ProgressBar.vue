@@ -32,29 +32,23 @@ export default {
       this.$el.remove()
     },
     walk () {
-      var self = this
-
       // 随机增长长度
+      let width = this.width + common.nextInt(1, 4)
+      this.width = width > 98 ? 98 : width
+
+      // 随机时间继续增长
       let timeout = common.nextInt(50, 100)
-      self.timer = setTimeout(function () {
-        let width = self.width + common.nextInt(1, 4)
-        self.width = width > 98 ? 98 : width
-        self.walk()
-      }, timeout)
+      this.timer = setTimeout(() => this.walk(), timeout)
     },
     done () {
-      var self = this
-
       // 清除定时器
-      clearTimeout(self.timer)
+      clearTimeout(this.timer)
 
       // 进度条走到 100%
-      self.width = 100
+      this.width = 100
 
       // 500ms后关闭组件
-      setTimeout(function () {
-        self.close()
-      }, 500)
+      setTimeout(() => this.close(), 500)
     }
   },
   computed: {

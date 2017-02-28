@@ -31,10 +31,26 @@
                     <span class="label label-default">待审核</span>
                   </td>
                   <td>
-                    <a @click="testStart">testStart</a>
-                    <a @click="testEnd">testEnd</a>
+                    <a @click="success">success</a>
+                    <a @click="info">info</a>
+                    <a @click="warn">warn</a>
+                    <a @click="danger">danger</a>
                     <a @click="auditConfirm()">通过</a>
                     <a @click="config.show = true">驳回</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td><a>ZB201701160009</a></td>
+                  <td>测试3</td>
+                  <td>邀请招标</td>
+                  <td>2017-01-16</td>
+                  <td>已提交审核
+                    <span class="label label-default">待审核</span>
+                  </td>
+                  <td>
+                    <a @click="start">start</a>
+                    <a @click="done">done</a>
                   </td>
                 </tr>
               </tbody>
@@ -65,11 +81,23 @@ export default {
     }
   },
   methods: {
-    testStart: function () {
+    start: function () {
       this.$progress.start()
     },
-    testEnd: function () {
+    done: function () {
       this.$progress.done()
+    },
+    success: function () {
+      this.$notify.success('审核成功')
+    },
+    info: function () {
+      this.$notify.info('审核成功')
+    },
+    warn: function () {
+      this.$notify.warn('审核成功')
+    },
+    danger: function () {
+      this.$notify.danger('审核成功')
     },
     auditConfirm: function () {
       this.$confirm('确认审核通过吗？', function () {

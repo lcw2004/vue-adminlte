@@ -11,7 +11,7 @@ import TimeRangePicker from './base/TimeRangePicker'
 import Tree from './tree/Tree'
 import TreeTableColPrefix from './tree/TreeTableColPrefix'
 
-import alert from './alerts'
+import notify from './notify'
 import confirm from './confirm'
 import progress from './progress'
 
@@ -28,7 +28,7 @@ function initGlobalComponents () {
   Vue.component(TreeTableColPrefix.name, TreeTableColPrefix)
 
   // message
-  Vue.prototype.$alert = alert
+  Vue.prototype.$notify = notify
   Vue.prototype.$confirm = confirm
   Vue.prototype.$progress = progress
 }
