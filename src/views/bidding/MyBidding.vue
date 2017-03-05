@@ -70,7 +70,7 @@
                   <td>2017-01-16</td>
                   <td>开标中</td>
                   <td>
-                    <a><router-link to='bidding/scene'>开标现场</router-link></a>
+                    <a><router-link to='/bidding/scene'>开标现场</router-link></a>
                   </td>
                 </tr>
                 <tr>
