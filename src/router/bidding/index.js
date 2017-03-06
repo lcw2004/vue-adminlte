@@ -6,12 +6,12 @@ import MyBidding from '../../views/bidding/MyBidding'
 
 import BiddingPermissionInfo from '../../views/bidding/BiddingPermissionInfo'
 import AuditProgress from '../../views/bidding/AuditProgress'
-import BiddingClarify from '../../views/bidding/BiddingClarify'
+
 import BiddingInfo from '../../views/bidding/BiddingInfo'
 import BiddingPreAward from '../../views/bidding/BiddingPreAward'
-import ClarifyInfo from '../../views/bidding/clarify/ClarifyInfo'
 
-import biddingScene from './biddingScene'
+import scene from './scene'
+import clarify from './clarify'
 export default [
   { path: '/bidding/create', component: AddBidding },
   { path: '/bidding/audit', component: BiddingAudit },
@@ -20,10 +20,9 @@ export default [
   { path: '/bidding/mine', component: MyBidding },
   { path: '/bidding/permission-info', component: BiddingPermissionInfo },
   { path: '/bidding/audit-progress', component: AuditProgress },
-  { path: '/bidding/clarify', component: BiddingClarify },
-  { path: '/bidding/clarify/form', component: ClarifyInfo },
   { path: '/bidding/info', component: BiddingInfo },
   { path: '/bidding/pre-award', component: BiddingPreAward },
 
-  ...biddingScene
+  ...scene,
+  ...clarify
 ]
