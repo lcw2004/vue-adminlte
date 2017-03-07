@@ -9,6 +9,7 @@ import AuditProgress from '../../views/bidding/AuditProgress'
 
 import BiddingInfo from '../../views/bidding/BiddingInfo'
 import BiddingPreAward from '../../views/bidding/BiddingPreAward'
+import BiddingTimeManage from '../../views/bidding/BiddingTimeManage'
 
 import scene from './scene'
 import clarify from './clarify'
@@ -22,6 +23,7 @@ export default [
   { path: '/bidding/audit-progress', component: AuditProgress },
   { path: '/bidding/info', component: BiddingInfo },
   { path: '/bidding/pre-award', component: BiddingPreAward },
+  { path: '/bidding/time-manage', component: BiddingTimeManage },
 
   ...scene,
   ...clarify

@@ -18,6 +18,7 @@
                   <label class="col-md-1 control-label">答复</label>
                   <div class="col-md-10">
                     <Editor></Editor>
+                    <input type="checkbox" name="my-checkbox" checked>
                   </div>
                 </div>
               </div>
@@ -51,11 +52,15 @@
 </template>
 
 <script>
+import $ from 'jquery'
 export default {
   name: 'ClarifyInfo',
   components: {
   },
   props: {
+  },
+  mounted () {
+    $("[name='my-checkbox']").bootstrapSwitch()
   },
   data: function () {
     return {}
