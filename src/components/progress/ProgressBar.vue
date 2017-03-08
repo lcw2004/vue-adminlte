@@ -1,5 +1,5 @@
 <template>
-<div class="progress" style="margin: 0px;" :class="progressSize">
+<div class="progress" style="margin: 0px; position: fixed; z-index: 99999; width: 100%;" :class="progressSize">
   <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" :class="progressClass" :style="progressStyle">
     <span class="sr-only">80% Complete</span>
   </div>
