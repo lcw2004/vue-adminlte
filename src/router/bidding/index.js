@@ -12,6 +12,7 @@ import BiddingPreAward from '../../views/bidding/BiddingPreAward'
 import BiddingTimeManage from '../../views/bidding/BiddingTimeManage'
 
 import scene from './scene'
+import expert from './expert'
 import clarify from './clarify'
 export default [
   { path: '/bidding/create', component: AddBidding },
@@ -26,5 +27,6 @@ export default [
   { path: '/bidding/time-manage', component: BiddingTimeManage },
 
   ...scene,
+  ...expert,
   ...clarify
 ]

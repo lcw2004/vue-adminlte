@@ -15,6 +15,7 @@ import 'admin-lte/dist/css/skins/_all-skins.min.css'
 import 'font-awesome/css/font-awesome.css'
 import 'eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css'
 import 'bootstrap-daterangepicker/daterangepicker.css'
+import 'bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.min.css'
 
 // 注册公共组件
 import initGlobalComponents from './components'

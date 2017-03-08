@@ -25,6 +25,8 @@
         <li><a><i class="fa fa-circle-o"></i><router-link to='/bidding/permission'>投标权限管理</router-link></a></li>
         <li><a><i class="fa fa-circle-o"></i><router-link to='/bidding/audit'>招标项目审核</router-link></a></li>
         <li><a><i class="fa fa-circle-o"></i><router-link to='/bidding/time-manage'>开标时间调整</router-link></a></li>
+        <li><a><i class="fa fa-circle-o"></i><router-link to='/bidding/expert-apply'>申请专家抽取</router-link></a></li>
+        <li><a><i class="fa fa-circle-o"></i><router-link to='/bidding/expert-extract'>专家抽取</router-link></a></li>
       </ul>
     </li>
     <li class="treeview">
