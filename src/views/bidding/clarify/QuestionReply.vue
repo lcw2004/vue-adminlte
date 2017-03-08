@@ -45,14 +45,10 @@
       </div>
     </div>
   </div>
-
-
-
 </section>
 </template>
 
 <script>
-import $ from 'jquery'
 export default {
   name: 'ClarifyInfo',
   components: {
@@ -60,7 +56,6 @@ export default {
   props: {
   },
   mounted () {
-    $("[name='my-checkbox']").bootstrapSwitch()
   },
   data: function () {
     return {}
