@@ -4,7 +4,7 @@
     <div class="col-md-12">
       <div class="box">
         <div class="box-header with-border">
-          <h3 class="box-title">Quick Email</h3>
+          <h3 class="box-title">申请抽取专家</h3>
         </div>
 
         <div class="box-body">
