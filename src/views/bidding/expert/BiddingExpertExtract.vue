@@ -58,7 +58,7 @@
             <h3 class="box-title">备注</h3>
           </div>
           <div class="box-body">
-            <p class="text-muted">只有 "审核通过，等待开标" 的项目可以抽取，其他状态的数据不在这里显示</p>
+            <p class="text-muted">只有项目负责人申请抽取专家之后，数据才在这里显示</p>
           </div>
         </div>
       </div>

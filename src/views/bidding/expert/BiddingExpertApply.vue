@@ -27,7 +27,7 @@
                   <td>测试3</td>
                   <td>邀请招标</td>
                   <td>2017-01-16</td>
-                  <td>审核通过，等待开标</td>
+                  <td><span class="label label-warning">未抽取</span></td>
                   <td>
                     <router-link to='/bidding/expert-apply/project'>申请抽取</router-link>
                   </td>
@@ -38,9 +38,9 @@
                   <td>测试4</td>
                   <td>邀请招标</td>
                   <td>2017-01-16</td>
-                  <td>审核通过，等待开标</td>
+                  <td><span class="label label-success">已抽取</span></td>
                   <td>
-                    <router-link to='/bidding/expert-apply/project'>申请抽取</router-link>
+                    <router-link to='/bidding/expert-apply/project'>重新申请</router-link>
                   </td>
                 </tr>
               </tbody>
@@ -58,7 +58,8 @@
             <h3 class="box-title">备注</h3>
           </div>
           <div class="box-body">
-            <p class="text-muted">只有 "审核通过，等待开标" 的项目可以抽取，其他状态的数据不在这里显示</p>
+            <p class="text-muted">1. 只有 "审核通过，等待开标" 的项目可以申请抽取专家，其他状态的数据不在这里显示</p>
+            <p class="text-muted">2. 已经申请过的可以再次申请（以防抽取之后专家因意外情况不能参与项目）</p>
           </div>
         </div>
       </div>

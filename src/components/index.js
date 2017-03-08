@@ -11,6 +11,9 @@ import TimeRangePicker from './base/TimeRangePicker'
 import Tree from './tree/Tree'
 import TreeTableColPrefix from './tree/TreeTableColPrefix'
 
+// button
+import FullButton from './button/FullButton'
+
 import notify from './notify'
 import confirm from './confirm'
 import progress from './progress'
@@ -26,6 +29,9 @@ function initGlobalComponents () {
   // tree
   Vue.component(Tree.name, Tree)
   Vue.component(TreeTableColPrefix.name, TreeTableColPrefix)
+
+  // button
+  Vue.component(FullButton.name, FullButton)
 
   // message
   Vue.prototype.$notify = notify
