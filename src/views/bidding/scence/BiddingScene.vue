@@ -20,13 +20,11 @@
 </template>
 
 <script>
-import FullScreenBtn from './FullScreenBtn'
 import Home from './Home'
 
 export default {
   name: 'BiddingScene',
   components: {
-    FullScreenBtn,
     Home
   },
   data () {

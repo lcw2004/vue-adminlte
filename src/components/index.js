@@ -6,6 +6,7 @@ import Editor from './base/Editor'
 import InlineEditor from './base/InlineEditor'
 import TimePicker from './base/TimePicker'
 import TimeRangePicker from './base/TimeRangePicker'
+import FullScreenBtn from './base/FullScreenBtn'
 
 // tree
 import Tree from './tree/Tree'
@@ -25,6 +26,7 @@ function initGlobalComponents () {
   Vue.component(InlineEditor.name, InlineEditor)
   Vue.component(TimePicker.name, TimePicker)
   Vue.component(TimeRangePicker.name, TimeRangePicker)
+  Vue.component(FullScreenBtn.name, FullScreenBtn)
 
   // tree
   Vue.component(Tree.name, Tree)
