@@ -1,4 +1,4 @@
-import BiddingScene from '../../views/bidding/BiddingScene'
+import BiddingScene from '../../views/bidding/scence/BiddingScene'
 import Compare from '../../views/bidding/scence/Compare'
 import Home from '../../views/bidding/scence/Home'
 

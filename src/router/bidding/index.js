@@ -8,7 +8,7 @@ import BiddingPermissionInfo from '../../views/bidding/BiddingPermissionInfo'
 import AuditProgress from '../../views/bidding/AuditProgress'
 
 import BiddingInfo from '../../views/bidding/BiddingInfo'
-import BiddingPreAward from '../../views/bidding/BiddingPreAward'
+import BiddingPreAward from '../../views/bidding/award/BiddingPreAward'
 import BiddingTimeManage from '../../views/bidding/BiddingTimeManage'
 
 import scene from './scene'

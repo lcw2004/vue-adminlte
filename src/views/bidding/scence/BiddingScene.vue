@@ -20,8 +20,8 @@
 </template>
 
 <script>
-import FullScreenBtn from './scence/FullScreenBtn'
-import Home from './scence/Home'
+import FullScreenBtn from './FullScreenBtn'
+import Home from './Home'
 
 export default {
   name: 'BiddingScene',
