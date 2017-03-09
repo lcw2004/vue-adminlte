@@ -9,7 +9,6 @@
               <FullScreenBtn :id="id"></FullScreenBtn>
             </div>
           </div>
-
           <div class="box-body">
             <CompareDetail></CompareDetail>
           </div>
@@ -19,26 +18,17 @@
 
     <div class="row">
       <div class="col-md-6">
-        <div class="box">
-          <div class="box-header with-border">
-            <h3 class="box-title">中标供应商</h3>
-          </div>
-
-          <div class="box-body">
-          </div>
-        </div>
+        <ChooseSupplier @selected="supplierSelected = arguments[0]"></ChooseSupplier>
       </div>
-
       <div class="col-md-6">
-        <div class="box">
-          <div class="box-header with-border">
-            <h3 class="box-title">项目组意见</h3>
-          </div>
+        <PreAdwardSupplier :supplier="supplierSelected"></PreAdwardSupplier>
+      </div>
+    </div>
 
-          <div class="box-body">
-            <ExpertSuggestion></ExpertSuggestion>
-          </div>
-        </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <ExpertSuggestion></ExpertSuggestion>
       </div>
     </div>
   </section>
@@ -48,17 +38,20 @@
 import CompareDetail from '../scence/CompareDetail'
 import ExpertSuggestion from './ExpertSuggestion'
 import ChooseSupplier from './ChooseSupplier'
+import PreAdwardSupplier from './PreAdwardSupplier'
 
 export default {
   name: 'BiddingPreAward',
   components: {
     CompareDetail,
     ExpertSuggestion,
-    ChooseSupplier
+    ChooseSupplier,
+    PreAdwardSupplier
   },
   data () {
     return {
-      id: Math.random() + ''
+      id: Math.random() + '',
+      supplierSelected: {}
     }
   }
 }

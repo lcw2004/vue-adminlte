@@ -1,3 +1,29 @@
+function totalMoney (supplierPrices) {
+  let prices = supplierPrices.prices
+  let suppliers = supplierPrices.suppliers
+  let totalMoney = new Map()
+  for (let value of prices) {
+    let number = value.subjectInfo.number
+
+    // 计算产品总价，并存到map中
+    for (let supplier of suppliers) {
+      let supplierId = supplier.id
+      let containTax = value.supplierPrices[supplierId].containTax
+      let subjectPrice = number * containTax
+      let totalMoneyOfThisSupplier = totalMoney.get(supplierId)
+      if (!totalMoneyOfThisSupplier) {
+        totalMoneyOfThisSupplier = {}
+        totalMoneyOfThisSupplier.total = 0
+      } else {
+        totalMoneyOfThisSupplier = totalMoney.get(supplierId)
+      }
+      totalMoneyOfThisSupplier.total += subjectPrice
+      totalMoney.set(supplierId, totalMoneyOfThisSupplier)
+    }
+  }
+  return totalMoney
+}
+
 function sortSupplierPrices (prices) {
   for (let value of prices.prices) {
     let supplierPrices = value.supplierPrices
@@ -38,33 +64,7 @@ function sortTotalMoney (totalMoney) {
   return totalMoney
 }
 
-function totalMoney (supplierPrices) {
-  let prices = supplierPrices.prices
-  let suppliers = supplierPrices.suppliers
-  let totalMoney = new Map()
-  for (let value of prices) {
-    let number = value.subjectInfo.number
-
-    // 计算产品总价，并存到map中
-    for (let supplier of suppliers) {
-      let supplierId = supplier.id
-      let containTax = value.supplierPrices[supplierId].containTax
-      let subjectPrice = number * containTax
-      let totalMoneyOfThisSupplier = totalMoney.get(supplierId)
-      if (!totalMoneyOfThisSupplier) {
-        totalMoneyOfThisSupplier = {}
-        totalMoneyOfThisSupplier.total = 0
-      } else {
-        totalMoneyOfThisSupplier = totalMoney.get(supplierId)
-      }
-      totalMoneyOfThisSupplier.total += subjectPrice
-      totalMoney.set(supplierId, totalMoneyOfThisSupplier)
-    }
-  }
-  return totalMoney
-}
-
-export default {
+export {
   sortTotalMoney,
   sortSupplierPrices,
   totalMoney
