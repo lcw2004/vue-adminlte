@@ -36,7 +36,7 @@
       </tbody>
     </table>
 
-    <UploadFile :config="config">
+    <UploadFile :config="config"></UploadFile>
   </div>
 </template>
 

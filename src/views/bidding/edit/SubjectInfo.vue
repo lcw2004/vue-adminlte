@@ -1,25 +1,25 @@
 <template>
-  <div class="box-body">
-    <div class="row">
-      <div class="col-md-6">
-        <div class="form-group">
-            <label class="control-label col-md-3">报价响应率</label>
-            <div class="col-md-5">
-              <div class="input-group">
-                <input type="text" class="form-control">
-                <span class="input-group-addon">%</span>
-              </div>
-            </div>
+<div class="box-body">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label class="control-label col-md-3">报价响应率</label>
+        <div class="col-md-5">
+          <div class="input-group">
+            <input type="text" class="form-control">
+            <span class="input-group-addon">%</span>
+          </div>
         </div>
       </div>
-      <div class="col-md-4"></div>
-      <div class="col-md-1">
-        <button type="button" class="btn btn-info btn-sm pull-right" @click="config.show = true">
+    </div>
+    <div class="col-md-4"></div>
+    <div class="col-md-1">
+      <button type="button" class="btn btn-info btn-sm pull-right" @click="config.show = true">
           <i class="fa fa-plus"></i>  导入标的
         </button>
-      </div>
-      <div class="col-md-1">
-        <button type="button" class="btn btn-info btn-sm pull-right" @click="config.show = true">
+    </div>
+    <div class="col-md-1">
+      <button type="button" class="btn btn-info btn-sm pull-right" @click="config.show = true">
           <i class="fa fa-plus"></i>  添加标的
         </button
       </div>
@@ -95,6 +95,7 @@
           </tbody>
         </table>
       </div>
+    </div>
   </div>
 </template>
 

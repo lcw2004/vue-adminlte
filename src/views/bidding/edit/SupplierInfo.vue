@@ -50,7 +50,7 @@
     </div>
   </div>
 
-  <SelectSupplier :config="config">
+  <SelectSupplier :config="config"></SelectSupplier>
 </div>
 </template>
 

@@ -10,15 +10,15 @@
         <label class="control-label">标的详情</label>
         <div class="radio inline">
           <label>
-              <input type="radio" value="1" v-model="showSubjectInfo">
-              是
-            </label>
+            <input type="radio" value="1" v-model="showSubjectInfo">
+            是
+          </label>
         </div>
         <div class="radio inline">
           <label>
-              <input type="radio" value="0" v-model="showSubjectInfo">
-              否
-            </label>
+            <input type="radio" value="0" v-model="showSubjectInfo">
+            否
+          </label>
         </div>
       </div>
     </div>
@@ -27,21 +27,21 @@
         <label class="control-label">报价</label>
         <div class="checkbox inline">
           <label>
-              <input type="checkbox" value="1" v-model="showPrices">
-              含税价
-            </label>
+            <input type="checkbox" value="1" v-model="showPrices">
+            含税价
+          </label>
         </div>
         <div class="checkbox inline">
           <label>
-              <input type="checkbox" value="2" v-model="showPrices">
-              剔税价
-            </label>
+            <input type="checkbox" value="2" v-model="showPrices">
+            剔税价
+          </label>
         </div>
         <div class="checkbox inline">
           <label>
-              <input type="checkbox" value="3" v-model="showPrices">
-              税率
-            </label>
+            <input type="checkbox" value="3" v-model="showPrices">
+            税率
+          </label>
         </div>
       </div>
     </div>
@@ -122,6 +122,7 @@
       </table>
     </div>
   </div>
+</div>
 </template>
 
 <script>
