@@ -117,6 +117,25 @@
               <td v-if="showPriceType('3')"></td>
             </template>
           </tr>
+
+          <tr>
+            <td></td>
+            <td>是否有技术偏离</td>
+
+            <template v-if="showSubjectInfo == '1'">
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </template>
+
+            <template v-for="supplier of supplierPricesSorted.suppliers">
+              <td><span class="label label-warning">是</span></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </template>
+          </tr>
           </tbody>
         </table>
       </table>

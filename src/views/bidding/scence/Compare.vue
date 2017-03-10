@@ -8,7 +8,10 @@
         <div class="col-md-5">
         </div>
         <div class="col-md-2">
-          <button type="button" class="btn btn-info btn-sm btn-block" @click="$router.go(-1)">
+          <button type="button" class="btn btn-info">
+            导出Excel
+          </button>
+          <button type="button" class="btn btn-info" @click="$router.go(-1)">
             返回
           </button>
         </div>
