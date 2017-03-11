@@ -61,6 +61,11 @@
         </div>
         <div class="box-body">
           <ol>
+            <li>3月11日
+              <ol>
+                <li>招标室管理</li>
+              </ol>
+            </li>
             <li>3月10日
               <ol>
                 <li>开标现场完善，澄清与回应功能</li>
