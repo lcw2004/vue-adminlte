@@ -6,17 +6,17 @@
         <ul class="nav nav-tabs">
           <li :class="{active : activeNav == 1}">
             <a data-toggle="tab" aria-expanded="false" @click="activeNav = 1">
-              <router-link to='/system/notice-namage' tag='span'>投标须知</router-link>
+              <router-link to='/system/notice' tag='span'>投标须知</router-link>
             </a>
           </li>
           <li :class="{active : activeNav == 2}" class="">
             <a data-toggle="tab" aria-expanded="true" @click="activeNav = 2">
-              <router-link to='/system/notice-namage' tag='span'>竞价须知</router-link>
+              <router-link to='/system/notice' tag='span'>竞价须知</router-link>
             </a>
           </li>
           <li :class="{active : activeNav == 3}" class="">
             <a data-toggle="tab" aria-expanded="true" @click="activeNav = 3">
-              <router-link to='/system/notice-namage' tag='span'>供应商注册须知</router-link>
+              <router-link to='/system/notice' tag='span'>供应商注册须知</router-link>
             </a>
           </li>
         </ul>
@@ -30,7 +30,7 @@
                   <div class="col-md-6">
                     <button type="button" class="btn btn-info btn-sm pull-right">
                       <i class="fa fa-plus"></i>
-                      <router-link to='/notice-tree-form' tag='span'>添加模板</router-link>
+                      <router-link to='/system/notice-tree-form' tag='span'>添加模板</router-link>
                     </button>
                   </div>
                 </form>
@@ -49,7 +49,7 @@
                       <td>1</td>
                       <td><a>模板1</a><span class="label label-primary">默认</span></td>
                       <td>
-                        <router-link to='/notice-tree-form'>编辑</router-link>
+                        <router-link to='/system/notice-tree-form'>编辑</router-link>
                         <a>删除</a>
                       </td>
                     </tr>
@@ -57,7 +57,7 @@
                       <td>2</td>
                       <td><a>模板2</a></td>
                       <td>
-                        <router-link to='/notice-tree-form'>编辑</router-link>
+                        <router-link to='/system/notice-tree-form'>编辑</router-link>
                         <a>删除</a>
                       </td>
                     </tr>
@@ -65,7 +65,7 @@
                       <td>3</td>
                       <td><a>模板3</a></td>
                       <td>
-                        <router-link to='/notice-tree-form'>编辑</router-link>
+                        <router-link to='/system/notice-tree-form'>编辑</router-link>
                         <a>删除</a>
                       </td>
                     </tr>
