@@ -42,6 +42,7 @@
                 <th>供应商名称</th>
                 <th>注册时间</th>
                 <th>联系人</th>
+                <th>手机号码</th>
                 <th>等级</th>
                 <th>操作</th>
               </tr>
@@ -50,6 +51,7 @@
                 <td><a>某某有限公司1</a></td>
                 <td>2017-01-01</td>
                 <td><a>张三</a></td>
+                <td>13999999999</td>
                 <td>
                   <span class="label label-danger">不合格供应商</span>
                 </td>
@@ -62,6 +64,7 @@
                 <td><a>某某有限公司2</a></td>
                 <td>2017-01-01</td>
                 <td><a>王五</a></td>
+                <td>13999999999</td>
                 <td>
                   <span class="label label-warning">预备供应商</span>
                 </td>
@@ -74,6 +77,7 @@
                 <td><a>某某有限公司3</a></td>
                 <td>2017-01-01</td>
                 <td><a>张三</a></td>
+                <td>13999999999</td>
                 <td>
                   <span class="label label-primary">合格供应商</span>
                 </td>
@@ -86,6 +90,7 @@
                 <td><a>某某有限公司4</a></td>
                 <td>2017-01-01</td>
                 <td><a>张三</a></td>
+                <td>13999999999</td>
                 <td>
                   <span class="label label-success">战略合作供应商</span>
                 </td>

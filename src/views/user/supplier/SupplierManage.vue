@@ -17,6 +17,7 @@
                   <th>供应商名称</th>
                   <th>注册时间</th>
                   <th>联系人</th>
+                  <th>手机号码</th>
                   <th>状态</th>
                   <th>操作</th>
                 </tr>
@@ -25,6 +26,7 @@
                   <td><router-link to="/supplier/info">某某有限公司</router-link></td>
                   <td>2017-01-01</td>
                   <td><a>张三</a></td>
+                  <td>13999999999</td>
                   <td>
                     <span class="label label-warning">审核驳回</span>
                   </td>
@@ -37,6 +39,7 @@
                   <td><router-link to="/supplier/info">某某有限公司</router-link></td>
                   <td>2017-01-01</td>
                   <td><a>张三</a></td>
+                  <td>13999999999</td>
                   <td>
                     <span class="label label-danger">停用</span>
                   </td>
@@ -46,10 +49,11 @@
                   </td>
                 </tr>
                 <tr>
-                  <td>1</td>
+                  <td>3</td>
                   <td><router-link to="/supplier/info">某某有限公司</router-link></td>
                   <td>2017-01-01</td>
                   <td><a>张三</a></td>
+                  <td>13999999999</td>
                   <td>
                     <span class="label label-warning">待审核</span>
                   </td>
@@ -58,16 +62,18 @@
                   </td>
                 </tr>
                 <tr>
-                  <td>1</td>
+                  <td>4</td>
                   <td><router-link to="/supplier/info">某某有限公司</router-link></td>
                   <td>2017-01-01</td>
                   <td><a>张三</a></td>
+                  <td>13999999999</td>
                   <td>
                     <span class="label label-success">正常</span>
                   </td>
                   <td>
                     <a>停用</a>
                     <a>删除</a>
+                    <a>黑名单</a>
                   </td>
                 </tr>
               </tbody>

@@ -17,6 +17,7 @@
                   <th>供应商名称</th>
                   <th>注册时间</th>
                   <th>联系人</th>
+                  <th>手机号码</th>
                   <th>审核项</th>
                   <th>状态</th>
                   <th>操作</th>
@@ -26,6 +27,7 @@
                   <td><a>某某有限公司</a></td>
                   <td>2017-01-01</td>
                   <td><a>张三</a></td>
+                  <td>13999999999</td>
                   <th>供应商注册</th>
                   <td>
                     <span class="label label-warning">待审核</span>
@@ -40,6 +42,7 @@
                   <td><a>某某有限公司</a></td>
                   <td>2017-01-01</td>
                   <td><a>张三</a></td>
+                  <td>13999999999</td>
                   <th>供应商资料变更</th>
                   <td>
                     <span class="label label-warning">待审核</span>
