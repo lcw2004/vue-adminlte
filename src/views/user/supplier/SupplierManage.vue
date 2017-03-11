@@ -31,6 +31,7 @@
                     <span class="label label-warning">审核驳回</span>
                   </td>
                   <td>
+                    <a>修改资料</a>
                     <a>删除</a>
                   </td>
                 </tr>
@@ -44,6 +45,7 @@
                     <span class="label label-danger">停用</span>
                   </td>
                   <td>
+                    <a>修改资料</a>
                     <a>启用</a>
                     <a>删除</a>
                   </td>
@@ -58,6 +60,7 @@
                     <span class="label label-warning">待审核</span>
                   </td>
                   <td>
+                    <a>修改资料</a>
                     <a>删除</a>
                   </td>
                 </tr>
@@ -71,6 +74,7 @@
                     <span class="label label-success">正常</span>
                   </td>
                   <td>
+                    <a>修改资料</a>
                     <a>停用</a>
                     <a>删除</a>
                     <a>黑名单</a>

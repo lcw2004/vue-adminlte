@@ -9,6 +9,7 @@
           <li :class="{active : step == 3}" @click="step = 3"><a>资质文件</a></li>
           <li :class="{active : step == 4}" @click="step = 4"><a>审核记录</a></li>
           <li :class="{active : step == 5}" @click="step = 5"><a>项目记录</a></li>
+          <li :class="{active : step == 6}" @click="step = 6"><a>调查记录</a></li>
         </ul>
         <div class="tab-content">
           <div class="tab-pane active">
@@ -17,6 +18,7 @@
             <Qualifications v-if="step == 3"></Qualifications>
             <AuditLog v-if="step == 4"></AuditLog>
             <Biddings v-if="step == 5"></Biddings>
+            <QuestionnaireInfo v-if="step == 6"></QuestionnaireInfo>
           </div>
         </div>
         <div class="box-footer">
@@ -35,6 +37,7 @@ import Contracts from './info/Contracts'
 import AuditLog from './info/AuditLog'
 import Biddings from './info/Biddings'
 import Qualifications from './info/Qualifications'
+import QuestionnaireInfo from './info/QuestionnaireInfo'
 
 export default {
   components: {
@@ -42,7 +45,8 @@ export default {
     Contracts,
     AuditLog,
     Biddings,
-    Qualifications
+    Qualifications,
+    QuestionnaireInfo
   },
   data: function () {
     return {
