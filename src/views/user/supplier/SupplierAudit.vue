@@ -29,7 +29,7 @@
                     <span class="label label-warning">待审核</span>
                   </td>
                   <td>
-                    <a @click="alertConfig.show = true">通过</a>
+                    <a @click="ok">通过</a>
                     <a @click="config.show = true">驳回</a>
                   </td>
                 </tr>
@@ -57,6 +57,11 @@ export default {
         show: false,
         title: '驳回原因'
       }
+    }
+  },
+  methods: {
+    ok () {
+      this.$confirm('确认审核通过吗？', () => this.$notify.success('提交成功，请等待审核！'))
     }
   }
 }
