@@ -57,6 +57,24 @@
                 </div>
                 <div class="col-md-12">
                   <div class="form-group">
+                    <label class="control-label col-md-2">是否要求报价</label>
+                    <div class="col-md-2">
+                      <div class="controls">
+                        <div class="radio inline">
+                          <label><input type="radio" :value="0" v-model="isRePrice">否</label>
+                        </div>
+                        <div class="radio inline">
+                          <label><input type="radio" :value="1" v-model="isRePrice">是</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-2" v-show="isRePrice == '1'">
+                      <button type="button" class="btn btn-primary" @click="rePriceConfig.show = true">选择需要报价的物料</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
                     <label class="control-label col-md-2">回应截止时间</label>
                     <div class="col-md-4">
                       <TimePicker/>
@@ -67,9 +85,7 @@
                   <div class="form-group">
                     <label class="control-label col-md-2">附件</label>
                     <div class="col-md-7">
-                      <a>
-                        <p class="form-control-static">下载</p>
-                      </a>
+                      <button type="button" class="btn btn-primary"><i class="fa fa-paperclip"></i> 上传附件</button>
                     </div>
                   </div>
                 </div>
@@ -92,11 +108,18 @@
       </div>
     </div>
   </div>
+
+  <BiddingClarifyRePrice :config="rePriceConfig"></BiddingClarifyRePrice>
 </div>
 </template>
 
 <script>
+import BiddingClarifyRePrice from './BiddingClarifyRePrice'
+
 export default {
+  components: {
+    BiddingClarifyRePrice
+  },
   props: {
     config: {
       type: Object,
@@ -105,10 +128,18 @@ export default {
   },
   data: function () {
     return {
-      type: '1'
+      type: '1',
+      isRePrice: '0',
+      rePriceConfig: {
+        title: '选择需要报价的物料',
+        show: true
+      }
     }
   },
   methods: {
+    selectSubject () {
+      console.log(1)
+    }
   }
 }
 </script>

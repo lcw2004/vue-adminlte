@@ -58,7 +58,7 @@ export default {
   data: function () {
     return {
       config: {
-        show: true,
+        show: false,
         title: '发布澄清'
       }
     }
