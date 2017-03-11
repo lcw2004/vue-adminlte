@@ -48,13 +48,14 @@
         </div>
       </div>
       <div class="row" >
-        <div class="col-md-4">
+        <div class="col-md-2">
         </div>
-        <div class="col-md-4">
+        <div class="col-md-6">
           <button type="button" class="btn btn-info">开标</button>
           <router-link to='/bidding/scene/compare' tag='button' class="btn btn-info">开标一览表</router-link>
+          <router-link to='/bidding/scene/clarify' tag='button' class="btn btn-info">澄清与回应</router-link>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-2">
         </div>
       </div>
 
