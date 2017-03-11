@@ -18,7 +18,7 @@ export default {
       ]
     },
     height: {
-      type: String,
+      type: [String, Number],
       default: '200px'
     },
     language: {
