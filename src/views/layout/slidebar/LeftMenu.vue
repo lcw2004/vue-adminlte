@@ -68,6 +68,7 @@
         <li><a><i class="fa fa-circle-o"></i><router-link to='/system/profession-type'>专业类别管理</router-link></a></li>
         <li><a><i class="fa fa-circle-o"></i><router-link to='/system/notice'>须知文件管理（投标、注册）</router-link></a></li>
         <li><a><i class="fa fa-circle-o"></i><router-link to='/system/room'>评标室管理</router-link></a></li>
+        <li><a><i class="fa fa-circle-o"></i><router-link to='/system/setting'>银行账户配置</router-link></a></li>
       </ul>
     </li>
     <li class="treeview">
