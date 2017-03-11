@@ -54,7 +54,7 @@
                   <span class="label label-danger">不合格供应商</span>
                 </td>
                 <td>
-                  <a>修改等级</a>
+                  <a @click="config.show = true">修改等级</a>
                 </td>
               </tr>
               <tr>
@@ -66,7 +66,7 @@
                   <span class="label label-warning">预备供应商</span>
                 </td>
                 <td>
-                  <a>升为合格供应商</a>
+                  <a @click="config.show = true">修改等级</a>
                 </td>
               </tr>
               <tr>
@@ -78,7 +78,7 @@
                   <span class="label label-primary">合格供应商</span>
                 </td>
                 <td>
-                  
+                  <a @click="config.show = true">修改等级</a>
                 </td>
               </tr>
               <tr>
@@ -90,6 +90,7 @@
                   <span class="label label-success">战略合作供应商</span>
                 </td>
                 <td>
+                  <a @click="config.show = true">修改等级</a>
                 </td>
               </tr>
             </tbody>
@@ -98,14 +99,25 @@
       </div>
     </div>
   </div>
+
+  <SupplierLevelUpdate :config="config"></SupplierLevelUpdate>
 </section>
 </template>
 
 <script>
+import SupplierLevelUpdate from './SupplierLevelUpdate'
+
 export default {
-  components: {},
+  components: {
+    SupplierLevelUpdate
+  },
   data: function () {
-    return {}
+    return {
+      config: {
+        title: '修改供应商等级',
+        show: true
+      }
+    }
   },
   methods: {}
 }
