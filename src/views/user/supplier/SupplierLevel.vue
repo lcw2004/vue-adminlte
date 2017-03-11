@@ -115,7 +115,7 @@ export default {
     return {
       config: {
         title: '修改供应商等级',
-        show: true
+        show: false
       }
     }
   },
