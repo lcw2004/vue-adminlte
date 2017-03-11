@@ -141,7 +141,6 @@
 import SelectExpertModal from './SelectExpertModal'
 
 export default {
-  name: 'SelectExpert',
   components: {
     SelectExpertModal
   },

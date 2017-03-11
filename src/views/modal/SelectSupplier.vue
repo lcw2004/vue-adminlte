@@ -65,7 +65,6 @@
 
 <script>
 export default {
-  name: 'SelectSupplier',
   props: {
     // 模态窗属性配置
     config: {

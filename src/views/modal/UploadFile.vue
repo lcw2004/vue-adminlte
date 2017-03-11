@@ -70,7 +70,6 @@
 
 <script>
 export default {
-  name: 'UploadFile',
   props: {
     // 模态窗属性配置
     config: {

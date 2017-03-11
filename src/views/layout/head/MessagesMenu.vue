@@ -79,7 +79,6 @@
 
 <script>
   export default{
-    name: 'MessagesMenu',
     data: function () {
       return {
         isOpen: false

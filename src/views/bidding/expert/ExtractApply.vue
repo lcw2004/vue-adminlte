@@ -114,7 +114,6 @@
 
 <script>
 export default {
-  name: 'ExtractApply',
   components: {
   },
   data: function () {

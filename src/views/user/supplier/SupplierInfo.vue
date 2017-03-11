@@ -37,7 +37,6 @@ import Biddings from './info/Biddings'
 import Qualifications from './info/Qualifications'
 
 export default {
-  name: 'SupplierInfo',
   components: {
     BaseInfo,
     Contracts,

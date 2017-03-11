@@ -86,6 +86,5 @@
 
 <script>
 export default {
-  name: 'BiddingManage'
 }
 </script>

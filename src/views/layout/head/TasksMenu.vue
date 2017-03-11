@@ -76,7 +76,6 @@
 
 <script>
   export default {
-    name: 'TasksMenu',
     data: function () {
       return {
         isOpen: false

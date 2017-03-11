@@ -57,7 +57,6 @@
 <script>
 import SelectSupplier from '../../modal/SelectSupplier'
 export default {
-  name: 'SupplierInfo',
   components: {
     SelectSupplier
   },

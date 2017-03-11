@@ -18,7 +18,6 @@ import MainContent from './MainContent'
 import ControlSidebar from './ControlSidebar'
 
 export default {
-  name: 'home',
   components: {
     MainHead,
     MainSlidebar,

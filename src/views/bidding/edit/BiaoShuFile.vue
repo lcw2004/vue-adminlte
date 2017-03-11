@@ -44,7 +44,6 @@
 import UploadFile from '../../modal/UploadFile'
 
 export default {
-  name: 'BiaoShuFile',
   components: {
     UploadFile
   },

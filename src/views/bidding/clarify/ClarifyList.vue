@@ -50,7 +50,6 @@
 import ClarifyAddModal from './ClarifyAddModal'
 
 export default {
-  name: 'ClarifyList',
   components: {
     ClarifyAddModal
   },

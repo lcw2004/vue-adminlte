@@ -30,7 +30,6 @@ import ClarifyList from './clarify/ClarifyList'
 import Question from './clarify/Question'
 
 export default {
-  name: 'BiddingClarify',
   components: {
     ClarifyInfo,
     ClarifyList,

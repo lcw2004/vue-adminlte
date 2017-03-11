@@ -24,7 +24,6 @@ import ProjectInfo from './ProjectInfo'
 import BiddingOpen from './BiddingOpen'
 
 export default {
-  name: 'Home',
   components: {
     Chat,
     ProjectInfo,

@@ -76,7 +76,6 @@
 import NoticeChapterInfo from './NoticeChapterInfo'
 
 export default {
-  name: 'NoticeTreeForm',
   components: {
     NoticeChapterInfo
   },

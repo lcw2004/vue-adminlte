@@ -76,7 +76,6 @@
 
 <script>
 export default {
-  name: 'ClarifyInfo',
   components: {
   },
   props: {

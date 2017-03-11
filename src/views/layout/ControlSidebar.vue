@@ -191,6 +191,5 @@
 
 <script>
 export default {
-  name: 'ControlSidebar'
 }
 </script>

@@ -146,7 +146,6 @@
 
 <script>
 export default {
-  name: 'MyBidding',
   components: {
   },
   data: function () {

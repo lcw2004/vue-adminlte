@@ -140,7 +140,6 @@
 
 <script>
 export default {
-  name: 'BiddingTimeManage',
   components: {
   },
   data: function () {

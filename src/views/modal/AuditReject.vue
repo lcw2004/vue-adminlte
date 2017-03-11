@@ -26,7 +26,6 @@
 
 <script>
 export default {
-  name: 'AuditReject',
   props: {
     // 模态窗属性配置
     config: {

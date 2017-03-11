@@ -6,7 +6,6 @@
 
 <script>
 export default {
-  name: 'AuditProgress',
   data () {
     return {}
   }

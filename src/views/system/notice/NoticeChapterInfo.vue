@@ -13,7 +13,6 @@
 
 <script>
 export default {
-  name: 'NoticeChapterInfo',
   components: {
   },
   data: function () {

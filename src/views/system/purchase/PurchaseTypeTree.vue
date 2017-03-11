@@ -10,7 +10,6 @@
 import Tree from '../../components/tree/Tree'
 
 export default {
-  name: 'PurchaseTypeTree',
   components: {
     Tree
   },

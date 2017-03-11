@@ -136,7 +136,6 @@
 import BSwitch from '../../../components/base/BSwitch'
 
 export default {
-  name: 'UserBiddingPermissionInfo',
   components: {
     BSwitch
   }

@@ -68,7 +68,6 @@
 import AuditReject from '../modal/AuditReject'
 
 export default {
-  name: 'BiddingAudit',
   components: {
     AuditReject
   },

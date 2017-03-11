@@ -14,7 +14,6 @@
 import Contact from './Contact'
 
 export default {
-  name: 'Contacts',
   components: {
     Contact
   },

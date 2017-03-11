@@ -89,7 +89,6 @@
 
 <script>
 export default {
-  name: 'BaseInfo',
   components: {
   },
   data: function () {

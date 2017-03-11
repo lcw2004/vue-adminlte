@@ -88,7 +88,6 @@
 
 <script>
 export default {
-  name: 'Contracts',
   components: {
   },
   data: function () {

@@ -69,7 +69,6 @@
 
 <script>
 export default {
-  name: 'ProfessionTypeModal',
   props: {
     config: {
       type: Object,

@@ -16,7 +16,6 @@
 <script>
 import UserBiddingPermissionInfo from './permission/UserBiddingPermissionInfo'
 export default {
-  name: 'BiddingPermissionInfo',
   components: {
     UserBiddingPermissionInfo
   }

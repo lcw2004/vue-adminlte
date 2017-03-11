@@ -9,7 +9,6 @@ import $ from 'jquery'
 import {isInFullScreen, toggleFullScreen, bindFullScreenEvent} from '../../../utils/fullscreen'
 
 export default {
-  name: 'FullScreenBtn',
   props: {
     id: {
       type: String,

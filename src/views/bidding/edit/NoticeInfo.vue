@@ -25,7 +25,6 @@
 import NoticeChapterInfo from '../../system/notice/NoticeChapterInfo'
 
 export default {
-  name: 'NoticeInfo',
   components: {
     NoticeChapterInfo
   },

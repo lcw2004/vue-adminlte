@@ -63,7 +63,6 @@
 
 <script>
 export default {
-  name: 'SelectExpertModal',
   props: {
     config: {
       type: Object,

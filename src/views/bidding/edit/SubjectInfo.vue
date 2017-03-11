@@ -101,6 +101,5 @@
 
 <script>
 export default {
-  name: 'SubjectInfo'
 }
 </script>

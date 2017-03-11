@@ -90,6 +90,5 @@
 
 <script>
 export default {
-  name: 'BiddingPermission'
 }
 </script>

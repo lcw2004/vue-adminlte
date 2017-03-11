@@ -26,7 +26,6 @@
 import CompareDetail from './CompareDetail'
 
 export default {
-  name: 'Compare',
   components: {
     CompareDetail
   }

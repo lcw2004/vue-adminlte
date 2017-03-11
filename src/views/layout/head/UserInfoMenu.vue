@@ -44,7 +44,6 @@
 
 <script>
   export default {
-    name: 'UserInfoMenu',
     data: function () {
       return {
         isOpen: false

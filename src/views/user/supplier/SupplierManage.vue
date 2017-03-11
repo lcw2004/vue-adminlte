@@ -105,7 +105,6 @@
 
 <script>
 export default {
-  name: 'SupplierManage',
   components: {
   },
   data: function () {

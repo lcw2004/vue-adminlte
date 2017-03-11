@@ -53,7 +53,6 @@ import PurchaseTypeModal from './PurchaseTypeModal'
 
 export default {
   mixins: [TreeTableMiXin],
-  name: 'PurchaseType',
   components: {
     TreeTableColPrefix,
     PurchaseTypeModal

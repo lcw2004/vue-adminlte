@@ -6,7 +6,6 @@
 import Home from './views/layout/Home'
 
 export default {
-  name: 'app',
   components: {
     Home
   }

@@ -69,7 +69,6 @@
 
 <script>
 export default {
-  name: 'PurchaseTypeModal',
   props: {
     config: {
       type: Object,

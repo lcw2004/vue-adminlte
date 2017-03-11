@@ -152,7 +152,6 @@
 
 <script>
 export default {
-  name: 'BaseInfo',
   components: {
   }
 }

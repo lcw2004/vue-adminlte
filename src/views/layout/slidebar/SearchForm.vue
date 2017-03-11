@@ -12,6 +12,5 @@
 
 <script>
 export default {
-  name: 'SearchForm'
 }
 </script>

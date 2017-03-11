@@ -9,7 +9,6 @@
 import ChatMessage from './ChatMessage'
 
 export default {
-  name: 'ChatMessages',
   components: {
     ChatMessage
   },

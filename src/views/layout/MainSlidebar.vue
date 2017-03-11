@@ -14,7 +14,6 @@
   import LeftMenu from './slidebar/LeftMenu'
 
   export default {
-    name: 'MainSlidebar',
     components: {
       UserPanel,
       SearchForm,

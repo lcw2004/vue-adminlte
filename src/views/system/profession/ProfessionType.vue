@@ -53,7 +53,6 @@ import ProfessionTypeModal from './ProfessionTypeModal'
 
 export default {
   mixins: [TreeTableMiXin],
-  name: 'ProfessionType',
   components: {
     TreeTableColPrefix,
     ProfessionTypeModal

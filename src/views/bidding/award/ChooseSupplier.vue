@@ -35,7 +35,6 @@ import { sortTotalMoney, sortSupplierPrices, totalMoney } from '../scence/suppli
 import SupplierPriceUnit from '../scence/SupplierPriceUnit'
 
 export default {
-  name: 'ChooseSupplier',
   components: {
     SupplierPriceUnit
   },

@@ -151,7 +151,6 @@ import SupplierPriceUnit from './SupplierPriceUnit'
 import { sortTotalMoney, sortSupplierPrices, totalMoney } from './supplier'
 
 export default {
-  name: 'CompareDetail',
   components: {
     SupplierPriceUnit
   },

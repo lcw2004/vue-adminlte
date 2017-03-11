@@ -59,7 +59,6 @@
 
 <script>
 export default {
-  name: 'Qualifications',
   components: {
   },
   data: function () {

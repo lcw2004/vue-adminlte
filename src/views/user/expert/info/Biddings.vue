@@ -6,7 +6,6 @@
 
 <script>
 export default {
-  name: 'Biddings',
   components: {
   },
   data: function () {

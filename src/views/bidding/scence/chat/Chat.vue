@@ -31,7 +31,6 @@ import ChatMessages from './ChatMessages'
 import Contacts from './Contacts'
 
 export default {
-  name: 'Chat',
   components: {
     ChatMessages,
     Contacts

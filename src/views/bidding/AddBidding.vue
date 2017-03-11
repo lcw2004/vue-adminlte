@@ -58,7 +58,6 @@ import BiaoShuFile from './edit/BiaoShuFile'
 import TouBiaoFile from './edit/TouBiaoFile'
 
 export default {
-  name: 'AddBidding',
   components: {
     BaseInfo,
     SubjectInfo,

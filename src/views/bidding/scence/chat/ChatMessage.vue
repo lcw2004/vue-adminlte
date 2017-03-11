@@ -13,7 +13,6 @@
 
 <script>
 export default {
-  name: 'ChatMessage',
   props: {
     slide: {
       default: 'left'

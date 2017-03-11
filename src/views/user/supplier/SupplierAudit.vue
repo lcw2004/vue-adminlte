@@ -48,7 +48,6 @@
 import AuditReject from '../../modal/AuditReject'
 
 export default {
-  name: 'SupplierAudit',
   components: {
     AuditReject
   },

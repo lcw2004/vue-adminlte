@@ -78,7 +78,6 @@
 
 <script>
 export default {
-  name: 'BiddingOpen',
   components: {
   },
   data: function () {

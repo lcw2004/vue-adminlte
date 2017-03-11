@@ -10,7 +10,6 @@
 
 <script>
   export default {
-    name: 'MainFooter',
     computed: {
       setting: function () {
         return this.$store.state.setting

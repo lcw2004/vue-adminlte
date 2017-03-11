@@ -87,6 +87,5 @@
 
 <script>
 export default {
-  name: 'ProjectInfo'
 }
 </script>

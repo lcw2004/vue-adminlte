@@ -41,7 +41,6 @@ import ChooseSupplier from './ChooseSupplier'
 import PreAdwardSupplier from './PreAdwardSupplier'
 
 export default {
-  name: 'BiddingPreAward',
   components: {
     CompareDetail,
     ExpertSuggestion,

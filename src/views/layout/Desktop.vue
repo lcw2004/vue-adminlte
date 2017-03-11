@@ -76,6 +76,5 @@
 
 <script>
   export default {
-    name: 'Desktop'
   }
 </script>

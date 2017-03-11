@@ -129,7 +129,6 @@
 
 <script>
 export default {
-  name: 'SummaryInfo',
   components: {}
 }
 </script>

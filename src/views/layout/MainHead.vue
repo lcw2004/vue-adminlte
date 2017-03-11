@@ -35,7 +35,6 @@
   import UserInfoMenu from './head/UserInfoMenu'
 
   export default {
-    name: 'MainHead',
     components: {
       MessagesMenu,
       NotificationsMenu,
