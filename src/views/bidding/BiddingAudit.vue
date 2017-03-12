@@ -17,7 +17,10 @@
                   <th>项目编号</th>
                   <th>项目名称</th>
                   <th>项目类型</th>
+                  <th>项目经理</th>
+                  <th>业主单位</th>
                   <th>发布日期</th>
+                  <th>开标时间</th>
                   <th>状态</th>
                   <th>操作</th>
                 </tr>
@@ -26,7 +29,10 @@
                   <td><a>ZB201701160009</a></td>
                   <td>测试3</td>
                   <td>邀请招标</td>
+                  <td>张三</td>
+                  <td>某某业主单位</td>
                   <td>2017-01-16</td>
+                  <td>2017-03-16 12:00:00</td>
                   <td>已提交审核
                     <span class="label label-default">待审核</span>
                   </td>
@@ -44,7 +50,10 @@
                   <td><a>ZB201701160009</a></td>
                   <td>测试3</td>
                   <td>邀请招标</td>
+                  <td>张三</td>
+                  <td>某某业主单位</td>
                   <td>2017-01-16</td>
+                  <td>2017-03-16 12:00:00</td>
                   <td>已提交审核
                     <span class="label label-default">待审核</span>
                   </td>
