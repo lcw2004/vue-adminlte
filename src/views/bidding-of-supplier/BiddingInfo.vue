@@ -1,11 +1,11 @@
 <template>
 <section class="content">
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-6">
       <TimeLine></TimeLine>
     </div>
 
-    <div class="col-md-8">
+    <div class="col-md-6">
       <ProjectInfo></ProjectInfo>
     </div>
   </div>
