@@ -33,8 +33,7 @@
                     <span class="label label-warning">待审核</span>
                   </td>
                   <td>
-                    <a><router-link to='/bidding/create'>编辑</router-link></a>
-                    <a>删除</a>
+                    <a><router-link to='/bidding/bidding-info'>查看详情</router-link></a>
                   </td>
                 </tr>
                 <tr>
@@ -48,7 +47,7 @@
                     <span class="label label-success">审核通过</span>
                   </td>
                   <td>
-                    <a><router-link to='/bidding/audit-progress'>审核进度</router-link></a>
+                    <a><router-link to='/bidding/bidding-info'>查看详情</router-link></a>
                   </td>
                 </tr>
                 <tr>
@@ -60,8 +59,7 @@
                   <td>2017-03-16 12:00:00</td>
                   <td>开标中</td>
                   <td>
-                    <a><router-link to='/bidding/clarify'>澄清</router-link></a>
-                    <a>负责人签到（开标时间当天显示）</a>
+                    <a><router-link to='/bidding/bidding-info'>查看详情</router-link></a>
                   </td>
                 </tr>
                 <tr>
@@ -73,8 +71,7 @@
                   <td>2017-03-16 12:00:00</td>
                   <td>开标结束，等待结果</td>
                   <td>
-                    <a><router-link to='/bidding/clarify'>澄清</router-link></a>
-                    <a>负责人签到（开标时间当天显示）</a>
+                    <a><router-link to='/bidding/bidding-info'>查看详情</router-link></a>
                   </td>
                 </tr>
                 <tr>
@@ -86,8 +83,7 @@
                   <td>2017-03-16 12:00:00</td>
                   <td>已中标</td>
                   <td>
-                    <a><router-link to='/bidding/clarify'>澄清</router-link></a>
-                    <a>负责人签到（开标时间当天显示）</a>
+                    <a><router-link to='/bidding/bidding-info'>查看详情</router-link></a>
                   </td>
                 </tr>
               </tbody>

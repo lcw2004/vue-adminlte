@@ -18,56 +18,44 @@
                   <th>项目名称</th>
                   <th>项目类型</th>
                   <th>发布日期</th>
-                  <th>开标时间</th>
-                  <th>状态</th>
+                  <th>报名截止日期</th>
+                  <th>报名状态</th>
                   <th>操作</th>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td><a>ZB201701160009</a></td>
+                  <td>测试1</td>
+                  <td>公开招标</td>
+                  <td>2017-01-16</td>
+                  <td>2017-03-16 12:00:00</td>
+                  <td>审核中</td>
+                  <td>
+                    <a>报名</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td><a>ZB201701160009</a></td>
+                  <td>测试2</td>
+                  <td>公开招标</td>
+                  <td>2017-01-16</td>
+                  <td>2017-03-16 12:00:00</td>
+                  <td>审核驳回</td>
+                  <td>
+                    <a>报名</a>
+                  </td>
                 </tr>
                 <tr>
                   <td>3</td>
                   <td><a>ZB201701160009</a></td>
                   <td>测试3</td>
-                  <td>邀请招标</td>
+                  <td>公开招标</td>
                   <td>2017-01-16</td>
                   <td>2017-03-16 12:00:00</td>
-                  <td>审核通过，等待开标</td>
+                  <td>审核驳回</td>
                   <td>
-                    <router-link to='/bidding/permission-info'>权限管理</router-link>
-                  </td>
-                </tr>
-                <tr>
-                  <td>4</td>
-                  <td><a>ZB201701160009</a></td>
-                  <td>测试4</td>
-                  <td>邀请招标</td>
-                  <td>2017-01-16</td>
-                  <td>2017-03-16 12:00:00</td>
-                  <td>开标中</td>
-                  <td>
-                    <router-link to='/bidding/permission-info'>权限管理</router-link>
-                  </td>
-                </tr>
-                <tr>
-                  <td>5</td>
-                  <td><a>ZB201701160009</a></td>
-                  <td>测试5</td>
-                  <td>邀请招标</td>
-                  <td>2017-01-16</td>
-                  <td>2017-03-16 12:00:00</td>
-                  <td>开标结束，预售标</td>
-                  <td>
-                    <router-link to='/bidding/permission-info'>权限管理</router-link>
-                  </td>
-                </tr>
-                <tr>
-                  <td>6</td>
-                  <td><a>ZB201701160009</a></td>
-                  <td>测试5</td>
-                  <td>邀请招标</td>
-                  <td>2017-01-16</td>
-                  <td>2017-03-16 12:00:00</td>
-                  <td>授标结束，待归档</td>
-                  <td>
-                    <router-link to='/bidding/permission-info'>权限管理</router-link>
+                    <a>取消报名</a>
                   </td>
                 </tr>
               </tbody>
@@ -85,7 +73,9 @@
             <h3 class="box-title">备注</h3>
           </div>
           <div class="box-body">
-            <p class="text-muted">只有审核通过、开标中、开标结束、授标结束状态的可以更改权限，其他状态的数据不在这里显示</p>
+            <ol>
+              <li></li>
+            </ol>
           </div>
         </div>
       </div>
@@ -95,5 +85,13 @@
 
 <script>
 export default {
+  components: {
+  },
+  data: function () {
+    return {
+    }
+  },
+  methods: {
+  }
 }
 </script>

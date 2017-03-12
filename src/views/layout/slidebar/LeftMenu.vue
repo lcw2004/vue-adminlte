@@ -118,6 +118,7 @@
       </a>
       <ul class="treeview-menu">
         <li><a><i class="fa fa-circle-o"></i><router-link to='/bidding/bidding-of-supplier'>我的投标项目</router-link></a></li>
+        <li><a><i class="fa fa-circle-o"></i><router-link to='/bidding/bidding-can-join'>可参与项目</router-link></a></li>
       </ul>
     </li>
   </ul>
