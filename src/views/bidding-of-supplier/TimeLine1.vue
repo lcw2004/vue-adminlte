@@ -58,7 +58,7 @@
 
       <!-- 中标公示 -->
       <li>
-        <i class="fa fa-upload bg-blue"></i>
+        <i class="fa fa-newspaper-o bg-blue"></i>
         <div class="timeline-item">
           <span class="time"><i class="fa fa-clock-o"></i> 2017-03-04 12:05</span>
           <h3 class="timeline-header">中标公示</h3>
@@ -67,7 +67,7 @@
 
       <!-- 废标 -->
       <li>
-        <i class="fa fa-upload bg-blue"></i>
+        <i class="fa fa-recycle bg-blue"></i>
         <div class="timeline-item">
           <span class="time"><i class="fa fa-clock-o"></i> 2017-03-04 12:05</span>
           <h3 class="timeline-header">废标</h3>

@@ -46,11 +46,11 @@
         <div class="timeline-item">
           <h3 class="timeline-header">提问与澄清</h3>
           <div class="timeline-body">
-            <p class="text-red">共有<span class="label label-danger">2</span>条澄清，<a>点击查看</a></p>
-            <p class="text-red">共有<span class="label label-danger">2</span>条回答，<a>点击查看</a></p>
+            <p class="text-red">共有<span class="label label-danger">1</span>条澄清，<router-link to='/bidding/s/questions'>点击查看</router-link></p>
+            <p class="text-red">共有<span class="label label-danger">1</span>条回答，<router-link to='/bidding/s/clarifies'>点击查看</router-link></p>
           </div>
           <div class="timeline-footer">
-            <a class="btn btn-primary btn-sm">提问</a>
+            <a class="btn btn-primary btn-sm" @click="config.show = true">提问</a>
           </div>
         </div>
       </li>
@@ -122,14 +122,25 @@
     </TimeLine>
 
   </div>
+
+  <AskQuestion :config="config"></AskQuestion>
 </div>
 </template>
 
 <script>
+import AskQuestion from './clarify/AskQuestion'
+
 export default {
-  components: {},
+  components: {
+    AskQuestion
+  },
   data: function () {
-    return {}
+    return {
+      config: {
+        title: '提问',
+        show: false
+      }
+    }
   },
   methods: {}
 }
