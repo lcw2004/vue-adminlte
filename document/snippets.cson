@@ -1,0 +1,398 @@
+# Your snippets
+#
+# Atom snippets allow you to enter a simple prefix in the editor and hit tab to
+# expand the prefix into a larger code block with templated values.
+#
+# You can create a new snippet in this file by typing "snip" and then hitting
+# tab.
+#
+# An example CoffeeScript snippet to expand log to console.log:
+#
+# '.source.coffee':
+#   'Console log':
+#     'prefix': 'log'
+#     'body': 'console.log $1'
+#
+# Each scope (e.g. '.source.coffee' above) can only be declared once.
+#
+# This file uses CoffeeScript Object Notation (CSON).
+# If you are unfamiliar with CSON, you can read more about it in the
+# Atom Flight Manual:
+# http://flight-manual.atom.io/using-atom/sections/basic-customization/#_cson
+
+# Vue模板文件
+'.vue':
+  'Vue Base with methods':
+    'prefix': 'vuea'
+    'body': """
+    <template>
+      <div>
+        $1
+      </div>
+    </template>
+
+    <script>
+    export default {
+      components: {
+      },
+      data: function () {
+        return {
+        }
+      },
+      methods: {
+      }
+    }
+    </script>
+    """
+
+# Vue模态窗
+  'Vue模态窗':
+    'prefix': 'vuem'
+    'body': """
+    <template>
+    <div class="modal" v-show="config.show" style="display: block">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" @click="config.show = false">
+              <span aria-hidden="true">×</span>
+            </button>
+            <h4 class="modal-title" v-text="config.title"></h4>
+          </div>
+          <div class="modal-body">
+            $1
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default " data-dismiss="modal" @click="config.show = false">取消</button>
+            <button type="button" class="btn btn-primary" @click="select()">确认</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    </template>
+
+    <script>
+    export default {
+      props: {
+        config: {
+          type: Object,
+          required: true
+        }
+      },
+      data: function () {
+        return {
+        }
+      },
+      methods: {
+      }
+    }
+    </script>
+    """
+
+######################################################
+####### 容器类
+######################################################
+# bootstrap section
+  'Bootstrap section':
+    'prefix': 'bsection'
+    'body': """
+      <section class="content">
+        <div class="row">
+          <div class="col-md-12$2">
+            $1
+          </div>
+        </div>
+      </section>
+    """
+
+# bootstrap box
+  'Bootstrap box':
+    'prefix': 'bbox'
+    'body': """
+      <div class="box">
+        <div class="box-header">
+          <h3 class="box-title">$1</h3>
+        </div>
+        <div class="box-body">
+          $2
+        </div>
+        <div class="box-footer">
+          $3
+        </div>
+      </div>
+    """
+
+# bootstrap box
+  'Bootstrap box':
+    'prefix': 'bbox-solid'
+    'body': """
+      <div class="box box-solid">
+        <div class="box-header">
+          <h3 class="box-title">$1</h3>
+        </div>
+        <div class="box-body">
+          $2
+        </div>
+        <div class="box-footer">
+          $3
+        </div>
+      </div>
+    """
+
+# bootstrap head
+  'Bootstrap head':
+    'prefix': 'bhead'
+    'body': """
+        <h4 class="page-header">$1</h4>
+    """
+
+# bootstrap row
+  'Bootstrap row':
+    'prefix': 'brow'
+    'body': """
+        <div class="row">
+          <div class="col-md-12$2">
+            $1
+          </div>
+        </div>
+    """
+
+# bootstrap col
+  'Bootstrap col':
+    'prefix': 'bcol'
+    'body': """
+        <div class="col-md-12$2">
+          $1
+        </div>
+    """
+
+# bootstrap remark
+  'Bootstrap remark':
+    'prefix': 'bremark'
+    'body': """
+      <div class="row">
+        <div class="col-md-12">
+          <div class="box box-solid">
+            <div class="box-header with-border">
+              <i class="fa fa-text-width"></i>
+              <h3 class="box-title">备注</h3>
+            </div>
+            <div class="box-body">
+              <ol>
+                <li>$1
+                  <ol>
+                    <li>$2</li>
+                  </ol>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    """
+
+
+######################################################
+####### 表单类
+######################################################
+# bootstrap form
+  'Bootstrap form':
+    'prefix': 'bform'
+    'body': """
+      <form class="form-horizontal">
+        $1
+      </form>
+    """
+  'Bootstrap form input':
+    'prefix': 'bform-input'
+    'body': """
+      <div class="form-group">
+        <label class="control-label col-md-4$3">$1</label>
+        <div class="col-md-8$3">
+          <div class="input-group">
+            <input type="text" class="form-control" $2>
+          </div>
+        </div>
+      </div>
+    """
+  'Bootstrap form input with btn':
+    'prefix': 'bform-input-btn'
+    'body': """
+      <div class="form-group">
+        <label class="control-label col-md-4$3">$1</label>
+        <div class="col-md-8$3">
+          <div class="input-group">
+            <input type="text" class="form-control" $2>
+            <span class="input-group-btn">
+              <button type="button" class="btn btn-primary btn-flat">选择</button>
+            </span>
+          </div>
+        </div>
+      </div>
+      """
+  'Bootstrap form radio':
+    'prefix': 'bform-radio'
+    'body': """
+      <div class="form-group">
+        <label class="control-label col-md-4$3">$1</label>
+        <div class="col-md-8$3">
+          <div class="controls">
+            <div class="radio inline">
+              <label><input type="radio" value="1">$1</label>
+            </div>
+            <div class="radio inline">
+              <label><input type="radio" value="2">$2</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    """
+  'Bootstrap form checkbox':
+    'prefix': 'bform-checkbox'
+    'body': """
+      <div class="form-group">
+        <label class="control-label col-md-4$5">$1</label>
+        <div class="col-md-8$4">
+          <div class="controls">
+            <div class="checkbox inline">
+              <label>
+                <input type="checkbox">
+                $2
+              </label>
+            </div>
+            <div class="checkbox inline">
+              <label>
+                <input type="checkbox">
+                $3
+              </label>
+            </div>
+            <div class="checkbox inline">
+              <label>
+                <input type="checkbox">
+                $4
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    """
+  'Bootstrap form text':
+    'prefix': 'bform-text'
+    'body': """
+      <div class="form-group">
+        <label class="control-label col-md-4$3">$1</label>
+        <div class="col-md-8$3">
+          <p class="form-control-static">$2</p>
+        </div>
+      </div>
+    """
+  'Bootstrap form select':
+    'prefix': 'bform-select'
+    'body': """
+      <div class="form-group">
+        <label class="control-label col-md-4">$1</label>
+        <div class="col-md-8">
+          <select class="form-control">
+            <option>$2</option>
+            <option>$3</option>
+          </select>
+        </div>
+      </div>
+    """
+  'Bootstrap form textarea':
+    'prefix': 'bform-textarea'
+    'body': """
+      <div class="form-group">
+        <label class="control-label col-md-$2">$1</label>
+        <div class="col-md-$3">
+          <textarea class="form-control" rows="3$4"></textarea>
+        </div>
+      </div>
+    """
+
+######################################################
+####### 元素类
+######################################################
+# bootstrap button
+  'Bootstrap button default':
+    'prefix': 'bbtn-default'
+    'body': """
+      <button type="button" class="btn btn-default">
+        $1
+      </button>
+    """
+
+  'Bootstrap button info':
+    'prefix': 'bbtn-info'
+    'body': """
+      <button type="button" class="btn btn-info">
+        $1
+      </button>
+    """
+
+  'Bootstrap button primary':
+    'prefix': 'bbtn-primary'
+    'body': """
+      <button type="button" class="btn btn-primary">
+        $1
+      </button>
+    """
+
+  'Bootstrap button danger':
+    'prefix': 'bbtn-danger'
+    'body': """
+      <button type="button" class="btn btn-danger">
+        $1
+      </button>
+    """
+
+  'Bootstrap label success':
+    'prefix': 'blabel-success'
+    'body': """
+      <span class="label label-success">$1</span>
+    """
+
+  'Bootstrap label warning':
+    'prefix': 'blabel-warning'
+    'body': """
+      <span class="label label-warning">$1</span>
+    """
+
+  'Bootstrap label primary':
+    'prefix': 'blabel-primary'
+    'body': """
+      <span class="label label-primary">$1</span>
+    """
+
+  'Bootstrap label danger':
+    'prefix': 'blabel-danger'
+    'body': """
+      <span class="label label-danger">$1</span>
+    """
+
+
+######################################################
+####### 表格类
+######################################################
+  'Bootstrap table':
+    'prefix': 'btable'
+    'body': """
+      <table class="table table-bordered">
+        <tbody>
+          <tr>
+            <th style="width: 10px">#</th>
+            <th>$1</th>
+            <th>$2</th>
+            <th>$3</th>
+            <th>$4</th>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>$5</td>
+            <td>$6</td>
+            <td>$7</td>
+            <td>$8</td>
+          </tr>
+        </tbody>
+      </table>
+    """
