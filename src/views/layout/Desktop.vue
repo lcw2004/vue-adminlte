@@ -61,6 +61,12 @@
         </div>
         <div class="box-body">
           <ol>
+            <li>3月12日
+              <ol>
+                <li>供应商投标类别审核</li>
+                <li>专家投标类别审核</li>
+              </ol>
+            </li>
             <li>3月11日
               <ol>
                 <li>招标室管理</li>

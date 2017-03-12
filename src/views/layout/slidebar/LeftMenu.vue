@@ -42,6 +42,7 @@
         <li><a><i class="fa fa-circle-o"></i><router-link to='/supplier/level'>供应商等级管理</router-link></a></li>
         <li><a><i class="fa fa-circle-o"></i><router-link to='/supplier/questionnaire'>供应商调查</router-link></a></li>
         <li><a><i class="fa fa-circle-o"></i><router-link to='/supplier/audit'>供应商审核</router-link></a></li>
+        <li><a><i class="fa fa-circle-o"></i><router-link to='/supplier/purchase-audit'>供应商投标类别审核</router-link></a></li>
         <li><a><i class="fa fa-circle-o"></i><router-link to='/supplier/blacklist'>供应商黑名单</router-link></a></li>
       </ul>
     </li>
