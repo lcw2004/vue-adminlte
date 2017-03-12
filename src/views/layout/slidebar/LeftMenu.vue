@@ -19,7 +19,7 @@
         </span>
       </a>
       <ul class="treeview-menu">
-        <li class="active"><a><i class="fa fa-circle-o"></i><router-link to='/bidding/mine'>我的招标项目</router-link></a></li>
+        <li class="active"><a><i class="fa fa-circle-o"></i><router-link to='/bidding/of-manager'>我的招标项目</router-link></a></li>
         <li><a><i class="fa fa-circle-o"></i><router-link to='/bidding/create'>招标项目发布</router-link></a></li>
         <li><a><i class="fa fa-circle-o"></i><router-link to='/bidding/manage'>招标项目管理</router-link></a></li>
         <li><a><i class="fa fa-circle-o"></i><router-link to='/bidding/permission'>投标权限管理</router-link></a></li>
@@ -97,10 +97,9 @@
         </span>
       </a>
       <ul class="treeview-menu">
-        <li><a><i class="fa fa-circle-o"></i>招投标项目评审</a></li>
+        <li><a><i class="fa fa-circle-o"></i><router-link to='/bidding/of-expert'>招投标项目评审</router-link></a></li>
       </ul>
     </li>
-
 
     <li class="header">供应商</li>
     <li class="treeview">
@@ -118,7 +117,7 @@
         </span>
       </a>
       <ul class="treeview-menu">
-        <li><a><i class="fa fa-circle-o"></i>我的投标项目</a></li>
+        <li><a><i class="fa fa-circle-o"></i><router-link to='/bidding/of-supplier'>我的投标项目</router-link></a></li>
       </ul>
     </li>
   </ul>
