@@ -16,6 +16,11 @@ import TreeTableColPrefix from './tree/TreeTableColPrefix'
 // button
 import FullButton from './button/FullButton'
 
+// Timeline
+import TimeLine from './timeline/TimeLine'
+import TimeLabel from './timeline/TimeLabel'
+import TimeItem from './timeline/TimeItem'
+
 import notify from './notify'
 import confirm from './confirm'
 import progress from './progress'
@@ -36,6 +41,11 @@ function initGlobalComponents () {
 
   // button
   Vue.component(FullButton.name, FullButton)
+
+  // Timeline
+  Vue.component(TimeLine.name, TimeLine)
+  Vue.component(TimeLabel.name, TimeLabel)
+  Vue.component(TimeItem.name, TimeItem)
 
   // message
   Vue.prototype.$notify = notify
