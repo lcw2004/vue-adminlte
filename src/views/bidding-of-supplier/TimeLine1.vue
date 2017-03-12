@@ -10,10 +10,8 @@
       <li>
         <i class="fa fa-cny bg-gray"></i>
         <div class="timeline-item">
-          <span class="time"><i class="fa fa-clock-o"></i>2017-03-04 12:05</span>
-          <div class="timeline-body">
-            缴纳标书费
-          </div>
+          <span class="time"><i class="fa fa-clock-o"></i> 2017-03-04 12:05</span>
+          <h3 class="timeline-header">缴纳标书费</h3>
         </div>
       </li>
 
@@ -22,10 +20,8 @@
       <li>
         <i class="fa fa-download bg-gray"></i>
         <div class="timeline-item">
-          <span class="time"><i class="fa fa-clock-o"></i>2017-03-04 12:05</span>
-          <div class="timeline-body">
-            下载标书
-          </div>
+          <span class="time"><i class="fa fa-clock-o"></i> 2017-03-04 12:05</span>
+          <h3 class="timeline-header">下载标书</h3>
           <div class="timeline-footer">
             <a class="btn btn-primary btn-sm">下载标书</a>
           </div>
@@ -38,10 +34,8 @@
       <li>
         <i class="fa fa-upload bg-gray"></i>
         <div class="timeline-item">
-          <span class="time"><i class="fa fa-clock-o"></i>2017-03-04 12:05</span>
-          <div class="timeline-body">
-            上传投标文件
-          </div>
+          <span class="time"><i class="fa fa-clock-o"></i> 2017-03-04 12:05</span>
+          <h3 class="timeline-header">上传投标文件</h3>
           <div class="timeline-footer">
             <a class="btn btn-primary btn-sm disabled">上传投标文件</a>
           </div>
@@ -66,10 +60,8 @@
       <li>
         <i class="fa fa-upload bg-blue"></i>
         <div class="timeline-item">
-          <span class="time"><i class="fa fa-clock-o"></i>2017-03-04 12:05</span>
-          <div class="timeline-body">
-            中标公示
-          </div>
+          <span class="time"><i class="fa fa-clock-o"></i> 2017-03-04 12:05</span>
+          <h3 class="timeline-header">中标公示</h3>
         </div>
       </li>
 
@@ -77,12 +69,14 @@
       <li>
         <i class="fa fa-upload bg-blue"></i>
         <div class="timeline-item">
-          <span class="time"><i class="fa fa-clock-o"></i>2017-03-04 12:05</span>
+          <span class="time"><i class="fa fa-clock-o"></i> 2017-03-04 12:05</span>
+          <h3 class="timeline-header">废标</h3>
           <div class="timeline-body">
-            废标
             <div class="row">
               <div class="col-md-12">
-                原因：<p class="text-red">xxxxxxxxxxxxxxxxxxx</p>
+                <div class="callout callout-default">
+                  <p class="text-red">因为什么什么什么什么原因废标</p>
+                </div>
               </div>
             </div>
           </div>

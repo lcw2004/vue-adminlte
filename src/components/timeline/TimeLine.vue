@@ -17,3 +17,10 @@ export default {
   }
 }
 </script>
+
+<style>
+/*覆盖AdminLte的字体*/
+.timeline h3 {
+  font-family: "Microsoft Yahei","Hiragino Sans GB","Helvetica Neue",Helvetica,tahoma,arial,Verdana,sans-serif
+}
+</style>

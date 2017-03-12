@@ -10,16 +10,14 @@
       <li>
         <i class="fa fa-cny bg-blue"></i>
         <div class="timeline-item">
+          <h3 class="timeline-header">缴纳标书费</h3>
           <div class="timeline-body">
-            <div class="row">
-              <div class="col-md-12">
-                <h4 class="page-header">缴纳标书费</h4>
-                <p class="text-red">户名：湘潭电机股份有限公司</p>
-                <p class="text-red">银行：工商银行下摄司支行</p>
-                <p class="text-red">账号：1904103219100002331</p>
-                <p>支付完成后请与我中心价格审核室伍涛涌（0731 - 58595724）联系，获取标书下载权限。</p>
-                <p class="text-light-blue">请在售标截止时间之前购买标书</p>
-              </div>
+            <p class="text-red">户名：湘潭电机股份有限公司</p>
+            <p class="text-red">银行：工商银行下摄司支行</p>
+            <p class="text-red">账号：1904103219100002331</p>
+            <p>支付完成后请与我中心价格审核室伍涛涌（0731 - 58595724）联系，获取标书下载权限。</p>
+            <div class="callout callout-danger">
+              请在售标截止时间之前购买标书
             </div>
           </div>
         </div>
@@ -29,17 +27,30 @@
       <li>
         <i class="fa fa-cny bg-blue"></i>
         <div class="timeline-item">
+          <h3 class="timeline-header">缴纳投标保证金</h3>
           <div class="timeline-body">
-            <div class="row">
-              <div class="col-md-12">
-                <h4 class="page-header">缴纳投标保证金</h4>
-                <p class="text-red">户名：湘潭电机股份有限公司</p>
-                <p class="text-red">银行：工商银行下摄司支行</p>
-                <p class="text-red">账号：1904103219100002331</p>
-                <p>支付完成后请与我中心价格审核室伍涛涌（0731 - 58595724）联系，获取投标权限。</p>
-                <p class="text-light-blue">请在开标之前缴纳投标保证金</p>
-              </div>
+            <p class="text-red">户名：湘潭电机股份有限公司</p>
+            <p class="text-red">银行：工商银行下摄司支行</p>
+            <p class="text-red">账号：1904103219100002331</p>
+            <p>支付完成后请与我中心价格审核室伍涛涌（0731 - 58595724）联系，获取投标权限。</p>
+            <div class="callout callout-danger">
+              请在开标之前缴纳投标保证金
             </div>
+          </div>
+        </div>
+      </li>
+
+      <!-- 问题与澄清 -->
+      <li>
+        <i class="fa fa-download bg-blue"></i>
+        <div class="timeline-item">
+          <h3 class="timeline-header">提问与澄清</h3>
+          <div class="timeline-body">
+            <p class="text-red">共有<span class="label label-danger">2</span>条澄清，<a>点击查看</a></p>
+            <p class="text-red">共有<span class="label label-danger">2</span>条回答，<a>点击查看</a></p>
+          </div>
+          <div class="timeline-footer">
+            <a class="btn btn-primary btn-sm">提问</a>
           </div>
         </div>
       </li>
@@ -48,9 +59,7 @@
       <li>
         <i class="fa fa-download bg-blue"></i>
         <div class="timeline-item">
-          <div class="timeline-body">
-            下载标书
-          </div>
+          <h3 class="timeline-header">下载标书</h3>
           <div class="timeline-footer">
             <a class="btn btn-primary btn-sm">下载标书</a>
           </div>
@@ -63,11 +72,10 @@
       <li>
         <i class="fa fa-upload bg-blue"></i>
         <div class="timeline-item">
+          <h3 class="timeline-header">上传投标文件</h3>
           <div class="timeline-body">
-            <div class="row">
-              <div class="col-md-12">
-                <p class="text-light-blue">请在投标截止时间之前上传标书</p>
-              </div>
+            <div class="callout callout-danger">
+              请在投标截止时间之前上传投标文件
             </div>
           </div>
           <div class="timeline-footer">
