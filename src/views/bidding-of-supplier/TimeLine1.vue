@@ -1,7 +1,7 @@
 <template>
 <div class="box">
   <div class="box-header">
-    <h3 class="box-title">参与进度</h3>
+    <h3 class="box-title">参与进度(完成状态)</h3>
   </div>
   <div class="box-body">
 
@@ -10,25 +10,19 @@
       <li>
         <i class="fa fa-cny bg-blue"></i>
         <div class="timeline-item">
+          <span class="time"><i class="fa fa-clock-o"></i>2017-03-04 12:05</span>
           <div class="timeline-body">
-            <div class="row">
-              <div class="col-md-12">
-                <h4 class="page-header">缴纳标书费</h4>
-                <p class="text-red">户名：湘潭电机股份有限公司</p>
-                <p class="text-red">银行：工商银行下摄司支行</p>
-                <p class="text-red">账号：1904103219100002331</p>
-                <p>支付完成后请与我中心价格审核室伍涛涌（0731 - 58595724）联系，获取标书下载权限。</p>
-                <p class="text-light-blue">请在售标截止时间之前购买标书</p>
-              </div>
-            </div>
+            缴纳标书费
           </div>
         </div>
       </li>
+
 
       <!-- 下载标书 -->
       <li>
         <i class="fa fa-download bg-blue"></i>
         <div class="timeline-item">
+          <span class="time"><i class="fa fa-clock-o"></i>2017-03-04 12:05</span>
           <div class="timeline-body">
             下载标书
           </div>
@@ -44,12 +38,9 @@
       <li>
         <i class="fa fa-upload bg-blue"></i>
         <div class="timeline-item">
+          <span class="time"><i class="fa fa-clock-o"></i>2017-03-04 12:05</span>
           <div class="timeline-body">
-            <div class="row">
-              <div class="col-md-12">
-                <p class="text-light-blue">请在投标截止时间之前上传标书</p>
-              </div>
-            </div>
+            上传标书
           </div>
           <div class="timeline-footer">
             <a class="btn btn-primary btn-sm disabled">上传标书</a>
@@ -57,7 +48,7 @@
         </div>
       </li>
 
-      <TimeLabel time="2017-03-10 16:00:00" remark="开始开标"></TimeLabel>
+      <TimeLabel time="2017-03-10 16:00:00" remark="开始开标" background="bg-gray"></TimeLabel>
 
       <!-- 上传标书 -->
       <li>
@@ -69,20 +60,31 @@
         </div>
       </li>
 
-      <TimeLabel time="2017-03-15 16:00:00" remark="结束开标"></TimeLabel>
+      <TimeLabel time="2017-03-15 16:00:00" remark="结束开标" background="bg-gray"></TimeLabel>
 
-      <!-- 开标结束 -->
+      <!-- 中标公示 -->
       <li>
-        <i class="fa fa-newspaper-o bg-blue"></i>
+        <i class="fa fa-upload bg-blue"></i>
         <div class="timeline-item">
+          <span class="time"><i class="fa fa-clock-o"></i>2017-03-04 12:05</span>
           <div class="timeline-body">
+            中标公示
+          </div>
+        </div>
+      </li>
+
+      <!-- 废标 -->
+      <li>
+        <i class="fa fa-upload bg-blue"></i>
+        <div class="timeline-item">
+          <span class="time"><i class="fa fa-clock-o"></i>2017-03-04 12:05</span>
+          <div class="timeline-body">
+            废标
             <div class="row">
               <div class="col-md-12">
-                <p class="text-light-blue">开标结束，请等待开标结果</p>
+                原因：<p class="text-red">xxxxxxxxxxxxxxxxxxx</p>
               </div>
             </div>
-          </div>
-          <div class="timeline-footer">
           </div>
         </div>
       </li>
