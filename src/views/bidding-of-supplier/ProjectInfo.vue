@@ -14,8 +14,8 @@
         <div class="row">
           <div class="col-md-6">
             <div class="form-group">
-              <label class="control-label col-md-4">项目编号</label>
-              <div class="col-md-8">
+              <label class="control-label col-md-5">项目编号</label>
+              <div class="col-md-7">
                 <p class="form-control-static">ZB201701150003</p>
               </div>
             </div>
@@ -23,8 +23,8 @@
 
           <div class="col-md-6">
             <div class="form-group">
-              <label class="control-label col-md-4">项目名称</label>
-              <div class="col-md-8">
+              <label class="control-label col-md-5">项目名称</label>
+              <div class="col-md-7">
                 <p class="form-control-static">某某招标项目</p>
               </div>
             </div>
@@ -34,8 +34,8 @@
         <div class="row">
           <div class="col-md-6">
             <div class="form-group">
-              <label class="control-label col-md-4">项目类型</label>
-              <div class="col-md-8">
+              <label class="control-label col-md-5">项目类型</label>
+              <div class="col-md-7">
                 <p class="form-control-static">公开招标</p>
               </div>
             </div>
@@ -43,8 +43,8 @@
 
           <div class="col-md-6">
             <div class="form-group">
-              <label class="control-label col-md-4">决标方式</label>
-              <div class="col-md-8">
+              <label class="control-label col-md-5">决标方式</label>
+              <div class="col-md-7">
                 <p class="form-control-static">价格决标</p>
               </div>
             </div>
@@ -54,8 +54,8 @@
         <div class="row">
           <div class="col-md-6">
             <div class="form-group">
-              <label class="control-label col-md-4">执行策略</label>
-              <div class="col-md-8">
+              <label class="control-label col-md-5">执行策略</label>
+              <div class="col-md-7">
                 <p class="form-control-static">网上招标</p>
               </div>
             </div>
@@ -63,8 +63,8 @@
 
           <div class="col-md-6">
             <div class="form-group">
-              <label class="control-label col-md-4">报价类型</label>
-              <div class="col-md-8">
+              <label class="control-label col-md-5">报价类型</label>
+              <div class="col-md-7">
                 <p class="form-control-static">含税价</p>
               </div>
             </div>
@@ -74,8 +74,8 @@
         <div class="row">
           <div class="col-md-6">
             <div class="form-group">
-              <label class="control-label col-md-4">是否唱标</label>
-              <div class="col-md-8">
+              <label class="control-label col-md-5">是否唱标</label>
+              <div class="col-md-7">
                 <p class="form-control-static">是</p>
               </div>
             </div>
@@ -85,8 +85,8 @@
         <div class="row">
           <div class="col-md-6">
             <div class="form-group">
-              <label class="control-label col-md-4">售标截止时间</label>
-              <div class="col-md-8">
+              <label class="control-label col-md-5">售标截止时间</label>
+              <div class="col-md-7">
                 <p class="form-control-static text-red">2017-03-05 16:00:00</p>
               </div>
             </div>
@@ -94,8 +94,8 @@
 
           <div class="col-md-6">
             <div class="form-group">
-              <label class="control-label col-md-4">投标截止时间</label>
-              <div class="col-md-8">
+              <label class="control-label col-md-5">投标截止时间</label>
+              <div class="col-md-7">
                 <p class="form-control-static text-red">2017-03-10 16:00:00</p>
               </div>
             </div>
@@ -103,10 +103,10 @@
         </div>
 
         <div class="row">
-          <div class="col-md-12">
+          <div class="col-md-10">
             <div class="form-group">
-              <label class="control-label col-md-2">开标时间</label>
-              <div class="col-md-10">
+              <label class="control-label col-md-3">开标时间</label>
+              <div class="col-md-9">
                 <p class="form-control-static">2017-03-11 16:00:00 到 2017-03-15 16:00:00</p>
               </div>
             </div>
@@ -154,7 +154,13 @@
     </div>
 
     <div class="box-footer">
-      
+      <div class="row">
+        <div class="col-md-2">
+          <button type="button" class="btn btn-block btn-default" @click="$router.go(-1)">
+            返回
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 </template>

@@ -8,7 +8,7 @@
     <TimeLine>
       <!-- 售标 -->
       <li>
-        <i class="fa fa-cny bg-blue"></i>
+        <i class="fa fa-cny bg-gray"></i>
         <div class="timeline-item">
           <span class="time"><i class="fa fa-clock-o"></i>2017-03-04 12:05</span>
           <div class="timeline-body">
@@ -20,7 +20,7 @@
 
       <!-- 下载标书 -->
       <li>
-        <i class="fa fa-download bg-blue"></i>
+        <i class="fa fa-download bg-gray"></i>
         <div class="timeline-item">
           <span class="time"><i class="fa fa-clock-o"></i>2017-03-04 12:05</span>
           <div class="timeline-body">
@@ -36,14 +36,14 @@
 
       <!-- 上传标书 -->
       <li>
-        <i class="fa fa-upload bg-blue"></i>
+        <i class="fa fa-upload bg-gray"></i>
         <div class="timeline-item">
           <span class="time"><i class="fa fa-clock-o"></i>2017-03-04 12:05</span>
           <div class="timeline-body">
-            上传标书
+            上传投标文件
           </div>
           <div class="timeline-footer">
-            <a class="btn btn-primary btn-sm disabled">上传标书</a>
+            <a class="btn btn-primary btn-sm disabled">上传投标文件</a>
           </div>
         </div>
       </li>
@@ -52,7 +52,7 @@
 
       <!-- 上传标书 -->
       <li>
-        <i class="fa fa-television bg-blue"></i>
+        <i class="fa fa-television bg-gray"></i>
         <div class="timeline-item">
           <div class="timeline-footer">
             <a class="btn btn-primary btn-sm">进入开标现场</a>
