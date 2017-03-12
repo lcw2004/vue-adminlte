@@ -10,6 +10,7 @@ import AuditProgress from '../../views/bidding/AuditProgress'
 import BiddingInfo from '../../views/bidding/BiddingInfo'
 import BiddingPreAward from '../../views/bidding/award/BiddingPreAward'
 import BiddingTimeManage from '../../views/bidding/BiddingTimeManage'
+import BiddingCalendar from '../../views/bidding/BiddingCalendar'
 
 import scene from './scene'
 import expert from './expert'
@@ -25,6 +26,7 @@ export default [
   { path: '/bidding/info', component: BiddingInfo },
   { path: '/bidding/pre-award', component: BiddingPreAward },
   { path: '/bidding/time-manage', component: BiddingTimeManage },
+  { path: '/bidding/calendar', component: BiddingCalendar },
 
   ...scene,
   ...expert,

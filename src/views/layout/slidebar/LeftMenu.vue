@@ -27,6 +27,7 @@
         <li><a><i class="fa fa-circle-o"></i><router-link to='/bidding/time-manage'>开标时间调整</router-link></a></li>
         <li><a><i class="fa fa-circle-o"></i><router-link to='/bidding/expert-apply'>申请专家抽取</router-link></a></li>
         <li><a><i class="fa fa-circle-o"></i><router-link to='/bidding/expert-extract'>专家抽取</router-link></a></li>
+        <li><a><i class="fa fa-circle-o"></i><router-link to='/bidding/calendar'>项目日历视图</router-link></a></li>
       </ul>
     </li>
     <li class="treeview">
