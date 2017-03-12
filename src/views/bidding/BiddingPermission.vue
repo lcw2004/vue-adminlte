@@ -27,6 +27,7 @@
                   <td>测试3</td>
                   <td>邀请招标</td>
                   <td>2017-01-16</td>
+                  <td>2017-03-16 12:00:00</td>
                   <td>审核通过，等待开标</td>
                   <td>
                     <router-link to='/bidding/permission-info'>权限管理</router-link>
@@ -38,6 +39,7 @@
                   <td>测试4</td>
                   <td>邀请招标</td>
                   <td>2017-01-16</td>
+                  <td>2017-03-16 12:00:00</td>
                   <td>开标中</td>
                   <td>
                     <router-link to='/bidding/permission-info'>权限管理</router-link>
@@ -49,6 +51,7 @@
                   <td>测试5</td>
                   <td>邀请招标</td>
                   <td>2017-01-16</td>
+                  <td>2017-03-16 12:00:00</td>
                   <td>开标结束，预售标</td>
                   <td>
                     <router-link to='/bidding/permission-info'>权限管理</router-link>
@@ -60,6 +63,7 @@
                   <td>测试5</td>
                   <td>邀请招标</td>
                   <td>2017-01-16</td>
+                  <td>2017-03-16 12:00:00</td>
                   <td>授标结束，待归档</td>
                   <td>
                     <router-link to='/bidding/permission-info'>权限管理</router-link>
