@@ -18,6 +18,7 @@
                   <th>项目名称</th>
                   <th>项目类型</th>
                   <th>发布日期</th>
+                  <th>开标时间</th>
                   <th>状态</th>
                   <th>操作</th>
                 </tr>
@@ -27,6 +28,7 @@
                   <td>测试3</td>
                   <td>邀请招标</td>
                   <td>2017-01-16</td>
+                  <td>2017-03-16 12:00:00</td>
                   <td><span class="label label-warning">未抽取</span></td>
                   <td>
                     <router-link to='/bidding/expert-apply/project'>申请抽取</router-link>
@@ -38,6 +40,7 @@
                   <td>测试4</td>
                   <td>邀请招标</td>
                   <td>2017-01-16</td>
+                  <td>2017-03-16 12:00:00</td>
                   <td><span class="label label-success">已抽取</span></td>
                   <td>
                     <router-link to='/bidding/expert-apply/project'>重新申请</router-link>

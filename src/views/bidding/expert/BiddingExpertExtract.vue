@@ -18,6 +18,7 @@
                   <th>项目名称</th>
                   <th>项目类型</th>
                   <th>发布日期</th>
+                  <th>开标时间</th>
                   <th>状态</th>
                   <th>操作</th>
                 </tr>
@@ -27,6 +28,7 @@
                   <td>测试3</td>
                   <td>邀请招标</td>
                   <td>2017-01-16</td>
+                  <td>2017-03-16 12:00:00</td>
                   <td>审核通过，等待开标</td>
                   <td>
                     <router-link to='/bidding/expert-extract/project'>抽取专家</router-link>
@@ -38,6 +40,7 @@
                   <td>测试4</td>
                   <td>邀请招标</td>
                   <td>2017-01-16</td>
+                  <td>2017-03-16 12:00:00</td>
                   <td>审核通过，等待开标</td>
                   <td>
                     <router-link to='/bidding/expert-extract/project'>抽取专家</router-link>

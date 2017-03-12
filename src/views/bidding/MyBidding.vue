@@ -18,6 +18,7 @@
                   <th>项目名称</th>
                   <th>项目类型</th>
                   <th>发布日期</th>
+                  <th>开标时间</th>
                   <th>状态</th>
                   <th>操作</th>
                 </tr>
@@ -27,6 +28,7 @@
                   <td>测试1</td>
                   <td>邀请招标</td>
                   <td>2017-01-16</td>
+                  <td>2017-03-16 12:00:00</td>
                   <td>编辑中
                     <span class="label label-warning">审核驳回</span>
                   </td>
@@ -41,6 +43,7 @@
                   <td>测试2</td>
                   <td>邀请招标</td>
                   <td>2017-01-16</td>
+                  <td>2017-03-16 12:00:00</td>
                   <td>已提交审核
                     <span class="label label-default">待审核</span>
                     <!-- <span class="label label-success">审核通过</span> -->
@@ -56,6 +59,7 @@
                   <td>测试3</td>
                   <td>邀请招标</td>
                   <td>2017-01-16</td>
+                  <td>2017-03-16 12:00:00</td>
                   <td>审核通过，等待开标</td>
                   <td>
                     <a><router-link to='/bidding/clarify'>澄清</router-link></a>
@@ -68,6 +72,7 @@
                   <td>测试4</td>
                   <td>邀请招标</td>
                   <td>2017-01-16</td>
+                  <td>2017-03-16 12:00:00</td>
                   <td>开标中</td>
                   <td>
                     <a><router-link to='/bidding/scene'>开标现场</router-link></a>
@@ -79,6 +84,7 @@
                   <td>测试5</td>
                   <td>邀请招标</td>
                   <td>2017-01-16</td>
+                  <td></td>
                   <td>开标结束，预售标
                     <span class="label label-default">待审核</span>
                   </td>
@@ -92,6 +98,7 @@
                   <td>测试5</td>
                   <td>邀请招标</td>
                   <td>2017-01-16</td>
+                  <td></td>
                   <td>授标结束，待归档</td>
                   <td>
                     <a @click="test">归档</a>
@@ -103,6 +110,7 @@
                   <td>测试5</td>
                   <td>邀请招标</td>
                   <td>2017-01-16</td>
+                  <td></td>
                   <td>已归档</td>
                   <td>
                     <a><router-link to='/bidding/info'>查看</router-link></a>
