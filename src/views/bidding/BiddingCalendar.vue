@@ -2,7 +2,11 @@
 <section class="content">
   <div class="box">
     <div class="box-header">
-      <h3 class="box-title"></h3>
+      <h3 class="box-title">
+        <button type="button" class="btn btn-info" @click="test">
+          测试
+        </button>
+      </h3>
     </div>
     <div class="box-body">
       <div class="row">
@@ -83,6 +87,22 @@ export default {
       ]
 
       this.events = events
+    },
+    test () {
+      let length = this.events.length
+      let date = new Date()
+      let d = date.getDate()
+      let m = date.getMonth()
+      let y = date.getFullYear()
+      let randomEvent = {
+        title: 'Birthday Party',
+        start: new Date(y, m, d + length, 19, 0),
+        end: new Date(y, m, d + length, 22, 30),
+        allDay: false,
+        backgroundColor: '#00a65a', // Success (green)
+        borderColor: '#00a65a' // Success (green)
+      }
+      this.events.push(randomEvent)
     }
   }
 }

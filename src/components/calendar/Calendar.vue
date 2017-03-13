@@ -1,6 +1,5 @@
 <template>
-<div :id="id">
-</div>
+<div></div>
 </template>
 
 <script>
@@ -13,6 +12,14 @@ export default {
     events: {
       type: Array,
       require: false
+    },
+    editable: {
+      type: Boolean,
+      default: false
+    },
+    droppable: {
+      type: Boolean,
+      default: false
     }
   },
   mounted () {
@@ -20,38 +27,51 @@ export default {
   },
   data: function () {
     return {
-      id: 'Calendar'
+      id: '123',
+      header: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'month,agendaWeek,agendaDay'
+      },
+      buttonText: {
+        today: '今天',
+        month: '月',
+        week: '周',
+        day: '日'
+      }
     }
   },
   watch: {
     events: {
       handler: function () {
-        this.init()
+        this.cal.fullCalendar('refetchEvents')
       },
       deep: true
     }
   },
   methods: {
     init () {
-      console.log('init ')
+      // 初始化
+      this.cal = $(this.$el).fullCalendar(this.calendarOption)
+    },
+    refresh () {
+      // 刷新元素
+      this.cal.fullCalendar('refetchEvents')
+    }
+  },
+  computed: {
+    calendarOption: function () {
       let self = this
-      $('#' + this.id).fullCalendar({
+      return {
         locale: 'zh-cn',
-        header: {
-          left: 'prev,next today',
-          center: 'title',
-          right: 'month,agendaWeek,agendaDay'
+        header: this.header,
+        buttonText: this.buttonText,
+        events: function (start, end, timezone, callback) {
+          callback(self.events)
         },
-        buttonText: {
-          today: 'today',
-          month: 'month',
-          week: 'week',
-          day: 'day'
-        },
-        events: self.events,
-        editable: false,
-        droppable: false
-      })
+        editable: this.editable,
+        droppable: this.droppable
+      }
     }
   }
 }
