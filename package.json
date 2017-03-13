@@ -16,6 +16,7 @@
     "ckeditor": "^4.6.2",
     "eonasdan-bootstrap-datetimepicker": "^4.17.46",
     "font-awesome": "^4.7.0",
+    "fullcalendar": "^3.2.0",
     "vue": "^2.1.0"
   },
   "devDependencies": {

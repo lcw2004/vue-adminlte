@@ -9,6 +9,9 @@ import TimeRangePicker from './base/TimeRangePicker'
 import FullScreenBtn from './base/FullScreenBtn'
 import RightPanel from './base/RightPanel'
 
+// Calendar
+import Calendar from './calendar/Calendar'
+
 // tree
 import Tree from './tree/Tree'
 import TreeTableColPrefix from './tree/TreeTableColPrefix'
@@ -34,6 +37,9 @@ function initGlobalComponents () {
   Vue.component(TimeRangePicker.name, TimeRangePicker)
   Vue.component(FullScreenBtn.name, FullScreenBtn)
   Vue.component(RightPanel.name, RightPanel)
+
+  // Calendar
+  Vue.component(Calendar.name, Calendar)
 
   // tree
   Vue.component(Tree.name, Tree)
