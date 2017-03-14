@@ -18,15 +18,26 @@
     <div class="box-footer">
     </div>
   </div>
+
+  <ProjectPreview :config="config"></ProjectPreview>
 </section>
 </template>
 
 <script>
+import ProjectPreview from './calendar/ProjectPreview'
+
 export default {
+  components: {
+    ProjectPreview
+  },
   props: {},
   data: function () {
     return {
-      events: []
+      events: [],
+      config: {
+        show: false,
+        title: '项目预览'
+      }
     }
   },
   mounted () {
@@ -34,8 +45,8 @@ export default {
   },
   methods: {
     eventClick (event) {
-      this.$notify.success('Event: ' + event.title)
-      this.$notify.success('Event Id: ' + event.id)
+      this.config.title = event.title
+      this.config.show = true
     },
     loadEvents () {
       let date = new Date()
@@ -46,53 +57,67 @@ export default {
       let events = [
         {
           id: 1,
-          title: 'All Day Event 1',
-          start: new Date(y, m, 1),
+          title: '项目一（售标）',
+          start: new Date(y, m, d - 15),
+          end: new Date(y, m, d - 12),
+          backgroundColor: '#f56954', // red
+          borderColor: '#f56954' // red
+        },
+        {
+          id: 1,
+          title: '项目一（投标）',
+          start: new Date(y, m, d - 12),
+          backgroundColor: '#f56954', // red
+          borderColor: '#f56954' // red
+        },
+        {
+          id: 1,
+          title: '项目一（开标）',
+          start: new Date(y, m, d - 11),
           backgroundColor: '#f56954', // red
           borderColor: '#f56954' // red
         },
         {
           id: 2,
-          title: 'Long Event',
-          start: new Date(y, m, d - 5),
+          title: '项目二（售标）',
+          start: new Date(y, m, d - 7),
           end: new Date(y, m, d - 2),
           backgroundColor: '#f39c12', // yellow
           borderColor: '#f39c12' // yellow
         },
         {
+          id: 2,
+          title: '项目二（投标）',
+          start: new Date(y, m, d - 2),
+          end: new Date(y, m, d),
+          backgroundColor: '#f39c12', // yellow
+          borderColor: '#f39c12' // yellow
+        },
+        {
+          id: 2,
+          title: '项目二（开标）',
+          start: new Date(y, m, d),
+          end: new Date(y, m, d + 2),
+          backgroundColor: '#f39c12', // yellow
+          borderColor: '#f39c12' // yellow
+        },
+        {
           id: 3,
-          title: 'Meeting',
-          start: new Date(y, m, d, 10, 30),
+          title: '项目三（售标）',
+          start: new Date(y, m, d - 1),
+          end: new Date(y, m, d + 3),
           allDay: false,
           backgroundColor: '#0073b7', // Blue
           borderColor: '#0073b7' // Blue
         },
         {
           id: 4,
-          title: 'Lunch',
-          start: new Date(y, m, d, 12, 0),
-          end: new Date(y, m, d, 14, 0),
+          title: '项目四（售标）',
+          start: new Date(y, m, d),
+          end: new Date(y, m, d + 4),
           allDay: false,
           backgroundColor: '#00c0ef', // Info (aqua)
           borderColor: '#00c0ef' // Info (aqua)
-        },
-        {
-          id: 5,
-          title: 'Birthday Party',
-          start: new Date(y, m, d + 1, 19, 0),
-          end: new Date(y, m, d + 1, 22, 30),
-          allDay: false,
-          backgroundColor: '#00a65a', // Success (green)
-          borderColor: '#00a65a' // Success (green)
-        },
-        {
-          id: 6,
-          title: 'Click for Google',
-          start: new Date(y, m, 28),
-          end: new Date(y, m, 29),
-          url: 'http://google.com/',
-          backgroundColor: '#3c8dbc', // Primary (light-blue)
-          borderColor: '#3c8dbc' // Primary (light-blue)
         }
       ]
 

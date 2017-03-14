@@ -8,6 +8,7 @@ import TimePicker from './base/TimePicker'
 import TimeRangePicker from './base/TimeRangePicker'
 import FullScreenBtn from './base/FullScreenBtn'
 import RightPanel from './base/RightPanel'
+import FixedContainer from './container/FixedContainer'
 
 // Calendar
 import Calendar from './calendar/Calendar'
@@ -37,6 +38,7 @@ function initGlobalComponents () {
   Vue.component(TimeRangePicker.name, TimeRangePicker)
   Vue.component(FullScreenBtn.name, FullScreenBtn)
   Vue.component(RightPanel.name, RightPanel)
+  Vue.component(FixedContainer.name, FixedContainer)
 
   // Calendar
   Vue.component(Calendar.name, Calendar)
