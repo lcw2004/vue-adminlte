@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import $ from 'jquery'
+let $ = require('jquery')
 import {isInFullScreen, toggleFullScreen, bindFullScreenEvent} from '../../utils/fullscreen'
 
 export default {

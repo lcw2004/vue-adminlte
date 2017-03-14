@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import $ from 'jquery'
+let $ = require('jquery')
 import datetimepicker from 'eonasdan-bootstrap-datetimepicker'
 $.fn.datetimepicker = datetimepicker
 

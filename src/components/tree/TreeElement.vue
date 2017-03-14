@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import $ from 'jquery'
+let $ = require('jquery')
 
 export default {
   name: 'TreeElement',

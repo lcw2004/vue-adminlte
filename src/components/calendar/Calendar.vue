@@ -2,7 +2,7 @@
 </template>
 
 <script>
-import $ from 'jquery'
+let $ = require('jquery')
 require('fullcalendar')
 
 export default {

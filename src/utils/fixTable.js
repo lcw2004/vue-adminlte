@@ -1,4 +1,4 @@
-import $ from 'jquery'
+let $ = require('jquery')
 
 function fixTable (tableId, fixColumnNumber, width, height) {
   // 查找_tableLayout，如果没有，则添加

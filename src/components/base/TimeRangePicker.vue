@@ -8,7 +8,7 @@
 <script>
 import 'bootstrap-daterangepicker'
 import moment from 'moment'
-import $ from 'jquery'
+let $ = require('jquery')
 
 export default {
   name: 'TimeRangePicker',

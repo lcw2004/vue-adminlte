@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import $ from 'jquery'
+let $ = require('jquery')
 import Vue from 'vue'
 import TreeElement from './TreeElement'
 
