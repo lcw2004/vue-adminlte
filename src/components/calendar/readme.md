@@ -1,42 +1,22 @@
-<template>
-<section class="content">
-  <div class="box">
-    <div class="box-header">
-      <h3 class="box-title">
-        <button type="button" class="btn btn-info" @click="addEvent">
-          添加
-        </button>
-      </h3>
-    </div>
-    <div class="box-body">
-      <div class="row">
-        <div class="col-md-12">
-          <Calendar :events="events" :eventClick="eventClick"></Calendar>
-        </div>
-      </div>
-    </div>
-    <div class="box-footer">
-    </div>
-  </div>
-</section>
-</template>
+# Calendar组件
 
-<script>
-export default {
-  props: {},
-  data: function () {
-    return {
-      events: []
-    }
-  },
-  mounted () {
-    this.loadEvents()
-  },
-  methods: {
+## props：
+- events(Array, 必须) 事件列表
+- eventClick(Function)  event点击回调事件
+- editable(Boolean) 是否可编辑
+- droppable(Boolean) 是否可拖拽
+
+## 示例：
+
+    <Calendar :events="events" :eventClick="eventClick"></Calendar>
+
+    // 事件点击回调
     eventClick (event) {
       this.$notify.success('Event: ' + event.title)
       this.$notify.success('Event Id: ' + event.id)
-    },
+    }
+
+    // 加载事件
     loadEvents () {
       let date = new Date()
       let d = date.getDate()
@@ -98,6 +78,8 @@ export default {
 
       this.events = events
     },
+
+    // 添加事件
     addEvent () {
       let length = this.events.length
       let date = new Date()
@@ -115,6 +97,3 @@ export default {
       }
       this.events.push(randomEvent)
     }
-  }
-}
-</script>

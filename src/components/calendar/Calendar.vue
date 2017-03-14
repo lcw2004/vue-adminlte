@@ -1,5 +1,4 @@
 <template>
-<div></div>
 </template>
 
 <script>
@@ -10,16 +9,16 @@ export default {
   name: 'Calendar',
   props: {
     events: {
-      type: Array,
-      require: false
+      type: Array
+    },
+    eventClick: {
+      type: Function
     },
     editable: {
-      type: Boolean,
-      default: false
+      type: Boolean
     },
     droppable: {
-      type: Boolean,
-      default: false
+      type: Boolean
     }
   },
   mounted () {
@@ -51,11 +50,9 @@ export default {
   },
   methods: {
     init () {
-      // 初始化
       this.cal = $(this.$el).fullCalendar(this.calendarOption)
     },
     refresh () {
-      // 刷新元素
       this.cal.fullCalendar('refetchEvents')
     }
   },
@@ -69,10 +66,22 @@ export default {
         events: function (start, end, timezone, callback) {
           callback(self.events)
         },
-        editable: this.editable,
-        droppable: this.droppable
+        eventClick: function (calEvent, jsEvent, view) {
+          self.eventClick(calEvent)
+        },
+        editable: false,
+        droppable: false
       }
     }
   }
 }
 </script>
+
+<style>
+a {
+  cursor: pointer;
+}
+.fc-event-container :hover {
+  opacity: 0.8
+}
+</style>
