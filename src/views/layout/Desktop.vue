@@ -88,7 +88,6 @@
     </div>
   </div>
 
-
   <div class="row">
     <div class="col-md-12">
       <div class="box box-solid">
@@ -126,6 +125,10 @@
 </template>
 
 <script>
-  export default {
+import BiddingCalendar from '../bidding/BiddingCalendar'
+export default {
+  components: {
+    BiddingCalendar
   }
+}
 </script>

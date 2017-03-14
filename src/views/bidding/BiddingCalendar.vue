@@ -3,9 +3,7 @@
   <div class="box">
     <div class="box-header">
       <h3 class="box-title">
-        <button type="button" class="btn btn-info" @click="addEvent">
-          添加
-        </button>
+        项目日历
       </h3>
     </div>
     <div class="box-body">
