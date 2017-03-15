@@ -20,7 +20,7 @@
                 <div class="col-md-12">
                   <div class="col-md-2">
                     <div class="controls">
-                      <Switch></Switch>
+                      <BootstrapSwitch v-model="isCanDownload"></BootstrapSwitch> {{ isCanDownload }}
                     </div>
                   </div>
                   <div class="col-md-2">
@@ -130,6 +130,11 @@
 <script>
 export default {
   components: {
+  },
+  data: function () {
+    return {
+      isCanDownload: 1
+    }
   }
 }
 </script>
