@@ -1,6 +1,6 @@
 <template>
-<div class="box box-solid">
-  <div class="box-header with-border">
+<div class="box box-primary">
+  <div class="box-header with-border" @click="showBody = !showBody">
     <h3 class="box-title">安徽三联泵业股份有限公司</h3>
     <div class="box-tools pull-right">
       <button type="button" class="btn btn-info btn-sm">保存
@@ -8,9 +8,7 @@
     </div>
   </div>
 
-  <form class="form-horizontal">
-    <div class="box-body">
-
+    <div class="box-body" v-show="showBody">
       <div class="row">
         <div class="col-md-12">
           <div class="form-group">
@@ -42,10 +40,19 @@
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <label class="col-md-2 control-label">下载标书</label>
+            <div class="col-md-10">
               <div class="row">
                 <div class="col-md-12">
                   <div class="col-md-3">
-                    <BootstrapSwitch onText="允许" offText="不允许"></BootstrapSwitch>下载标书
+                    <BootstrapSwitch onText="允许" offText="不允许"></BootstrapSwitch>
                   </div>
                 </div>
               </div>
@@ -85,6 +92,15 @@
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <label class="col-md-2 control-label">投标</label>
+            <div class="col-md-10">
               <div class="row">
                 <div class="col-md-12">
                   <div class="col-md-3">
@@ -98,7 +114,6 @@
       </div>
 
     </div>
-  </form>
 </div>
 </template>
 
@@ -108,7 +123,7 @@ export default {
   },
   data: function () {
     return {
-      isCanDownload: 1
+      showBody: true
     }
   }
 }
