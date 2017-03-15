@@ -1,5 +1,5 @@
 <template>
-  <div class="switch switch-large">
+  <div class="switch switch-large" >
     <input type="checkbox"/>
   </div>
 </template>
@@ -19,15 +19,15 @@ export default {
     },
     size: {
       type: String,
-      default: 'mini'
+      default: 'small'
     },
     onText: {
       type: String,
-      default: 'ON'
+      default: '是'
     },
     offText: {
       type: String,
-      default: 'OFF'
+      default: '否'
     },
     labelText: {
       type: String,
@@ -48,7 +48,6 @@ export default {
       let self = this
       let ckbox = $(self.$el).find('input:eq(0)')
       ckbox.bootstrapSwitch(self.switchOption)
-      ckbox.bootstrapSwitch('state', self.value === 1)
       ckbox.on('switchChange.bootstrapSwitch', function (event, state) {
         self.$emit('input', state ? self.onValue : self.offValue)
       })
@@ -60,8 +59,8 @@ export default {
         size: this.size,
         onText: this.onText,
         offText: this.offText,
-        labelText: this.labelText,
-        switchChange: this.onSwitchChange
+        state: this.value === 1,
+        handleWidth: 50
       }
     }
   }

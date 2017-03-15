@@ -18,10 +18,8 @@
             <div class="col-md-10">
               <div class="row">
                 <div class="col-md-12">
-                  <div class="col-md-2">
-                    <div class="controls">
-                      <BootstrapSwitch v-model="isCanDownload"></BootstrapSwitch> {{ isCanDownload }}
-                    </div>
+                  <div class="col-md-3">
+                    <BootstrapSwitch onText="已收" offText="未收"></BootstrapSwitch>
                   </div>
                   <div class="col-md-2">
                     <select class="form-control">
@@ -46,16 +44,8 @@
               </div>
               <div class="row">
                 <div class="col-md-12">
-                  <div class="col-md-4">
-                    <div class="controls">
-                      <div class="radio inline">
-                        <label><input type="radio" value="0">不允许</label>
-                      </div>
-                      <div class="radio inline">
-                        <label><input type="radio" value="1">允许</label>
-                      </div>
-                      下载标书
-                    </div>
+                  <div class="col-md-3">
+                    <BootstrapSwitch onText="允许" offText="不允许"></BootstrapSwitch>下载标书
                   </div>
                 </div>
               </div>
@@ -71,15 +61,8 @@
             <div class="col-md-10">
               <div class="row">
                 <div class="col-md-12">
-                  <div class="col-md-2">
-                    <div class="controls">
-                      <div class="radio inline">
-                        <label><input type="radio" value="0">未收</label>
-                      </div>
-                      <div class="radio inline">
-                        <label><input type="radio" value="1">已收</label>
-                      </div>
-                    </div>
+                  <div class="col-md-3">
+                    <BootstrapSwitch onText="已收" offText="未收"></BootstrapSwitch>
                   </div>
                   <div class="col-md-2">
                     <select class="form-control">
@@ -104,16 +87,8 @@
               </div>
               <div class="row">
                 <div class="col-md-12">
-                  <div class="col-md-4">
-                    <div class="controls">
-                      <div class="radio inline">
-                        <label><input type="radio" value="0">不允许</label>
-                      </div>
-                      <div class="radio inline">
-                        <label><input type="radio" value="1">允许</label>
-                      </div>
-                      投标
-                    </div>
+                  <div class="col-md-3">
+                    <BootstrapSwitch onText="允许" offText="不允许"></BootstrapSwitch>
                   </div>
                 </div>
               </div>
