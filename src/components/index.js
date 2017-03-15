@@ -12,7 +12,7 @@ import FullButton from './button/FullButton'
 import Calendar from './calendar/Calendar'
 
 // switch
-import BSwitch from './switch/BSwitch'
+import Switch from './switch/Switch'
 
 // editor
 import Editor from './editor/Editor'
@@ -48,7 +48,7 @@ function initGlobalComponents () {
   Vue.component(Calendar.name, Calendar)
 
   // switch
-  Vue.component(BSwitch.name, BSwitch)
+  Vue.component(Switch.name, Switch)
 
   // editor
   Vue.component(Editor.name, Editor)

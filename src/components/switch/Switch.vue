@@ -11,7 +11,7 @@ require('bootstrap-switch')
 let $ = require('jquery')
 
 export default {
-  name: 'BSwitch',
+  name: 'Switch',
   props: {
     label: {
       type: String,

@@ -20,7 +20,7 @@
                 <div class="col-md-12">
                   <div class="col-md-2">
                     <div class="controls">
-                      <BSwitch></BSwitch>
+                      <Switch></Switch>
                     </div>
                   </div>
                   <div class="col-md-2">
