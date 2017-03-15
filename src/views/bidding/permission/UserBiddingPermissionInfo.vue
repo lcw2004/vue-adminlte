@@ -20,12 +20,7 @@
                 <div class="col-md-12">
                   <div class="col-md-2">
                     <div class="controls">
-                      <div class="radio inline">
-                        <label><input type="radio" value="0">未收</label>
-                      </div>
-                      <div class="radio inline">
-                        <label><input type="radio" value="1">已收</label>
-                      </div>
+                      <BSwitch></BSwitch>
                     </div>
                   </div>
                   <div class="col-md-2">
@@ -133,11 +128,8 @@
 </template>
 
 <script>
-import BSwitch from '../../../components/base/BSwitch'
-
 export default {
   components: {
-    BSwitch
   }
 }
 </script>
