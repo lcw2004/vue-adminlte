@@ -106,9 +106,18 @@
     <li class="treeview">
       <a href="#">
         <i class="fa fa-files-o"></i>
-        <span>个人信息</span>
+        <span>个人中心</span>
+        <span class="pull-right-container">
+          <i class="fa fa-angle-left pull-right"></i>
+        </span>
       </a>
+      <ul class="treeview-menu">
+        <li><a><i class="fa fa-circle-o"></i><router-link to='/personal/user-info'>个人信息</router-link></a></li>
+        <li><a><i class="fa fa-circle-o"></i><router-link to='/personal/password'>修改密码</router-link></a></li>
+      </ul>
     </li>
+
+
     <li class="treeview">
       <a href="#">
         <i class="fa fa-files-o"></i>

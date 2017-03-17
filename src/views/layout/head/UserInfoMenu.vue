@@ -32,10 +32,10 @@
       <!-- Menu Footer-->
       <li class="user-footer">
         <div class="pull-left">
-          <a href="#" class="btn btn-default btn-flat">Profile</a>
+          <router-link to='/personal/user-info' class="btn btn-default btn-flat">个人信息</router-link>
         </div>
         <div class="pull-right">
-          <a href="#" class="btn btn-default btn-flat">Sign out</a>
+          <a href="#" class="btn btn-default btn-flat">退出登录</a>
         </div>
       </li>
     </ul>

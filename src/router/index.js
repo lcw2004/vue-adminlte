@@ -5,6 +5,7 @@ import biddingOfSupplier from './bidding-of-supplier'
 import biddingOfExpert from './bidding-of-expert'
 import system from './system'
 import user from './user'
+import personal from './personal'
 
 const router = {
   routes: [
@@ -14,7 +15,8 @@ const router = {
     ...biddingOfSupplier,
     ...biddingOfExpert,
     ...system,
-    ...user
+    ...user,
+    ...personal
   ]
 }
 
