@@ -48,6 +48,7 @@
                   </td>
                   <td>
                     <a><router-link to='/bidding/bidding-info'>查看详情</router-link></a>
+                    <a><router-link to='/bidding/s/submit-bidding'>投标</router-link></a>
                   </td>
                 </tr>
                 <tr>
