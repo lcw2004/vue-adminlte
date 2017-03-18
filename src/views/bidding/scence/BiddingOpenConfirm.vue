@@ -9,11 +9,18 @@
         <h4 class="modal-title" v-text="config.title"></h4>
       </div>
       <div class="modal-body">
-        <div class="row">
-          <div class="col-md-12">
-              <input type="text" class="form-control" >
+        <form class="form-horizontal">
+          <div class="form-group">
+            <div class="col-md-12">
+                <input type="text" class="form-control" >
+            </div>
           </div>
-        </div>
+          <div class="form-group">
+            <div class="col-md-12">
+              <p class="form-control-static text-red">投标供应商数量少于3家</p>
+            </div>
+          </div>
+        </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default " data-dismiss="modal" @click="config.show = false">取消</button>

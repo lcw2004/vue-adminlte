@@ -52,7 +52,7 @@
           <div class="pull-right">
             <button type="button" class="btn btn-info" @click="config.show = true">开标</button>
             <router-link to='/bidding/scene/compare' tag='button' class="btn btn-info">开标一览表</router-link>
-            <router-link to='/bidding/scene/clarify' tag='button' class="btn btn-info">澄清与回应</router-link>
+            <router-link to='/bidding/scene/clarify' tag='button' class="btn btn-info">澄清与回应 <span class="badge">1</span></router-link>
 
             <button type="button" class="btn btn-primary disabled">
               结束澄清，进入授标
@@ -71,7 +71,9 @@
             <div class="box-body">
               <p class="text-muted">1. 到开标时间之后才显示开标按钮</p>
               <p class="text-muted">2. 点击开标之后才出现"废标"、"开标一览表"、"澄清与回应"、"结束澄清，进入授标"按钮</p>
-              <p class="text-muted">低于3家提示不足3家是否开标</p>
+              <p class="text-muted">3. 低于3家提示不足3家是否开标</p>
+              <p class="text-muted">4. 如果有澄清未关闭，在"澄清与回应"按钮上标识出来</p>
+              <p class="text-muted">5. 如果有澄清未关闭，"结束澄清，进入授标"不可点击</p>
             </div>
           </div>
         </div>
