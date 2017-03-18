@@ -29,9 +29,7 @@
                   <div class="form-group">
                     <label class="control-label col-md-5">附件</label>
                     <div class="col-md-7">
-                      <a>
-                        <p class="form-control-static">下载</p>
-                      </a>
+                      <p class="form-control-static"><a><i class="fa fa-paperclip"></i> 下载</a></p>
                     </div>
                   </div>
                 </div>

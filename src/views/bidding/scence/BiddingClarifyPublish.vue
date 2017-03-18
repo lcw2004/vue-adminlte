@@ -104,7 +104,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default " data-dismiss="modal" @click="config.show = false">取消</button>
-        <button type="button" class="btn btn-primary" @click="select()">确认</button>
+        <button type="button" class="btn btn-primary" @click="ok()">确认</button>
       </div>
     </div>
   </div>
@@ -131,14 +131,13 @@ export default {
       type: '1',
       isRePrice: '0',
       rePriceConfig: {
-        title: '选择需要报价的物料',
-        show: true
+        title: '选择需要重新报价的物料',
+        show: false
       }
     }
   },
   methods: {
-    selectSubject () {
-      console.log(1)
+    ok () {
     }
   }
 }

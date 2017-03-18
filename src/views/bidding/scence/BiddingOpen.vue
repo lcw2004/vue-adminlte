@@ -48,14 +48,16 @@
         </div>
       </div>
       <div class="row" >
-        <div class="col-md-2">
-        </div>
-        <div class="col-md-6">
-          <button type="button" class="btn btn-info">开标</button>
-          <router-link to='/bidding/scene/compare' tag='button' class="btn btn-info">开标一览表</router-link>
-          <router-link to='/bidding/scene/clarify' tag='button' class="btn btn-info">澄清与回应</router-link>
-        </div>
-        <div class="col-md-2">
+        <div class="col-md-12">
+          <div class="pull-right">
+            <button type="button" class="btn btn-info" @click="config.show = true">开标</button>
+            <router-link to='/bidding/scene/compare' tag='button' class="btn btn-info">开标一览表</router-link>
+            <router-link to='/bidding/scene/clarify' tag='button' class="btn btn-info">澄清与回应</router-link>
+
+            <button type="button" class="btn btn-primary disabled">
+              结束澄清，进入授标
+            </button>
+          </div>
         </div>
       </div>
 
@@ -67,23 +69,31 @@
               <h3 class="box-title">备注</h3>
             </div>
             <div class="box-body">
-              <p class="text-muted">点击开标之后才出现"废标"、"开标一览表"按钮</p>
-              <p class="text-muted">到时间之后才显示开标按钮</p>
+              <p class="text-muted">1. 到开标时间之后才显示开标按钮</p>
+              <p class="text-muted">2. 点击开标之后才出现"废标"、"开标一览表"、"澄清与回应"、"结束澄清，进入授标"按钮</p>
               <p class="text-muted">低于3家提示不足3家是否开标</p>
             </div>
           </div>
         </div>
       </div>
     </div>
+
+    <BiddingOpenConfirm :config="config"></BiddingOpenConfirm>
   </div>
 </template>
 
 <script>
+import BiddingOpenConfirm from './BiddingOpenConfirm'
 export default {
   components: {
+    BiddingOpenConfirm
   },
   data: function () {
     return {
+      config: {
+        show: false,
+        title: '开标密码'
+      }
     }
   }
 }

@@ -10,7 +10,7 @@
       </div>
       <div class="modal-body">
         <div class="row">
-          <div class="col-md-5 scrollable">
+          <div class="col-md-12 scrollable">
             <table class="table table-bordered">
               <tbody>
                 <tr>
@@ -117,70 +117,6 @@
                   <td>钢铁</td>
                   <td>1000</td>
                   <td>88.05</td>
-                </tr>
-                <tr>
-                  <td><input type="checkbox"/></td>
-                  <td>001</td>
-                  <td>钢铁</td>
-                  <td>1000</td>
-                  <td>88.05</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="col-md-1 text-center">
-            <div class="row">
-              <div class="col-md-12">
-                <button type="button" class="btn btn-primary btn-xs">全选 <i class="fa fa-fw fa-angle-double-right"></i></button>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-12">
-                &nbsp;
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-12">
-                <button type="button" class="btn btn-primary btn-xs">添加 <i class="fa fa-fw fa-angle-double-right"></i></button>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-12">
-                &nbsp;
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-12">
-                <button type="button" class="btn btn-primary btn-xs"><i class="fa fa-fw fa-angle-double-left"></i> 删除</button>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-12">
-                &nbsp;
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-12">
-                <button type="button" class="btn btn-primary btn-xs"><i class="fa fa-fw fa-angle-double-left"></i> 清空</button>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-5 scrollable">
-            <table class="table table-bordered">
-              <tbody>
-                <tr>
-                  <th style="width: 10px"><input type="checkbox"/></th>
-                  <th>编码</th>
-                  <th>名称</th>
-                  <th>数量</th>
-                  <th>参考价</th>
-                </tr>
-                <tr>
-                  <td><input type="checkbox"/></td>
-                  <td>001</td>
-                  <td>钢铁</td>
-                  <td>1000</td>
-                  <td>99.00</td>
                 </tr>
                 <tr>
                   <td><input type="checkbox"/></td>
@@ -195,8 +131,15 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default " data-dismiss="modal" @click="config.show = false">取消</button>
-        <button type="button" class="btn btn-primary" @click="select()">确认</button>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="pull-left">选中 <span class="label label-success">5</span> 个标的物</div>
+          </div>
+          <div class="col-md-6">
+            <button type="button" class="btn btn-default " data-dismiss="modal" @click="config.show = false">取消</button>
+            <button type="button" class="btn btn-primary" @click="ok()">确认</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>

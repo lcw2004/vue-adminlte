@@ -1,27 +1,22 @@
 <template>
   <div class="row">
     <div class="col-md-12">
+      <div class="row" >
+        <div class="col-md-12">
+          <div class="pull-right">
+            <button type="button" class="btn btn-primary" @click="config.show = true">
+              发布澄清
+            </button>
+            <button type="button" class="btn btn-default" @click="$router.go(-1)">
+              返回
+            </button>
+          </div>
+        </div>
+      </div>
+
       <BiddingClarifyDetail index="3" status="0"></BiddingClarifyDetail>
       <BiddingClarifyDetail index="2" status="1"></BiddingClarifyDetail>
       <BiddingClarifyDetail index="1" status="1"></BiddingClarifyDetail>
-
-      <div class="row" >
-        <div class="col-md-4">
-        </div>
-        <div class="col-md-4">
-          <button type="button" class="btn btn-primary" @click="config.show = true">
-            发布澄清
-          </button>
-          <button type="button" class="btn btn-primary disabled">
-            结束澄清，进入授标
-          </button>
-          <button type="button" class="btn btn-info" @click="$router.go(-1)">
-            返回
-          </button>
-        </div>
-        <div class="col-md-4">
-        </div>
-      </div>
 
       <div class="row">
         <div class="col-md-12">
