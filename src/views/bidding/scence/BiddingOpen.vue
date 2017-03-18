@@ -28,7 +28,7 @@
                 <td>投标单位2</td>
                 <td>2017-01-01 11:11:11</td>
                 <td><span class="label label-success">已投标</span></td>
-                <td><span class="label label-warning">未开标</span></td>
+                <td><span class="label label-success">开标成功</span></td>
                 <td>
                   <a>废标</a>
                 </td>
@@ -38,7 +38,7 @@
                 <td>投标单位3 </td>
                 <td></td>
                 <td><span class="label label-danger">未投标</span></td>
-                <td><span class="label label-danger">开标失败</span></td>
+                <td><span class="label label-success">开标成功</span></td>
                 <td>
                   <a>废标</a>
                 </td>
@@ -68,6 +68,8 @@
             </div>
             <div class="box-body">
               <p class="text-muted">点击开标之后才出现"废标"、"开标一览表"按钮</p>
+              <p class="text-muted">到时间之后才显示开标按钮</p>
+              <p class="text-muted">低于3家提示不足3家是否开标</p>
             </div>
           </div>
         </div>
