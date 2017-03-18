@@ -13,6 +13,18 @@
           <div class="row">
             <div class="col-md-12">
               <div class="form-group">
+                <label class="control-label col-md-2">参与人</label>
+                <div class="col-md-8">
+                  <div class="input-group">
+                    <input type="text" class="form-control" >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
                 <label class="control-label col-md-2">评价</label>
                 <div class="col-md-9">
                   <textarea class="form-control" rows="3"></textarea>

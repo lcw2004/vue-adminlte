@@ -129,7 +129,7 @@
               <label><input type="radio" value="1">含税价</label>
             </div>
             <div class="radio inline">
-              <label><input type="radio" value="2">剔税价</label>
+              <label><input type="radio" value="2">去税价</label>
             </div>
           </div>
         </div>

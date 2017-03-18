@@ -34,7 +34,7 @@
         <div class="checkbox inline">
           <label>
             <input type="checkbox" value="2" v-model="showPrices">
-            剔税价
+            去税价
           </label>
         </div>
         <div class="checkbox inline">
@@ -71,7 +71,7 @@
             <template v-for="supplier of supplierPricesSorted.suppliers">
               <td>最终报价</td>
               <td v-if="showPriceType('1')">含税价</td>
-              <td v-if="showPriceType('2')">剔税价</td>
+              <td v-if="showPriceType('2')">去税价</td>
               <td v-if="showPriceType('3')">税率</td>
             </template>
           </tr>
