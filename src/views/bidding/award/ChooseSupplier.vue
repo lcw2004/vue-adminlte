@@ -31,8 +31,8 @@
 </template>
 
 <script>
-import { sortTotalMoney, sortSupplierPrices, totalMoney } from '../scence/supplier'
-import SupplierPriceUnit from '../scence/SupplierPriceUnit'
+import { sortTotalMoney, sortSupplierPrices, totalMoney } from '../scence/quotes/supplier'
+import SupplierPriceUnit from '../scence/quotes/SupplierPriceUnit'
 
 export default {
   components: {

@@ -146,7 +146,7 @@
 
 <script>
 let $ = require('jquery')
-import fixTable from '../../../utils/fixTable'
+import fixTable from '../../../../utils/fixTable'
 import SupplierPriceUnit from './SupplierPriceUnit'
 import { sortTotalMoney, sortSupplierPrices, totalMoney } from './supplier'
 

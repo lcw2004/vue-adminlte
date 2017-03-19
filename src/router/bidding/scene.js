@@ -1,15 +1,15 @@
 import BiddingScene from '../../views/bidding/scence/BiddingScene'
-import Compare from '../../views/bidding/scence/Compare'
-import Home from '../../views/bidding/scence/Home'
-import BiddingClarify from '../../views/bidding/scence/BiddingClarify'
+import BiddingQuotesContains from '../../views/bidding/scence/quotes/BiddingQuotesContains'
+import Index from '../../views/bidding/scence/Index'
+import BiddingClarify from '../../views/bidding/scence/clarify/BiddingClarify'
 
 export default [
   {
     path: '/bidding/scene',
     component: BiddingScene,
     children: [
-      { path: '', component: Home },
-      { path: 'compare', component: Compare },
+      { path: '', component: Index },
+      { path: 'quotes', component: BiddingQuotesContains },
       { path: 'clarify', component: BiddingClarify }
     ]
   }

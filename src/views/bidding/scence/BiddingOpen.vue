@@ -51,7 +51,7 @@
         <div class="col-md-12">
           <div class="pull-right">
             <button type="button" class="btn btn-info" @click="config.show = true">开标</button>
-            <router-link to='/bidding/scene/compare' tag='button' class="btn btn-info">开标一览表</router-link>
+            <router-link to='/bidding/scene/quotes' tag='button' class="btn btn-info">开标一览表</router-link>
             <router-link to='/bidding/scene/clarify' tag='button' class="btn btn-info">澄清与回应 <span class="badge">1</span></router-link>
 
             <button type="button" class="btn btn-primary disabled">

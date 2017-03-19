@@ -35,14 +35,14 @@
 </template>
 
 <script>
-import CompareDetail from '../scence/CompareDetail'
+import BiddingQuotes from '../scence/quotes/BiddingQuotes'
 import ExpertSuggestion from './ExpertSuggestion'
 import ChooseSupplier from './ChooseSupplier'
 import PreAdwardSupplier from './PreAdwardSupplier'
 
 export default {
   components: {
-    CompareDetail,
+    BiddingQuotes,
     ExpertSuggestion,
     ChooseSupplier,
     PreAdwardSupplier

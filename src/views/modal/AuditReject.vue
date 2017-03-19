@@ -11,7 +11,7 @@
       <div class="modal-body">
         <div class="row">
           <div class="col-md-12">
-            <textarea class="form-control" placeholder="请输入驳回原因"></textarea>
+            <textarea class="form-control" placeholder="请输入原因"></textarea>
           </div>
         </div>
       </div>

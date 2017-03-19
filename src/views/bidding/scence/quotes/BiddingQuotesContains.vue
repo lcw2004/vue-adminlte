@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md-12">
 
-      <CompareDetail></CompareDetail>
+      <BiddingQuotes></BiddingQuotes>
 
       <div class="row" >
         <div class="col-md-5">
@@ -23,11 +23,11 @@
 </template>
 
 <script>
-import CompareDetail from './CompareDetail'
+import BiddingQuotes from './BiddingQuotes'
 
 export default {
   components: {
-    CompareDetail
+    BiddingQuotes
   }
 }
 </script>
