@@ -1,5 +1,5 @@
 <template>
-  <span class="label" :class="labelClass">{{value}}</span>
+  <span class="label" :class="labelClass">第{{value}}名</span>
 </template>
 <script>
 export default {

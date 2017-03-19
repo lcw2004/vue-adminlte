@@ -46,6 +46,15 @@ function sortSupplierPrices (prices) {
   return prices
 }
 
+function totalFloorMoney (prices) {
+  let total = 0
+  for (let value of prices.prices) {
+    let subjectInfo = value.subjectInfo
+    total += subjectInfo.floorPrice * subjectInfo.number
+  }
+  return total
+}
+
 function sortTotalMoney (totalMoney) {
   // 对总价进行排名
   let totalMoneyArray = Array.from(totalMoney.values())
@@ -67,5 +76,6 @@ function sortTotalMoney (totalMoney) {
 export {
   sortTotalMoney,
   sortSupplierPrices,
+  totalFloorMoney,
   totalMoney
 }

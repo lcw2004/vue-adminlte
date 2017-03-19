@@ -94,12 +94,14 @@
           <tr>
             <td></td>
             <td>总金额</td>
-            <td>645</td>
+            <td>{{ totalFloorMoney }}</td>
             <td v-if="isShowSubjectDetail" :colspan="isShowSubjectDetail ? 4 : 0"></td>
 
             <template v-for="supplier of supplierPricesSorted.suppliers">
-              <td :colspan="showPrices.length + 1">{{ totalMoneySorted.get(supplier.id).total }}
+              <td :colspan="showPrices.length + 1">
+                {{ totalMoneySorted.get(supplier.id).total }}
                 <SupplierPriceUnit :value="totalMoneySorted.get(supplier.id).sortNum"></SupplierPriceUnit>
+                <span class="label label-danger" v-if="totalMoneySorted.get(supplier.id).total > totalFloorMoney">高于拦标价</span>
               </td>
             </template>
           </tr>
@@ -110,7 +112,10 @@
             <td :colspan="isShowSubjectDetail ? 5 : 0"></td>
 
             <template v-for="supplier of supplierPricesSorted.suppliers">
-              <td :colspan="showPrices.length + 1"><span class="label label-warning">是</span></td>
+              <td :colspan="showPrices.length + 1">
+                <span class="label label-warning">存在偏离</span>
+                <router-link to="technical-deviation">查看</router-link>
+              </td>
             </template>
           </tr>
           </tbody>
@@ -125,7 +130,7 @@
 let $ = require('jquery')
 import fixTable from '../../../../utils/fixTable'
 import SupplierPriceUnit from './SupplierPriceUnit'
-import { sortTotalMoney, sortSupplierPrices, totalMoney } from './supplier'
+import { sortTotalMoney, sortSupplierPrices, totalFloorMoney, totalMoney } from './supplier'
 
 export default {
   components: {
@@ -162,6 +167,9 @@ export default {
     },
     totalMoneySorted: function () {
       return sortTotalMoney(this.totalMoney)
+    },
+    totalFloorMoney: function () {
+      return totalFloorMoney(this.supplierPrices)
     }
   }
 }
