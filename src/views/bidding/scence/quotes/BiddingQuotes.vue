@@ -7,18 +7,9 @@
     </div>
     <div class="col-md-3">
       <div class="control-group pull-right">
-        <label class="control-label">标的详情</label>
-        <div class="radio inline">
-          <label>
-            <input type="radio" value="1" v-model="showSubjectInfo">
-            是
-          </label>
-        </div>
-        <div class="radio inline">
-          <label>
-            <input type="radio" value="0" v-model="showSubjectInfo">
-            否
-          </label>
+        <label class="control-label">报价详情&nbsp;</label>
+        <div class="pull-right">
+          <BootstrapSwitch size="mini" v-model="isShowSubjectDetail"></BootstrapSwitch>
         </div>
       </div>
     </div>
@@ -47,7 +38,7 @@
     </div>
   </div>
 
-  <div class="row">
+  <div class="row" style="margin-right: 0px; margin-left: 0px; ">
     <div class="col-md-12" style="overflow:auto;" id="flagDiv">
       <table id="myTable" class="table table-bordered table-hover">
         <thead>
@@ -102,8 +93,9 @@
           <!-- 总金额 -->
           <tr>
             <td></td>
-            <td colspan="">总金额</td>
-            <td :colspan="isShowSubjectDetail ? 5 : 0"></td>
+            <td>总金额</td>
+            <td>645</td>
+            <td v-if="isShowSubjectDetail" :colspan="isShowSubjectDetail ? 4 : 0"></td>
 
             <template v-for="supplier of supplierPricesSorted.suppliers">
               <td :colspan="showPrices.length + 1">{{ totalMoneySorted.get(supplier.id).total }}
@@ -141,7 +133,7 @@ export default {
   },
   data: function () {
     return {
-      showSubjectInfo: 0,
+      isShowSubjectDetail: false,
       showPrices: []
     }
   },
@@ -170,9 +162,6 @@ export default {
     },
     totalMoneySorted: function () {
       return sortTotalMoney(this.totalMoney)
-    },
-    isShowSubjectDetail: function () {
-      return this.showSubjectInfo === '1'
     }
   }
 }
@@ -181,6 +170,6 @@ export default {
 <style type="text/css">
 td {
   word-break: keep-all;
-  white-space:nowrap;
+  white-space: nowrap;
 }
 </style>

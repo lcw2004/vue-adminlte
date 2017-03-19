@@ -59,8 +59,7 @@ export default {
         size: this.size,
         onText: this.onText,
         offText: this.offText,
-        state: this.value === 1,
-        handleWidth: 50
+        state: this.value === 1
       }
     }
   }
