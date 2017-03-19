@@ -20,6 +20,7 @@ const data = {
         code: '001',
         number: 2,
         price: 11,
+        floorPrice: 6000,
         unit: '面'
       },
       supplierPrices: {
@@ -50,6 +51,7 @@ const data = {
         code: '002',
         number: 2,
         price: 12,
+        floorPrice: 150,
         unit: '面'
       },
       supplierPrices: {
@@ -80,6 +82,7 @@ const data = {
         code: '003',
         number: 1,
         price: 13,
+        floorPrice: 300,
         unit: '次'
       },
       supplierPrices: {

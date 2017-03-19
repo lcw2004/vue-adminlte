@@ -54,8 +54,9 @@
           <tr>
             <td rowspan="2">序号</td>
             <td rowspan="2">标的名称</td>
+            <td rowspan="2">拦标价</td>
 
-            <template v-if="showSubjectInfo == '1'">
+            <template v-if="isShowSubjectDetail">
               <td rowspan="2">标的编码</td>
               <td rowspan="2">标的数量</td>
               <td rowspan="2">计量单位</td>
@@ -81,8 +82,9 @@
           <tr v-for="(supplierPrice, index) of supplierPricesSorted.prices">
             <td>{{ index + 1 }}</td>
             <td>{{ supplierPrice.subjectInfo.name }}</td>
+            <td>{{ supplierPrice.subjectInfo.floorPrice }}</td>
 
-            <template v-if="showSubjectInfo == '1'">
+            <template v-if="isShowSubjectDetail">
               <td>{{ supplierPrice.subjectInfo.code }}</td>
               <td>{{ supplierPrice.subjectInfo.number }}</td>
               <td>{{ supplierPrice.subjectInfo.unit }}</td>
@@ -97,37 +99,23 @@
             </template>
           </tr>
 
+          <!-- 总金额 -->
           <tr>
             <td></td>
-            <td>总金额</td>
-
-            <template v-if="showSubjectInfo == '1'">
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </template>
+            <td colspan="">总金额</td>
+            <td :colspan="isShowSubjectDetail ? 5 : 0"></td>
 
             <template v-for="supplier of supplierPricesSorted.suppliers">
-              <td>{{ totalMoneySorted.get(supplier.id).total }}
+              <td :colspan="showPrices.length + 1">{{ totalMoneySorted.get(supplier.id).total }}
                 <SupplierPriceUnit :value="totalMoneySorted.get(supplier.id).sortNum"></SupplierPriceUnit>
               </td>
-              <td v-if="showPriceType('1')"></td>
-              <td v-if="showPriceType('2')"></td>
-              <td v-if="showPriceType('3')"></td>
             </template>
           </tr>
 
           <tr>
             <td></td>
             <td>是否有技术偏离</td>
-
-            <template v-if="showSubjectInfo == '1'">
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </template>
+            <td :colspan="isShowSubjectDetail ? 5 : 0"></td>
 
             <template v-for="supplier of supplierPricesSorted.suppliers">
               <td :colspan="showPrices.length + 1"><span class="label label-warning">是</span></td>
@@ -182,6 +170,9 @@ export default {
     },
     totalMoneySorted: function () {
       return sortTotalMoney(this.totalMoney)
+    },
+    isShowSubjectDetail: function () {
+      return this.showSubjectInfo === '1'
     }
   }
 }
