@@ -80,15 +80,15 @@
       </div>
     </div>
 
-    <BiddingOpenConfirm :config="config"></BiddingOpenConfirm>
+    <OpenBiddingConfirm :config="config"></OpenBiddingConfirm>
   </div>
 </template>
 
 <script>
-import BiddingOpenConfirm from './BiddingOpenConfirm'
+import OpenBiddingConfirm from './OpenBiddingConfirm'
 export default {
   components: {
-    BiddingOpenConfirm
+    OpenBiddingConfirm
   },
   data: function () {
     return {
