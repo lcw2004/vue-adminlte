@@ -5,7 +5,7 @@
     <div class="box box-solid">
       <div class="box-header">
         <h3 class="box-title">第 {{index}} 轮澄清
-          <span v-if="status == 1" class="label label-success">已结束</span>
+          <span v-if="status == 1" class="label label-default">已结束</span>
           <span v-if="status == 0" class="label label-warning">未结束</span>
         </h3>
         <div class="box-tools pull-right">
@@ -88,7 +88,7 @@
                 <tr>
                   <td>1</td>
                   <td>投标单位1</td>
-                  <td><span class="label label-success">已回应</span></td>
+                  <td><span class="label label-default">已回应</span></td>
                   <td>2017-01-01 11:11:11</td>
                   <td>
                   </td>
@@ -104,7 +104,7 @@
                 <tr>
                   <td>3</td>
                   <td>投标单位3 </td>
-                  <td><span class="label label-success">已回应</span></td>
+                  <td><span class="label label-default">已回应</span></td>
                   <td>2017-01-01 11:11:11</td>
                   <td>
                   </td>
