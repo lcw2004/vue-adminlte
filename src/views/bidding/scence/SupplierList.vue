@@ -3,7 +3,7 @@
     <div class="col-md-12">
       <div class="row" >
         <div class="col-md-12">
-          <table class="table table-bordered">
+          <table class="table table-bordered table-hover">
             <tbody>
               <tr>
                 <th style="width: 10px">#</th>
@@ -20,7 +20,8 @@
                 <td><span class="label label-success">已投标</span></td>
                 <td><span class="label label-success">开标成功</span></td>
                 <td>
-                  <a>废标</a>
+                  <a @click="supplierInvalidConfig.show = true">废标</a>
+                  <router-link to='/bidding/scene/tender-detail'>投标详情</router-link>
                 </td>
               </tr>
               <tr>
@@ -30,7 +31,8 @@
                 <td><span class="label label-success">已投标</span></td>
                 <td><span class="label label-success">开标成功</span></td>
                 <td>
-                  <a>废标</a>
+                  <a @click="supplierInvalidConfig.show = true">废标</a>
+                  <router-link to='/bidding/scene/tender-detail'>投标详情</router-link>
                 </td>
               </tr>
               <tr>
@@ -40,7 +42,8 @@
                 <td><span class="label label-danger">未投标</span></td>
                 <td><span class="label label-success">开标成功</span></td>
                 <td>
-                  <a>废标</a>
+                  <a @click="supplierInvalidConfig.show = true">废标</a>
+                  <router-link to='/bidding/scene/tender-detail'>投标详情</router-link>
                 </td>
               </tr>
             </tbody>
@@ -81,20 +84,27 @@
     </div>
 
     <OpenBiddingConfirm :config="config"></OpenBiddingConfirm>
+    <AuditReject :config="supplierInvalidConfig"></AuditReject>
   </div>
 </template>
 
 <script>
 import OpenBiddingConfirm from './OpenBiddingConfirm'
+import AuditReject from '../../modal/AuditReject.vue'
 export default {
   components: {
-    OpenBiddingConfirm
+    OpenBiddingConfirm,
+    AuditReject
   },
   data: function () {
     return {
       config: {
         show: false,
         title: '开标密码'
+      },
+      supplierInvalidConfig: {
+        show: false,
+        title: '废标'
       }
     }
   }

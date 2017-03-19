@@ -44,7 +44,7 @@
                 <div class="form-group">
                   <label class="control-label col-md-2">专业要求</label>
                   <div class="col-md-9">
-                    <table class="table table-bordered">
+                    <table class="table table-bordered table-hover">
                       <tbody>
                         <tr>
                           <th style="width: 10px">#</th>

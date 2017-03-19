@@ -3,7 +3,7 @@
     <button type="button" class="btn btn-info btn-sm pull-right" @click="config.show = true">
       <i class="fa fa-plus"></i>  添加标书文件
     </button>
-    <table class="table table-bordered">
+    <table class="table table-bordered table-hover">
       <tbody>
         <tr>
           <th style="width: 10px">#</th>

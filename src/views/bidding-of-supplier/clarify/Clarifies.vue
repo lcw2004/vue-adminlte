@@ -7,7 +7,7 @@
             <h3 class="box-title">项目澄清</h3>
           </div>
           <div class="box-body">
-            <table class="table table-bordered">
+            <table class="table table-bordered table-hover">
               <tbody>
                 <tr>
                   <th style="width: 10px">#</th>

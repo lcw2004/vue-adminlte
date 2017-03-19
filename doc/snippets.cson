@@ -377,7 +377,7 @@
   'Bootstrap table':
     'prefix': 'btable'
     'body': """
-      <table class="table table-bordered">
+      <table class="table table-bordered table-hover">
         <tbody>
           <tr>
             <th style="width: 10px">#</th>

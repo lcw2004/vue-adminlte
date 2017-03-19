@@ -49,7 +49,7 @@
 
   <div class="row">
     <div class="col-md-12" style="overflow:auto;" id="flagDiv">
-      <table id="myTable" class="table table-bordered">
+      <table id="myTable" class="table table-bordered table-hover">
         <thead>
           <tr>
             <td rowspan="2">序号</td>
@@ -130,10 +130,7 @@
             </template>
 
             <template v-for="supplier of supplierPricesSorted.suppliers">
-              <td><span class="label label-warning">是</span></td>
-              <td></td>
-              <td></td>
-              <td></td>
+              <td :colspan="showPrices.length + 1"><span class="label label-warning">是</span></td>
             </template>
           </tr>
           </tbody>

@@ -25,7 +25,7 @@
     </div>
 
     <div class="col-md-12">
-      <table class="table table-bordered">
+      <table class="table table-bordered table-hover">
         <tbody>
           <tr>
             <th style="width: 10px">#</th>

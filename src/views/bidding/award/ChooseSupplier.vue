@@ -4,7 +4,7 @@
       <h3 class="box-title">供应商价格排名</h3>
     </div>
     <div class="box-body">
-      <table class="table table-bordered">
+      <table class="table table-bordered table-hover">
         <tbody>
           <tr>
             <th style="width: 10px">#</th>
