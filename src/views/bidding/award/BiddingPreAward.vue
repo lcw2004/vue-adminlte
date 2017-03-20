@@ -10,7 +10,7 @@
             </div>
           </div>
           <div class="box-body">
-            <CompareDetail></CompareDetail>
+            <BiddingQuotes></BiddingQuotes>
           </div>
         </div>
       </div>

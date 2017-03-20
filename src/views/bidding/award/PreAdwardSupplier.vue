@@ -23,6 +23,8 @@
       <button type="submit" class="btn btn-primary">提交审核</button>
       <button type="submit" class="btn btn-primary">报告预览</button>
       <button type="submit" class="btn btn-primary">导出Excel</button>
+      <button type="submit" class="btn btn-primary">中标公告设置</button>
+      <router-link to='/bidding/set-floor-price' tag="button" class="btn btn-primary">设置拦标价</router-link>
     </div>
   </div>
 </template>

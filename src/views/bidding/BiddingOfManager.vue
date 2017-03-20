@@ -101,7 +101,7 @@
                   <td></td>
                   <td>授标结束，待归档</td>
                   <td>
-                    <a @click="test">归档</a>
+                    <a>归档</a>
                     <a @click="reAward">重新授标</a>
                   </td>
                 </tr>
