@@ -117,8 +117,6 @@
         <li><a><i class="fa fa-circle-o"></i><router-link to='/personal/supplier/office-info'>机构信息</router-link></a></li>
       </ul>
     </li>
-
-
     <li class="treeview">
       <a href="#">
         <i class="fa fa-files-o"></i>
@@ -130,6 +128,21 @@
       <ul class="treeview-menu">
         <li><a><i class="fa fa-circle-o"></i><router-link to='/bidding/bidding-of-supplier'>我的投标项目</router-link></a></li>
         <li><a><i class="fa fa-circle-o"></i><router-link to='/bidding/bidding-can-join'>可参与项目</router-link></a></li>
+      </ul>
+    </li>
+
+
+    <li class="header">专家</li>
+    <li class="treeview">
+      <a href="#">
+        <i class="fa fa-files-o"></i>
+        <span>招标项目</span>
+        <span class="pull-right-container">
+          <i class="fa fa-angle-left pull-right"></i>
+        </span>
+      </a>
+      <ul class="treeview-menu">
+        <li><a><i class="fa fa-circle-o"></i><router-link to='/bidding/bidding-of-supervisor'>招投标项目监督</router-link></a></li>
       </ul>
     </li>
   </ul>
