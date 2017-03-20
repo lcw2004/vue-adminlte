@@ -22,7 +22,8 @@
         <li class="active"><a><i class="fa fa-circle-o"></i><router-link to='/bidding/of-manager'>我的招标项目</router-link></a></li>
         <li><a><i class="fa fa-circle-o"></i><router-link to='/bidding/create'>招标项目发布</router-link></a></li>
         <li><a><i class="fa fa-circle-o"></i><router-link to='/bidding/manage'>招标项目管理</router-link></a></li>
-        <li><a><i class="fa fa-circle-o"></i><router-link to='/bidding/permission'>投标权限管理</router-link></a></li>
+        <li><a><i class="fa fa-circle-o"></i><router-link to='/bidding/fee-manage'>费金管理</router-link></a></li>
+        <li><a><i class="fa fa-circle-o"></i><router-link to='/bidding/floor-price'>设置拦标价</router-link></a></li>
         <li><a><i class="fa fa-circle-o"></i><router-link to='/bidding/audit'>招标项目审核</router-link></a></li>
         <li><a><i class="fa fa-circle-o"></i><router-link to='/bidding/expert-apply'>申请专家抽取</router-link></a></li>
         <li><a><i class="fa fa-circle-o"></i><router-link to='/bidding/expert-extract'>专家抽取</router-link></a></li>
