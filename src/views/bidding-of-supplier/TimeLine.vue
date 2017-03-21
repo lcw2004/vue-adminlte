@@ -79,7 +79,7 @@
             </div>
           </div>
           <div class="timeline-footer">
-            <a class="btn btn-primary btn-sm disabled">上传投标文件</a>
+            <router-link class="btn btn-primary btn-sm" to="/bidding/s/submit-bidding">上传投标文件</router-link>
           </div>
         </div>
       </li>
@@ -91,7 +91,7 @@
         <i class="fa fa-television bg-blue"></i>
         <div class="timeline-item">
           <div class="timeline-footer">
-            <a class="btn btn-primary btn-sm">进入开标现场</a>
+            <router-link class="btn btn-primary btn-sm" to="/bidding/s/scence">进入开标现场</router-link>
           </div>
         </div>
       </li>

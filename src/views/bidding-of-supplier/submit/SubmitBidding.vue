@@ -18,8 +18,7 @@
             </div>
           </div>
           <div class="box-footer">
-            <div class="col-md-4 col-sm-0"></div>
-            <div class="col-md-2 col-sm-2"><button class="btn btn-block btn-default" @click="$router.go(-1)">返回</button></div>
+            <div class="col-md-2 col-md-offset-2"><button class="btn btn-block btn-default" @click="$router.go(-1)">返回</button></div>
           </div>
         </div>
       </div>

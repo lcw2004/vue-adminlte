@@ -15,12 +15,12 @@
     <div class="col-md-4"></div>
     <div class="col-md-1">
       <button type="button" class="btn btn-info btn-sm pull-right" @click="config.show = true">
-          <i class="fa fa-plus"></i>  导入标的
-        </button>
+        <i class="fa fa-plus"></i>  导入标的
+      </button>
     </div>
     <div class="col-md-1">
       <button type="button" class="btn btn-info btn-sm pull-right" @click="config.show = true">
-          <i class="fa fa-plus"></i>  添加标的
+        <i class="fa fa-plus"></i>  添加标的
       </button>
     </div>
 
