@@ -60,6 +60,9 @@
                   <td>
                     <a @click="start">start</a>
                     <a @click="done">done</a>
+                    <button type="button" class="btn btn-primary btn-sm" @click="rest">
+                      Rest
+                    </button>
                   </td>
                 </tr>
               </tbody>
@@ -110,6 +113,17 @@ export default {
     auditConfirm: function () {
       this.$confirm('确认审核通过吗？', function () {
         this.$notify.success('审核成功')
+      })
+    },
+    rest: function () {
+      this.$notify.success('rest')
+      let actions = {
+        listRedis: {method: 'get', url: '/redis-demo/event/user'},
+        list: {method: 'get', url: '/one/a/rest/sys/user'}
+      }
+      let resource = this.$resource(null, {}, actions)
+      resource.list({pageNo: 1, pageSize: 10}).then(function (response) {
+        console.log(response)
       })
     }
   }
