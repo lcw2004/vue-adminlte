@@ -152,5 +152,15 @@
 
 <script>
 export default {
+  data: function () {
+    return {
+      topMenu: {}
+    }
+  },
+  mounted () {
+    this.$http.get('/one/a/rest/sys/menu/user').then(function (response) {
+      this.topMenu = response.body
+    })
+  }
 }
 </script>

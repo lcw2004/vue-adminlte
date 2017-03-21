@@ -119,7 +119,7 @@ export default {
       this.$notify.success('rest')
       let actions = {
         listRedis: {method: 'get', url: '/redis-demo/event/user'},
-        list: {method: 'get', url: '/one/a/rest/sys/user'}
+        list: {method: 'get', url: '/one/a/rest/sys/menu/user'}
       }
       let resource = this.$resource(null, {}, actions)
       resource.list({pageNo: 1, pageSize: 10}).then(function (response) {
