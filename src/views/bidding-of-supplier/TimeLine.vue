@@ -12,11 +12,11 @@
         <div class="timeline-item">
           <h3 class="timeline-header">缴纳标书费</h3>
           <div class="timeline-body">
-            <p class="text-red">户名：湘潭电机股份有限公司</p>
+            <p class="text-red">户名：某某股份有限公司</p>
             <p class="text-red">银行：工商银行下摄司支行</p>
-            <p class="text-red">账号：1904103219100002331</p>
-            <p>支付完成后请与我中心价格审核室伍涛涌（0731 - 58595724）联系，获取标书下载权限。</p>
-            <div class="callout callout-danger">
+            <p class="text-red">账号：12345678901234567</p>
+            <p>支付完成后请<a class="btn btn-primary btn-sm">上传缴费凭证</a>，与我中心价格审核室张三（0731 - 99999999）联系，获取标书下载权限。</p>
+            <div class="callout callout-warning">
               请在售标截止时间之前购买标书
             </div>
           </div>
@@ -29,12 +29,12 @@
         <div class="timeline-item">
           <h3 class="timeline-header">缴纳投标保证金</h3>
           <div class="timeline-body">
-            <p class="text-red">户名：湘潭电机股份有限公司</p>
+            <p class="text-red">户名：某某股份有限公司</p>
             <p class="text-red">银行：工商银行下摄司支行</p>
-            <p class="text-red">账号：1904103219100002331</p>
-            <p>支付完成后请与我中心价格审核室伍涛涌（0731 - 58595724）联系，获取投标权限。</p>
-            <div class="callout callout-danger">
-              请在开标之前缴纳投标保证金
+            <p class="text-red">账号：12345678901234567</p>
+            <p>支付完成后请<a class="btn btn-primary btn-sm">上传缴费凭证</a>，与我中心价格审核室张三（0731 - 99999999）联系，获取投标权限。</p>
+            <div class="callout callout-warning">
+              请在售标截止时间之前上传投标保证金
             </div>
           </div>
         </div>
