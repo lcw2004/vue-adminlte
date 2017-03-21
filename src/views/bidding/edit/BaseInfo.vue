@@ -8,8 +8,8 @@
           <div class="input-group">
             <input type="text" class="form-control">
             <span class="input-group-btn">
-                <button type="button" class="btn btn-primary btn-flat">选择</button>
-              </span>
+              <button type="button" class="btn btn-primary btn-flat">选择</button>
+            </span>
           </div>
         </div>
       </div>
@@ -94,8 +94,8 @@
           <div class="input-group">
             <input type="text" class="form-control">
             <span class="input-group-btn">
-                  <button type="button" class="btn btn-primary btn-flat">选择</button>
-                </span>
+              <button type="button" class="btn btn-primary btn-flat">选择</button>
+            </span>
           </div>
         </div>
       </div>
@@ -119,6 +119,17 @@
 
   <div class="row">
     <div class="col-md-6">
+      <div class="form-group">
+        <label class="control-label col-md-4">报名联系人</label>
+        <div class="col-md-7">
+          <div class="input-group">
+            <input type="text" class="form-control">
+            <span class="input-group-btn">
+              <button type="button" class="btn btn-primary btn-flat">选择</button>
+            </span>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="col-md-6">
       <div class="form-group">
