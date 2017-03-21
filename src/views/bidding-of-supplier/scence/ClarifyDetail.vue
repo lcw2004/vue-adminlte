@@ -67,7 +67,7 @@
                         <button type="button" class="btn btn-primary" @click="config.show = true">
                           回应并报价
                         </button>
-                        <button type="button" class="btn btn-primary">
+                        <button type="button" class="btn btn-primary" @click="rePriceConfig.show = true">
                           查看本轮报价
                         </button>
                       </div>
@@ -82,16 +82,19 @@
     </div>
 
     <RePriceModal :config="config"></RePriceModal>
+    <RePriceDetailModal :config="rePriceConfig"></RePriceDetailModal>
   </div>
 </template>
 
 <script>
 import RePriceModal from './RePriceModal'
+import RePriceDetailModal from './RePriceDetailModal'
 
 export default {
   props: ['index', 'status'],
   components: {
-    RePriceModal
+    RePriceModal,
+    RePriceDetailModal
   },
   data: function () {
     return {
@@ -99,6 +102,10 @@ export default {
       config: {
         show: false,
         title: '二次报价'
+      },
+      rePriceConfig: {
+        show: false,
+        title: '二次报价记录'
       }
     }
   },

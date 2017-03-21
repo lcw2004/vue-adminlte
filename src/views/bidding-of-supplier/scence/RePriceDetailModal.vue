@@ -10,18 +10,6 @@
       </div>
       <div class="modal-body">
         <div class="row">
-          <div class="col-md-12">
-            <div class="pull-right">
-              <button type="button" class="btn btn-info btn-sm">
-                  <i class="fa fa-plus"></i>  导入报价信息
-                </button>
-              <button type="button" class="btn btn-info btn-sm">
-                  <i class="fa fa-plus"></i>  下载模板
-                </button>
-            </div>
-          </div>
-        </div>
-        <div class="row">
           <div class="col-md-12 scrollable">
             <table class="table table-bordered table-hover">
               <tbody>
@@ -40,7 +28,7 @@
                   <td>001</td>
                   <td>钢铁</td>
                   <td>99.00</td>
-                  <td><input type="text" class="form-control input-sm" style="width: 60px"></td>
+                  <td>10000</td>
                   <td>吨</td>
                   <td>xxx</td>
                   <td>长沙</td>
@@ -50,7 +38,7 @@
                   <td>001</td>
                   <td>钢铁</td>
                   <td>99.00</td>
-                  <td><input type="text" class="form-control input-sm" style="width: 60px"></td>
+                  <td>10000</td>
                   <td>吨</td>
                   <td>xxx</td>
                   <td>长沙</td>
@@ -60,7 +48,7 @@
                   <td>001</td>
                   <td>钢铁</td>
                   <td>99.00</td>
-                  <td><input type="text" class="form-control input-sm" style="width: 60px"></td>
+                  <td>10000</td>
                   <td>吨</td>
                   <td>xxx</td>
                   <td>长沙</td>
@@ -81,15 +69,8 @@
         </div>
       </div>
       <div class="modal-footer">
-        <div class="row">
-          <div class="col-md-6">
-            <div class="pull-left">共计 <span class="label label-success">2</span> 项需要二次报价，已报 <span class="label label-success">0</span> 项目</div>
-          </div>
-          <div class="col-md-6">
-            <button type="button" class="btn btn-default " data-dismiss="modal" @click="config.show = false">取消</button>
-            <button type="button" class="btn btn-primary" @click="ok()">确认</button>
-          </div>
-        </div>
+        <button type="button" class="btn btn-default " data-dismiss="modal" @click="config.show = false">取消</button>
+        <button type="button" class="btn btn-primary" @click="ok()">确认</button>
       </div>
     </div>
   </div>
@@ -105,16 +86,11 @@ export default {
     }
   },
   data: function () {
-    return {
-    }
+    return {}
   },
   methods: {
     ok () {
-      let self = this
-      this.$confirm('确认提交报价信息并回应吗？在回应截止时间之前还可重新报价', function () {
-        self.config.show = false
-        self.$notify.success('回应成功')
-      })
+      this.config.show = false
     }
   }
 }
