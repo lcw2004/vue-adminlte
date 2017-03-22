@@ -7,6 +7,7 @@ import SettingManage from '../../views/system/setting/SettingManage'
 
 import MenuList from '../../views/system/menu/MenuList'
 import DictList from '../../views/system/dict/DictList'
+import DictForm from '../../views/system/dict/DictForm'
 import RoleList from '../../views/system/role/RoleList'
 
 export default [
@@ -18,5 +19,7 @@ export default [
   { path: '/system/setting', component: SettingManage },
   { path: '/system/menu', component: MenuList },
   { path: '/system/dict', component: DictList },
+  { path: '/system/dict/:id', component: DictForm },
+  { path: '/system/dict/add', component: DictForm },
   { path: '/system/role', component: RoleList }
 ]

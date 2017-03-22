@@ -1,12 +1,11 @@
 <template>
   <span>
-    <span :style="{paddingLeft : (obj.level -1) * 20 + 'px'}"></span>
-    <a @click="toggle(obj)" v-if="obj.childList != null && obj.childList.length > 0">
-      <i v-show="!obj.isExpanded" class="fa fa-caret-right"></i>
-      <i v-show="obj.isExpanded" class="fa fa-caret-down"></i>
+    <a :style="{paddingLeft : (obj.level -1) * 20 + 'px'}"
+        @click="toggle(obj)">
+      <i :class="expandStyle"></i>
     </a>
-    <span v-else style="padding-left : 10px"></span>
     <i v-if="obj.icon" :class="obj.icon" style="font-size: 16px"></i>
+    {{ (obj.level -1) * 20 + 'px' }}
   </span>
 </template>
 
@@ -18,6 +17,18 @@ export default {
     toggle: function () {
       console.log(1)
       this.$emit('toggle')
+    }
+  },
+  computed: {
+    expandStyle: function () {
+      let style = ['fa', 'fa-caret-down']
+      if (this.obj.isExpanded) {
+        style = ['fa', 'fa-caret-right']
+      }
+      return style
+    },
+    hasChild: function () {
+      return this.obj.childList !== null && this.obj.childList.length > 0
     }
   }
 }
