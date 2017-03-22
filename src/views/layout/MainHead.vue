@@ -1,31 +1,39 @@
 <template>
-  <header class="main-header">
-    <!-- Logo -->
-    <a href="index2.html" class="logo">
-      <span class="logo-mini">{{ setting.productShortName }}</span>
-      <span class="logo-lg">{{ setting.productName }}</span>
+<header class="main-header">
+  <!-- Logo -->
+  <a href="index2.html" class="logo">
+    <span class="logo-mini">{{ setting.productShortName }}</span>
+    <span class="logo-lg">{{ setting.productName }}</span>
+  </a>
+
+  <nav class="navbar navbar-static-top">
+    <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+      <span class="sr-only">Toggle navigation</span>
     </a>
 
-    <nav class="navbar navbar-static-top">
-      <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-        <span class="sr-only">Toggle navigation</span>
-      </a>
+    <ul class="nav navbar-nav navbar-left">
+      <li :class="{active : activedMenu.id == secondMenu.id}"
+        v-for="secondMenu of topMenu.childList"
+        @click="activeMenu(secondMenu)">
+        <a>{{ secondMenu.name }}</a>
+      </li>
+    </ul>
 
-      <div class="navbar-custom-menu">
-        <ul class="nav navbar-nav">
-          <MessagesMenu/>
-          <NotificationsMenu/>
-          <TasksMenu/>
-          <UserInfoMenu/>
+    <div class="navbar-custom-menu">
+      <ul class="nav navbar-nav">
+        <MessagesMenu/>
+        <NotificationsMenu/>
+        <TasksMenu/>
+        <UserInfoMenu/>
 
-          <!-- ControlSidebar 暂时隐藏 -->
-          <!-- <li>
+        <!-- ControlSidebar 暂时隐藏 -->
+        <!-- <li>
             <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
           </li> -->
-        </ul>
-      </div>
-    </nav>
-  </header>
+      </ul>
+    </div>
+  </nav>
+</header>
 </template>
 
 <script>
@@ -44,6 +52,17 @@
     computed: {
       setting: function () {
         return this.$store.state.setting
+      },
+      topMenu: function () {
+        return this.$store.state.sys.topMenu
+      },
+      activedMenu: function () {
+        return this.$store.state.sys.activedMenu
+      }
+    },
+    methods: {
+      activeMenu (secondMenu) {
+        this.$store.dispatch('activeMenu', secondMenu)
       }
     }
   }

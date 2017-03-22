@@ -118,12 +118,13 @@ export default {
     rest: function () {
       this.$notify.success('rest')
       let actions = {
-        listRedis: {method: 'get', url: '/redis-demo/event/user'},
-        list: {method: 'get', url: '/one/a/rest/sys/menu/user'}
+        loadMenu: {method: 'get', url: '/one/a/rest/sys/menu/user'},
+        loadEvent: {method: 'get', url: '/redis-demo/event/user'}
       }
       let resource = this.$resource(null, {}, actions)
-      resource.list({pageNo: 1, pageSize: 10}).then(function (response) {
-        console.log(response)
+      resource.loadMenu().then(function (response) {
+        console.log(response.body)
+        this.$store.dispatch('initMenu', response.body)
       })
     }
   }

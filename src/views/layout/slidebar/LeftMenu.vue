@@ -158,9 +158,8 @@ export default {
     }
   },
   mounted () {
-    this.$http.get('/one/a/rest/sys/menu/user').then(function (response) {
-      this.topMenu = response.body
-    })
+  },
+  computed: {
   }
 }
 </script>
