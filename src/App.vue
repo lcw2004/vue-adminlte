@@ -11,7 +11,11 @@ export default {
   },
   mounted () {
     this.$http.get('/one/a/rest/sys/menu/user').then(function (response) {
-      this.$store.dispatch('initMenu', response.body)
+      let topMenu = response.body
+      this.$store.dispatch('initMenu', topMenu)
+      if (topMenu && topMenu.childList.length > 0) {
+        this.$store.dispatch('activeMenu', topMenu.childList[0])
+      }
     })
   }
 }
