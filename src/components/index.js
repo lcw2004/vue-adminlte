@@ -5,6 +5,9 @@ import FullScreenBtn from './base/FullScreenBtn'
 import RightPanel from './base/RightPanel'
 import FixedContainer from './container/FixedContainer'
 
+// 分页
+import Pagination from './pagination/Pagination'
+
 // button
 import FullButton from './button/FullButton'
 
@@ -40,6 +43,10 @@ function initGlobalComponents () {
   Vue.component(FullScreenBtn.name, FullScreenBtn)
   Vue.component(RightPanel.name, RightPanel)
   Vue.component(FixedContainer.name, FixedContainer)
+
+  // pagination
+  // Vue.component(Pagination.name, Pagination)
+  Vue.component(Pagination.name, Pagination)
 
   // button
   Vue.component(FullButton.name, FullButton)

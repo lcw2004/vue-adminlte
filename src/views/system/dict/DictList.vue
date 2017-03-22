@@ -53,6 +53,8 @@
                   </tr>
                 </tbody>
               </table>
+
+              <Pagination :page="page" @page-no="param.pageNo = arguments[0]" @page-size="param.pageSize = arguments[0]"></Pagination>
             </div>
           </div>
         </div>
