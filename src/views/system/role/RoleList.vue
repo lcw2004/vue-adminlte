@@ -2,7 +2,6 @@
 <section class="content">
   <div class="box">
     <div class="box-body">
-      <!-- 标题 -->
       <div class="row row-margin-bottom">
         <div class="col-md-12">
           <form class="form-inline">
@@ -58,8 +57,7 @@ export default {
       param: {
         pageNo: 1,
         pageSize: 10,
-        type: '',
-        description: ''
+        name: ''
       },
       page: {},
       dictTypeList: []

@@ -3,7 +3,9 @@ import actions from './actions'
 
 const state = {
   topMenu: {},
-  activedMenu: {}
+  activedMenu: {},
+  thirdMenu: {},
+  dictList: {}
 }
 
 export default {
