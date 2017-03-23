@@ -1,0 +1,180 @@
+<template>
+<section class="content">
+  <div class="box">
+    <div class="box-header">
+      <h3 class="box-title">菜单信息</h3>
+    </div>
+    <div class="box-body">
+      <form class="form-horizontal">
+        <div class="form-group">
+          <label class="col-sm-2 control-label">上级机构</label>
+          <div class="col-sm-4">
+            <div class="input-group">
+              <input type="text" class="form-control" v-model="obj.parent == null ? '' : obj.parent.name" />
+              <span class="input-group-btn">
+								<button class="btn btn-info" type="button" @click="officeTreeModalConfig.show = true">选择</button>
+							</span>
+            </div>
+            <office-tree-modal :config="officeTreeModalConfig" v-model="obj.parent"></office-tree-modal>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label">归属区域</label>
+          <div class="col-sm-4">
+            <div class="input-group">
+              <input type="text" class="form-control" v-model="obj.area.name" />
+              <span class="input-group-btn">
+									<button class="btn btn-info" type="button" @click="areaTreeModalConfig.show = true">选择</button>
+								</span>
+            </div>
+            <area-tree-modal :config="areaTreeModalConfig" v-model="obj.area"></area-tree-modal>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label">机构名称</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" v-model="obj.name" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label">机构编码</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" v-model="obj.code" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label">机构类型</label>
+          <div class="col-sm-4">
+            <select class="form-control" v-model="obj.type">
+								<c:forEach var="dict" items="${fns:getDictList('sys_office_type')}">
+									<option value="${dict.value}">${dict.label}</option>
+								</c:forEach>
+							</select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label">机构级别</label>
+          <div class="col-sm-4">
+            <select class="form-control" v-model="obj.grade">
+								<c:forEach var="dict" items="${fns:getDictList('sys_office_grade')}">
+									<option value="${dict.value}">${dict.label}</option>
+								</c:forEach>
+							</select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label">联系地址</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" v-model="obj.address" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label">邮政编码</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" v-model="obj.zipCode" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label">负责人</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" v-model="obj.master" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label">电话</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" v-model="obj.phone" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label">传真</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" v-model="obj.fax" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label">邮箱</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" v-model="obj.email" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label">备注</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" v-model="obj.remarks" />
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="box-footer">
+      <div class="row">
+        <div class="col-md-2 col-md-offset-2">
+          <a class="btn btn-block btn-primary" @click="save()">保存</a>
+        </div>
+        <div class="col-md-2">
+          <a class="btn btn-block btn-default" @click="$router.go(-1)">返回</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</template>
+
+<script>
+export default {
+  components: {},
+  data: function () {
+    return {
+      obj: {
+        parent: {},
+        area: {},
+        name: '',
+        code: '',
+        type: 1,
+        grade: 1,
+        address: '',
+        zipCode: '',
+        master: '',
+        phone: '',
+        fax: '',
+        email: '',
+        remarks: ''
+      },
+
+      officeTreeModalConfig: {
+        show: false,
+        title: '选择上级机构'
+      },
+        // 模态窗属性
+      areaTreeModalConfig: {
+        show: false,
+        title: '选择归属区域'
+      }
+    }
+  },
+  mounted () {
+    let actions = {
+      get: { method: 'get', url: '/one/a/rest/sys/office{/id}' },
+      save: { method: 'post', url: '/one/a/rest/sys/office' }
+    }
+    this.resource = this.$resource(null, {}, actions)
+    this.load()
+  },
+  methods: {
+    load: function () {
+      let id = this.$route.params.id
+      if (id) {
+        this.resource.get({id: id}).then(function (response) {
+          this.obj = response.body
+        })
+      }
+    },
+    save: function () {
+      this.resource.save(null, JSON.stringify(this.obj)).then(function (response) {
+        this.$notify.success('保存成功')
+        this.$router.go(-1)
+      })
+    }
+  }
+}
+</script>
