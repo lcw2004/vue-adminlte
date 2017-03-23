@@ -34,3 +34,12 @@ new Vue({
   store,
   components: { App }
 })
+
+// 启用进度条
+Vue.http.interceptors.push(function (request, next) {
+  this.$progress.start()
+  next(function (response) {
+    this.$progress.done()
+    return response
+  })
+})

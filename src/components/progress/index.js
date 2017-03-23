@@ -5,9 +5,10 @@ let progressBar
 
 let start = function () {
   // 具体的样式可以参考adminlte的进度条示例
+  // // class: ['progress-bar-red', 'progress-bar-striped']
   let propsData = {
     size: ['progress-xxs', 'active'],
-    class: ['progress-bar-red', 'progress-bar-striped']
+    class: ['progress-bar-primary']
   }
   let ProgressBarComponent = Vue.extend(ProgressBar)
 
