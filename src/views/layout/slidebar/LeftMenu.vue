@@ -30,7 +30,7 @@ export default {
   },
   computed: {
     activedMenu: function () {
-      return this.$store.state.sys.activedMenu
+      return this.$store.state.system.activedMenu
     }
   }
 }

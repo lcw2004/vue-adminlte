@@ -54,10 +54,10 @@
         return this.$store.state.setting
       },
       topMenu: function () {
-        return this.$store.state.sys.topMenu
+        return this.$store.state.system.topMenu
       },
       activedMenu: function () {
-        return this.$store.state.sys.activedMenu
+        return this.$store.state.system.activedMenu
       }
     },
     methods: {
