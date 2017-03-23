@@ -46,20 +46,16 @@
           <label class="col-sm-2 control-label">机构类型</label>
           <div class="col-sm-4">
             <select class="form-control" v-model="obj.type">
-								<c:forEach var="dict" items="${fns:getDictList('sys_office_type')}">
-									<option value="${dict.value}">${dict.label}</option>
-								</c:forEach>
-							</select>
+
+						</select>
           </div>
         </div>
         <div class="form-group">
           <label class="col-sm-2 control-label">机构级别</label>
           <div class="col-sm-4">
             <select class="form-control" v-model="obj.grade">
-								<c:forEach var="dict" items="${fns:getDictList('sys_office_grade')}">
-									<option value="${dict.value}">${dict.label}</option>
-								</c:forEach>
-							</select>
+							<option value="${dict.value}">${dict.label}</option>
+						</select>
           </div>
         </div>
         <div class="form-group">

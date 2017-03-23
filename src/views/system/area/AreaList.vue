@@ -1,18 +1,78 @@
 <template>
-  <div>
-    
+<section class="content">
+  <div class="box">
+    <div class="box-body">
+      <div class="row row-margin-bottom">
+        <div class="col-md-12">
+          <div class="pull-right">
+            <a class="btn btn-primary" @click="toggleAll()"><span v-if="toggleStatus">收缩</span><span v-else>展开</span>全部</a>
+            <a class="btn btn-primary" @click="config.show = true">添加</a>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <table class="table table-bordered table-hover">
+            <thead>
+              <tr>
+                <th>区域名称</th>
+                <th>区域编码</th>
+                <th>区域类型</th>
+                <th>备注</th>
+                <th>操作</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="obj of dataList" v-show="obj.isShowInTable" :key="obj.id">
+                <td>
+                  <TreeTableColPrefix :obj="obj" @toggle="toggle(obj)"></TreeTableColPrefix>
+                  <span @click="toggle(obj)" v-text="obj.name"></span>
+                </td>
+                <td><span v-text="obj.code"></span></td>
+                <td><span v-text="obj.typeCN"></span></td>
+                <td><span v-text="obj.remarks"></span></td>
+                <td>
+                  <router-link :to='"/system/area/" + obj.id'>修改</router-link>
+                  <a>删除</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
   </div>
+</section>
 </template>
 
 <script>
+import TreeTableMiXin from '../../../mixins/TreeTableMiXin'
+import TreeTableColPrefix from '../../../components/tree/TreeTableColPrefix'
+
 export default {
+  mixins: [TreeTableMiXin],
   components: {
+    TreeTableColPrefix
   },
   data: function () {
     return {
+      topElement: {}
     }
   },
+  mounted () {
+    let actions = {
+      query: { method: 'get', url: '/one/a/rest/sys/area/tree' },
+      delete: { method: 'delete', url: '/one/a/rest/sys/area{/id}' }
+    }
+    this.resource = this.$resource(null, {}, actions)
+    this.loadTreeTable()
+  },
   methods: {
+    loadTreeTable: function () {
+      this.resource.query().then(function (response) {
+        this.topElement = response.body
+      })
+    }
   }
 }
 </script>

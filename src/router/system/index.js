@@ -8,6 +8,9 @@ import SettingManage from '../../views/system/setting/SettingManage'
 import DictList from '../../views/system/dict/DictList'
 import DictForm from '../../views/system/dict/DictForm'
 
+import AreaList from '../../views/system/area/AreaList'
+import AreaForm from '../../views/system/area/AreaForm'
+
 import MenuList from '../../views/system/menu/MenuList'
 import MenuForm from '../../views/system/menu/MenuForm'
 
@@ -33,6 +36,10 @@ export default [
   { path: '/system/dict', component: DictList },
   { path: '/system/dict/:id', component: DictForm },
   { path: '/system/dict/add', component: DictForm },
+
+  { path: '/system/area', component: AreaList },
+  { path: '/system/area/:id', component: AreaForm },
+  { path: '/system/area/add', component: AreaForm },
 
   { path: '/system/menu', component: MenuList },
   { path: '/system/menu/:id', component: MenuForm },
