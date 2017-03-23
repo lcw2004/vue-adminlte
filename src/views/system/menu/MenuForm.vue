@@ -78,10 +78,12 @@
       </form>
     </div>
     <div class="box-footer">
-      <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
-          <a class="btn btn-primary" @click="save()">保存</a>
-          <a class="btn btn-info" href="${ctx}/sys/menu">返回</a>
+      <div class="row">
+        <div class="col-md-2 col-md-offset-2">
+          <a class="btn btn-block btn-primary" @click="save()">保存</a>
+        </div>
+        <div class="col-md-2">
+          <a class="btn btn-block btn-default" @click="$router.go(-1)">返回</a>
         </div>
       </div>
     </div>
