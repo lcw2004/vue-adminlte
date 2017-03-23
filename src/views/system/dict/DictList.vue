@@ -67,7 +67,7 @@ export default {
   data: function () {
     return {
       param: {
-        pageNo: 0,
+        pageNo: 1,
         pageSize: 10,
         type: '',
         description: ''
@@ -83,19 +83,18 @@ export default {
       delete: { method: 'delete', url: '/one/a/rest/sys/dict{/id}' }
     }
     this.resource = this.$resource(null, {}, actions)
-
-    // 设置页码
-    this.param.pageNo = 1
-
-    // 加载字典列表
-    this.resource.listType().then(function (response) {
-      this.dictTypeList = response.body
-    })
+    this.loadDictType()
+    this.query()
   },
   methods: {
     query () {
       this.resource.list(this.param).then(function (response) {
         this.page = response.body
+      })
+    },
+    loadDictType () {
+      this.resource.listType().then(function (response) {
+        this.dictTypeList = response.body
       })
     },
     deleteData (id) {
@@ -111,7 +110,6 @@ export default {
   watch: {
     'param': {
       handler: function () {
-        // 监听查询条件对象，如果有更改就查询数据
         this.query()
       },
       deep: true

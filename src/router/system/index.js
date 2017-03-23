@@ -10,6 +10,7 @@ import MenuForm from '../../views/system/menu/MenuForm'
 import DictList from '../../views/system/dict/DictList'
 import DictForm from '../../views/system/dict/DictForm'
 import RoleList from '../../views/system/role/RoleList'
+import LogList from '../../views/system/log/LogList'
 
 export default [
   { path: '/system/purchase-type', component: PurchaseType },
@@ -24,5 +25,6 @@ export default [
   { path: '/system/dict', component: DictList },
   { path: '/system/dict/:id', component: DictForm },
   { path: '/system/dict/add', component: DictForm },
-  { path: '/system/role', component: RoleList }
+  { path: '/system/role', component: RoleList },
+  { path: '/system/log', component: LogList }
 ]
