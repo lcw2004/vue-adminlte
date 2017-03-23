@@ -8,7 +8,7 @@ import actions from './actions'
 // 模块
 import setting from './setting'
 import data from './data'
-import sys from './sys'
+import system from './system'
 
 const state = {
 }
@@ -20,6 +20,6 @@ export default new Vuex.Store({
   modules: {
     setting,
     data,
-    sys
+    system
   }
 })

@@ -10,7 +10,7 @@ export default {
   activeThirdMenu ({ commit }, menu) {
     commit(types.ACTIVE_THIRD_MENU, menu)
   },
-  initDict ({ commit }, dictList) {
-    commit(types.INIT_DICT, dictList)
+  initDict ({ commit }, dictMap) {
+    commit(types.INIT_DICT, dictMap)
   }
 }

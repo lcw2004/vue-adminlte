@@ -10,7 +10,7 @@ export default {
   [types.ACTIVE_THIRD_MENU] (state, menu) {
     state.thirdMenu = menu
   },
-  [types.INIT_DICT] (state, dictList) {
-    state.dictList = dictList
+  [types.INIT_DICT] (state, dictMap) {
+    state.dictMap = dictMap
   }
 }

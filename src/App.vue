@@ -24,7 +24,7 @@ export default {
       })
     },
     loadDict () {
-      this.$http.get('/one/a/rest/sys/dict', {params: {pageSize: 1000}}).then(function (response) {
+      this.$http.get('/one/a/rest/sys/dict/group', {params: {pageSize: 1000}}).then(function (response) {
         this.$store.dispatch('initDict', response.body)
       })
     }

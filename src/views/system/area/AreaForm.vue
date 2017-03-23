@@ -33,11 +33,7 @@
         <div class="form-group">
           <label class="col-sm-2 control-label">区域类型</label>
           <div class="col-sm-4">
-            <select class="form-control" v-model="obj.type">
-								<c:forEach var="dict" items="${fns:getDictList('sys_area_type')}">
-									<option value="${dict.value}">${dict.label}</option>
-								</c:forEach>
-							</select>
+            <DictSelector v-model="obj.type" type="sys_area_type"></DictSelector>
           </div>
         </div>
         <div class="form-group">
