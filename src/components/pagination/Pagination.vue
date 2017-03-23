@@ -17,15 +17,14 @@
     <ul class='pagination pull-right navbar-static-top'>
       <li>
         共 {{ page.count }} 条，每页
-        <div class='btn-group dropup'>
-          <button class='btn btn-default btn-sm dropdown-toggle' type='button' data-toggle='dropdown'>{{ pageSize }}<span class='caret'></span></button>
-          <ul class='dropdown-menu' role='menu'>
-            <li><a @click='pageSize = 10'>10</a></li>
-            <li><a @click='pageSize = 25'>25</a></li>
-            <li><a @click='pageSize = 50'>50</a></li>
-            <li><a @click='pageSize = 100'>100</a></li>
-          </ul>
-        </div>
+        <label>
+          <select class="form-control input-sm" v-model="pageSize">
+            <option value="10">10</option>
+            <option value="25">25</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+          </select>
+        </label>
         条
       </li>
     </ul>
