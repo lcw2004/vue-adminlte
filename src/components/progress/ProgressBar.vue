@@ -66,3 +66,9 @@ export default {
   }
 }
 </script>
+
+<style>
+.progress-xxxs {
+  height: 2px
+}
+</style>
