@@ -15,7 +15,7 @@
 									<button class="btn btn-info" type="button" @click="companyTreeModalConfig.show = true">选择</button>
 								</span>
             </div>
-            <office-tree-modal :config="companyTreeModalConfig" v-model="obj.office"></office-tree-modal>
+            <SelectOfficeModal :config="companyTreeModalConfig" v-model="obj.office"></SelectOfficeModal>
           </div>
         </div>
         <div class="form-group">
@@ -54,8 +54,11 @@
 </template>
 
 <script>
+import SelectOfficeModal from '../modal/SelectOfficeModal'
+
 export default {
   components: {
+    SelectOfficeModal
   },
   data: function () {
     return {
