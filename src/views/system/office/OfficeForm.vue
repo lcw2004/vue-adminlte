@@ -15,7 +15,7 @@
 								<button class="btn btn-info" type="button" @click="officeTreeModalConfig.show = true">选择</button>
 							</span>
             </div>
-            <office-tree-modal :config="officeTreeModalConfig" v-model="obj.parent"></office-tree-modal>
+            <SelectOfficeModal :config="officeTreeModalConfig" v-model="obj.parent"></SelectOfficeModal>
           </div>
         </div>
         <div class="form-group">
@@ -27,7 +27,7 @@
 									<button class="btn btn-info" type="button" @click="areaTreeModalConfig.show = true">选择</button>
 								</span>
             </div>
-            <area-tree-modal :config="areaTreeModalConfig" v-model="obj.area"></area-tree-modal>
+            <SelectAreaModal :config="areaTreeModalConfig" v-model="obj.area"></SelectAreaModal>
           </div>
         </div>
         <div class="form-group">
@@ -117,8 +117,14 @@
 </template>
 
 <script>
+import SelectOfficeModal from '../modal/SelectOfficeModal'
+import SelectAreaModal from '../modal/SelectAreaModal'
+
 export default {
-  components: {},
+  components: {
+    SelectOfficeModal,
+    SelectAreaModal
+  },
   data: function () {
     return {
       obj: {

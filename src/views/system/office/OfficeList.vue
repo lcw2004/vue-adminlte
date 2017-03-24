@@ -6,7 +6,7 @@
         <div class="col-md-12">
           <div class="pull-right">
             <a class="btn btn-primary" @click="toggleAll()"><span v-if="toggleStatus">收缩</span><span v-else>展开</span>全部</a>
-            <a class="btn btn-primary" @click="config.show = true">添加</a>
+            <router-link to="/system/office/add" class="btn btn-primary">添加</router-link>
           </div>
         </div>
       </div>
