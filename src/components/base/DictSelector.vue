@@ -22,7 +22,7 @@ export default {
   },
   computed: {
     dictMap: function () {
-      return this.$store.state.system.tem.dictMap
+      return this.$store.state.system.dictMap
     },
     dictList: function () {
       return this.dictMap[this.type]

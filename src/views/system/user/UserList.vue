@@ -45,7 +45,7 @@
 							<td><span v-text="obj.mobile"></span></td>
 							<td><span v-text="obj.roleNames"></span></td>
 							<td>
-                <router-link :to='"/system/user/" + obj.id'>修改</router-link>
+                <router-link :to='"/system/user/" + obj.id + "/form"'>修改</router-link>
                 <a @click="deleteData(obj.id)">删除</a>
 							</td>
 						</tr>

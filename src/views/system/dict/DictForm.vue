@@ -58,7 +58,13 @@ export default {
   },
   data: function () {
     return {
-      obj: {}
+      obj: {
+        type: '',
+        description: '',
+        label: '',
+        value: '',
+        sort: 1
+      }
     }
   },
   mounted () {

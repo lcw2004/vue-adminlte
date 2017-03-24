@@ -6,14 +6,13 @@
       <div class="row row-margin-bottom">
         <div class="col-md-12">
           <form class="form-inline">
-            <div class="col-md-3">
+            <div class="col-md-6">
               <label class="control-label">类型</label>
               <select class="form-control inline-block" v-model="param.type">
-							<option value="">全部</option>
-							<option v-for="dictType of dictTypeList" :value="dictType">{{ dictType }}</option>
-						</select>
-            </div>
-            <div class="col-md-3">
+  							<option value="">全部</option>
+  							<option v-for="dictType of dictTypeList" :value="dictType">{{ dictType }}</option>
+  						</select>
+
               <label class="control-label">描述</label>
               <input class="form-control inline-block" type="text" v-model="param.description">
             </div>
@@ -46,7 +45,7 @@
                 <td><span v-text="obj.value"></span></td>
                 <td><span v-text="obj.sort"></span></td>
                 <td>
-                  <router-link :to='"/system/dict/" + obj.id'>修改</router-link>
+                  <router-link :to='"/system/dict/" + obj.id + "/form"'>修改</router-link>
                   <a @click="deleteData(obj.id)">删除</a>
                 </td>
               </tr>

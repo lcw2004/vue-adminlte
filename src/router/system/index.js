@@ -34,28 +34,28 @@ export default [
   { path: '/system/setting', component: SettingManage },
 
   { path: '/system/dict', component: DictList },
-  { path: '/system/dict/:id', component: DictForm },
   { path: '/system/dict/add', component: DictForm },
+  { path: '/system/dict/:id/form', component: DictForm },
 
   { path: '/system/area', component: AreaList },
-  { path: '/system/area/:id', component: AreaForm },
   { path: '/system/area/add', component: AreaForm },
+  { path: '/system/area/:id/form', component: AreaForm },
 
   { path: '/system/menu', component: MenuList },
-  { path: '/system/menu/:id', component: MenuForm },
   { path: '/system/menu/add', component: MenuForm },
+  { path: '/system/menu/:id/form', component: MenuForm },
 
   { path: '/system/role', component: RoleList },
-  { path: '/system/role/:id', component: RoleForm },
   { path: '/system/role/add', component: RoleForm },
+  { path: '/system/role/:id/form', component: RoleForm },
 
   { path: '/system/office', component: OfficeList },
-  { path: '/system/office/:id', component: OfficeForm },
   { path: '/system/office/add', component: OfficeForm },
+  { path: '/system/office/:id/form', component: OfficeForm },
 
   { path: '/system/user', component: UserList },
-  { path: '/system/user/:id', component: UserForm },
   { path: '/system/user/add', component: UserForm },
+  { path: '/system/user/:id/form', component: UserForm },
 
   { path: '/system/log', component: LogList }
 ]

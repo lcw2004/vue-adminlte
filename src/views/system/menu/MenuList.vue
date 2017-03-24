@@ -34,7 +34,7 @@
                 <td><span v-text="obj.isShowCN"></span></td>
                 <td><span v-text="obj.permission"></span></td>
                 <td>
-                  <router-link :to='"/system/menu/" + obj.id'>修改</router-link>
+                  <router-link :to='"/system/menu/" + obj.id + "/form"'>修改</router-link>
                   <a>删除</a>
                 </td>
               </tr>

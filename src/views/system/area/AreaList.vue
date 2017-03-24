@@ -32,7 +32,7 @@
                 <td><span v-text="obj.typeCN"></span></td>
                 <td><span v-text="obj.remarks"></span></td>
                 <td>
-                  <router-link :to='"/system/area/" + obj.id'>修改</router-link>
+                  <router-link :to='"/system/area/" + obj.id + "/form"'>修改</router-link>
                   <a>删除</a>
                 </td>
               </tr>
