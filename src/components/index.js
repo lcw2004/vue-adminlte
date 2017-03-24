@@ -3,7 +3,7 @@ import Vue from 'vue'
 // base
 import FullScreenBtn from './base/FullScreenBtn'
 import RightPanel from './base/RightPanel'
-import DictSelector from './base/DictSelector'
+import DictSelect from './base/DictSelect'
 import FixedContainer from './container/FixedContainer'
 
 // 分页
@@ -43,7 +43,7 @@ function initGlobalComponents () {
   // base
   Vue.component(FullScreenBtn.name, FullScreenBtn)
   Vue.component(RightPanel.name, RightPanel)
-  Vue.component(DictSelector.name, DictSelector)
+  Vue.component(DictSelect.name, DictSelect)
   Vue.component(FixedContainer.name, FixedContainer)
 
   // pagination

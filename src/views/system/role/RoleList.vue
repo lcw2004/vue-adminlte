@@ -32,7 +32,7 @@
               <tr v-for="obj of page.list">
                 <td><span v-text="obj.name"></span></td>
                 <td><span v-text="obj.office.name"></span></td>
-                <td><span v-text="obj.sort"></span></td>
+                <td><span v-text="obj.dataScopeCn"></span></td>
                 <td>
                   <router-link :to='"/system/role/" + obj.id + "/form"'>修改</router-link>
                   <a @click="deleteData(obj.id)">删除</a>

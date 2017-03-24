@@ -33,7 +33,7 @@
         <div class="form-group">
           <label class="col-sm-2 control-label">区域类型</label>
           <div class="col-sm-4">
-            <DictSelector v-model="obj.type" type="sys_area_type"></DictSelector>
+            <DictSelect v-model="obj.type" type="sys_area_type"></DictSelect>
           </div>
         </div>
         <div class="form-group">

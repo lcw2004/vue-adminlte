@@ -27,11 +27,8 @@
         <div class="form-group">
           <label class="col-sm-2 control-label">数据范围</label>
           <div class="col-sm-4">
-            <select class="form-control" v-model="obj.dataScope">
-								<c:forEach var="dict" items="${fns:getDictList('sys_data_scope')}">
-									<option value="${dict.value}">${dict.label}</option>
-								</c:forEach>
-							</select> 特殊情况下，设置为“按明细设置”，可进行跨机构授权
+            <DictSelect v-model="obj.dataScope" type="sys_data_scope"></DictSelect>
+            特殊情况下，设置为“按明细设置”，可进行跨机构授权
           </div>
         </div>
         <div class="form-group">

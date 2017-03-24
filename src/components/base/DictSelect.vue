@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'DictSelector',
+  name: 'DictSelect',
   props: {
     type: {
       type: String,
