@@ -2,7 +2,7 @@
 <section class="content">
   <div class="box">
     <div class="box-header">
-      <h3 class="box-title">字典信息</h3>
+      <h3 class="box-title">用户信息</h3>
     </div>
     <div class="box-body">
       <form class="form-horizontal">
@@ -15,6 +15,7 @@
 									<button class="btn btn-info" type="button" @click="companyTreeModalConfig.show = true">选择</button>
 								</span>
 							</div>
+              <SelectOfficeModal :config="companyTreeModalConfig" v-model="obj.company"></SelectOfficeModal>
 						</div>
 					</div>
 					<div class="form-group">
@@ -26,6 +27,7 @@
 									<button class="btn btn-info" type="button" @click="officeTreeModalConfig.show = true">选择</button>
 								</span>
 							</div>
+              <SelectOfficeModal :config="officeTreeModalConfig" v-model="obj.office"></SelectOfficeModal>
 						</div>
 					</div>
 					<div class="form-group">
@@ -97,8 +99,11 @@
 </template>
 
 <script>
+import SelectOfficeModal from '../modal/SelectOfficeModal'
+
 export default {
   components: {
+    SelectOfficeModal
   },
   data: function () {
     return {

@@ -2,7 +2,7 @@
 <section class="content">
   <div class="box">
     <div class="box-header">
-      <h3 class="box-title">字典信息</h3>
+      <h3 class="box-title">角色信息</h3>
     </div>
     <div class="box-body">
       <form class="form-horizontal">
