@@ -1,11 +1,10 @@
 <template>
   <span>
-    <a :style="{paddingLeft : (obj.level -1) * 20 + 'px'}"
-        @click="toggle(obj)">
+    <span class="treegrid-indent" v-for="index in obj.level - 1"></span>
+    <span @click="toggle(obj)">
       <i :class="expandStyle"></i>
-    </a>
-    <i v-if="obj.icon" :class="obj.icon" style="font-size: 16px"></i>
-    {{ (obj.level -1) * 20 + 'px' }}
+    </span>
+    <i v-if="obj.icon" class="treegrid-expander" :class="obj.icon"></i>
   </span>
 </template>
 
@@ -21,9 +20,12 @@ export default {
   },
   computed: {
     expandStyle: function () {
-      let style = ['fa', 'fa-caret-down']
+      if (!this.hasChild) {
+        return ['treegrid-expander']
+      }
+      let style = ['treegrid-expander', 'fa', 'fa-plus-square-o']
       if (this.obj.isExpanded) {
-        style = ['fa', 'fa-caret-right']
+        style = ['treegrid-expander', 'fa', 'fa-minus-square-o']
       }
       return style
     },
@@ -33,3 +35,19 @@ export default {
   }
 }
 </script>
+
+<style>
+.treegrid-indent {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  position: relative;
+}
+.treegrid-expander {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+</style>
