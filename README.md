@@ -1,3 +1,23 @@
+# 项目说明
+1.  这是使用vue-cli建立的项目
+2.  为了支持多页面，对vue-cli默认的配置文件进行了一些改动，目前是将单个页面的配置放置moudles.js里面
+  - 如果要添加新的页面，直接在moudles.js里面添加即可
+  - 如果要添加的页面很多，还是把moudles.js改为根据默认约定生成模块吧
+3.  UI使用的是adminlte
+
+
+# 目前支持的功能
+
+## 组件
+1.  Tree
+2.  TreeTable
+3.  notify接口
+4.  confirm接口
+5.  Editor富文本编辑框
+6.  时间选择器
+7.  分页组件
+8.  TimeLine组件
+
 # 项目结构
 
 ## src/components
