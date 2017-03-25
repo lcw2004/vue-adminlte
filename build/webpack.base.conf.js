@@ -11,16 +11,9 @@ var cssSourceMapDev = (env === 'development' && config.dev.cssSourceMap)
 var cssSourceMapProd = (env === 'production' && config.build.productionSourceMap)
 var useCssSourceMap = cssSourceMapDev || cssSourceMapProd
 
-
 module.exports = {
   // 引入多页面模块
   entry: modules.entries,
-
-  // generate dist index.html with correct asset hash for caching.
-  // you can customize output by editing /index.html
-  // see https://github.com/ampedandwired/html-webpack-plugin
-  ...modules.htmlWebpackPlugins,
-
   output: {
     path: config.build.assetsRoot,
     publicPath: process.env.NODE_ENV === 'production' ? config.build.assetsPublicPath : config.dev.assetsPublicPath,

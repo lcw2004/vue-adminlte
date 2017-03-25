@@ -2,6 +2,7 @@ var config = require('../config')
 var webpack = require('webpack')
 var merge = require('webpack-merge')
 var utils = require('./utils')
+var modules = require('./modules')
 var baseWebpackConfig = require('./webpack.base.conf')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var FriendlyErrors = require('friendly-errors-webpack-plugin')
@@ -26,6 +27,11 @@ module.exports = merge(baseWebpackConfig, {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
     // https://github.com/ampedandwired/html-webpack-plugin
-    new FriendlyErrors()
+    new FriendlyErrors(),
+
+      // generate dist index.html with correct asset hash for caching.
+      // you can customize output by editing /index.html
+      // see https://github.com/ampedandwired/html-webpack-plugin
+      ...modules.htmlWebpackPlugins
   ]
 })

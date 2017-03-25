@@ -6,13 +6,13 @@ Vue.use(VueRouter)
 Vue.use(VueResource)
 Vue.use(Vuex)
 
-import Login from './Login.vue'
+import Registry from './Registry.vue'
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
-  template: '<Login></Login>',
+  template: '<Registry></Registry>',
   components: {
-    Login
+    Registry
   }
 })
