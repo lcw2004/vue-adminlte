@@ -25,18 +25,12 @@ initGlobalComponents()
 import App from './App'
 import store from './vuex'
 import router from './router'
-let vueRouter = new VueRouter(router)
-vueRouter.beforeEach((to, from, next) => {
-  console.log(to)
-  console.log(from)
-  next()
-})
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   template: '<App/>',
-  router: vueRouter,
+  router: router,
   store,
   components: { App }
 })
