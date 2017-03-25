@@ -1,10 +1,19 @@
 <template>
 <div>
-  <span class="tree-indent" v-for="index in level - 1"></span>
-  <input type="checkbox" v-if='selectType == "checkbox"' v-model="isChecked" :style="halfChecked">
-  <input type="radio" v-if='selectType == "radio"' v-model="selectElementId" :value="element.id">
-  <i @click="toggole()" v-show="isFolder" :class="folderClass"></i>
-  <span @click="toggole()" v-text="element.name"></span>
+  <div style="height: 20px">
+    <span class="tree-indent" v-for="index in level - 1"></span>
+
+    <span class="tree-expander">
+      <input type="checkbox" v-if='selectType == "checkbox"' id="checkbox"v-model="isChecked" :style="halfChecked">
+      <input type="radio" v-if='selectType == "radio"' v-model="selectElementId" :value="element.id">
+    </span>
+
+    <span class="tree-expander" v-show="isFolder">
+      <i @click="toggole()" :class="folderClass"></i>
+    </span>
+
+    <span @click="toggole()" v-text="element.name"></span>
+  </div>
 
   <ul v-for="child of element.childList" v-show="isExpanded">
     <li>
@@ -50,7 +59,8 @@ export default {
       /**
        * 展开的菜单的级数，默认展开三级
        */
-      isExpanded: this.level <= 2
+      isExpanded: this.level <= 2,
+      isHalf: true
     }
   },
   methods: {
