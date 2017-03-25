@@ -12,8 +12,8 @@
             <div class="input-group">
               <input type="text" class="form-control" v-model="obj.office.name" />
               <span class="input-group-btn">
-									<button class="btn btn-info" type="button" @click="companyTreeModalConfig.show = true">选择</button>
-								</span>
+								<button class="btn btn-info" type="button" @click="companyTreeModalConfig.show = true">选择</button>
+							</span>
             </div>
             <SelectOfficeModal :config="companyTreeModalConfig" v-model="obj.office"></SelectOfficeModal>
           </div>
@@ -28,7 +28,7 @@
           <label class="col-sm-2 control-label">数据范围</label>
           <div class="col-sm-4">
             <DictSelect v-model="obj.dataScope" type="sys_data_scope"></DictSelect>
-            特殊情况下，设置为“按明细设置”，可进行跨机构授权
+            <p class="help-block">特殊情况下，设置为“按明细设置”，可进行跨机构授权</p>
           </div>
         </div>
         <div class="form-group">

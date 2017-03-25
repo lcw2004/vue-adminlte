@@ -1,5 +1,6 @@
 <template>
 <div>
+  <span class="tree-indent" v-for="index in level - 1"></span>
   <input type="checkbox" v-if='selectType == "checkbox"' v-model="isChecked" :style="halfChecked">
   <input type="radio" v-if='selectType == "radio"' v-model="selectElementId" :value="element.id">
   <i @click="toggole()" v-show="isFolder" :class="folderClass"></i>

@@ -1,7 +1,5 @@
 <template>
-<div>
   <TreeElement :element="element" :level="1" :value="value" :select-type="selectType" :tree-bus="treeBus"></TreeElement>
-</div>
 </template>
 
 <script>
@@ -79,22 +77,3 @@ export default {
   }
 }
 </script>
-
-<style>
-.tree-indent {
-  width: 16px;
-  height: 16px;
-  display: inline-block;
-  position: relative;
-}
-.tree-expander {
-  width: 16px;
-  height: 16px;
-  display: inline-block;
-  position: relative;
-  cursor: pointer;
-}
-ul, li {
-  list-style: none;
-}
-</style>

@@ -22,7 +22,7 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-md-12 scrollable">
+          <div class="col-md-12 modal-scrollable">
             <table class="table table-bordered table-hover">
               <tbody>
                 <tr>
