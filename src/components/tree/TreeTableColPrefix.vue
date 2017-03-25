@@ -1,10 +1,13 @@
 <template>
-  <span>
+  <span @click="toggle(obj)">
     <span class="treegrid-indent" v-for="index in obj.level - 1"></span>
-    <span @click="toggle(obj)">
+    <span>
       <i :class="expandStyle"></i>
     </span>
     <i v-if="obj.icon" class="treegrid-expander" :class="obj.icon"></i>
+
+    <!-- 挂载点 -->
+    <span><slot></slot></span>
   </span>
 </template>
 

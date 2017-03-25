@@ -26,8 +26,7 @@
             <tbody>
               <tr v-for="obj of dataList" v-show="obj.isShowInTable" :key="obj.id">
                 <td>
-                  <TreeTableColPrefix :obj="obj" @toggle="toggle(obj)"></TreeTableColPrefix>
-                  <span @click="toggle(obj)" v-text="obj.name"></span>
+                  <TreeTableColPrefix :obj="obj" @toggle="toggle(obj)">{{ obj.name }}</TreeTableColPrefix>
                 </td>
                 <td><span v-text="obj.href"></span></td>
                 <td><span v-text="obj.sort"></span></td>
@@ -49,13 +48,9 @@
 
 <script>
 import TreeTableMiXin from '../../../mixins/TreeTableMiXin'
-import TreeTableColPrefix from '../../../components/tree/TreeTableColPrefix'
 
 export default {
   mixins: [TreeTableMiXin],
-  components: {
-    TreeTableColPrefix
-  },
   data: function () {
     return {
       topElement: {}

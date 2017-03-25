@@ -65,7 +65,7 @@ function toggleAllMenu (topMenu, isShowInTable) {
   let list = topMenu.childList
   for (let i = 0; i < list.length; i++) {
     let childMenu = list[i]
-    childMenu.isExpanded = !isShowInTable
+    childMenu.isExpanded = isShowInTable
     toggleChildMenuListRecursion(childMenu, isShowInTable)
   }
 }
