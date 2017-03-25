@@ -10,7 +10,7 @@ import Registry from './Registry.vue'
 
 /* eslint-disable no-new */
 new Vue({
-  el: '#app',
+  el: '#registry',
   template: '<Registry></Registry>',
   components: {
     Registry

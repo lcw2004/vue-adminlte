@@ -10,7 +10,7 @@ import Login from './Login.vue'
 
 /* eslint-disable no-new */
 new Vue({
-  el: '#app',
+  el: '#login',
   template: '<Login></Login>',
   components: {
     Login
