@@ -35,7 +35,7 @@
           <router-link to='/personal/user-info' class="btn btn-default btn-flat">个人信息</router-link>
         </div>
         <div class="pull-right">
-          <a href="#" class="btn btn-default btn-flat">退出登录</a>
+          <a href="/login.html" class="btn btn-default btn-flat">退出登录</a>
         </div>
       </li>
     </ul>

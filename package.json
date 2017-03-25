@@ -17,6 +17,7 @@
     "eonasdan-bootstrap-datetimepicker": "^4.17.46",
     "font-awesome": "^4.7.0",
     "fullcalendar": "^3.2.0",
+    "glob": "^7.1.1",
     "ionicons": "^3.0.0",
     "vue": "^2.1.0"
   },
