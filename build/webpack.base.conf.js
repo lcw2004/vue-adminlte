@@ -1,6 +1,7 @@
 var path = require('path')
 var config = require('../config')
 var utils = require('./utils')
+var modules = require('./modules')
 var projectRoot = path.resolve(__dirname, '../')
 
 var env = process.env.NODE_ENV
@@ -10,10 +11,16 @@ var cssSourceMapDev = (env === 'development' && config.dev.cssSourceMap)
 var cssSourceMapProd = (env === 'production' && config.build.productionSourceMap)
 var useCssSourceMap = cssSourceMapDev || cssSourceMapProd
 
+
 module.exports = {
-  entry: {
-    app: './src/main.js'
-  },
+  // 引入多页面模块
+  entry: modules.entries,
+
+  // generate dist index.html with correct asset hash for caching.
+  // you can customize output by editing /index.html
+  // see https://github.com/ampedandwired/html-webpack-plugin
+  ...modules.htmlWebpackPlugins,
+
   output: {
     path: config.build.assetsRoot,
     publicPath: process.env.NODE_ENV === 'production' ? config.build.assetsPublicPath : config.dev.assetsPublicPath,

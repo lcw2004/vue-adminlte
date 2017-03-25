@@ -26,16 +26,6 @@ module.exports = merge(baseWebpackConfig, {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
     // https://github.com/ampedandwired/html-webpack-plugin
-    new HtmlWebpackPlugin({
-      filename: 'index.html',
-      template: 'index.html',
-      inject: true
-    }),
-    new HtmlWebpackPlugin({
-      filename: 'login.html',
-      template: 'pages/login/login.html',
-      inject: true
-    }),
     new FriendlyErrors()
   ]
 })
