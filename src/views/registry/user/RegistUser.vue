@@ -3,12 +3,18 @@
   <div class="col-md-2"></div>
   <div class="col-md-8">
     <div class="box box-solid">
+      <div class="box-header">
+        <div class="text-center ">
+          <h3 class="box-title">供应商注册</h3>
+        </div>
+      </div>
+
       <div class="box-body">
-        <div class="row">
+        <div class="row row-margin-bottom">
           <div class="col-md-12">
             <Step>
-              <StepItem index="1" name="账户注册" :is-active="stepId == 1" />
-              <StepItem index="2" name="机构信息" :is-active="stepId == 2" />
+              <StepItem index="1" name="注册账户" :is-active="stepId == 1" />
+              <StepItem index="2" name="完善机构信息" :is-active="stepId == 2" />
             </Step>
           </div>
         </div>
