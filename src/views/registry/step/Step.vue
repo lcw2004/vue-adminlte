@@ -25,7 +25,7 @@ export default {
   display: inline-block;
   float: left;
   margin: 1.2em 0;
-  width: 33%;
+  width: 49%;
   /*display: table-cell;
   width: 1%;
   float: none;*/
