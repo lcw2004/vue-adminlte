@@ -14,7 +14,7 @@
     </div>
 
     <div class="form-group">
-      <label class="control-label col-md-2">注册帐号</label>
+      <label class="control-label required col-md-2">注册帐号</label>
       <div class="col-md-4">
         <input type="text" class="form-control" >
       </div>
@@ -110,3 +110,15 @@ export default {
   }
 }
 </script>
+
+<style>
+.required:before {
+  font-family: 'Times New Roman';
+  font-size: 14px;
+  content: "* ";
+  color: #dd4b39;
+  position: relative;
+  top: 3px;
+  right: 3px;
+}
+</style>
