@@ -1,12 +1,15 @@
 <template>
   <form class="form-horizontal">
-    <div class="form-group">
+    <div class="form-group has-error">
       <label class="control-label col-md-2">供应商全称</label>
       <div class="col-md-4">
         <input type="text" class="form-control" >
       </div>
       <div class="col-md-6">
         <p class="help-block">供应商全称必须与公司公章相符，不得含其它字符!</p>
+        <p class="help-block">该机构已经注册过了，点此 <a href="login.html">登录系统</a>。</p>
+        <p class="help-block">如果您不记得密码，点此 <a>找回密码</a>。</p>
+        <p class="help-block">如果您不记得账号，点此 <a>找回账户</a>。</p>
       </div>
     </div>
 
@@ -56,7 +59,7 @@
         <input type="text" class="form-control" >
       </div>
       <div class="col-md-6">
-        <p class="help-block"></p>
+        <p class="help-block">请输入验证邮箱，您可通过该邮箱找回账号或者密码!</p>
       </div>
     </div>
 
@@ -72,22 +75,6 @@
       </div>
       <div class="col-md-6">
         <p class="help-block"></p>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-12">
-        <div class="box box-solid">
-          <div class="box-header with-border">
-            <i class="fa fa-text-width"></i>
-            <h3 class="box-title">备注</h3>
-          </div>
-          <div class="box-body">
-            <ol>
-              <li>1. </li>
-            </ol>
-          </div>
-        </div>
       </div>
     </div>
   </form>
