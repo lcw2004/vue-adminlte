@@ -28,12 +28,17 @@ export default {
   margin: 1em auto;
   background-color: #edeff0;
   border-radius: .25em
+
 }
 
 .gsi-step-indicator li {
   display: inline-block;
   float: left;
-  margin: 1.2em 0
+  margin: 1.2em 0;
+  width: 33%;
+  /*display: table-cell;
+  width: 1%;
+  float: none;*/
 }
 
 .gsi-step-indicator li .number {
@@ -73,11 +78,11 @@ export default {
 }
 
 .gsi-step-indicator li.current>* {
-  color: #96c03d
+  color: #3c8dbc
 }
 
 .gsi-step-indicator a:hover {
-  color: #96c03d
+  color: #3c8dbc
 }
 
 .gsi-step-indicator a {
@@ -115,8 +120,8 @@ export default {
 
 .gsi-step-indicator.triangle li.current>* {
   color: #fff;
-  background-color: #96c03d;
-  border-color: #96c03d
+  background-color: #3c8dbc;
+  border-color: #3c8dbc
 }
 
 .gsi-step-indicator.triangle li:first-of-type>* {
@@ -126,12 +131,6 @@ export default {
 .gsi-step-indicator.triangle li:last-of-type>* {
   padding-right: 1.6em;
   border-radius: 0 .25em .25em 0
-}
-
-.gsi-step-indicator.triangle a:hover {
-  color: #fff;
-  background-color: #2c3f4c;
-  border-color: #2c3f4c
 }
 
 .gsi-step-indicator.triangle li::after, .gsi-step-indicator.triangle li>*::after {
