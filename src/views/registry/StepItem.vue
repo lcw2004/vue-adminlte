@@ -1,9 +1,9 @@
 <template>
-<li :class="{current : isActive}">
+<li :class="{active : isActive}">
   <a>
-    <span class="number">{{ index }} </span>
+    <span class="number">{{ index }}</span>
     <span class="desc">
-      {{ name }}
+      <label>{{ name }}</label>
     </span>
   </a>
 </li>

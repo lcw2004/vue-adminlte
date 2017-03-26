@@ -9,17 +9,8 @@
 
 <script>
 export default {
-  components: {
-  },
-  data: function () {
-    return {
-    }
-  },
-  methods: {
-  }
 }
 </script>
-
 
 <style>
 .gsi-step-indicator {
@@ -28,7 +19,6 @@ export default {
   margin: 1em auto;
   background-color: #edeff0;
   border-radius: .25em
-
 }
 
 .gsi-step-indicator li {
@@ -52,7 +42,8 @@ export default {
 }
 
 .gsi-step-indicator li .desc label {
-  font-size: 1.1em
+  font-size: 1.1em;
+  font-weight: normal;
 }
 
 .gsi-step-indicator li .desc span {
@@ -60,39 +51,10 @@ export default {
   display: block
 }
 
-.gsi-step-indicator li::after {
-  display: inline-block;
-  content: '»';
-  margin: 0 1em;
-  color: #959fa5
-}
-
-.gsi-step-indicator li:last-of-type::after {
-  display: none
-}
-
 .gsi-step-indicator li>* {
   display: flex;
   font-size: 1.4rem;
   color: #2c3f4c
-}
-
-.gsi-step-indicator li.current>* {
-  color: #3c8dbc
-}
-
-.gsi-step-indicator a:hover {
-  color: #3c8dbc
-}
-
-.gsi-step-indicator a {
-  text-decoration: none !important
-}
-
-.gsi-step-indicator:after {
-  content: "";
-  display: table;
-  clear: both
 }
 
 .gsi-step-indicator.triangle {
@@ -118,7 +80,7 @@ export default {
   border-color: #edeff0
 }
 
-.gsi-step-indicator.triangle li.current>* {
+.gsi-step-indicator.triangle li.active>* {
   color: #fff;
   background-color: #3c8dbc;
   border-color: #3c8dbc
@@ -180,10 +142,5 @@ export default {
 .gsi-step-indicator.triangle.gsi-arrow-left li>*::after {
   z-index: 2;
   border-right-color: inherit
-}
-
-.gsi-step-indicator.gsi-vertical li {
-  float: inherit !important;
-  display: block
 }
 </style>
