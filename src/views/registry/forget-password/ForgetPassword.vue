@@ -5,7 +5,7 @@
     <div class="box box-solid">
       <div class="box-header">
         <div class="text-center registry-title">
-          <h3 class="box-title">供应商注册</h3>
+          <h3 class="box-title">重置密码</h3>
         </div>
       </div>
 
@@ -13,16 +13,18 @@
         <div class="row row-margin-bottom">
           <div class="col-md-12">
             <Step>
-              <StepItem index="1" name="注册账户" width="49" :is-active="stepId == 1" />
-              <StepItem index="2" name="完善机构信息" width="49" :is-active="stepId == 2" />
+              <StepItem index="1" name="验证账户" width="33" :is-active="stepId == 1" />
+              <StepItem index="2" name="安全验证" width="33" :is-active="stepId == 2" />
+              <StepItem index="3" name="重置密码" width="33" :is-active="stepId == 3" />
             </Step>
           </div>
         </div>
 
         <div class="row">
           <div class="col-md-12">
-            <UserInfo v-if="stepId == 1"/>
-            <OrgInfo v-if="stepId == 2"/>
+            <ValidAccount v-if="stepId == 1"/>
+            <ValidEmail v-if="stepId == 2"/>
+            <RestPassword v-if="stepId == 3"/>
           </div>
         </div>
       </div>
@@ -30,11 +32,6 @@
         <div class="row">
           <div class="col-md-12">
             <div class="col-md-4"></div>
-            <div class="col-md-2" v-if="stepId != 1">
-              <button type="button" class="btn btn-block btn-default" @click="lastStep">
-                上一步
-              </button>
-            </div>
             <div class="col-md-2" v-if="stepId < maxStep">
               <button type="button" class="btn btn-block btn-primary"  @click="nextStep">
                 下一步
@@ -56,20 +53,22 @@
 <script>
 import Step from '../step/Step'
 import StepItem from '../step/StepItem'
-import UserInfo from './UserInfo'
-import OrgInfo from './OrgInfo'
+import ValidAccount from './ValidAccount'
+import ValidEmail from './ValidEmail'
+import RestPassword from './RestPassword'
 
 export default {
   components: {
     Step,
     StepItem,
-    UserInfo,
-    OrgInfo
+    ValidAccount,
+    ValidEmail,
+    RestPassword
   },
   data: function () {
     return {
       stepId: 1,
-      maxStep: 2
+      maxStep: 3
     }
   },
   methods: {

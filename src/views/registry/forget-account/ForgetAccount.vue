@@ -5,7 +5,7 @@
     <div class="box box-solid">
       <div class="box-header">
         <div class="text-center registry-title">
-          <h3 class="box-title">供应商注册</h3>
+          <h3 class="box-title">找回账号</h3>
         </div>
       </div>
 
@@ -13,8 +13,8 @@
         <div class="row row-margin-bottom">
           <div class="col-md-12">
             <Step>
-              <StepItem index="1" name="注册账户" width="49" :is-active="stepId == 1" />
-              <StepItem index="2" name="完善机构信息" width="49" :is-active="stepId == 2" />
+              <StepItem index="1" name="注册账户" :is-active="stepId == 1" />
+              <StepItem index="2" name="完善机构信息" :is-active="stepId == 2" />
             </Step>
           </div>
         </div>
@@ -56,15 +56,11 @@
 <script>
 import Step from '../step/Step'
 import StepItem from '../step/StepItem'
-import UserInfo from './UserInfo'
-import OrgInfo from './OrgInfo'
 
 export default {
   components: {
     Step,
-    StepItem,
-    UserInfo,
-    OrgInfo
+    StepItem
   },
   data: function () {
     return {

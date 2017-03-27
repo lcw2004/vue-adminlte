@@ -8,8 +8,8 @@
       <div class="col-md-6">
         <p class="help-block">供应商全称必须与公司公章相符，不得含其它字符!</p>
         <p class="help-block">该机构已经注册过了，点此 <a href="login.html">登录系统</a>。</p>
-        <p class="help-block">如果您不记得密码，点此 <a>找回密码</a>。</p>
-        <p class="help-block">如果您不记得账号，点此 <a>找回账户</a>。</p>
+        <p class="help-block">如果您不记得账号，点此 <router-link to="/forget-account">找回账户</router-link>。</p>
+        <p class="help-block">如果您不记得密码，点此 <router-link to="/forget-password">重置密码</router-link>。</p>
       </div>
     </div>
 

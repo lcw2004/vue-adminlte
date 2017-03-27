@@ -32,11 +32,12 @@ export default {
 }
 
 .gsi-step-indicator li .number {
-  font-size: 2em
+  font-size: 2em;
+  padding-top: 2px;
 }
 
 .gsi-step-indicator li .desc {
-  padding-top: 10px;
+  padding-top: 14px;
   padding-left: 10px;
   vertical-align: super
 }
@@ -74,7 +75,7 @@ export default {
 
 .gsi-step-indicator.triangle li>* {
   position: relative;
-  padding: 1em .8em .8em 2.5em;
+  padding: 0em .8em .8em 2.5em;
   color: #2c3f4c;
   background-color: #edeff0;
   border-color: #edeff0
@@ -102,7 +103,7 @@ export default {
   left: 100%;
   height: 0;
   width: 0;
-  border: 31px solid transparent;
+  border: 25px solid transparent;
   border-right-width: 0;
   border-left-width: 20px
 }
@@ -134,7 +135,7 @@ export default {
   left: -20px;
   height: 0;
   width: 0;
-  border: 31px solid transparent;
+  border: 21px solid transparent;
   border-right-width: 20px;
   border-left-width: 0
 }
@@ -142,5 +143,9 @@ export default {
 .gsi-step-indicator.triangle.gsi-arrow-left li>*::after {
   z-index: 2;
   border-right-color: inherit
+}
+
+.gsi-step-indicator.triangle.gsi-arrow-left li>a {
+  padding-left: 40px;
 }
 </style>

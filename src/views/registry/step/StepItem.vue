@@ -1,5 +1,5 @@
 <template>
-<li :class="{active : isActive}">
+<li :class="{active : isActive}" :style="liStyle">
   <a>
     <span class="number">{{ index }}</span>
     <span class="desc">
@@ -17,7 +17,15 @@ export default {
       default: false
     },
     index: {},
-    name: {}
+    name: {},
+    width: {}
+  },
+  computed: {
+    liStyle: function () {
+      return {
+        width: this.width + '%'
+      }
+    }
   }
 }
 </script>

@@ -8,10 +8,15 @@ Vue.use(Vuex)
 
 import AgreementInfo from './agreement/AgreementInfo'
 import RegistUser from './user/RegistUser'
+import ForgetAccount from './forget-account/ForgetAccount'
+import ForgetPassword from './forget-password/ForgetPassword'
+
 let router = {
   routes: [
     { path: '/', component: AgreementInfo },
-    { path: '/r', component: RegistUser }
+    { path: '/r', component: RegistUser },
+    { path: '/forget-account', component: ForgetAccount },
+    { path: '/forget-password', component: ForgetPassword }
   ]
 }
 let vueRouter = new VueRouter(router)
