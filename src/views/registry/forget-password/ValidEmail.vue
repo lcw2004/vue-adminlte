@@ -5,7 +5,6 @@
       <div class="col-md-4">
         <p class="form-control-static">123****22@qq.com</p>
       </div>
-
     </div>
 
     <div class="form-group has-error">

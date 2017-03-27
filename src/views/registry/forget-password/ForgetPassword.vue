@@ -39,7 +39,7 @@
             </div>
             <div class="col-md-2" v-if="stepId == maxStep">
               <button type="button" class="btn btn-block btn-primary" @click="submit">
-                提 交
+                保 存
               </button>
             </div>
           </div>
