@@ -114,7 +114,7 @@
                   <td></td>
                   <td>已归档</td>
                   <td>
-                    <a><router-link to='/bidding/info'>查看</router-link></a>
+                    <a><router-link to='/bidding/archives'>查看</router-link></a>
                   </td>
                 </tr>
               </tbody>

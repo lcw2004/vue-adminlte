@@ -7,7 +7,7 @@ import BiddingOfManager from '../../views/bidding/BiddingOfManager'
 import BiddingPermissionInfo from '../../views/bidding/BiddingPermissionInfo'
 import AuditProgress from '../../views/bidding/AuditProgress'
 
-import BiddingInfo from '../../views/bidding/BiddingInfo'
+import BiddingArchives from '../../views/bidding/archives/BiddingArchives'
 import BiddingPreAward from '../../views/bidding/award/BiddingPreAward'
 import BiddingTimeManage from '../../views/bidding/BiddingTimeManage'
 import BiddingFloorPrice from '../../views/bidding/floor-price/BiddingFloorPrice'
@@ -26,7 +26,7 @@ export default [
   { path: '/bidding/of-manager', component: BiddingOfManager },
   { path: '/bidding/permission-info', component: BiddingPermissionInfo },
   { path: '/bidding/audit-progress', component: AuditProgress },
-  { path: '/bidding/info', component: BiddingInfo },
+  { path: '/bidding/archives', component: BiddingArchives },
   { path: '/bidding/pre-award', component: BiddingPreAward },
   { path: '/bidding/time-manage', component: BiddingTimeManage },
   { path: '/bidding/floor-price', component: BiddingFloorPrice },

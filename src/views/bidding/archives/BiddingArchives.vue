@@ -1,6 +1,6 @@
 <template>
 <div>
-  <div>BiddingInfo</div>
+  <div>Bidding</div>
 </div>
 </template>
 
