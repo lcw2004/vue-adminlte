@@ -84,9 +84,84 @@
         }
       },
       methods: {
+        ok () {
+          this.config.show = false
+          this.$notify.success('开标成功')
+        }
       }
     }
     </script>
+    """
+  'Vue modal config':
+    'prefix': 'vuem-config'
+    'body': """
+    config: {
+      show: false,
+      title: '$1'
+    }
+    """
+
+######################################################
+####### 自定义API
+######################################################
+#
+  'Notify success':
+    'prefix': 'notify-success'
+    'body': """$notify.success('$1')"""
+  'Notify info':
+    'prefix': 'notify-info'
+    'body': """$notify.info('$1')"""
+  'Notify warn':
+    'prefix': 'notify-warn'
+    'body': """$notify.warn('$1')"""
+  'Notify danger':
+    'prefix': 'notify-danger'
+    'body': """$notify.danger('$1')"""
+  'confirm':
+    'prefix': 'confirm'
+    'body': """$confirm('$1', function () {
+        $2
+      })
+    """
+  'Dict Select':
+    'prefix': 'dict-select'
+    'body': """
+    <DictSelect v-model="$2" type="$1"></DictSelect>
+    """
+
+######################################################
+####### 自定义组件
+######################################################
+  'TimeLine':
+    'prefix': 'TimeLine'
+    'body': """
+    <TimeLine>$1</TimeLine>
+    """
+  'TimeLabel':
+    'prefix': 'TimeLabel'
+    'body': """
+    <TimeLabel time="2017-03-05 16:00:00" remark="$2" background="bg-gray">$1</TimeLabel>
+    """
+  'TimeItem':
+    'prefix': 'TimeItem'
+    'body': """
+      <TimeItem icon="fa fa-download" time="$3" title="$2">
+    $1
+    </TimeItem>
+    """
+  'TimeItemBody':
+    'prefix': 'TimeItemBody'
+    'body': """
+    <TimeItemBody>
+      $1
+    </TimeItemBody>
+    """
+  'TimeItemFooter':
+    'prefix': 'TimeItemFooter'
+    'body': """
+    <TimeItemFooter>
+      $1
+    </TimeItemFooter>
     """
 
 ######################################################
@@ -123,7 +198,7 @@
     """
 
 # bootstrap box
-  'Bootstrap box':
+  'Bootstrap box solid':
     'prefix': 'bbox-solid'
     'body': """
       <div class="box box-solid">
@@ -139,6 +214,26 @@
       </div>
     """
 
+# Bootstrap nav
+  'Bootstrap nav':
+    'prefix': 'bnav'
+    'body': """
+    <div class="nav-tabs-custom">
+      <ul class="nav nav-tabs">
+        <li :class="{active : step == 1}" @click="step = 1"><a>$1</a></li>
+      </ul>
+      <div class="tab-content">
+        <div class="tab-pane active">
+          $2
+        </div>
+      </div>
+      <div class="box-footer">
+        <div class="col-md-4 col-sm-0"></div>
+        <div class="col-md-2 col-sm-2"><button class="btn btn-block btn-default" @click="$router.go(-1)">返回</button></div>
+      </div>
+    </div>
+    """
+
 # bootstrap head
   'Bootstrap head':
     'prefix': 'bhead'
@@ -151,6 +246,17 @@
     'prefix': 'brow'
     'body': """
         <div class="row">
+          <div class="col-md-12$2">
+            $1
+          </div>
+        </div>
+    """
+
+# bootstrap row
+  'Bootstrap row with margin':
+    'prefix': 'brow-margin'
+    'body': """
+        <div class="row row-margin-bottom">
           <div class="col-md-12$2">
             $1
           </div>
@@ -191,6 +297,23 @@
       </div>
     """
 
+# bootstrap pull right
+  'Bootstrap pull right':
+    'prefix': 'bpull-right'
+    'body': """
+      <div class="pull-right">
+        $1
+      </div>
+    """
+
+# bootstrap pull left
+  'Bootstrap pull left':
+    'prefix': 'bpull-left'
+    'body': """
+      <div class="pull-left">
+        $1
+      </div>
+    """
 
 ######################################################
 ####### 表单类
@@ -309,6 +432,13 @@
         </div>
       </div>
     """
+  'Bootstrap form download':
+    'prefix': 'bform-download'
+    'body': """
+      <p class="form-control-static"><a><i class="fa fa-paperclip"></i> $1下载</a></p>
+    """
+
+
 
 ######################################################
 ####### 元素类
@@ -346,6 +476,20 @@
       </button>
     """
 
+  'Bootstrap button goback':
+    'prefix': 'bbtn-goback'
+    'body': """
+      <button type="button" class="btn btn-default"  @click="$router.go(-1)">
+        返回
+      </button>
+    """
+
+  'Bootstrap button gobacka':
+    'prefix': 'bbtn-gobacka'
+    'body': """
+      <a class="btn btn-default" @click="$router.go(-1)">返回</a>
+    """
+
   'Bootstrap label success':
     'prefix': 'blabel-success'
     'body': """
@@ -377,7 +521,7 @@
   'Bootstrap table':
     'prefix': 'btable'
     'body': """
-      <table class="table table-bordered table-hover">
+      <table class="table table-bordered">
         <tbody>
           <tr>
             <th style="width: 10px">#</th>

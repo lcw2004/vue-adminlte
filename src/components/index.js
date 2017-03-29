@@ -30,6 +30,8 @@ import TimeRangePicker from './time/TimeRangePicker'
 import TimeLine from './timeline/TimeLine'
 import TimeLabel from './timeline/TimeLabel'
 import TimeItem from './timeline/TimeItem'
+import TimeItemBody from './timeline/TimeItemBody'
+import TimeItemFooter from './timeline/TimeItemFooter'
 
 // tree
 import Tree from './tree/Tree'
@@ -71,6 +73,8 @@ function initGlobalComponents () {
   Vue.component(TimeLine.name, TimeLine)
   Vue.component(TimeLabel.name, TimeLabel)
   Vue.component(TimeItem.name, TimeItem)
+  Vue.component(TimeItemBody.name, TimeItemBody)
+  Vue.component(TimeItemFooter.name, TimeItemFooter)
 
   // tree
   Vue.component(Tree.name, Tree)

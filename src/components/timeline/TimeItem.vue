@@ -1,29 +1,47 @@
 <template>
-  <div class="timeline-item">
-    <span class="time"><i class="fa fa-clock-o"></i> 12:05</span>
+  <li>
+    <i :class="iconClass"></i>
+    <div class="timeline-item">
+      <span class="time"><i class="fa fa-clock-o"></i> {{ time }}</span>
+      <h3 class="timeline-header">{{ title }}</h3>
 
-    <h3 class="timeline-header"><a href="#">Support Team</a> sent you an email</h3>
+      <!-- timeline-body -->
+      <slot></slot>
 
-    <div class="timeline-body">
-      Etsy doostang zoodles disqus groupon greplin oooj voxy zoodles, weebly ning heekya handango imeem plugg dopplr jibjab, movity jajah plickers sifteo edmodo ifttt zimbra. Babblely odeo kaboodle quora plaxo ideeli hulu weebly balihoo...
+      <!-- timeline-footer -->
+      <slot name="footer"></slot>
     </div>
-    <div class="timeline-footer">
-      <a class="btn btn-primary btn-xs">Read more</a>
-      <a class="btn btn-danger btn-xs">Delete</a>
-    </div>
-  </div>
+  </li>
 </template>
 
 <script>
 export default {
   name: 'TimeItem',
-  components: {
+  props: {
+    icon: {
+      type: String,
+      required: true
+    },
+    iconColor: {
+      default: 'bg-gray'
+    },
+    time: {
+      type: String,
+      required: true
+    },
+    title: {
+      type: String,
+      required: true
+    }
   },
   data: function () {
     return {
     }
   },
-  methods: {
+  computed: {
+    iconClass: function () {
+      return [this.icon, this.iconColor]
+    }
   }
 }
 </script>
