@@ -2,16 +2,25 @@
   <li>
     <i :class="iconClass"></i>
     <div class="timeline-item">
-      <span class="time" v-if="time"> <i class="fa fa-clock-o"></i> {{ time }}</span>
+      <span class="time">
+        <a @click="showDetail = !showDetail">查看详情 <i :class="expandClass"></i></a>
+        <i class="fa fa-clock-o" ></i> {{ time }}
+      </span>
 
       <!-- timeline-header -->
-      <slot name="header"></slot>
+      <h3 :class="headerClass">
+        <slot name="header"></slot>
+      </h3>
 
       <!-- timeline-body -->
-      <slot name="body"></slot>
+      <div class="timeline-body" v-show="showDetail">
+        <slot name="body"></slot>
+      </div>
 
       <!-- timeline-footer -->
-      <slot name="footer"></slot>
+      <div class="timeline-footer">
+        <slot name="footer"></slot>
+      </div>
     </div>
   </li>
 </template>
@@ -40,7 +49,26 @@ export default {
   computed: {
     iconClass: function () {
       return [this.icon, this.iconColor]
+    },
+    expandClass: function () {
+      if (this.showDetail) {
+        return ['fa fa-fw fa-caret-up']
+      } else {
+        return ['fa fa-fw fa-caret-down']
+      }
+    },
+    headerClass: function () {
+      return {
+        'timeline-header': true,
+        'no-border': !this.showDetail
+      }
     }
   }
 }
 </script>
+
+<style>
+.time > a {
+  margin-right: 20px
+}
+</style>

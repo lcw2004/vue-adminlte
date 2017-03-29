@@ -1,5 +1,5 @@
 <template>
-  <div class="timeline-body">
+  <div>
     <slot></slot>
   </div>
 </template>
