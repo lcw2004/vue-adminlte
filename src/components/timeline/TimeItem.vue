@@ -2,11 +2,13 @@
   <li>
     <i :class="iconClass"></i>
     <div class="timeline-item">
-      <span class="time"><i class="fa fa-clock-o"></i> {{ time }}</span>
-      <h3 class="timeline-header">{{ title }}</h3>
+      <span class="time" v-if="time"> <i class="fa fa-clock-o"></i> {{ time }}</span>
+
+      <!-- timeline-header -->
+      <slot name="header"></slot>
 
       <!-- timeline-body -->
-      <slot></slot>
+      <slot name="body"></slot>
 
       <!-- timeline-footer -->
       <slot name="footer"></slot>
@@ -27,15 +29,12 @@ export default {
     },
     time: {
       type: String,
-      required: true
-    },
-    title: {
-      type: String,
-      required: true
+      required: false
     }
   },
   data: function () {
     return {
+      showDetail: false
     }
   },
   computed: {

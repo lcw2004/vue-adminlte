@@ -32,6 +32,7 @@ import TimeLabel from './timeline/TimeLabel'
 import TimeItem from './timeline/TimeItem'
 import TimeItemBody from './timeline/TimeItemBody'
 import TimeItemFooter from './timeline/TimeItemFooter'
+import TimeItemHeader from './timeline/TimeItemHeader'
 
 // tree
 import Tree from './tree/Tree'
@@ -75,6 +76,7 @@ function initGlobalComponents () {
   Vue.component(TimeItem.name, TimeItem)
   Vue.component(TimeItemBody.name, TimeItemBody)
   Vue.component(TimeItemFooter.name, TimeItemFooter)
+  Vue.component(TimeItemHeader.name, TimeItemHeader)
 
   // tree
   Vue.component(Tree.name, Tree)
