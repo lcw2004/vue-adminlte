@@ -2,11 +2,31 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import Vuex from 'vuex'
+Vue.use(Vuex)
 import VueResource from 'vue-resource'
+Vue.use(VueResource)
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
-Vue.use(VueResource)
-Vue.use(Vuex)
+
+const config = {
+  errorBagName: 'errors', // change if property conflicts.
+  fieldsBagName: 'fields',
+  delay: 0,
+  locale: 'zh_CN',
+  dictionary: null,
+  strict: true,
+  enableAutoClasses: false,
+  classNames: {
+    touched: 'touched', // the control has been blurred
+    untouched: 'untouched', // the control hasn't been blurred
+    valid: 'valid', // model is valid
+    invalid: 'invalid', // model is invalid
+    pristine: 'pristine', // control has not been interacted with
+    dirty: 'dirty' // control has been interacted with
+  }
+}
+import VeeValidate from 'vee-validate'
+Vue.use(VeeValidate, config)
 
 // 引入资源css资源文件
 import 'admin-lte/bootstrap/css/bootstrap.css'
