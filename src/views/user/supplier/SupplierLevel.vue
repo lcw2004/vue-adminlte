@@ -6,30 +6,34 @@
         <div class="box-header">
           <form class="form-horizontal">
             <div class="row">
-              <div class="col-md-3">
-                <div class="form-group">
-                  <label class="control-label col-md-4">姓名</label>
-                  <div class="col-md-8">
-                    <div class="input-group">
-                      <input type="text" class="form-control">
+              <div class="col-md-12">
+                <form class="form-inline">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="col-md-3">
+                        <input type="text" placeholder="公司名/简称/曾用名称" class="form-control inline-block">
+                      </div>
+                      <div class="col-md-3">
+                        <div class="form-group">
+                          <label class="control-label col-md-4">等级</label>
+                          <div class="col-md-8">
+                            <select class="form-control">
+                              <option>全部</option>
+                              <option>不合格供应商</option>
+                              <option>预备供应商</option>
+                              <option>合格供应商</option>
+                              <option>战略合作供应商</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
+
+                  <SupplierQueryCondition></SupplierQueryCondition>
+                </form>
               </div>
-              <div class="col-md-3">
-                <div class="form-group">
-                  <label class="control-label col-md-4">等级</label>
-                  <div class="col-md-8">
-                    <select class="form-control">
-                      <option>全部</option>
-                      <option>不合格供应商</option>
-                      <option>预备供应商</option>
-                      <option>合格供应商</option>
-                      <option>战略合作供应商</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
+
             </div>
           </form>
         </div>

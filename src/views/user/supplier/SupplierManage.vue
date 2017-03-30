@@ -5,7 +5,15 @@
         <div class="box">
           <div class="box-header">
             <form class="form-inline">
-              <div class="col-md-3"><label class="control-label">姓名</label> <input type="text" placeholder="姓名" class="form-control inline-block"></div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="col-md-3">
+                    <input type="text" placeholder="公司名/简称/曾用名称" class="form-control inline-block">
+                  </div>
+                </div>
+              </div>
+
+              <SupplierQueryCondition></SupplierQueryCondition>
             </form>
           </div>
 

@@ -19,7 +19,9 @@ import 'bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.min.css'
 
 // 注册公共组件
 import initGlobalComponents from './components'
+import initViewComponents from './views'
 initGlobalComponents()
+initViewComponents()
 
 // 引入根组件、路由、状态
 import App from './App'
