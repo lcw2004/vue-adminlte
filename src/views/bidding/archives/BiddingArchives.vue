@@ -22,15 +22,25 @@
 <script>
 import BiddingTimeLine from './BiddingTimeLine'
 import BiddingFileInfo from './BiddingFileInfo'
+import BiddingProjectInfo from './BiddingProjectInfo'
+import BiddingSupplierList from './BiddingSupplierList'
+import BiddingSubjectList from './BiddingSubjectList'
 
 export default {
   components: {
     BiddingTimeLine,
-    BiddingFileInfo
+    BiddingFileInfo,
+    BiddingProjectInfo,
+    BiddingSupplierList,
+    BiddingSubjectList
   },
   data () {
     return {
       navs: [
+        {
+          component: 'BiddingProjectInfo',
+          name: '项目信息'
+        },
         {
           component: 'BiddingTimeLine',
           name: '项目时间线'
@@ -38,6 +48,14 @@ export default {
         {
           component: 'BiddingFileInfo',
           name: '项目文件'
+        },
+        {
+          component: 'BiddingSubjectList',
+          name: '物料列表'
+        },
+        {
+          component: 'BiddingSupplierList',
+          name: '参与供应商'
         }
       ],
       activeNav: 'BiddingTimeLine'

@@ -178,7 +178,7 @@
 
       <TimeItem icon="fa fa-download" time="2017-03-10 11:15">
         <TimeItemHeader slot="header">
-          <a>张三</a> 录入标的
+          <a>张三</a> 录入标底
         </TimeItemHeader>
         <TimeItemBody slot="body">
           <div class="row">

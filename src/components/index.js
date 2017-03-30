@@ -42,6 +42,10 @@ import notify from './notify'
 import confirm from './confirm'
 import progress from './progress'
 
+// Form
+import FormControlStatic from './form/FormControlStatic'
+import FormGroup from './form/FormGroup'
+
 function initGlobalComponents () {
   // base
   Vue.component(FullScreenBtn.name, FullScreenBtn)
@@ -81,6 +85,10 @@ function initGlobalComponents () {
   // tree
   Vue.component(Tree.name, Tree)
   Vue.component(TreeTableColPrefix.name, TreeTableColPrefix)
+
+  // form
+  Vue.component(FormGroup.name, FormGroup)
+  Vue.component(FormControlStatic.name, FormControlStatic)
 
   // message
   Vue.prototype.$notify = notify

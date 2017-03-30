@@ -43,7 +43,7 @@ export default {
   },
   data: function () {
     return {
-      showDetail: false
+      showDetail: true
     }
   },
   computed: {
