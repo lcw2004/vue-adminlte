@@ -42,6 +42,9 @@ import initGlobalComponents from './components'
 import initViewComponents from './views'
 initGlobalComponents()
 initViewComponents()
+// 注册自定义指令
+import initDirectives from './directives'
+initDirectives()
 
 // 引入根组件、路由、状态
 import App from './App'

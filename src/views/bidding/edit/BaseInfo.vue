@@ -36,13 +36,10 @@
 
   <div class="row">
     <div class="col-md-6">
-      <div class="form-group has-feedback" :class="{'has-error' : errors.has('projectNumber')}">
+      <div class="form-group" v-render="projectNumber">
         <label class="control-label col-md-4">项目编号</label>
         <div class="col-md-7">
           <input type="text" class="form-control" v-validate="'required|email'" name="projectNumber" v-model="projectNumber">
-          <i v-show="errors.has('projectNumber')" class="fa fa-warning form-control-feedback"></i>
-          <i v-show="!errors.has('projectNumber')" class="fa fa-check form-control-feedback"></i>
-          <span v-show="errors.has('projectNumber')" class="help-block">{{ errors.first('projectNumber') }}</span>
         </div>
       </div>
     </div>
@@ -65,11 +62,10 @@
 
   <div class="row">
     <div class="col-md-6">
-      <div class="form-group has-feedback has-success">
+      <div class="form-group has-feedback" v-render="projectName">
         <label class="control-label col-md-4">项目名称</label>
         <div class="col-md-7">
-          <input type="text" class="form-control">
-          <i class="fa fa-search form-control-feedback"></i>
+          <input type="text" class="form-control" v-validate="'required|email'" v-model="projectName">
         </div>
       </div>
     </div>
@@ -193,62 +189,10 @@ export default {
   },
   data: function () {
     return {
-      projectNumber: ''
+      projectNumber: '',
+      projectName: '',
+      projectName1: ''
     }
   }
 }
 </script>
-
-<style>
-.fa.form-control-feedback {
-  line-height: 34px;
-  /* @input-height-base; */
-}
-
-.input-sm~.fa.form-control-feedback {
-  line-height: 30px;
-  /* @input-height-base; */
-}
-
-.input-lg~.fa.form-control-feedback {
-  line-height: 46px;
-  /* @input-height-base; */
-}
-
-.has-feedback-left input.form-control {
-  padding-left: 34px;
-  /* @input-height-base; */
-  padding-right: 12px;
-  /* @padding-base-horizontal */
-}
-
-.has-feedback-left .form-control-feedback {
-  left: 0;
-}
-
-.form-horizontal .has-feedback-left .form-control-feedback {
-  left: 12px;
-  /* @grid-gutter-width / 2 */
-}
-
-.has-feedback-left input.input-sm {
-  padding-left: 30px;
-  @input-height-small;
-}
-
-.has-feedback-left input.input-lg {
-  padding-left: 46px;
-  @input-height-large;
-}
-
-.has-success div i {
-    border-color: #27a4b0;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-}
-.has-error .form-control {
-    border-color: #e73d4a;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-}
-</style>
