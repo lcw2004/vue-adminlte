@@ -1,13 +1,29 @@
 export default {
-  bind: function () {
+  bind: function (el, binding, vnode) {
+    console.log('---------------------------------')
+    console.log('bind')
+    console.log(binding)
+    console.log('vnode keys: ' + Object.keys(vnode).join(', '))
+
+    if (binding.modifiers.r) {
+      addRequiredClass(el)
+    }
+
+    console.log('---------------------------------')
   },
-  inserted: function (el) {
-    el.focus()
+  inserted: function (el, binding, vnode) {
+    console.log('---------------------------------')
+    console.log('inserted')
+    console.log(binding)
+    console.log('vnode keys: ' + Object.keys(vnode).join(', '))
+
+    // addRequiredClass(el)
+
+    console.log('---------------------------------')
   },
   update: function (el, binding, vnode) {
     console.log('---------------------------------')
     console.log(binding)
-    console.log('vnode keys: ' + Object.keys(vnode).join(', '))
 
     let bindName = binding.expression
     let vm = vnode.context
@@ -33,6 +49,7 @@ export default {
 }
 
 const FORM_CONTROL = 'form-control'
+const CONTROL_LABEL = 'control-label'
 const HELP_BLOCK = 'help-block'
 const HAS_ERROR = 'has-error'
 // const HAS_SUCCESS = 'has-success'
@@ -41,6 +58,7 @@ const FA = 'fa'
 const FA_WARNING = 'fa-warning'
 const FA_CHECK = 'fa-check'
 const FORM_CONTROL_FEEDBACK = 'form-control-feedback'
+const REQUIRED = 'required'
 
 function handlerPass (el) {
   removeClass(el, HAS_ERROR)
@@ -54,6 +72,11 @@ function handlerError (el, errorMsg) {
   addClass(el, HAS_ERROR)
   addIcon(el, FA_WARNING)
   appendErrorSpan(el, errorMsg)
+}
+
+function addRequiredClass (el) {
+  let controlLabel = el.getElementsByClassName(CONTROL_LABEL)[0]
+  addClass(controlLabel, REQUIRED)
 }
 
 /**
