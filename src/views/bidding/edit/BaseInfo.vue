@@ -65,7 +65,7 @@
       <div class="form-group has-feedback" v-render="projectName">
         <label class="control-label col-md-4">项目名称</label>
         <div class="col-md-7">
-          <input type="text" class="form-control" v-validate="'required|email'" v-model="projectName">
+          <input type="text" class="form-control" v-validate="'required|email'" name="projectName" v-model="projectName">
         </div>
       </div>
     </div>

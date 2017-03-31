@@ -1,37 +1,34 @@
 export default {
   bind: function () {
-    console.log('bind render')
   },
   inserted: function (el) {
-    console.log('insert render')
     el.focus()
   },
   update: function (el, binding, vnode) {
     console.log('---------------------------------')
-    console.log('update render')
-
     console.log(binding)
     console.log('vnode keys: ' + Object.keys(vnode).join(', '))
 
     let bindName = binding.expression
     let vm = vnode.context
-    let hasError = vm.errors.has(bindName)
+    // filded 失败一次之后触发，errors 实时触发
+    let isFailded = vm.fields.failed(bindName) || vm.errors.has(bindName)
+    let isPassed = vm.fields.passed(bindName)
 
     console.log(vm.errors)
-    if (hasError) {
+    if (isFailded) {
       let errorMsg = vm.errors.first(bindName)
-      console.log('hasError')
-      console.log(errorMsg)
       handlerError(el, errorMsg)
-    } else {
-      console.log('valid ok')
+      console.log('valid filded')
+      console.log(errorMsg)
+    } else if (isPassed) {
+      console.log('valid pass')
       handlerPass(el)
     }
 
     console.log('---------------------------------')
   },
   unbind: function () {
-    console.log('unbind render')
   }
 }
 
@@ -47,16 +44,21 @@ const FORM_CONTROL_FEEDBACK = 'form-control-feedback'
 
 function handlerPass (el) {
   removeClass(el, HAS_ERROR)
+  // addClass(el, HAS_SUCCESS)
   addIcon(el, FA_CHECK)
   removeErrorSpan(el)
 }
 
 function handlerError (el, errorMsg) {
+  // removeClass(el, HAS_SUCCESS)
   addClass(el, HAS_ERROR)
   addIcon(el, FA_WARNING)
   appendErrorSpan(el, errorMsg)
 }
 
+/**
+* 添加Icon
+*/
 function addIcon (el, iconClass) {
   // 寻找错误挂载点
   let formControl = getErrorMountElement(el)
@@ -77,6 +79,9 @@ function addIcon (el, iconClass) {
   }
 }
 
+/**
+* 添加错误信息
+*/
 function appendErrorSpan (el, errorMsg) {
   // 寻找错误挂载点
   let formControl = getErrorMountElement(el)
@@ -100,6 +105,9 @@ function appendErrorSpan (el, errorMsg) {
   errorSpan.appendChild(document.createTextNode(errorMsg))
 }
 
+/**
+* 移除错误信息
+*/
 function removeErrorSpan (el) {
   let formControl = getErrorMountElement(el)
   if (!formControl) {
@@ -128,6 +136,9 @@ function getErrorMountElement (el) {
   }
 }
 
+/**
+* 获取表单上的Icon
+*/
 function getErrorIcon (parentNode) {
   let checkIcons = parentNode.getElementsByClassName(FA_CHECK)
   let warningIcons = parentNode.getElementsByClassName(FA_WARNING)
