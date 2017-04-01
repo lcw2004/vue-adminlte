@@ -36,10 +36,10 @@
 
   <div class="row">
     <div class="col-md-6">
-      <div class="form-group" v-render.r="projectNumber">
+      <div class="form-group" v-render.r="项目编号">
         <label class="control-label col-md-4">项目编号</label>
         <div class="col-md-7">
-          <input type="text" class="form-control" v-validate="'required|email'" name="projectNumber" v-model="projectNumber">
+          <input type="text" class="form-control" v-validate="'required|email'" name="项目编号" v-model="projectNumber">
         </div>
       </div>
     </div>
@@ -62,10 +62,10 @@
 
   <div class="row">
     <div class="col-md-6">
-      <div class="form-group has-feedback" v-render="projectName">
+      <div class="form-group has-feedback" v-render="项目名称">
         <label class="control-label col-md-4">项目名称</label>
         <div class="col-md-7">
-          <input type="text" class="form-control" v-validate="'required|email'" name="projectName" v-model="projectName">
+          <input type="text" class="form-control" v-validate="'required|email'" name="项目名称" v-model="projectName">
         </div>
       </div>
     </div>
