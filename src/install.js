@@ -31,10 +31,26 @@ function initProgressBar () {
   Vue.http.interceptors.push(function (request, next) {
     this.$progress.start()
     next(function (response) {
+      if (response.status === 400) {
+        handlerError(this, response.body)
+      }
       this.$progress.done()
       return response
     })
   })
+}
+
+function handlerError (self, error) {
+  console.log(error)
+  let errorCode = error.code
+
+  // 处理验证失败错误
+  if (errorCode === '1000') {
+    let filedErrors = error.data
+    for (let i = 0; i < filedErrors.length; i++) {
+      self.$notify.danger(filedErrors[i].defaultMessage)
+    }
+  }
 }
 
 function install () {
