@@ -41,15 +41,17 @@ function initProgressBar () {
 }
 
 function handlerError (self, error) {
-  console.log(error)
+  console.error(error)
   let errorCode = error.code
-
-  // 处理验证失败错误
   if (errorCode === '1000') {
+    // 处理验证失败错误
     let filedErrors = error.data
     for (let i = 0; i < filedErrors.length; i++) {
       self.$notify.danger(filedErrors[i].defaultMessage)
     }
+  } if (error.message) {
+    // 处理普通异常错误
+    self.$notify.danger(error.message)
   }
 }
 
