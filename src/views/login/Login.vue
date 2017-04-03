@@ -28,42 +28,70 @@
       <div class="panel-body">
         <p class="login-body-panel-head">Sign In to your account</p>
         <form class="form login-form">
-          <div class="form-group">
-            <div class="input-group">
-              <div class="input-group-addon login-icon"><i class="fa fa-user" style="width: 15px;"></i></div>
-              <input type="text" v-model="loginInfo.username" class="form-control" style="height: 38px" placeholder="登录名">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <div class="input-group">
+                  <div class="input-group-addon login-icon"><i class="fa fa-user" style="width: 15px;"></i></div>
+                  <input type="text" v-model="loginInfo.username" class="form-control" style="height: 38px" placeholder="登录名">
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="form-group">
-            <div class="input-group">
-              <div class="input-group-addon login-icon"><i class="fa fa-asterisk" style="width: 15px;"></i></div>
-              <input type="password" v-model="loginInfo.password" class="form-control" style="height: 38px" placeholder="密码">
-            </div>
-          </div>
-          <div class="form-group" v-if="result.ok != null && !result.ok">
-            <div class="input-group">
-              <p class="form-control-static text-red">{{ result.message }}</p>
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="checkbox pull-left">
-              <label>
-                <input type="checkbox" v-model="loginInfo.isRememberMe"> 记住我
-              </label>
-            </div>
-          </div>
-          <div class="form-group" v-if="isVerifyCode">
-            <div class="text-left" style="margin-bottom: 10px;">
-							<label>验证码：</label>
-							<input type="text" v-model="loginInfo.verifyCode" style="min-width: 20px;width: 35%;max-width: 150px;height: 28px;font-size: 15px" maxlength="4">
-              <VerifyCodeImg :timestamp="timestamp"></VerifyCodeImg>
-							<a @click="refreshVerifyCode" class="form-icon" ><i class="fa fa-refresh" aria-hidden="true"></i></a>
-						</div>
           </div>
 
-          <a class="btn btn-primary btn-lg btn-block" @click="login">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <div class="input-group">
+                  <div class="input-group-addon login-icon"><i class="fa fa-asterisk" style="width: 15px;"></i></div>
+                  <input type="password" v-model="loginInfo.password" class="form-control" style="height: 38px" placeholder="密码">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group" v-if="result.ok != null && !result.ok">
+                <div class="input-group">
+                  <p class="form-control-static text-red">{{ result.message }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <div class="checkbox pull-left">
+                  <label>
+                    <input type="checkbox" v-model="loginInfo.isRememberMe"> 记住我
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group" v-if="isVerifyCode">
+                <div class="text-left" style="margin-bottom: 10px;">
+                  <label>验证码：</label>
+                  <input type="text" v-model="loginInfo.verifyCode" style="min-width: 20px;width: 35%;max-width: 150px;height: 28px;font-size: 15px" maxlength="4">
+                  <VerifyCodeImg :timestamp="timestamp"></VerifyCodeImg>
+                  <a @click="refreshVerifyCode" class="form-icon"><i class="fa fa-refresh" aria-hidden="true"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12">
+              <a class="btn btn-primary btn-lg btn-block" @click="login">
   						登          录
-  				</a>
+  				    </a>
+            </div>
+          </div>
         </form>
       </div>
     </div>
