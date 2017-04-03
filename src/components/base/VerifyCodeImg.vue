@@ -19,11 +19,8 @@ export default {
     }
   },
   computed: {
-    t: function () {
-      return this.timestamp
-    },
     imageUrl: function () {
-      return '/one/a/rest/verifyCode' + '?t=' + this.t
+      return '/one/a/rest/verifyCode' + '?t=' + this.t + this.timestamp
     }
   }
 }

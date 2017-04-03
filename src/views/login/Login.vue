@@ -50,12 +50,18 @@
             </div>
           </div>
 
-          <div class="row">
-            <div class="col-md-12">
-              <div class="form-group" v-if="result.ok != null && !result.ok">
+          <div class="row" v-if="isVerifyCode">
+            <div class="form-group">
+              <div class="col-md-9 col-xs-9">
                 <div class="input-group">
-                  <p class="form-control-static text-red">{{ result.message }}</p>
+                  <input type="text" class="form-control" placeholder="验证码" id="verifyCode" v-focus v-model="loginInfo.verifyCode"  maxlength="4">
+                  <span class="input-group-addon" style="padding: 0">
+                    <VerifyCodeImg :timestamp="timestamp"></VerifyCodeImg>
+                  </span>
                 </div>
+              </div>
+              <div class="col-md-3 col-xs-3">
+                <a @click="refreshVerifyCode"><p class="form-control-static">换一张</p></a>
               </div>
             </div>
           </div>
@@ -74,12 +80,9 @@
 
           <div class="row">
             <div class="col-md-12">
-              <div class="form-group" v-if="isVerifyCode">
-                <div class="text-left" style="margin-bottom: 10px;">
-                  <label>验证码：</label>
-                  <input type="text" v-model="loginInfo.verifyCode" style="min-width: 20px;width: 35%;max-width: 150px;height: 28px;font-size: 15px" maxlength="4">
-                  <VerifyCodeImg :timestamp="timestamp"></VerifyCodeImg>
-                  <a @click="refreshVerifyCode" class="form-icon"><i class="fa fa-refresh" aria-hidden="true"></i></a>
+              <div class="form-group" v-if="result.ok != null && !result.ok">
+                <div class="input-group">
+                  <p class="form-control-static text-red">{{ result.message }}</p>
                 </div>
               </div>
             </div>
@@ -125,7 +128,8 @@ export default {
         isRememberMe: false,
         verifyCode: ''
       },
-      result: {}
+      result: {},
+      focusOnVerifyCode: true
     }
   },
   mounted () {
@@ -146,16 +150,31 @@ export default {
           // 账号错误
           if (result.data != null && result.data) {
             this.isVerifyCode = true
+            this.refreshVerifyCode()
+            this.focusVerifyCode()
           }
         } else if (result.code === '0002') {
           // 验证码错误
-          this.isValidCode = true
+          this.isVerifyCode = true
           this.refreshVerifyCode()
+          this.focusVerifyCode()
         }
       })
     },
     refreshVerifyCode () {
       this.timestamp = Math.random() + ''
+    },
+    focusVerifyCode () {
+      let verifyCodeElement = document.getElementById('verifyCode')
+      verifyCodeElement.focus()
+      verifyCodeElement.classList.add('has-error')
+    }
+  },
+  directives: {
+    focus: {
+      inserted: function (el) {
+        el.focus()
+      }
     }
   }
 }
@@ -276,6 +295,10 @@ export default {
 .login-icon {
   padding-left: 18px;
   padding-right: 18px;
+}
+
+.verify-code {
+  margin-bottom: 10px
 }
 /*登录 End */
 </style>
