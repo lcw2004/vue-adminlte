@@ -4,6 +4,7 @@ import Vue from 'vue'
 import FullScreenBtn from './base/FullScreenBtn'
 import RightPanel from './base/RightPanel'
 import DictSelect from './base/DictSelect'
+import VerifyCodeImg from './base/VerifyCodeImg'
 import FixedContainer from './container/FixedContainer'
 
 // 分页
@@ -51,6 +52,7 @@ function initGlobalComponents () {
   Vue.component(FullScreenBtn.name, FullScreenBtn)
   Vue.component(RightPanel.name, RightPanel)
   Vue.component(DictSelect.name, DictSelect)
+  Vue.component(VerifyCodeImg.name, VerifyCodeImg)
   Vue.component(FixedContainer.name, FixedContainer)
 
   // pagination

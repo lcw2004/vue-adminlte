@@ -31,26 +31,37 @@
           <div class="form-group">
             <div class="input-group">
               <div class="input-group-addon login-icon"><i class="fa fa-user" style="width: 15px;"></i></div>
-              <input type="text" id="username" name="username" class="form-control" style="height: 38px" placeholder="登录名">
+              <input type="text" v-model="loginInfo.username" class="form-control" style="height: 38px" placeholder="登录名">
             </div>
           </div>
           <div class="form-group">
             <div class="input-group">
               <div class="input-group-addon login-icon"><i class="fa fa-asterisk" style="width: 15px;"></i></div>
-              <input type="password" id="password" name="password" class="form-control" style="height: 38px" placeholder="密码">
+              <input type="password" v-model="loginInfo.password" class="form-control" style="height: 38px" placeholder="密码">
+            </div>
+          </div>
+          <div class="form-group" v-if="result.ok != null && !result.ok">
+            <div class="input-group">
+              <p class="form-control-static text-red">{{ result.message }}</p>
             </div>
           </div>
           <div class="form-group">
-              <div class="checkbox pull-left">
-                <label>
-                  <input type="checkbox"> 记住我
-                </label>
+            <div class="checkbox pull-left">
+              <label>
+                <input type="checkbox" v-model="loginInfo.isRememberMe"> 记住我
+              </label>
             </div>
           </div>
-          <div class="row">
+          <div class="form-group" v-if="isVerifyCode">
+            <div class="text-left" style="margin-bottom: 10px;">
+							<label>验证码：</label>
+							<input type="text" v-model="loginInfo.verifyCode" style="min-width: 20px;width: 35%;max-width: 150px;height: 28px;font-size: 15px" maxlength="4">
+              <VerifyCodeImg :timestamp="timestamp"></VerifyCodeImg>
+							<a @click="refreshVerifyCode" class="form-icon" ><i class="fa fa-refresh" aria-hidden="true"></i></a>
+						</div>
           </div>
 
-          <a class="btn btn-primary btn-lg btn-block" href="/">
+          <a class="btn btn-primary btn-lg btn-block" @click="login">
   						登          录
   				</a>
         </form>
@@ -70,12 +81,55 @@
 </template>
 
 <script>
+import VerifyCodeImg from '../../components/base/VerifyCodeImg'
+
 export default {
-  components: {},
-  data: function () {
-    return {}
+  components: {
+    VerifyCodeImg
   },
-  methods: {}
+  data: function () {
+    return {
+      isVerifyCode: false,
+      timestamp: '',
+      loginInfo: {
+        username: '',
+        password: '',
+        isRememberMe: false,
+        verifyCode: ''
+      },
+      result: {}
+    }
+  },
+  mounted () {
+    let actions = {
+      login: {method: 'post', url: '/one/a/rest/login'}
+    }
+    this.resource = this.$resource(null, {}, actions, {emulateJSON: true})
+  },
+  methods: {
+    login () {
+      this.resource.login(this.loginInfo).then(function (response) {
+        let result = response.body
+        this.result = result
+        if (result.ok) {
+          // 登录成功
+          window.location.href = '/'
+        } else if (result.code === '0001') {
+          // 账号错误
+          if (result.data != null && result.data) {
+            this.isVerifyCode = true
+          }
+        } else if (result.code === '0002') {
+          // 验证码错误
+          this.isValidCode = true
+          this.refreshVerifyCode()
+        }
+      })
+    },
+    refreshVerifyCode () {
+      this.timestamp = Math.random() + ''
+    }
+  }
 }
 </script>
 
