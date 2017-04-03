@@ -33,7 +33,7 @@
               <div class="form-group">
                 <div class="input-group">
                   <div class="input-group-addon login-icon"><i class="fa fa-user" style="width: 15px;"></i></div>
-                  <input type="text" v-focus v-model="loginInfo.username" class="form-control" style="height: 38px" placeholder="登录名">
+                  <input type="text" id="username" v-focus v-model="loginInfo.username" class="form-control" style="height: 38px" placeholder="登录名">
                 </div>
               </div>
             </div>
@@ -44,7 +44,7 @@
               <div class="form-group">
                 <div class="input-group">
                   <div class="input-group-addon login-icon"><i class="fa fa-asterisk" style="width: 15px;"></i></div>
-                  <input type="password" v-model="loginInfo.password" class="form-control" style="height: 38px" placeholder="密码">
+                  <input type="password" id="password" v-model="loginInfo.password" class="form-control" style="height: 38px" placeholder="密码">
                 </div>
               </div>
             </div>
@@ -78,11 +78,11 @@
             </div>
           </div>
 
-          <div class="row">
+          <div class="row" v-if="errorMessage">
             <div class="col-md-12">
-              <div class="form-group" v-if="result.ok != null && !result.ok">
+              <div class="form-group">
                 <div class="input-group">
-                  <p class="form-control-static text-red">{{ result.message }}</p>
+                  <p class="form-control-static text-red">{{ errorMessage }}</p>
                 </div>
               </div>
             </div>
@@ -129,6 +129,7 @@ export default {
         isRememberMe: false,
         verifyCode: ''
       },
+      errorMessage: '',
       result: {}, // 登录结果
       loginBtnDisabled: false
     }
@@ -140,7 +141,13 @@ export default {
     this.resource = this.$resource(null, {}, actions, {emulateJSON: true})
   },
   methods: {
+    /**
+    * 登录接口
+    */
     login () {
+      if (!this.valid()) {
+        return
+      }
       if (this.loginBtnDisabled) {
         return
       }
@@ -155,31 +162,74 @@ export default {
           window.location.href = '/'
         } else if (result.code === '0001') {
           // 账号错误
+          this.errorMessage = result.message
           if (result.data != null && result.data) {
+            // 根据后台返回的错误次数启用验证码
             this.isVerifyCode = true
             this.refreshVerifyCode()
             this.focusOnVerifyCode()
           }
         } else if (result.code === '0002') {
           // 验证码错误
+          this.errorMessage = result.message
           this.isVerifyCode = true
           this.refreshVerifyCode()
           this.focusOnVerifyCode()
         }
       })
     },
+
+    /**
+    * 验证，验证通过返回true，验证失败返回false
+    */
+    valid: function () {
+      if (this.loginInfo.username.length <= 0) {
+        document.getElementById('username').focus()
+        this.errorMessage = '请您输入登录账户'
+        return false
+      }
+
+      if (this.loginInfo.password.length <= 0) {
+        document.getElementById('password').focus()
+        this.errorMessage = '请您输入登录密码'
+        return false
+      }
+
+      if (this.isVerifyCode && this.loginInfo.verifyCode.length <= 0) {
+        this.focusOnVerifyCode()
+        this.errorMessage = '请您输入验证码'
+        return false
+      }
+      return true
+    },
+
+    /**
+    * 刷新验证码
+    */
     refreshVerifyCode () {
       this.timestamp = Math.random() + ''
     },
+
+    /**
+    * 将焦点放在验证码输入框上面
+    */
     focusOnVerifyCode () {
       let verifyCodeElement = document.getElementById('verifyCode')
       if (verifyCodeElement) {
         verifyCodeElement.focus()
       }
     },
+
+    /**
+    * 点击登录后将用户按钮置为不可用
+    */
     beforeLogin () {
       this.loginBtnDisabled = true
     },
+
+    /**
+    * 登录接口响应后将用户按钮置为可用
+    */
     afterLogin () {
       this.loginBtnDisabled = false
     }
