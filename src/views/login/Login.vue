@@ -1,5 +1,5 @@
 <template>
-<div class="login-container">
+<div class="login-container" @keyup.enter="login">
   <!--[if lte IE 8]>
   <div>
     <h4>温馨提示：</h4><p>你使用的浏览器版本过低。为了获得更好的浏览体验，我们强烈建议您 <a href="http://browsehappy.com" target="_blank">升级</a> 到最新版本的IE浏览器，或者使用较新版本的 Chrome、Firefox、Safari 等。</p>
@@ -33,7 +33,7 @@
               <div class="form-group">
                 <div class="input-group">
                   <div class="input-group-addon login-icon"><i class="fa fa-user" style="width: 15px;"></i></div>
-                  <input type="text" v-model="loginInfo.username" class="form-control" style="height: 38px" placeholder="登录名">
+                  <input type="text" v-focus v-model="loginInfo.username" class="form-control" style="height: 38px" placeholder="登录名">
                 </div>
               </div>
             </div>
@@ -61,7 +61,7 @@
                 </div>
               </div>
               <div class="col-md-3 col-xs-3">
-                <a @click="refreshVerifyCode"><p class="form-control-static">换一张</p></a>
+                <a @click="refreshVerifyCode" style="cursor: pointer"><p class="form-control-static">换一张</p></a>
               </div>
             </div>
           </div>
@@ -90,8 +90,9 @@
 
           <div class="row">
             <div class="col-md-12">
-              <a class="btn btn-primary btn-lg btn-block" @click="login">
-  						登          录
+              <a class="btn btn-primary btn-lg btn-block" :class="{ disabled: loginBtnDisabled }" @click="login">
+                <template v-if="loginBtnDisabled">登录中</template>
+  						  <template v-if="!loginBtnDisabled">登录</template>
   				    </a>
             </div>
           </div>
@@ -120,16 +121,16 @@ export default {
   },
   data: function () {
     return {
-      isVerifyCode: false,
-      timestamp: '',
+      isVerifyCode: false, // 是否显示验证码
+      timestamp: '', // 验证码时间戳
       loginInfo: {
         username: '',
         password: '',
         isRememberMe: false,
         verifyCode: ''
       },
-      result: {},
-      focusOnVerifyCode: true
+      result: {}, // 登录结果
+      loginBtnDisabled: false
     }
   },
   mounted () {
@@ -140,7 +141,13 @@ export default {
   },
   methods: {
     login () {
+      if (this.loginBtnDisabled) {
+        return
+      }
+
+      this.beforeLogin()
       this.resource.login(this.loginInfo).then(function (response) {
+        this.afterLogin()
         let result = response.body
         this.result = result
         if (result.ok) {
@@ -151,23 +158,30 @@ export default {
           if (result.data != null && result.data) {
             this.isVerifyCode = true
             this.refreshVerifyCode()
-            this.focusVerifyCode()
+            this.focusOnVerifyCode()
           }
         } else if (result.code === '0002') {
           // 验证码错误
           this.isVerifyCode = true
           this.refreshVerifyCode()
-          this.focusVerifyCode()
+          this.focusOnVerifyCode()
         }
       })
     },
     refreshVerifyCode () {
       this.timestamp = Math.random() + ''
     },
-    focusVerifyCode () {
+    focusOnVerifyCode () {
       let verifyCodeElement = document.getElementById('verifyCode')
-      verifyCodeElement.focus()
-      verifyCodeElement.classList.add('has-error')
+      if (verifyCodeElement) {
+        verifyCodeElement.focus()
+      }
+    },
+    beforeLogin () {
+      this.loginBtnDisabled = true
+    },
+    afterLogin () {
+      this.loginBtnDisabled = false
     }
   },
   directives: {
