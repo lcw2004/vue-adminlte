@@ -26,7 +26,7 @@
   <div class="login-body">
     <div class="login-body-panel">
       <div class="panel-body">
-        <p class="login-body-panel-head">Sign In to your account</p>
+        <p class="login-body-panel-head">欢迎登录 One Base System</p>
         <form class="form login-form">
           <div class="row">
             <div class="col-md-12">
@@ -66,18 +66,6 @@
             </div>
           </div>
 
-          <div class="row">
-            <div class="col-md-12">
-              <div class="form-group">
-                <div class="checkbox pull-left">
-                  <label>
-                    <input type="checkbox" v-model="loginInfo.isRememberMe"> 记住我
-                  </label>
-                </div>
-              </div>
-            </div>
-          </div>
-
           <div class="row" v-if="errorMessage">
             <div class="col-md-12">
               <div class="form-group">
@@ -96,12 +84,21 @@
   				    </a>
             </div>
           </div>
+
+          <div class="row"  style="margin-top: 20px">
+            <div class="col-md-6">
+              <div class="pull-right">
+                <a href="resetpass.html" class="btn-link login-mar-rgt">忘记密码 ?</a>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="pull-left">
+                <a href="registry.html" class="btn-link login-mar-lft">注册帐号</a>
+              </div>
+            </div>
+          </div>
         </form>
       </div>
-    </div>
-    <div class="login-body-panel1">
-      <a href="resetpass.html" class="btn-link login-mar-rgt">忘记密码 ?</a>
-      <a href="registry.html" class="btn-link login-mar-lft">注册帐号</a>
     </div>
   </div>
   <!--===================================================-->
@@ -318,7 +315,7 @@ export default {
 .login-body-panel {
   width: 70%;
   min-width: 250px;
-  max-width: 400px;
+  max-width: 380px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 20px;
