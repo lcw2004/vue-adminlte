@@ -2,7 +2,7 @@
   <li class="dropdown user user-menu" :class="{ open: isOpen }">
     <a class="dropdown-toggle" data-toggle="dropdown" @click="toggole()">
       <img src="static/adminlte/img/user2-160x160.jpg" class="user-image" alt="User Image">
-      <span class="hidden-xs">Alexander Pierce</span>
+      <span class="hidden-xs">{{ userInfo.name }}</span>
     </a>
     <ul class="dropdown-menu">
       <!-- User image -->
@@ -10,8 +10,8 @@
         <img src="static/adminlte/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
         <p>
-          Alexander Pierce - Web Developer
-          <small>Member since Nov. 2012</small>
+          {{ userInfo.name }} - {{ userInfo.office.name }}
+          <small>登录时间：{{ userInfo.loginDate }}</small>
         </p>
       </li>
       <!-- Menu Body -->
@@ -35,7 +35,7 @@
           <router-link to='/personal/user-info' class="btn btn-default btn-flat">个人信息</router-link>
         </div>
         <div class="pull-right">
-          <a href="/login.html" class="btn btn-default btn-flat">退出登录</a>
+          <a class="btn btn-default btn-flat" @click="logout">退出登录</a>
         </div>
       </li>
     </ul>
@@ -52,6 +52,17 @@
     methods: {
       toggole: function () {
         this.isOpen = !this.isOpen
+      },
+      logout: function () {
+        this.$http.get('/one/a/rest/logout').then(function (response) {
+          this.$store.dispatch('removeUserInfo')
+          window.location.href = 'login.html'
+        })
+      }
+    },
+    computed: {
+      userInfo: function () {
+        return this.$store.state.system.userInfo
       }
     }
   }
