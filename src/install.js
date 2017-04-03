@@ -19,6 +19,7 @@ import initGlobalComponents from './components'
 import initViewComponents from './views'
 import initDirectives from './directives'
 
+// 配置vee-validate
 function initVeeValidate () {
   Validator.addLocale(cn)
   const config = {
@@ -27,32 +28,21 @@ function initVeeValidate () {
   Vue.use(VeeValidate, config)
 }
 
+// 配置vue-resource
+import handlerError from './utils/handlerError'
 function initProgressBar () {
   Vue.http.interceptors.push(function (request, next) {
     this.$progress.start()
     next(function (response) {
-      if (response.status === 400) {
-        handlerError(this, response.body)
+      // 处理异常（成功都返回200状态码，200+的状态码不处理）
+      if (response.status !== 200) {
+        handlerError(this, response.status, response.body)
       }
+
       this.$progress.done()
       return response
     })
   })
-}
-
-function handlerError (self, error) {
-  console.error(error)
-  let errorCode = error.code
-  if (errorCode === '1000') {
-    // 处理验证失败错误
-    let filedErrors = error.data
-    for (let i = 0; i < filedErrors.length; i++) {
-      self.$notify.danger(filedErrors[i].defaultMessage)
-    }
-  } if (error.message) {
-    // 处理普通异常错误
-    self.$notify.danger(error.message)
-  }
 }
 
 function install () {

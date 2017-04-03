@@ -12,5 +12,11 @@ export default {
   },
   [types.INIT_DICT] (state, dictMap) {
     state.dictMap = dictMap
+  },
+  [types.INIT_USER_INFO] (state, userInfo) {
+    state.userInfo = userInfo
+  },
+  [types.REMOVE_USER_INFO] (state) {
+    state.userInfo = {}
   }
 }

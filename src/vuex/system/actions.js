@@ -12,5 +12,11 @@ export default {
   },
   initDict ({ commit }, dictMap) {
     commit(types.INIT_DICT, dictMap)
+  },
+  initUserInfo ({ commit }, userInfo) {
+    commit(types.INIT_USER_INFO, userInfo)
+  },
+  removeUserInfo ({ commit }) {
+    commit(types.REMOVE_USER_INFO)
   }
 }

@@ -5,7 +5,8 @@ const state = {
   topMenu: {},
   activedMenu: {},
   thirdMenu: {},
-  dictMap: {}
+  dictMap: {},
+  userInfo: {}
 }
 
 export default {

@@ -12,6 +12,7 @@ export default {
   mounted () {
     this.loadMenu()
     this.loadDict()
+    this.loadUserInfo()
   },
   methods: {
     loadMenu () {
@@ -26,6 +27,11 @@ export default {
     loadDict () {
       this.$http.get('/one/a/rest/sys/dict/group', {params: {pageSize: 1000}}).then(function (response) {
         this.$store.dispatch('initDict', response.body)
+      })
+    },
+    loadUserInfo () {
+      this.$http.get('/one/a/rest/userInfo').then(function (response) {
+        this.$store.dispatch('initUserInfo', response.body.data)
       })
     }
   }
