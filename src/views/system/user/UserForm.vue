@@ -36,6 +36,36 @@
 							<input type="text" class="form-control" v-model="obj.no"/>
 						</div>
 					</div>
+          <div class="form-group">
+            <label class="control-label col-md-4">测试</label>
+            <div class="col-md-8">
+              <div class="controls">
+                {{ checkboxValue }}
+                <div class="checkbox inline">
+                  <label>
+                    <Checkbox data="1" v-model="checkboxValue"/>1
+                  </label>
+                </div>
+                <div class="checkbox inline">
+                  <label>
+                    <input type="checkbox" value="2" v-model="checkboxValue" v-checkbox>2
+                  </label>
+                </div>
+                <div class="checkbox inline">
+                  <label>
+                    <input type="checkbox" value="3" v-model="checkboxValue">3
+
+                  </label>
+                </div>
+                <div class="checkbox inline">
+                  <label>
+                    <input type="checkbox" value="4" v-model="checkboxValue">4
+
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
 					<div class="form-group">
 						<label class="col-sm-2 control-label">姓名</label>
 						<div class="col-sm-4">
@@ -100,6 +130,7 @@
 
 <script>
 import SelectOfficeModal from '../modal/SelectOfficeModal'
+import $ from 'jquery'
 
 export default {
   components: {
@@ -107,6 +138,7 @@ export default {
   },
   data: function () {
     return {
+      checkboxValue: ['1', '2'],
       obj: {
         id: '',
         company: {},
@@ -141,6 +173,13 @@ export default {
     this.resource = this.$resource(null, {}, actions)
     this.load()
     this.loadRole()
+
+    $
+    // $(':checkbox').iCheck({
+    //   checkboxClass: 'icheckbox_flat-blue',
+    //   radioClass: 'iradio_flat-blue',
+    //   increaseArea: '20%' // optional
+    // })
   },
   methods: {
     load: function () {
