@@ -16,22 +16,31 @@ export default {
   },
   methods: {
     loadMenu () {
-      this.$http.get('/one/a/rest/sys/menu/user').then(function (response) {
-        let topMenu = response.body
-        this.$store.dispatch('initMenu', topMenu)
-        if (topMenu && topMenu.childList.length > 0) {
-          this.$store.dispatch('activeMenu', topMenu.childList[0])
+      this.$http.get('/one/a/rest/userMenu').then(function (response) {
+        let result = response.body
+        if (result.ok) {
+          let topMenu = result.data
+          this.$store.dispatch('initMenu', topMenu)
+          if (topMenu && topMenu.childList.length > 0) {
+            this.$store.dispatch('activeMenu', topMenu.childList[0])
+          }
         }
       })
     },
     loadDict () {
       this.$http.get('/one/a/rest/sys/dict/group', {params: {pageSize: 1000}}).then(function (response) {
-        this.$store.dispatch('initDict', response.body)
+        let result = response.body
+        if (result.ok) {
+          this.$store.dispatch('initDict', result.data)
+        }
       })
     },
     loadUserInfo () {
       this.$http.get('/one/a/rest/userInfo').then(function (response) {
-        this.$store.dispatch('initUserInfo', response.body.data)
+        let result = response.body
+        if (result.ok) {
+          this.$store.dispatch('initUserInfo', result.data)
+        }
       })
     }
   }

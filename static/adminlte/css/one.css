@@ -34,3 +34,11 @@ ul, li {
   margin-top: 40px;
   font-weight: bold;
 }
+
+/*Icon*/
+.icon-default {
+  color: #c1c2c5
+}
+.icon-danger {
+  color: #dd4b39
+}

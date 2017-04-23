@@ -10,8 +10,8 @@
         <img src="static/adminlte/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
         <p>
-          {{ userInfo.name }} - {{ userInfo.office.name }}
-          <small>登录时间：{{ userInfo.loginDate }}</small>
+          {{ userInfo.name }}
+          <small>登录时间：{{ userInfo.lastLoginTime }}</small>
         </p>
       </li>
       <!-- Menu Body -->
