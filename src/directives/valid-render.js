@@ -25,6 +25,8 @@ export default {
     console.log('---------------------------------')
     console.log(binding)
 
+    let isWithIcon = binding.modifiers.i
+
     let bindName = binding.expression
     let vm = vnode.context
     // filded 失败一次之后触发，errors 实时触发
@@ -34,12 +36,12 @@ export default {
     console.log(vm.errors)
     if (isFailded) {
       let errorMsg = vm.errors.first(bindName)
-      handlerError(el, errorMsg)
+      handlerError(el, isWithIcon, errorMsg)
       console.log('valid filded')
       console.log(errorMsg)
     } else if (isPassed) {
       console.log('valid pass')
-      handlerPass(el)
+      handlerPass(el, isWithIcon)
     }
 
     console.log('---------------------------------')
@@ -60,18 +62,20 @@ const FA_CHECK = 'fa-check'
 const FORM_CONTROL_FEEDBACK = 'form-control-feedback'
 const REQUIRED = 'required'
 
-function handlerPass (el) {
+function handlerPass (el, isWithIcon) {
   removeClass(el, HAS_ERROR)
-  // addClass(el, HAS_SUCCESS)
-  addIcon(el, FA_CHECK)
   removeErrorSpan(el)
+  if (isWithIcon) {
+    addSuccessIcon(el)
+  }
 }
 
-function handlerError (el, errorMsg) {
-  // removeClass(el, HAS_SUCCESS)
+function handlerError (el, isWithIcon, errorMsg) {
   addClass(el, HAS_ERROR)
-  addIcon(el, FA_WARNING)
   appendErrorSpan(el, errorMsg)
+  if (isWithIcon) {
+    addDangerIcon(el)
+  }
 }
 
 function addRequiredClass (el) {
@@ -79,12 +83,19 @@ function addRequiredClass (el) {
   addClass(controlLabel, REQUIRED)
 }
 
+function addSuccessIcon (el) {
+  addIcon(el, FA_CHECK)
+}
+function addDangerIcon (el) {
+  addIcon(el, FA_WARNING)
+}
+
 /**
 * 添加Icon
 */
 function addIcon (el, iconClass) {
   // 寻找错误挂载点
-  let formControl = getErrorMountElement(el)
+  let formControl = getIconMountElement(el)
   if (!formControl) {
     console.error('can not find form-control where error mount')
     return
@@ -151,6 +162,18 @@ function removeErrorSpan (el) {
 * 寻找错误挂载点
 */
 function getErrorMountElement (el) {
+  let formControl = el.getElementsByClassName(FORM_CONTROL)
+  if (formControl.length > 0) {
+    return formControl[0].parentNode
+  } else {
+    return null
+  }
+}
+
+/**
+* 寻找Icon挂载点
+*/
+function getIconMountElement (el) {
   let formControl = el.getElementsByClassName(FORM_CONTROL)
   if (formControl.length > 0) {
     return formControl[0]

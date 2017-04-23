@@ -133,7 +133,7 @@ export default {
   },
   mounted () {
     let actions = {
-      login: {method: 'post', url: '/one/a/rest/login'}
+      login: {method: 'get', url: '/one/a/rest/login'}
     }
     this.resource = this.$resource(null, {}, actions, {emulateJSON: true})
   },
