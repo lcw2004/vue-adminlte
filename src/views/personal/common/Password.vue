@@ -9,23 +9,26 @@
           <div class="box-body">
             <form class="form-horizontal">
               <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label class="col-md-4 control-label">当前密码</label>
-                    <div class="col-md-8">
-                      <input type="password" class="form-control" placeholder="请填写当前登录密码" v-model="oldPassword">
+                <div class="col-md-12">
+                  <div class="form-group" v-render.r="当前密码">
+                    <label class="col-md-2 control-label">当前密码</label>
+                    <div class="col-md-4">
+                      <input type="password" class="form-control" placeholder="请填写当前登录密码" v-validate:oldPassword.initial="'required'" name="当前密码" v-model="oldPassword">
+                      <span v-show="errors.has('oldPassword')" class="help is-danger">{{ errors.first('oldPassword') }}</span>
                     </div>
                   </div>
-                  <div class="form-group">
-                    <label class="col-md-4 control-label">新密码</label>
-                    <div class="col-md-8">
-                      <input type="password" class="form-control" placeholder="请填写新的登录密码" v-model="newPassword">
+                  <div class="form-group" v-render.r="新密码">
+                    <label class="col-md-2 control-label">新密码</label>
+                    <div class="col-md-4">
+                      <input type="password" class="form-control" placeholder="请填写新的登录密码" v-validate:newPassword.initial="'required'" name="新密码" v-model="newPassword">
+                      <span v-show="errors.has('newPassword')" class="help is-danger">{{ errors.first('newPassword') }}</span>
                     </div>
                   </div>
-                  <div class="form-group">
-                    <label class="col-md-4 control-label">确认密码</label>
-                    <div class="col-md-8">
-                      <input type="password" class="form-control" placeholder="再次输入新的登录密码" v-model="newPasswordConfirm">
+                  <div class="form-group" v-render.r="确认密码">
+                    <label class="col-md-2 control-label">确认密码</label>
+                    <div class="col-md-4">
+                      <input type="password" class="form-control" placeholder="再次输入新的登录密码" v-validate:newPasswordConfirm.initial="'required|confirmed:新密码'" name="确认密码" v-model="newPasswordConfirm">
+                      <span v-show="errors.has('newPasswordConfirm')" class="help is-danger">{{ errors.first('newPasswordConfirm') }}</span>
                     </div>
                   </div>
                 </div>
@@ -59,11 +62,13 @@ export default {
   },
   methods: {
     updatePassword () {
-      this.$http.put('/one/a/rest/updatePassword', null, {params: this.$data}).then(function (response) {
-        let result = response.body
-        if (result.ok) {
-          this.$notify.info('修改成功')
-        }
+      this.$validator.validateAll().then(() => {
+        this.$http.put('/one/a/rest/updatePassword', null, {params: this.$data}).then(function (response) {
+          let result = response.body
+          if (result.ok) {
+            this.$notify.info('修改成功')
+          }
+        })
       })
     }
   }
