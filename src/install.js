@@ -37,6 +37,11 @@ function initProgressBar () {
       // 处理异常（成功都返回200状态码，200+的状态码不处理）
       if (response.status !== 200) {
         handlerError(this, response.status, response.body)
+      } else {
+        let result = response.body
+        if (!result.ok) {
+          this.$notify.danger(result.message)
+        }
       }
 
       this.$progress.done()

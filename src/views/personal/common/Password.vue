@@ -13,19 +13,19 @@
                   <div class="form-group">
                     <label class="col-md-4 control-label">当前密码</label>
                     <div class="col-md-8">
-                      <input type="password" class="form-control" placeholder="请填写当前登录密码">
+                      <input type="password" class="form-control" placeholder="请填写当前登录密码" v-model="oldPassword">
                     </div>
                   </div>
                   <div class="form-group">
                     <label class="col-md-4 control-label">新密码</label>
                     <div class="col-md-8">
-                      <input type="password" class="form-control" placeholder="请填写新的登录密码">
+                      <input type="password" class="form-control" placeholder="请填写新的登录密码" v-model="newPassword">
                     </div>
                   </div>
                   <div class="form-group">
                     <label class="col-md-4 control-label">确认密码</label>
                     <div class="col-md-8">
-                      <input type="password" class="form-control" placeholder="再次输入新的登录密码">
+                      <input type="password" class="form-control" placeholder="再次输入新的登录密码" v-model="newPasswordConfirm">
                     </div>
                   </div>
                 </div>
@@ -35,7 +35,7 @@
           <div class="box-footer">
             <div class="row">
               <div class="col-md-2 col-md-offset-2">
-                <button type="button" class="btn btn-block btn-primary">
+                <button type="button" class="btn btn-block btn-primary" @click="updatePassword()">
                   确认修改密码
                 </button>
               </div>
@@ -51,7 +51,21 @@
 export default {
   components: {},
   data: function () {
-    return {}
+    return {
+      oldPassword: '',
+      newPassword: '',
+      newPasswordConfirm: ''
+    }
+  },
+  methods: {
+    updatePassword () {
+      this.$http.put('/one/a/rest/updatePassword', null, {params: this.$data}).then(function (response) {
+        let result = response.body
+        if (result.ok) {
+          this.$notify.info('修改成功')
+        }
+      })
+    }
   }
 }
 </script>
