@@ -52,7 +52,7 @@
             </tbody>
           </table>
 
-          <Pagination :page="page" @page-no="param.pageNo = arguments[0]" @page-size="param.pageSize = arguments[0]"></Pagination>
+          <Pagination :page="page" @page-no="pageNo = arguments[0]" @page-size="pageSize = arguments[0]"></Pagination>
         </div>
       </div>
     </div>
@@ -61,43 +61,39 @@
 </template>
 
 <script>
+import PageMixin from '../../../mixins/PageMixin.js'
+
 export default {
-  components: {},
+  mixins: [PageMixin],
   data: function () {
     return {
+      actions: {
+        list: { method: 'get', url: '/one/a/rest/sys/dict' },
+        listType: { method: 'get', url: '/one/a/rest/sys/dict/type' },
+        delete: { method: 'delete', url: '/one/a/rest/sys/dict{/id}' }
+      },
       param: {
-        pageNo: 1,
-        pageSize: 10,
         type: '',
         description: ''
       },
-      page: {},
       dictTypeList: []
     }
   },
   mounted () {
-    let actions = {
-      list: { method: 'get', url: '/one/a/rest/sys/dict' },
-      listType: { method: 'get', url: '/one/a/rest/sys/dict/type' },
-      delete: { method: 'delete', url: '/one/a/rest/sys/dict{/id}' }
-    }
-    this.resource = this.$resource(null, {}, actions)
     this.loadDictType()
-    this.query()
   },
   methods: {
-    query () {
-      this.resource.list(this.param).then(function (response) {
-        this.page = response.body
-      })
-    },
     loadDictType () {
       this.resource.listType().then(function (response) {
-        this.dictTypeList = response.body
+        let result = response.body
+        if (result.ok) {
+          this.dictTypeList = result.data
+        }
       })
     },
     deleteData (id) {
       let self = this
+      // TODO 在confirm中注册this
       self.$confirm('确认删除吗？', function () {
         self.resource.delete({id: id}).then(function (response) {
           self.query()
