@@ -80,14 +80,20 @@ export default {
       let id = this.$route.params.id
       if (id) {
         this.resource.get({id: id}).then(function (response) {
-          this.obj = response.body
+          var result = response.body
+          if (result.ok && result.data) {
+            this.obj = result.data
+          }
         })
       }
     },
     save: function () {
-      this.resource.save(null, JSON.stringify(this.obj)).then(function (response) {
-        this.$notify.success('保存成功')
-        this.$router.go(-1)
+      this.resource.save(this.obj).then(function (response) {
+        var result = response.body
+        if (result.ok) {
+          this.$notify.success('保存成功')
+          this.$router.go(-1)
+        }
       })
     }
   }
