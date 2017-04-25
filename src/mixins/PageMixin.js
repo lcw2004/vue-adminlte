@@ -1,9 +1,14 @@
 /**
 * 分页mixin，主要功能如下：
-* 1. 定义了pageNo\pageSize\page三个属性，其他地方不再需要定义一遍
-* 2. 根据actions注入resource，引用方可以直接调用
-* 3. 分页变化的时候自动调用 queryForPage 方法查询数据
-* 4. 提供 query 接口供引用方调用，该方法会清除分页
+*   1. 定义了pageNo\pageSize\page三个属性，其他地方不再需要定义一遍
+*   2. 根据actions注入resource，引用方可以直接调用
+*   3. 分页变化的时候自动调用 queryForPage 方法查询数据
+*   4. 提供 query 接口供引用方调用，该方法会清除分页
+*
+* 使用：
+*   1. 定义actions
+*   2. 定义param，如果没有则不需要定义
+*   3. 引入分页组件：<Pagination :page="page" @page-no="pageNo = arguments[0]" @page-size="pageSize = arguments[0]"></Pagination>
 */
 
 let PageMixin = {
@@ -39,6 +44,9 @@ let PageMixin = {
     */
     queryByPageAndParam (pageNo, pageSize) {
       let param = this.param
+      if (!param) {
+        param = {}
+      }
       param.pageNo = pageNo
       param.pageSize = pageSize
       this.resource.list(param).then(function (response) {
