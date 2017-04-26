@@ -74,13 +74,19 @@
         </div>
       </div>
     </div>
+
+    <SelectIconModal :config="iconModalConfig" v-model="obj.icon" />
   </div>
 </section>
 </template>
 
 <script>
+import SelectIconModal from '../modal/SelectIconModal'
+
 export default {
-  components: {},
+  components: {
+    SelectIconModal
+  },
   data: function () {
     return {
       obj: {
@@ -98,7 +104,6 @@ export default {
         title: '选择上级菜单'
       },
       iconModalConfig: {
-        show: false,
         title: '选择图标'
       }
     }
