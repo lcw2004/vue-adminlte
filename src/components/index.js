@@ -3,7 +3,8 @@ import Vue from 'vue'
 // base
 import FullScreenBtn from './base/FullScreenBtn'
 import RightPanel from './base/RightPanel'
-import DictSelect from './base/DictSelect'
+import DictSelect from './dict/DictSelect'
+import DictRadio from './dict/DictRadio'
 import VerifyCodeImg from './base/VerifyCodeImg'
 import Checkbox from './base/Checkbox'
 import FixedContainer from './container/FixedContainer'
@@ -53,12 +54,12 @@ function initGlobalComponents () {
   Vue.component(FullScreenBtn.name, FullScreenBtn)
   Vue.component(RightPanel.name, RightPanel)
   Vue.component(DictSelect.name, DictSelect)
+  Vue.component(DictRadio.name, DictRadio)
   Vue.component(VerifyCodeImg.name, VerifyCodeImg)
   Vue.component(Checkbox.name, Checkbox)
   Vue.component(FixedContainer.name, FixedContainer)
 
   // pagination
-  // Vue.component(Pagination.name, Pagination)
   Vue.component(Pagination.name, Pagination)
 
   // button

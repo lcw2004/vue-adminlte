@@ -10,12 +10,12 @@
           <label class="col-sm-2 control-label">上级菜单</label>
           <div class="col-sm-4">
             <div class="input-group">
-              <input type="text" class="form-control" v-model="obj.parent.name" />
+              <input type="text" class="form-control" />
               <span class="input-group-btn">
 									<button class="btn btn-info" type="button" @click="menuTreeModalConfig.show = true">选择</button>
 								</span>
             </div>
-            <menu-tree-modal :config="menuTreeModalConfig" v-model="obj.parent"></menu-tree-modal>
+            <!-- <menu-tree-modal :config="menuTreeModalConfig" v-model="obj.parent"></menu-tree-modal> -->
           </div>
         </div>
         <div class="form-group">
@@ -47,20 +47,13 @@
           <div class="col-sm-4">
             <button class="btn btn-info" type="button" @click="iconModalConfig.show = true">选择</button>
             <i v-if="obj.icon" :class="obj.icon" style="font-size: 25px"></i>
-            <icon-modal :config="iconModalConfig" v-model="obj.icon"></icon-modal>
+            <!-- <icon-modal :config="iconModalConfig" v-model="obj.icon"></icon-modal> -->
           </div>
         </div>
         <div class="form-group">
           <label class="col-sm-2 control-label">可见</label>
           <div class="col-sm-4">
-            <div class="radio">
-              <c:forEach var="dict" items="${fns:getDictList('show_hide')}">
-                <label>
-										<input type="radio" value="${dict.value}" v-model="obj.isShow">
-										${dict.label}
-									</label>
-              </c:forEach>
-            </div>
+            <DictRadio type="show_hide" v-model="obj.isShow" />
           </div>
         </div>
         <div class="form-group">
@@ -130,7 +123,10 @@ export default {
       let id = this.$route.params.id
       if (id) {
         this.resource.get({id: id}).then(function (response) {
-          this.obj = response.body
+          let result = response.body
+          if (result.ok) {
+            this.obj = result.data
+          }
         })
       }
     },
