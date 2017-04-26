@@ -31,12 +31,6 @@
           </div>
         </div>
         <div class="form-group">
-          <label class="col-sm-2 control-label">目标</label>
-          <div class="col-sm-4">
-            <input type="text" class="form-control" v-model="obj.target" />
-          </div>
-        </div>
-        <div class="form-group">
           <label class="col-sm-2 control-label">排序</label>
           <div class="col-sm-4">
             <input type="number" class="form-control" v-model="obj.sort" />
@@ -94,7 +88,6 @@ export default {
         parent: {},
         name: '',
         href: '',
-        target: '',
         sort: 0,
         icon: '',
         permission: '',
