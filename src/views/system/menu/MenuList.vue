@@ -67,7 +67,10 @@ export default {
   methods: {
     loadTreeTable: function () {
       this.resource.getMenuTree().then(function (response) {
-        this.topElement = response.body
+        let result = response.body
+        if (result.ok) {
+          this.topElement = result.data
+        }
       })
     }
   }
