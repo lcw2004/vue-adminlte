@@ -44,11 +44,9 @@ export default {
   methods: {
     ok () {
       this.config.show = false
-      let returnValue = {
-        id: this.value.id,
-        name: this.value.name
-      }
-      this.$emit('input', returnValue)
+      let value = this.value
+      value.childList = null
+      this.$emit('input', value)
     }
   }
 }

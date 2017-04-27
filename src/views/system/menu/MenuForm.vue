@@ -10,12 +10,11 @@
           <label class="col-sm-2 control-label">上级菜单</label>
           <div class="col-sm-4">
             <div class="input-group">
-              <input type="text" class="form-control" />
+              <input type="text" class="form-control" v-model="obj.parent.name"/>
               <span class="input-group-btn">
-									<button class="btn btn-info" type="button" @click="menuTreeModalConfig.show = true">选择</button>
-								</span>
+								<button class="btn btn-info" type="button" @click="menuTreeModalConfig.show = true">选择</button>
+							</span>
             </div>
-            <!-- <menu-tree-modal :config="menuTreeModalConfig" v-model="obj.parent"></menu-tree-modal> -->
           </div>
         </div>
         <div class="form-group">
@@ -41,7 +40,6 @@
           <div class="col-sm-4">
             <button class="btn btn-info" type="button" @click="iconModalConfig.show = true">选择</button>
             <i v-if="obj.icon" :class="obj.icon" style="font-size: 25px"></i>
-            <!-- <icon-modal :config="iconModalConfig" v-model="obj.icon"></icon-modal> -->
           </div>
         </div>
         <div class="form-group">
@@ -76,16 +74,19 @@
     </div>
 
     <SelectIconModal :config="iconModalConfig" v-model="obj.icon" />
+    <SelectMenuModal :config="menuTreeModalConfig" v-model="obj.parent" />
   </div>
 </section>
 </template>
 
 <script>
 import SelectIconModal from '../modal/SelectIconModal'
+import SelectMenuModal from '../modal/SelectMenuModal'
 
 export default {
   components: {
-    SelectIconModal
+    SelectIconModal,
+    SelectMenuModal
   },
   data: function () {
     return {
@@ -104,6 +105,7 @@ export default {
         title: '选择上级菜单'
       },
       iconModalConfig: {
+        show: false,
         title: '选择图标'
       }
     }
