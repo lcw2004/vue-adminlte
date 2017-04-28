@@ -7,7 +7,7 @@
           <form class="form-inline">
             <div class="col-md-6">
               <label class="control-label">名称</label>
-              <input class="form-control inline-block" type="text" placeholder="角色名称" v-model="param.name">
+              <input class="form-control inline-block" type="text" placeholder="角色名称" v-model="param.roleName">
             </div>
             <div class="col-md-6">
               <div class="pull-right">
@@ -22,17 +22,19 @@
           <table class="table table-bordered table-hover">
             <thead>
               <tr>
+                <th style="width: 10px">#</th>
                 <th>角色名称</th>
-                <th>归属机构</th>
                 <th>数据范围</th>
+                <th>备注</th>
                 <th>操作</th>
               </tr>
             </thead>
             <tbody>
-              <tr v-for="obj of page.list">
+              <tr v-for="(obj, index) of page.list">
+                <td><span v-text="index + 1"></span></td>
                 <td><span v-text="obj.name"></span></td>
-                <td><span v-text="obj.office.name"></span></td>
-                <td><span v-text="obj.dataScopeCn"></span></td>
+                <td><span v-text="obj.dataScope"></span></td>
+                <td><span v-text="obj.remark"></span></td>
                 <td>
                   <router-link :to='"/system/role/" + obj.id + "/form"'>修改</router-link>
                   <a @click="deleteData(obj.id)">删除</a>
@@ -41,7 +43,7 @@
             </tbody>
           </table>
 
-          <Pagination :page="page" @page-no="param.pageNo = arguments[0]" @page-size="param.pageSize = arguments[0]"></Pagination>
+          <Pagination :page="page" @page-no="pageNo = arguments[0]" @page-size="pageSize = arguments[0]"></Pagination>
         </div>
       </div>
     </div>
@@ -50,33 +52,22 @@
 </template>
 
 <script>
+import PageMixin from '../../../mixins/PageMixin.js'
+
 export default {
-  components: {},
+  mixins: [PageMixin],
   data: function () {
     return {
-      param: {
-        pageNo: 1,
-        pageSize: 10,
-        name: ''
+      actions: {
+        list: { method: 'get', url: '/one/a/rest/sys/role' },
+        delete: { method: 'delete', url: '/one/a/rest/sys/role{/id}' }
       },
-      page: {},
-      dictTypeList: []
+      param: {
+        roleName: ''
+      }
     }
-  },
-  mounted () {
-    let actions = {
-      list: { method: 'get', url: '/one/a/rest/sys/role' },
-      delete: { method: 'delete', url: '/one/a/rest/sys/role{/id}' }
-    }
-    this.resource = this.$resource(null, {}, actions)
-    this.query()
   },
   methods: {
-    query () {
-      this.resource.list(this.param).then(function (response) {
-        this.page = response.body
-      })
-    },
     deleteData (id) {
       let self = this
       self.$confirm('确认删除吗？', function () {

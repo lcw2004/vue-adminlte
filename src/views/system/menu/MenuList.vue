@@ -6,7 +6,7 @@
         <div class="col-md-12">
           <div class="pull-right">
             <a class="btn btn-primary" @click="toggleAll()"><span v-if="toggleStatus">收缩</span><span v-else>展开</span>全部</a>
-            <a class="btn btn-primary" @click="config.show = true">添加</a>
+            <router-link class="btn btn-primary" :to="'/system/menu/add'">添加</router-link>
           </div>
         </div>
       </div>
@@ -34,7 +34,7 @@
                 <td><span v-text="obj.permission"></span></td>
                 <td>
                   <router-link :to='"/system/menu/" + obj.id + "/form"'>修改</router-link>
-                  <a>删除</a>
+                  <a @click="deleteObj(obj)">删除</a>
                 </td>
               </tr>
             </tbody>
@@ -71,6 +71,16 @@ export default {
         if (result.ok) {
           this.topElement = result.data
         }
+      })
+    },
+    deleteObj: function (obj) {
+      let self = this
+      this.$confirm('确认删除菜单[ ' + obj.name + ' ]吗？', function () {
+        self.resource.delete({id: obj.id}).then(function (response) {
+          if (response.body.ok) {
+            self.$notify.info('删除成功')
+          }
+        })
       })
     }
   }

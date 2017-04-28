@@ -96,6 +96,7 @@ export default {
         name: '',
         href: '',
         sort: 0,
+        delFlag: 0,
         icon: '',
         permission: '',
         remarks: ''

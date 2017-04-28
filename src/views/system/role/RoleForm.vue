@@ -7,18 +7,6 @@
     <div class="box-body">
       <form class="form-horizontal">
         <div class="form-group">
-          <label class="col-sm-2 control-label">归属机构</label>
-          <div class="col-sm-4">
-            <div class="input-group">
-              <input type="text" class="form-control" v-model="obj.office.name" />
-              <span class="input-group-btn">
-								<button class="btn btn-info" type="button" @click="companyTreeModalConfig.show = true">选择</button>
-							</span>
-            </div>
-            <SelectOfficeModal :config="companyTreeModalConfig" v-model="obj.office"></SelectOfficeModal>
-          </div>
-        </div>
-        <div class="form-group">
           <label class="col-sm-2 control-label">角色名称</label>
           <div class="col-sm-4">
             <input type="text" class="form-control" v-model="obj.name" />
@@ -34,7 +22,7 @@
         <div class="form-group">
           <label class="col-sm-2 control-label">角色授权</label>
           <div class="col-sm-4">
-            <tree :element="topMenu" v-model="obj.menuIdList" select-type="checkbox"></tree>
+            <Tree :element="topMenu" v-model="obj.menuIdList" select-type="checkbox"></Tree>
           </div>
         </div>
       </form>
@@ -54,11 +42,8 @@
 </template>
 
 <script>
-import SelectOfficeModal from '../modal/SelectOfficeModal'
-
 export default {
   components: {
-    SelectOfficeModal
   },
   data: function () {
     return {
@@ -90,13 +75,19 @@ export default {
       let id = this.$route.params.id
       if (id) {
         this.resource.get({id: id}).then(function (response) {
-          this.obj = response.body
+          let result = response.body
+          if (result.ok) {
+            this.obj = result.data
+          }
         })
       }
     },
     loadMenu: function () {
       this.resource.getMenuTree().then(function (response) {
-        this.topMenu = response.body
+        let result = response.body
+        if (result.ok) {
+          this.topMenu = result.data
+        }
       })
     },
     save: function () {
