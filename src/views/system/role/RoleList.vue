@@ -69,11 +69,10 @@ export default {
   },
   methods: {
     deleteData (id) {
-      let self = this
-      self.$confirm('确认删除吗？', function () {
-        self.resource.delete({id: id}).then(function (response) {
-          self.query()
-          self.$notify.success('删除成功！')
+      this.$confirm('确认删除吗？', function () {
+        this.resource.delete({id: id}).then(function (response) {
+          this.query()
+          this.$notify.success('删除成功！')
         })
       })
     }

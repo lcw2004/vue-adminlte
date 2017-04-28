@@ -74,11 +74,10 @@ export default {
       })
     },
     deleteObj: function (obj) {
-      let self = this
       this.$confirm('确认删除菜单[ ' + obj.name + ' ]吗？', function () {
-        self.resource.delete({id: obj.id}).then(function (response) {
+        this.resource.delete({id: obj.id}).then(function (response) {
           if (response.body.ok) {
-            self.$notify.info('删除成功')
+            this.$notify.info('删除成功')
           }
         })
       })
