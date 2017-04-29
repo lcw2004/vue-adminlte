@@ -111,7 +111,7 @@ export default {
   methods: {
     ok () {
       let self = this
-      this.$confirm('确认提交报价信息并回应吗？在回应截止时间之前还可重新报价', function () {
+      this.$confirm('确认提交报价信息并回应吗？在回应截止时间之前还可重新报价', () => {
         self.config.show = false
         self.$notify.success('回应成功')
       })

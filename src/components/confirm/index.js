@@ -13,6 +13,7 @@ let confirmSimple = function (message, onOk, onCancel) {
     onOk: onOk,
     onCancel: onCancel
   }
+
   let ConfirmComponent = Vue.extend(Confirm)
   return new ConfirmComponent({
     el: document.createElement('div'),

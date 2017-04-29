@@ -69,7 +69,7 @@ export default {
   },
   methods: {
     deleteData (id) {
-      this.$confirm('确认删除吗？', function () {
+      this.$confirm('确认删除吗？', () => {
         this.resource.delete({id: id}).then(function (response) {
           this.query()
           this.$notify.success('删除成功！')

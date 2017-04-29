@@ -111,7 +111,7 @@ export default {
       this.$notify.danger('审核成功')
     },
     auditConfirm: function () {
-      this.$confirm('确认审核通过吗？', function () {
+      this.$confirm('确认审核通过吗？', () => {
         this.$notify.success('审核成功')
       })
     },

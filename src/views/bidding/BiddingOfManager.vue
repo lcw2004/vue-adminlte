@@ -163,7 +163,7 @@ export default {
   },
   methods: {
     reAward: function () {
-      this.$confirm('确认重新授标吗？确认之后将会清空现在的授标记录', function () {
+      this.$confirm('确认重新授标吗？确认之后将会清空现在的授标记录', () => {
         this.$notify.warn('操作成功，请重新点击授标按钮进行授标')
       })
     }
