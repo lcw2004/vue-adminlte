@@ -63,6 +63,9 @@
     methods: {
       activeMenu (secondMenu) {
         this.$store.dispatch('activeMenu', secondMenu)
+        if (secondMenu.href) {
+          window.open(secondMenu.href)
+        }
       }
     }
   }
