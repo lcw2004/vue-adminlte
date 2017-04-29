@@ -19,7 +19,6 @@ export default {
       this.$http.get('/one/a/rest/userMenu').then(function (response) {
         let result = response.body
         if (result.ok) {
-          debugger
           let topMenu = result.data
           this.$store.dispatch('initMenu', topMenu)
           if (topMenu && topMenu.childList && topMenu.childList.length > 0) {
