@@ -77,7 +77,8 @@ export default {
       this.$confirm('确认删除菜单[ ' + obj.name + ' ]吗？', () => {
         this.resource.delete({id: obj.id}).then(function (response) {
           if (response.body.ok) {
-            this.$notify.info('删除成功')
+            this.$notify.success('删除成功')
+            this.removeElement(obj)
           }
         })
       })

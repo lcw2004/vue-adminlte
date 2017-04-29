@@ -70,6 +70,20 @@ function toggleAllMenu (topMenu, isShowInTable) {
   }
 }
 
+function removeFromTopElement (topElement, element) {
+  let list = topElement.childList
+  if (list == null) {
+    return
+  }
+  list.forEach((childMenu, i) => {
+    if (childMenu.id === element.id) {
+      childMenu.childList = null
+      list.splice(i, 1)
+    }
+    removeFromTopElement(childMenu, element)
+  })
+}
+
 const TreeTableMiXin = {
   data: function () {
     return {
@@ -107,6 +121,12 @@ const TreeTableMiXin = {
     toggleAll: function () {
       toggleAllMenu(this.topElement, !this.toggleStatus)
       this.toggleStatus = !this.toggleStatus
+    },
+    /**
+    * 移除元素以及该元素的子元素
+    */
+    removeElement (element) {
+      removeFromTopElement(this.topElement, element)
     }
   }
 }
