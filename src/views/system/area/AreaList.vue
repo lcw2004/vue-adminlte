@@ -25,8 +25,7 @@
             <tbody>
               <tr v-for="obj of dataList" v-show="obj.isShowInTable" :key="obj.id">
                 <td>
-                  <TreeTableColPrefix :obj="obj" @toggle="toggle(obj)"></TreeTableColPrefix>
-                  <span @click="toggle(obj)" v-text="obj.name"></span>
+                  <TreeTableColPrefix :obj="obj" @toggle="toggle(obj)">{{ obj.name }}</TreeTableColPrefix>
                 </td>
                 <td><span v-text="obj.code"></span></td>
                 <td><span v-text="obj.typeCN"></span></td>
@@ -70,7 +69,10 @@ export default {
   methods: {
     loadTreeTable: function () {
       this.resource.query().then(function (response) {
-        this.topElement = response.body
+        let result = response.body
+        if (result.ok) {
+          this.topElement = result.data
+        }
       })
     }
   }
