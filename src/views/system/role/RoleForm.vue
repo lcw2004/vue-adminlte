@@ -22,7 +22,7 @@
         <div class="form-group">
           <label class="col-sm-2 control-label">角色授权</label>
           <div class="col-sm-4">
-            <Tree :element="topMenu" v-model="obj.menuIdList" select-type="checkbox"></Tree>
+            <Tree :element="topMenu" v-model="obj.sysMenuEOIdList" select-type="checkbox"></Tree>
           </div>
         </div>
       </form>

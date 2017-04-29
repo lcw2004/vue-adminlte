@@ -3,8 +3,8 @@
     <section class="sidebar">
       <UserPanel/>
       <SearchForm/>
-      <LeftMenu v-if="activedMenu.id != null"/>
-      <LeftMenuStatic v-if="activedMenu.id == null"/>
+      <LeftMenu v-if="topMenu.id != null"/>
+      <LeftMenuStatic v-if="topMenu.id == null"/>
     </section>
   </aside>
 </template>
@@ -23,8 +23,8 @@
       LeftMenuStatic
     },
     computed: {
-      activedMenu: function () {
-        return this.$store.state.system.activedMenu
+      topMenu: function () {
+        return this.$store.state.system.topMenu
       }
     }
   }
