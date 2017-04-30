@@ -103,7 +103,7 @@ export default {
         parent: {},
         name: '',
         href: '',
-        sort: 0,
+        sort: 1,
         delFlag: 0,
         icon: '',
         permission: '',
@@ -119,6 +119,16 @@ export default {
         show: false,
         title: '选择图标'
       }
+    }
+  },
+  methods: {
+    clear () {
+      this.obj.name = ''
+      this.obj.href = ''
+      this.obj.icon = ''
+      this.obj.permission = ''
+      this.obj.remarks = ''
+      this.obj.sort = this.obj.sort + 1
     }
   }
 }
