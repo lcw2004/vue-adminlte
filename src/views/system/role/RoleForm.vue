@@ -47,13 +47,22 @@ export default {
   },
   data: function () {
     return {
+      actions: {
+        getMenuTree: {method: 'get', url: '/one/a/rest/sys/menu/tree'},
+        get: {method: 'get', url: '/one/a/rest/sys/role{/id}'},
+        save: {method: 'post', url: '/one/a/rest/sys/role'},
+        update: {method: 'put', url: '/one/a/rest/sys/role'}
+      },
+
       obj: {
         office: {},
         name: '',
         dataScope: '',
         menuIdList: []
       },
+
       topMenu: {},
+
       companyTreeModalConfig: {
         show: false,
         title: '选择所属机构'
@@ -61,39 +70,15 @@ export default {
     }
   },
   mounted () {
-    let actions = {
-      get: {method: 'get', url: '/one/a/rest/sys/role{/id}'},
-      getMenuTree: {method: 'get', url: '/one/a/rest/sys/menu/tree'},
-      save: {method: 'post', url: '/one/a/rest/sys/role'}
-    }
-    this.resource = this.$resource(null, {}, actions)
-    this.load()
     this.loadMenu()
   },
   methods: {
-    load: function () {
-      let id = this.$route.params.id
-      if (id) {
-        this.resource.get({id: id}).then(function (response) {
-          let result = response.body
-          if (result.ok) {
-            this.obj = result.data
-          }
-        })
-      }
-    },
     loadMenu: function () {
       this.resource.getMenuTree().then(function (response) {
         let result = response.body
         if (result.ok) {
           this.topMenu = result.data
         }
-      })
-    },
-    save: function () {
-      this.resource.save(null, JSON.stringify(this.obj)).then(function (response) {
-        this.$notify.success('保存成功')
-        this.$router.go(-1)
       })
     }
   }

@@ -6,7 +6,7 @@
         <div class="col-md-12">
           <div class="pull-right">
             <a class="btn btn-primary" @click="toggleAll()"><span v-if="toggleStatus">收缩</span><span v-else>展开</span>全部</a>
-            <a class="btn btn-primary" @click="config.show = true">添加</a>
+            <router-link class="btn btn-primary" :to="'/system/area/add'">添加</router-link>
           </div>
         </div>
       </div>
@@ -17,7 +17,6 @@
               <tr>
                 <th>区域名称</th>
                 <th>区域编码</th>
-                <th>区域类型</th>
                 <th>备注</th>
                 <th>操作</th>
               </tr>
@@ -28,11 +27,10 @@
                   <TreeTableColPrefix :obj="obj" @toggle="toggle(obj)">{{ obj.name }}</TreeTableColPrefix>
                 </td>
                 <td><span v-text="obj.code"></span></td>
-                <td><span v-text="obj.typeCN"></span></td>
                 <td><span v-text="obj.remarks"></span></td>
                 <td>
                   <router-link :to='"/system/area/" + obj.id + "/form"'>修改</router-link>
-                  <a>删除</a>
+                  <a @click="deleteObj(obj)">删除</a>
                 </td>
               </tr>
             </tbody>
@@ -73,6 +71,16 @@ export default {
         if (result.ok) {
           this.topElement = result.data
         }
+      })
+    },
+    deleteObj: function (obj) {
+      this.$confirm('确认删除区域[ ' + obj.name + ' ]吗？', () => {
+        this.resource.delete({id: obj.id}).then(function (response) {
+          if (response.body.ok) {
+            this.$notify.success('删除成功')
+            this.removeElement(obj)
+          }
+        })
       })
     }
   }

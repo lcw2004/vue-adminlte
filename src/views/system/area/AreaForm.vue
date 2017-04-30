@@ -31,12 +31,6 @@
           </div>
         </div>
         <div class="form-group">
-          <label class="col-sm-2 control-label">区域类型</label>
-          <div class="col-sm-4">
-            <DictSelect v-model="obj.type" type="sys_area_type"></DictSelect>
-          </div>
-        </div>
-        <div class="form-group">
           <label class="col-sm-2 control-label">备注</label>
           <div class="col-sm-4">
             <input type="text" class="form-control" v-model="obj.remarks" />
@@ -63,6 +57,12 @@ export default {
   components: {},
   data: function () {
     return {
+      actions: {
+        get: { method: 'get', url: '/one/a/rest/sys/area{/id}' },
+        save: { method: 'post', url: '/one/a/rest/sys/area' },
+        update: { method: 'put', url: '/one/a/rest/sys/area' }
+      },
+
       obj: {
         parent: {},
         area: {},
@@ -88,30 +88,6 @@ export default {
         show: false,
         title: '选择归属区域'
       }
-    }
-  },
-  mounted () {
-    let actions = {
-      get: { method: 'get', url: '/one/a/rest/sys/area{/id}' },
-      save: { method: 'post', url: '/one/a/rest/sys/area' }
-    }
-    this.resource = this.$resource(null, {}, actions)
-    this.load()
-  },
-  methods: {
-    load: function () {
-      let id = this.$route.params.id
-      if (id) {
-        this.resource.get({id: id}).then(function (response) {
-          this.obj = response.body
-        })
-      }
-    },
-    save: function () {
-      this.resource.save(null, JSON.stringify(this.obj)).then(function (response) {
-        this.$notify.success('保存成功')
-        this.$router.go(-1)
-      })
     }
   }
 }

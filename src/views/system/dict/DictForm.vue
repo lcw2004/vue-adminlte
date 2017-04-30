@@ -53,11 +53,17 @@
 </template>
 
 <script>
+import FormMixin from '../../../mixins/FormMixin.js'
 export default {
-  components: {
-  },
+  mixins: [FormMixin],
   data: function () {
     return {
+      actions: {
+        get: { method: 'get', url: '/one/a/rest/sys/dict{/id}' },
+        save: { method: 'post', url: '/one/a/rest/sys/dict' },
+        update: { method: 'put', url: '/one/a/rest/sys/dict' }
+      },
+
       obj: {
         type: '',
         description: '',
@@ -65,36 +71,6 @@ export default {
         value: '',
         sort: 1
       }
-    }
-  },
-  mounted () {
-    let actions = {
-      get: {method: 'get', url: '/one/a/rest/sys/dict{/id}'},
-      save: {method: 'post', url: '/one/a/rest/sys/dict'}
-    }
-    this.resource = this.$resource(null, {}, actions)
-    this.load()
-  },
-  methods: {
-    load: function () {
-      let id = this.$route.params.id
-      if (id) {
-        this.resource.get({id: id}).then(function (response) {
-          var result = response.body
-          if (result.ok && result.data) {
-            this.obj = result.data
-          }
-        })
-      }
-    },
-    save: function () {
-      this.resource.save(this.obj).then(function (response) {
-        var result = response.body
-        if (result.ok) {
-          this.$notify.success('保存成功')
-          this.$router.go(-1)
-        }
-      })
     }
   }
 }

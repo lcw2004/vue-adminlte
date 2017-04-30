@@ -127,6 +127,12 @@ export default {
   },
   data: function () {
     return {
+      actions: {
+        get: { method: 'get', url: '/one/a/rest/sys/office{/id}' },
+        save: { method: 'post', url: '/one/a/rest/sys/office' },
+        update: { method: 'put', url: '/one/a/rest/sys/office' }
+      },
+
       obj: {
         parent: {},
         area: {},
@@ -152,30 +158,6 @@ export default {
         show: false,
         title: '选择归属区域'
       }
-    }
-  },
-  mounted () {
-    let actions = {
-      get: { method: 'get', url: '/one/a/rest/sys/office{/id}' },
-      save: { method: 'post', url: '/one/a/rest/sys/office' }
-    }
-    this.resource = this.$resource(null, {}, actions)
-    this.load()
-  },
-  methods: {
-    load: function () {
-      let id = this.$route.params.id
-      if (id) {
-        this.resource.get({id: id}).then(function (response) {
-          this.obj = response.body
-        })
-      }
-    },
-    save: function () {
-      this.resource.save(null, JSON.stringify(this.obj)).then(function (response) {
-        this.$notify.success('保存成功')
-        this.$router.go(-1)
-      })
     }
   }
 }
