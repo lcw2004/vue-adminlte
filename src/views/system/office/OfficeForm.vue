@@ -155,7 +155,7 @@ export default {
         show: false,
         title: '选择上级机构'
       },
-        // 模态窗属性
+
       areaTreeModalConfig: {
         show: false,
         title: '选择归属区域'

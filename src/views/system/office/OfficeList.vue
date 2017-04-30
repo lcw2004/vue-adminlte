@@ -34,7 +34,7 @@
   							<td><span v-text="obj.remarks"></span></td>
                 <td>
                   <router-link :to='"/system/office/" + obj.id + "/form"'>修改</router-link>
-                  <a>删除</a>
+                  <a @click="deleteObj(obj)">删除</a>
                 </td>
               </tr>
             </tbody>
@@ -75,6 +75,16 @@ export default {
         if (result.ok) {
           this.topElement = result.data
         }
+      })
+    },
+    deleteObj: function (obj) {
+      this.$confirm('确认删除机构[ ' + obj.name + ' ]吗？', () => {
+        this.resource.delete({id: obj.id}).then(function (response) {
+          if (response.body.ok) {
+            this.$notify.success('删除成功')
+            this.removeElement(obj)
+          }
+        })
       })
     }
   }

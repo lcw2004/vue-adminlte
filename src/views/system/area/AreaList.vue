@@ -17,7 +17,6 @@
               <tr>
                 <th>区域名称</th>
                 <th>区域编码</th>
-                <th>备注</th>
                 <th>操作</th>
               </tr>
             </thead>
@@ -27,7 +26,6 @@
                   <TreeTableColPrefix :obj="obj" @toggle="toggle(obj)">{{ obj.name }}</TreeTableColPrefix>
                 </td>
                 <td><span v-text="obj.code"></span></td>
-                <td><span v-text="obj.remarks"></span></td>
                 <td>
                   <router-link :to='"/system/area/" + obj.id + "/form"'>修改</router-link>
                   <a @click="deleteObj(obj)">删除</a>

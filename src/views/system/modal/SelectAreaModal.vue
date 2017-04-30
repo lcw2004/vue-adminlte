@@ -10,7 +10,10 @@ export default {
       }
       let resource = this.$resource(null, {}, actions)
       resource.getTree().then(function (response) {
-        this.topElement = response.body
+        let result = response.body
+        if (result.ok) {
+          this.topElement = result.data
+        }
       })
     }
   }

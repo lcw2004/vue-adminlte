@@ -15,7 +15,6 @@
 									<button class="btn btn-info" type="button" @click="areaTreeModalConfig.show = true">选择</button>
 								</span>
             </div>
-            <area-tree-modal :config="areaTreeModalConfig" v-model="obj.parent"></area-tree-modal>
           </div>
         </div>
         <div class="form-group">
@@ -28,12 +27,6 @@
           <label class="col-sm-2 control-label">区域编码</label>
           <div class="col-sm-4">
             <input type="text" class="form-control" v-model="obj.code" />
-          </div>
-        </div>
-        <div class="form-group">
-          <label class="col-sm-2 control-label">备注</label>
-          <div class="col-sm-4">
-            <input type="text" class="form-control" v-model="obj.remarks" />
           </div>
         </div>
       </form>
@@ -49,13 +42,20 @@
       </div>
     </div>
   </div>
+
+  <SelectAreaModal :config="areaTreeModalConfig" v-model="obj.parent"/>
 </section>
 </template>
 
 <script>
 import FormMixin from '../../../mixins/FormMixin.js'
+import SelectAreaModal from '../modal/SelectAreaModal'
+
 export default {
   mixins: [FormMixin],
+  components: {
+    SelectAreaModal
+  },
   data: function () {
     return {
       actions: {
