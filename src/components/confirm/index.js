@@ -4,14 +4,16 @@ import Confirm from './Confirm'
 /**
 * 简单弹出一个文本字弹框
 */
-let confirmSimple = function (message, onOk, onCancel) {
+let confirmSimple = function (message, onOk, onCancel, okBtnText, cancelBtnText) {
   let propsData = {
     title: '操作确认',
     message: message,
     type: 'default',
     size: 'md',
     onOk: onOk,
-    onCancel: onCancel
+    onCancel: onCancel,
+    okBtnText: okBtnText,
+    cancelBtnText: cancelBtnText
   }
 
   let ConfirmComponent = Vue.extend(Confirm)

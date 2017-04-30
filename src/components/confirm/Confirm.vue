@@ -12,8 +12,8 @@
         {{ message }}
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn" :class="cancelBtnStyle" data-dismiss="modal" @click="close()">取消</button>
-        <button type="button" class="btn" :class="okBtnStyle" @click="ok()">确认</button>
+        <button type="button" class="btn" :class="cancelBtnStyle" data-dismiss="modal" @click="cancel()">{{ cancelBtnText }}</button>
+        <button type="button" class="btn" :class="okBtnStyle" @click="ok()">{{ okBtnText }}</button>
       </div>
     </div>
   </div>
@@ -49,6 +49,14 @@ export default {
     size: {
       type: String,
       default: 'md'
+    },
+    okBtnText: {
+      type: String,
+      default: '确定'
+    },
+    cancelBtnText: {
+      type: String,
+      default: '取消'
     }
   },
   data: function () {
@@ -75,7 +83,15 @@ export default {
       this.$el.remove()
     },
     ok () {
-      this.onOk()
+      if (this.onOk) {
+        this.onOk()
+      }
+      this.close()
+    },
+    cancel () {
+      if (this.onCancel) {
+        this.onCancel()
+      }
       this.close()
     }
   },

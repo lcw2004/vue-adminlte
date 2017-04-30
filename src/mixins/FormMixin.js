@@ -43,7 +43,12 @@ let FormMixin = {
           var result = response.body
           if (result.ok) {
             this.$notify.success('添加成功')
-            this.$router.go(-1)
+            this.$confirm('添加成功，是否继续添加？', () => {
+              // TODO 继续添加
+              // 返回列表
+            }, () => {
+              this.$router.go(-1)
+            }, '继续添加', '返回')
           }
         })
       }
