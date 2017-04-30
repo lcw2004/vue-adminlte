@@ -53,8 +53,9 @@
 </template>
 
 <script>
+import FormMixin from '../../../mixins/FormMixin.js'
 export default {
-  components: {},
+  mixins: [FormMixin],
   data: function () {
     return {
       actions: {

@@ -82,8 +82,10 @@
 <script>
 import SelectIconModal from '../modal/SelectIconModal'
 import SelectMenuModal from '../modal/SelectMenuModal'
+import FormMixin from '../../../mixins/FormMixin.js'
 
 export default {
+  mixins: [FormMixin],
   components: {
     SelectIconModal,
     SelectMenuModal

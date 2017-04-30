@@ -119,8 +119,10 @@
 <script>
 import SelectOfficeModal from '../modal/SelectOfficeModal'
 import SelectAreaModal from '../modal/SelectAreaModal'
+import FormMixin from '../../../mixins/FormMixin.js'
 
 export default {
+  mixins: [FormMixin],
   components: {
     SelectOfficeModal,
     SelectAreaModal
