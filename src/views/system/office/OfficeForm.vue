@@ -45,17 +45,13 @@
         <div class="form-group">
           <label class="col-sm-2 control-label">机构类型</label>
           <div class="col-sm-4">
-            <select class="form-control" v-model="obj.type">
-
-						</select>
+            <DictSelect v-model="obj.type" type="sys_office_type"></DictSelect>
           </div>
         </div>
         <div class="form-group">
           <label class="col-sm-2 control-label">机构级别</label>
           <div class="col-sm-4">
-            <select class="form-control" v-model="obj.grade">
-							<option value="${dict.value}">${dict.label}</option>
-						</select>
+            <DictSelect v-model="obj.type" type="sys_office_grade"></DictSelect>
           </div>
         </div>
         <div class="form-group">
