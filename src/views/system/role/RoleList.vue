@@ -34,7 +34,7 @@
                 <td><span v-text="index + 1"></span></td>
                 <td><span v-text="obj.name"></span></td>
                 <td><span v-text="obj.dataScope"></span></td>
-                <td><span v-text="obj.remark"></span></td>
+                <td><span v-text="obj.remarks"></span></td>
                 <td>
                   <router-link :to='"/system/role/" + obj.id + "/form"'>修改</router-link>
                   <a @click="deleteData(obj.id)">删除</a>
