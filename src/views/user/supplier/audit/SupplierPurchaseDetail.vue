@@ -61,12 +61,12 @@
 </template>
 
 <script>
-import SupplierInfo from '../SupplierInfo'
+import SupplierView from '../SupplierView'
 import AuditReject from '../../../modal/AuditReject'
 
 export default {
   components: {
-    SupplierInfo,
+    SupplierView,
     AuditReject
   },
   data: function () {

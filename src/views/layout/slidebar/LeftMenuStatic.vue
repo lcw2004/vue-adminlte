@@ -41,12 +41,12 @@
         </span>
       </a>
       <ul class="treeview-menu">
-        <li><a><i class="fa fa-circle-o"></i><router-link to='/supplier/manage'>供应商管理</router-link></a></li>
-        <li><a><i class="fa fa-circle-o"></i><router-link to='/supplier/level'>供应商等级管理</router-link></a></li>
-        <li><a><i class="fa fa-circle-o"></i><router-link to='/supplier/questionnaire'>供应商调查</router-link></a></li>
-        <li><a><i class="fa fa-circle-o"></i><router-link to='/supplier/audit'>供应商审核</router-link></a></li>
-        <li><a><i class="fa fa-circle-o"></i><router-link to='/supplier/purchase-audit'>供应商投标类别审核</router-link></a></li>
-        <li><a><i class="fa fa-circle-o"></i><router-link to='/supplier/blacklist'>供应商黑名单</router-link></a></li>
+        <li><a><i class="fa fa-circle-o"></i><router-link to='/user/supplier/manage'>供应商管理</router-link></a></li>
+        <li><a><i class="fa fa-circle-o"></i><router-link to='/user/supplier/level'>供应商等级管理</router-link></a></li>
+        <li><a><i class="fa fa-circle-o"></i><router-link to='/user/supplier/questionnaire'>供应商调查</router-link></a></li>
+        <li><a><i class="fa fa-circle-o"></i><router-link to='/user/supplier/audit'>供应商审核</router-link></a></li>
+        <li><a><i class="fa fa-circle-o"></i><router-link to='/user/supplier/purchase-audit'>供应商投标类别审核</router-link></a></li>
+        <li><a><i class="fa fa-circle-o"></i><router-link to='/user/supplier/blacklist'>供应商黑名单</router-link></a></li>
       </ul>
     </li>
     <li class="treeview">
@@ -58,7 +58,7 @@
         </span>
       </a>
       <ul class="treeview-menu">
-        <li><a><i class="fa fa-circle-o"></i><router-link to='/expert/manage'>评标专家管理</router-link></a></li>
+        <li><a><i class="fa fa-circle-o"></i><router-link to='/user/expert/manage'>评标专家管理</router-link></a></li>
       </ul>
     </li>
     <li class="treeview">

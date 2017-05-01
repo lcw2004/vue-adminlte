@@ -33,7 +33,7 @@
               <tr v-for="(obj, index) of page.list">
                 <td>{{ index + 1}}</td>
                 <td>
-                  <router-link to="/supplier/info">{{ obj.name }}</router-link>
+                  <router-link :to='"/user/supplier/" + obj.supplierId + "/view"'>{{ obj.name }}</router-link>
                 </td>
                 <td><span v-text="obj.createTime"></span></td>
                 <td><span v-text="obj.principalUser.name"></span></td>
@@ -47,7 +47,7 @@
                   <span v-if="obj.status == 5">{{ obj.statusCn }}</span>
                 </td>
                 <td>
-                  <router-link :to='"/user/supplier/" + obj.id + "/form"'>修改</router-link>
+                  <router-link :to='"/user/supplier/" + obj.supplierId + "/form"'>修改</router-link>
                   <a @click="deleteData(obj)">删除</a>
                   <a v-if="obj.status == 4" @click="start(obj)">启用</a>
                   <a v-if="obj.status == 2" @click="stop(obj)">停用</a>
