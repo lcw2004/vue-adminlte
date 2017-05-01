@@ -10,32 +10,39 @@
                 <div class="form-group">
                   <label class="col-md-3 control-label">单位名称</label>
                   <div class="col-md-9">
-                    <p class="form-control-static">河南恒远恒山工业有限公司 <span class="label label-warning">审核中</span></p>
+                    <p class="form-control-static">{{ obj.name }}
+                      <span v-if="obj.status == -1">{{ obj.statusCn }}</span>
+                      <span v-if="obj.status == 1" class="label label-primary">{{ obj.statusCn }}</span>
+                      <span v-if="obj.status == 2" class="label label-success">{{ obj.statusCn }}</span>
+                      <span v-if="obj.status == 3" class="label label-warning">{{ obj.statusCn }}</span>
+                      <span v-if="obj.status == 4" class="label label-default">{{ obj.statusCn }}</span>
+                      <span v-if="obj.status == 5">{{ obj.statusCn }}</span>
+                    </p>
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="col-md-3 control-label">单位简称</label>
                   <div class="col-md-9">
-                    <p class="form-control-static">恒远集团</p>
+                    <p class="form-control-static">{{ obj.shortName }}</p>
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="col-md-3 control-label">曾用名称</label>
                   <div class="col-md-9">
-                    <p class="form-control-static">河南省恒远起重机械集团有限公司</p>
+                    <p class="form-control-static">{{ obj.usedName }}</p>
                   </div>
                 </div>
 
                 <div class="form-group">
                   <label class="col-md-3 control-label">公司法人姓名</label>
                   <div class="col-md-9">
-                    <p class="form-control-static">杨紫杰</p>
+                    <p class="form-control-static">{{ obj.legalPersonName }}</p>
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="col-md-3 control-label">公司法人身份证</label>
                   <div class="col-md-9">
-                    <p class="form-control-static">xxxxxxxxxxxxxxxx</p>
+                    <p class="form-control-static">{{ obj.legalPersonNumber }}</p>
                   </div>
                 </div>
 
@@ -89,7 +96,11 @@
 
 <script>
 export default {
-  components: {
+  props: {
+    obj: {
+      type: Object,
+      required: true
+    }
   },
   data: function () {
     return {

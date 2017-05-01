@@ -13,16 +13,16 @@
         </ul>
         <div class="tab-content">
           <div class="tab-pane active">
-            <BaseInfo v-if="step == 1"></BaseInfo>
-            <Contracts v-if="step == 2"></Contracts>
-            <Qualifications v-if="step == 3"></Qualifications>
-            <AuditLog v-if="step == 4"></AuditLog>
-            <Biddings v-if="step == 5"></Biddings>
-            <QuestionnaireInfo v-if="step == 6"></QuestionnaireInfo>
+            <BaseInfo v-if="step == 1" :obj="obj" />
+            <Contracts v-if="step == 2" :obj="obj" />
+            <Qualifications v-if="step == 3" :obj="obj" />
+            <AuditLog v-if="step == 4" :obj="obj" />
+            <Biddings v-if="step == 5" :obj="obj" />
+            <QuestionnaireInfo v-if="step == 6" :obj="obj" />
           </div>
         </div>
         <div class="box-footer">
-          <div class="col-md-4 col-sm-0"></div>
+          <div class="col-md-2 col-sm-0"></div>
           <div class="col-md-2 col-sm-2"><button class="btn btn-block btn-default" @click="$router.go(-1)">返回</button></div>
         </div>
       </div>
@@ -32,6 +32,7 @@
 </template>
 
 <script>
+import FormMixin from '../../../mixins/FormMixin.js'
 import BaseInfo from './info/BaseInfo'
 import Contracts from './info/Contracts'
 import AuditLog from './info/AuditLog'
@@ -40,6 +41,7 @@ import Qualifications from './info/Qualifications'
 import QuestionnaireInfo from './info/QuestionnaireInfo'
 
 export default {
+  mixins: [FormMixin],
   components: {
     BaseInfo,
     Contracts,
@@ -50,6 +52,12 @@ export default {
   },
   data: function () {
     return {
+      actions: {
+        get: { method: 'get', url: '/one/a/rest/user/supplier{/id}' }
+      },
+
+      obj: {},
+
       step: 1
     }
   }

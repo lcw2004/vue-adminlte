@@ -6,7 +6,11 @@
 
 <script>
 export default {
-  components: {
+  props: {
+    obj: {
+      type: Object,
+      required: true
+    }
   },
   data: function () {
     return {

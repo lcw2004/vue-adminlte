@@ -14,41 +14,17 @@
               <th>影印件</th>
               <th>备注</th>
             </tr>
-            <tr>
-              <td>1</td>
-              <td>营业执照</td>
-              <td>410728000048416（2-8）</td>
-              <td>长垣县工商行政管理局</td>
-              <td>2017-01-01</td>
-              <td>2027-01-01</td>
+            <tr v-for="(q, index) of qualifications">
+              <td>{{ index + 1}}</td>
+              <td>{{ q.type.qualificationName }}</td>
+              <td>{{ q.qualificationCode }}</td>
+              <td>{{ q.issueAgency }}</td>
+              <td>{{ q.issueDate }}</td>
+              <td>{{ q.invalidDate }}</td>
               <td>
                 <a>查看</a>
               </td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>税务登记证（国税）</td>
-              <td>410728317412046</td>
-              <td>长垣县工商行政管理局</td>
-              <td>2017-01-01</td>
-              <td>2027-01-01</td>
-              <td>
-                <a>查看</a>
-              </td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>组织机构代码证</td>
-              <td>31741204-6</td>
-              <td>长垣县工商行政管理局</td>
-              <td>2017-01-01</td>
-              <td>2027-01-01</td>
-              <td>
-                <a>查看</a>
-              </td>
-              <td></td>
+              <td>{{ q.remark }}</td>
             </tr>
           </tbody>
         </table>
@@ -59,10 +35,32 @@
 
 <script>
 export default {
-  components: {
+  props: {
+    obj: {
+      type: Object,
+      required: true
+    }
   },
   data: function () {
     return {
+      qualifications: []
+    }
+  },
+  mounted () {
+    let actions = {
+      getQualifications: { method: 'get', url: '/one/a/rest/user/supplier{/id}/qualifications' }
+    }
+    this.resource = this.$resource(null, {}, actions)
+    this.getQualifications()
+  },
+  methods: {
+    getQualifications () {
+      this.resource.getQualifications({id: this.obj.supplierId}).then(function (response) {
+        var result = response.body
+        if (result.ok) {
+          this.qualifications = result.data
+        }
+      })
     }
   }
 }

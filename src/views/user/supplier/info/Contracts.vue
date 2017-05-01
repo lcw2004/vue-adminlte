@@ -10,19 +10,19 @@
               <div class="form-group">
                 <label class="col-md-3 control-label">登录账号</label>
                 <div class="col-md-9">
-                  <p class="form-control-static">1234567890</p>
+                  <p class="form-control-static">{{ obj.principalUser.account }}</p>
                 </div>
               </div>
               <div class="form-group">
                 <label class="col-md-3 control-label">姓名</label>
                 <div class="col-md-9">
-                  <p class="form-control-static">张三</p>
+                  <p class="form-control-static">{{ obj.principalUser.name }}</p>
                 </div>
               </div>
               <div class="form-group">
                 <label class="col-md-3 control-label">最后登录时间</label>
                 <div class="col-md-9">
-                  <p class="form-control-static">2017-02-01 11:01:01</p>
+                  <p class="form-control-static">{{ obj.principalUser.lastLoginTime }}</p>
                 </div>
               </div>
             </div>
@@ -31,13 +31,13 @@
               <div class="form-group">
                 <label class="col-md-3 control-label">注册IP</label>
                 <div class="col-md-9">
-                  <p class="form-control-static">10.11.11.12</p>
+                  <p class="form-control-static">{{ obj.principalUser.createIp }}</p>
                 </div>
               </div>
               <div class="form-group">
                 <label class="col-md-3 control-label">注册时间</label>
                 <div class="col-md-9">
-                  <p class="form-control-static">2017-01-01 11:01:01</p>
+                  <p class="form-control-static">{{ obj.principalUser.createTime }}</p>
                 </div>
               </div>
             </div>
@@ -53,13 +53,13 @@
               <div class="form-group">
                 <label class="col-md-3 control-label">手机号码</label>
                 <div class="col-md-9">
-                  <p class="form-control-static">1234567890</p>
+                  <p class="form-control-static">{{ obj.principalUser.userContactInfo.mobile }}</p>
                 </div>
               </div>
               <div class="form-group">
                 <label class="col-md-3 control-label">座机号码</label>
                 <div class="col-md-9">
-                  <p class="form-control-static">1234567890</p>
+                  <p class="form-control-static">{{ obj.principalUser.userContactInfo.phone }}</p>
                 </div>
               </div>
             </div>
@@ -68,13 +68,13 @@
               <div class="form-group">
                 <label class="col-md-3 control-label">电子邮箱</label>
                 <div class="col-md-9">
-                  <p class="form-control-static">test@163.com</p>
+                  <p class="form-control-static">{{ obj.principalUser.userContactInfo.email }}</p>
                 </div>
               </div>
               <div class="form-group">
                 <label class="col-md-3 control-label">用户地址</label>
                 <div class="col-md-9">
-                  <p class="form-control-static">湖南省，长沙市 某地</p>
+                  <p class="form-control-static">{{ obj.principalUser.userContactInfo.address }}</p>
                 </div>
               </div>
             </div>
@@ -88,7 +88,11 @@
 
 <script>
 export default {
-  components: {
+  props: {
+    obj: {
+      type: Object,
+      required: true
+    }
   },
   data: function () {
     return {
