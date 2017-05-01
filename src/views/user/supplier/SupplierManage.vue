@@ -1,132 +1,149 @@
 <template>
-  <section class="content">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="box">
-          <div class="box-header">
-            <form class="form-inline">
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="col-md-3">
-                    <input type="text" placeholder="公司名/简称/曾用名称" class="form-control inline-block">
-                  </div>
+<section class="content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="box">
+        <div class="box-header">
+          <form class="form-inline">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="col-md-3">
+                  <input type="text" placeholder="公司名/简称/曾用名称" class="form-control inline-block">
                 </div>
               </div>
+            </div>
+            <SupplierQueryCondition></SupplierQueryCondition>
+          </form>
+        </div>
 
-              <SupplierQueryCondition></SupplierQueryCondition>
-            </form>
-          </div>
-
-          <div class="box-body">
-            <table class="table table-bordered table-hover">
-              <tbody>
-                <tr>
-                  <th style="width: 10px">#</th>
-                  <th>供应商名称</th>
-                  <th>注册时间</th>
-                  <th>联系人</th>
-                  <th>手机号码</th>
-                  <th>状态</th>
-                  <th>操作</th>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td><router-link to="/supplier/info">某某有限公司</router-link></td>
-                  <td>2017-01-01</td>
-                  <td><a>张三</a></td>
-                  <td>13999999999</td>
-                  <td>
-                    <span class="label label-warning">审核驳回</span>
-                  </td>
-                  <td>
-                    <a>修改资料</a>
-                    <a>删除</a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td><router-link to="/supplier/info">某某有限公司</router-link></td>
-                  <td>2017-01-01</td>
-                  <td><a>张三</a></td>
-                  <td>13999999999</td>
-                  <td>
-                    <span class="label label-danger">停用</span>
-                  </td>
-                  <td>
-                    <a>修改资料</a>
-                    <a>启用</a>
-                    <a>删除</a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td><router-link to="/supplier/info">某某有限公司</router-link></td>
-                  <td>2017-01-01</td>
-                  <td><a>张三</a></td>
-                  <td>13999999999</td>
-                  <td>
-                    <span class="label label-warning">待审核</span>
-                  </td>
-                  <td>
-                    <a>修改资料</a>
-                    <a>删除</a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>4</td>
-                  <td><router-link to="/supplier/info">某某有限公司</router-link></td>
-                  <td>2017-01-01</td>
-                  <td><a>张三</a></td>
-                  <td>13999999999</td>
-                  <td>
-                    <span class="label label-success">正常</span>
-                  </td>
-                  <td>
-                    <a>修改资料</a>
-                    <a>停用</a>
-                    <a>删除</a>
-                    <a>黑名单</a>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+        <div class="box-body">
+          <table class="table table-bordered table-hover">
+            <thead>
+              <tr>
+                <th style="width: 10px">#</th>
+                <th>供应商名称</th>
+                <th>注册时间</th>
+                <th>联系人</th>
+                <th>手机号码</th>
+                <th>状态</th>
+                <th>操作</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="(obj, index) of page.list">
+                <td>{{ index + 1}}</td>
+                <td>
+                  <router-link to="/supplier/info">{{ obj.name }}</router-link>
+                </td>
+                <td><span v-text="obj.createTime"></span></td>
+                <td><span v-text="obj.principalUser.name"></span></td>
+                <td><span v-text="obj.principalUser.userContactInfo.phone"></span></td>
+                <td>
+                  <span v-if="obj.status == -1">{{ obj.statusCn }}</span>
+                  <span v-if="obj.status == 1" class="label label-primary">{{ obj.statusCn }}</span>
+                  <span v-if="obj.status == 2" class="label label-success">{{ obj.statusCn }}</span>
+                  <span v-if="obj.status == 3" class="label label-warning">{{ obj.statusCn }}</span>
+                  <span v-if="obj.status == 4" class="label label-default">{{ obj.statusCn }}</span>
+                  <span v-if="obj.status == 5">{{ obj.statusCn }}</span>
+                </td>
+                <td>
+                  <router-link :to='"/user/supplier/" + obj.id + "/form"'>修改</router-link>
+                  <a @click="deleteData(obj)">删除</a>
+                  <a v-if="obj.status == 4" @click="start(obj)">启用</a>
+                  <a v-if="obj.status == 2" @click="stop(obj)">停用</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
+  </div>
 
-    <div class="row">
-      <div class="col-md-12">
-        <div class="box box-solid">
-          <div class="box-header with-border">
-            <i class="fa fa-text-width"></i>
-            <h3 class="box-title">备注</h3>
-          </div>
-          <div class="box-body">
-            <ol>
-              <li>用户有如下几种状态
-                <ol>
-                  <li>1 - 正常（只有该状态的供应商可以参与投标）</li>
-                  <li>2 - 待审核</li>
-                  <li>3 - 审核驳回</li>
-                  <li>-1 - 已删除</li>
-                  <li>-2 - 停用</li>
-                </ol>
-              </li>
-            </ol>
-          </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="box box-solid">
+        <div class="box-header with-border">
+          <i class="fa fa-text-width"></i>
+          <h3 class="box-title">备注</h3>
+        </div>
+        <div class="box-body">
+          <ol>
+            <li>用户有如下几种状态
+              <ol>
+                <li>1 - 正常（只有该状态的供应商可以参与投标），（修改资料 停用 删除 黑名单）</li>
+                <li>2 - 待审核（修改资料 删除）</li>
+                <li>3 - 审核驳回（修改资料 删除）</li>
+                <li>-1 - 已删除</li>
+                <li>-2 - 停用（ 修改资料 启用 删除）</li>
+              </ol>
+            </li>
+          </ol>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 </template>
 
 <script>
+import PageMixin from '../../../mixins/PageMixin.js'
+
 export default {
-  components: {
-  },
+  mixins: [PageMixin],
   data: function () {
     return {
+      actions: {
+        list: { method: 'get', url: '/one/a/rest/user/supplier' },
+        delete: { method: 'delete', url: '/one/a/rest/user/supplier{/id}' },
+        stop: { method: 'put', url: '/one/a/rest/user/supplier{/id}/stop' },
+        start: { method: 'put', url: '/one/a/rest/user/supplier{/id}/start' }
+      },
+      param: {
+        type: '',
+        description: ''
+      },
+      dictTypeList: []
+    }
+  },
+  methods: {
+    deleteData (obj) {
+      this.$confirm('确认删除吗？', () => {
+        this.resource.delete({id: obj.supplierId}).then(function (response) {
+          if (response.body.ok) {
+            this.query()
+            this.$notify.success('删除成功！')
+          }
+        })
+      })
+    },
+    stop (obj) {
+      this.$confirm('确认停用供应商吗？', () => {
+        this.resource.stop({id: obj.supplierId}, null).then(function (response) {
+          if (response.body.ok) {
+            this.query()
+            this.$notify.success('停用成功！')
+          }
+        })
+      })
+    },
+    start (obj) {
+      this.$confirm('确认启用供应商吗？', () => {
+        this.resource.start({id: obj.supplierId}, null).then(function (response) {
+          if (response.body.ok) {
+            this.query()
+            this.$notify.success('启用成功！')
+          }
+        })
+      })
+    }
+  },
+  watch: {
+    'param': {
+      handler: function () {
+        this.query()
+      },
+      deep: true
     }
   }
 }
