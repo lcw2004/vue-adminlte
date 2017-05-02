@@ -1,4 +1,3 @@
-import PurchaseType from '../../views/system/purchase/PurchaseType'
 import ProfessionType from '../../views/system/profession/ProfessionType'
 import NoticeManage from '../../views/system/notice/NoticeManage'
 import NoticeTreeForm from '../../views/system/notice/NoticeTreeForm'
@@ -25,8 +24,10 @@ import UserForm from '../../views/system/user/UserForm'
 
 import LogList from '../../views/system/log/LogList'
 
+import PurchaseType from '../../views/system/purchase/PurchaseType'
+import PyrchaseTypeForm from '../../views/system/purchase/PyrchaseTypeForm'
+
 export default [
-  { path: '/system/purchase-type', component: PurchaseType },
   { path: '/system/profession-type', component: ProfessionType },
   { path: '/system/notice', component: NoticeManage },
   { path: '/system/notice-tree-form', component: NoticeTreeForm },
@@ -56,6 +57,10 @@ export default [
   { path: '/system/user', component: UserList },
   { path: '/system/user/add', component: UserForm },
   { path: '/system/user/:id/form', component: UserForm },
+
+  { path: '/system/purchaseType', component: PurchaseType },
+  { path: '/system/purchaseType/add', component: PyrchaseTypeForm },
+  { path: '/system/purchaseType/:id/form', component: PyrchaseTypeForm },
 
   { path: '/system/log', component: LogList }
 ]
