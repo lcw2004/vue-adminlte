@@ -21,20 +21,15 @@
 
         <div class="row">
           <div class="col-md-12">
-            <UserInfo v-if="stepId == 1"/>
-            <OrgInfo v-if="stepId == 2"/>
+            <UserInfo v-if="stepId == 1" :user="user"/>
+            <OrgInfo v-if="stepId == 2" :user="user"/>
           </div>
         </div>
       </div>
       <div class="box-footer">
         <div class="row">
           <div class="col-md-12">
-            <div class="col-md-4"></div>
-            <div class="col-md-2" v-if="stepId != 1">
-              <button type="button" class="btn btn-block btn-default" @click="lastStep">
-                上一步
-              </button>
-            </div>
+            <div class="col-md-5"></div>
             <div class="col-md-2" v-if="stepId < maxStep">
               <button type="button" class="btn btn-block btn-primary"  @click="nextStep">
                 下一步
@@ -69,7 +64,16 @@ export default {
   data: function () {
     return {
       stepId: 1,
-      maxStep: 2
+      maxStep: 2,
+
+      user: {
+        supplierName: '',
+        account: '',
+        password: '',
+        passwordConfirm: '',
+        mobile: '',
+        email: ''
+      }
     }
   },
   methods: {
