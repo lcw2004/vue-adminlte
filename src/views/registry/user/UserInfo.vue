@@ -1,13 +1,13 @@
 <template>
   <form class="form-horizontal">
-    <div class="form-group" v-render.r="'项目名称'">
+    <div class="form-group" v-render.r="'供应商全称'">
       <label class="control-label col-md-2">供应商全称</label>
       <div class="col-md-4">
-        <input type="text" class="form-control" v-model="user.supplierName" v-validate="'required'" name="项目名称" maxlength="50">
+        <input type="text" class="form-control" v-model="user.supplierName" v-validate="'required'" name="供应商全称" maxlength="50" @blur="validSupplierName">
       </div>
       <div class="col-md-6">
         <p class="help-block">供应商全称必须与公司公章相符，不得含其它字符!</p>
-        <p class="help-block">
+        <p class="help-block" v-if="errors.has('供应商全称')">
           该机构已经注册过了，点此 <a href="login.html">登录系统</a>。</br>
           如果您不记得账号，点此 <router-link to="/forget-account">找回账户</router-link>。</br>
           如果您不记得密码，点此 <router-link to="/forget-password">重置密码</router-link>。
@@ -95,9 +95,7 @@ export default {
       leftTime: 0,
       defaultLeftTime: 10,
 
-      validCodeMessage: '',
-
-      projectName: ''
+      validCodeMessage: ''
     }
   },
   methods: {
@@ -108,6 +106,7 @@ export default {
 
       // 发送验证码
       this.send()
+      this.validSupplierName()
 
       // 倒计时
       this.leftTime = this.defaultLeftTime
@@ -127,6 +126,16 @@ export default {
           this.validCodeMessage = '验证码发送成功！'
         } else {
           this.validCodeMessage = response.body.message
+        }
+      })
+    },
+    validSupplierName () {
+      this.$http.get('/one/a/rest/user/supplierRegistry/validName?name=' + this.user.supplierName).then(function (response) {
+        let result = response.body
+        if (result.ok) {
+          // 验证通过
+        } else {
+          this.errors.add('供应商全称', '供应商已经存在', 'is_exist')
         }
       })
     }

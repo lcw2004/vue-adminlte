@@ -22,8 +22,6 @@ export default {
     console.log('---------------------------------')
   },
   update: function (el, binding, vnode) {
-    /* eslint-disable */
-    debugger
     console.log('---------------------------------')
     console.log(binding)
 
@@ -120,7 +118,6 @@ function addIcon (el, iconClass) {
 */
 function appendErrorSpan (el, errorMsg) {
   // 寻找错误挂载点
-  debugger
   let formControl = getErrorMountElement(el)
   if (!formControl) {
     console.error('can not find form-control where error mount')
