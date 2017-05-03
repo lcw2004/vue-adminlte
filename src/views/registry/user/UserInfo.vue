@@ -130,6 +130,8 @@ export default {
       })
     },
     validSupplierName () {
+      // TODO 先判断是否有值，有值再验证
+
       this.$http.get('/one/a/rest/user/supplierRegistry/validName?name=' + this.user.supplierName).then(function (response) {
         let result = response.body
         if (result.ok) {
