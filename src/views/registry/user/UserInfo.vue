@@ -7,7 +7,7 @@
       </div>
       <div class="col-md-6">
         <p class="help-block">供应商全称必须与公司公章相符，不得含其它字符!</p>
-        <p class="help-block" v-if="errors.has('供应商全称')">
+        <p class="help-block" v-if="errors.has('供应商全称:is_exist')">
           该机构已经注册过了，点此 <a href="login.html">登录系统</a>。</br>
           如果您不记得账号，点此 <router-link to="/forget-account">找回账户</router-link>。</br>
           如果您不记得密码，点此 <router-link to="/forget-password">重置密码</router-link>。
@@ -18,7 +18,7 @@
     <div class="form-group" v-render.r="'注册帐号'">
       <label class="control-label col-md-2">注册帐号</label>
       <div class="col-md-4">
-        <input type="text" class="form-control" v-model="user.account" v-validate="'required'" name="注册帐号" >
+        <input type="text" class="form-control" v-model="user.account" v-validate="'required'" name="注册帐号" @blur="validAccount">
       </div>
       <div class="col-md-6">
         <p class="help-block">只能输入3-20个字母或者数字的组合字串且不包含空格</p>
@@ -120,7 +120,7 @@ export default {
     },
     send () {
       let email = this.user.email
-      this.$http.get('/one/a/rest/user/supplierRegistry/validCode?email=' + email).then(function (response) {
+      this.$http.get('/one/a/rest/user/supplierRegistry/sendValidCode?email=' + email).then(function (response) {
         console.log(response.body)
         if (response.body.ok) {
           this.validCodeMessage = '验证码发送成功！'
@@ -130,14 +130,28 @@ export default {
       })
     },
     validSupplierName () {
-      // TODO 先判断是否有值，有值再验证
-
+      if (!this.user.supplierName) {
+        return
+      }
       this.$http.get('/one/a/rest/user/supplierRegistry/validName?name=' + this.user.supplierName).then(function (response) {
         let result = response.body
         if (result.ok) {
-          // 验证通过
+          this.errors.remove('供应商全称', 'is_exist')
         } else {
           this.errors.add('供应商全称', '供应商已经存在', 'is_exist')
+        }
+      })
+    },
+    validAccount () {
+      if (!this.user.account) {
+        return
+      }
+      this.$http.get('/one/a/rest/user/supplierRegistry/validAccount?account=' + this.user.account).then(function (response) {
+        let result = response.body
+        if (result.ok) {
+          this.errors.remove('注册帐号', 'is_exist')
+        } else {
+          this.errors.add('注册帐号', '账户已经存在', 'is_exist')
         }
       })
     }
