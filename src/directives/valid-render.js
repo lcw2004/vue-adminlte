@@ -22,12 +22,14 @@ export default {
     console.log('---------------------------------')
   },
   update: function (el, binding, vnode) {
+    /* eslint-disable */
+    debugger
     console.log('---------------------------------')
     console.log(binding)
 
     let isWithIcon = binding.modifiers.i
 
-    let bindName = binding.expression
+    let bindName = binding.value
     let vm = vnode.context
     // filded 失败一次之后触发，errors 实时触发
     let isFailded = vm.fields.failed(bindName) || vm.errors.has(bindName)
@@ -118,6 +120,7 @@ function addIcon (el, iconClass) {
 */
 function appendErrorSpan (el, errorMsg) {
   // 寻找错误挂载点
+  debugger
   let formControl = getErrorMountElement(el)
   if (!formControl) {
     console.error('can not find form-control where error mount')

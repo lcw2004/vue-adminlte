@@ -8,6 +8,8 @@ Vue.use(Vuex)
 
 import initVeeValidate from '../../utils/init/initVeeValidate'
 initVeeValidate()
+import initDirectives from '../../directives'
+initDirectives()
 
 // init router start
 import AgreementInfo from './agreement/AgreementInfo'
