@@ -6,6 +6,10 @@ Vue.use(VueRouter)
 Vue.use(VueResource)
 Vue.use(Vuex)
 
+import initVeeValidate from '../../utils/init/initVeeValidate'
+initVeeValidate()
+
+// init router start
 import AgreementInfo from './agreement/AgreementInfo'
 import RegistUser from './user/RegistUser'
 import ForgetAccount from './forget-account/ForgetAccount'
@@ -20,11 +24,14 @@ let router = {
   ]
 }
 let vueRouter = new VueRouter(router)
+// init router end
 
+// init css start
 import 'admin-lte/bootstrap/css/bootstrap.css'
 import 'admin-lte/dist/css/AdminLTE.css'
 import 'admin-lte/dist/css/skins/_all-skins.min.css'
 import 'font-awesome/css/font-awesome.css'
+// init css end
 
 import Registry from './Registry.vue'
 

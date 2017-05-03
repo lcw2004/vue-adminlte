@@ -1,9 +1,9 @@
 <template>
   <form class="form-horizontal">
-    <div class="form-group has-error">
+    <div class="form-group" v-render.r="项目编号">
       <label class="control-label col-md-2">供应商全称</label>
       <div class="col-md-4">
-        <input type="text" class="form-control"  v-model="user.supplierName">
+        <input type="text" class="form-control" v-model="user.supplierName" v-validate="'required|email'" name="项目编号">
       </div>
       <div class="col-md-6">
         <p class="help-block">供应商全称必须与公司公章相符，不得含其它字符!</p>

@@ -36,7 +36,7 @@
 
   <div class="row">
     <div class="col-md-6">
-      <div class="form-group" v-render.r="项目编号">
+      <div class="form-group" >
         <label class="control-label col-md-4">项目编号</label>
         <div class="col-md-7">
           <input type="text" class="form-control" v-validate="'required|email'" name="项目编号" v-model="projectNumber">
