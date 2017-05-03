@@ -156,7 +156,9 @@ function removeErrorSpan (el) {
   let errorSpanList = parentNode.getElementsByClassName(HELP_BLOCK)
   if (errorSpanList.length >= 0) {
     for (let i = 0; i < errorSpanList.length; i++) {
-      errorSpanList[0].remove()
+      // errorSpanList[i].remove()
+      // 之前是移除错误提示，改为将错误提示的文本置空，下一次直接复用
+      errorSpanList[i].innerHTML = ''
     }
   }
 }
