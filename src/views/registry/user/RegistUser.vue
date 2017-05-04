@@ -21,25 +21,8 @@
 
         <div class="row">
           <div class="col-md-12">
-            <UserInfo v-if="stepId == 1" :user="user"/>
-            <OrgInfo v-if="stepId == 2" :user="user"/>
-          </div>
-        </div>
-      </div>
-      <div class="box-footer">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="col-md-5"></div>
-            <div class="col-md-2" v-if="stepId < maxStep">
-              <button type="button" class="btn btn-block btn-primary"  @click="nextStep">
-                下一步
-              </button>
-            </div>
-            <div class="col-md-2" v-if="stepId == maxStep">
-              <button type="button" class="btn btn-block btn-primary" @click="submit">
-                提 交
-              </button>
-            </div>
+            <UserInfo v-if="stepId == 1" @next="nextStep(arguments[0])"/>
+            <OrgInfo v-if="stepId == 2" :user-id="userId"/>
           </div>
         </div>
       </div>
@@ -65,18 +48,14 @@ export default {
     return {
       stepId: 1,
       maxStep: 2,
-
-      user: {
-        supplierName: '',
-        account: '',
-        password: '',
-        passwordConfirm: '',
-        mobile: '',
-        email: ''
-      }
+      userId: ''
     }
   },
   methods: {
+    next (userId) {
+      this.userId = userId
+      this.nextStep()
+    },
     lastStep () {
       if (this.stepId > 1) {
         this.stepId = this.stepId - 1
