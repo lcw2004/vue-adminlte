@@ -14,6 +14,8 @@ initDirectives()
 // init router start
 import AgreementInfo from './agreement/AgreementInfo'
 import RegistUser from './user/RegistUser'
+import UserInfo from './user/UserInfo'
+import OrgInfo from './user/OrgInfo'
 import ForgetAccount from './forget-account/ForgetAccount'
 import ForgetPassword from './forget-password/ForgetPassword'
 
@@ -21,6 +23,8 @@ let router = {
   routes: [
     { path: '/', component: AgreementInfo },
     { path: '/r', component: RegistUser },
+    { path: '/step1', component: UserInfo },
+    { path: '/step2/:id', component: OrgInfo },
     { path: '/forget-account', component: ForgetAccount },
     { path: '/forget-password', component: ForgetPassword }
   ]

@@ -57,7 +57,7 @@ export default {
   methods: {
     agree: function () {
       if (this.isAgree) {
-        this.$router.push('/r')
+        this.$router.push('/step1')
       }
     }
   }

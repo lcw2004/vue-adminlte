@@ -1,102 +1,126 @@
 <template>
   <div class="row">
-    <div class="col-md-12">
-      <form class="form-horizontal">
-        <div class="form-group" v-render.r="'供应商全称'">
-          <label class="control-label col-md-2">供应商全称</label>
-          <div class="col-md-4">
-            <input type="text" class="form-control" v-model.trim="user.supplierName" v-validate="'required'" name="供应商全称" maxlength="50"
-                   @blur="validSupplierName">
-          </div>
-          <div class="col-md-6">
-            <p class="help-block">供应商全称必须与公司公章相符，不得含其它字符!</p>
-            <p class="help-block" v-if="errors.has('供应商全称:is_exist')">
-              该机构已经注册过了，点此 <a href="login.html">登录系统</a>。</br>
-              如果您不记得账号，点此
-              <router-link to="/forget-account">找回账户</router-link>
-              。</br>
-              如果您不记得密码，点此
-              <router-link to="/forget-password">重置密码</router-link>
-              。
-            </p>
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <div class="box box-solid">
+        <div class="box-header">
+          <div class="text-center registry-title">
+            <h3 class="box-title">供应商注册</h3>
           </div>
         </div>
 
-        <div class="form-group" v-render.r="'注册帐号'">
-          <label class="control-label col-md-2">注册帐号</label>
-          <div class="col-md-4">
-            <input type="text" class="form-control" v-model.trim="user.account" v-validate="'required'" name="注册帐号" @blur="validAccount">
+        <div class="box-body">
+          <div class="row row-margin-bottom">
+            <div class="col-md-12">
+              <Step>
+                <StepItem index="1" name="注册账户" width="49" :is-active="1==1"/>
+                <StepItem index="2" name="完善机构信息" width="49" :is-active="1!=1"/>
+              </Step>
+            </div>
           </div>
-          <div class="col-md-6">
-            <p class="help-block">只能输入3-20个字母或者数字的组合字串且不包含空格</p>
+
+          <div class="row">
+            <div class="col-md-12">
+              <form class="form-horizontal">
+                <div class="form-group" v-render.r="'供应商全称'">
+                  <label class="control-label col-md-2">供应商全称</label>
+                  <div class="col-md-4">
+                    <input type="text" class="form-control" v-model.trim="user.supplierName" v-validate="'required'" name="供应商全称" maxlength="50"
+                           @blur="validSupplierName">
+                  </div>
+                  <div class="col-md-6">
+                    <p class="help-block">供应商全称必须与公司公章相符，不得含其它字符!</p>
+                    <p class="help-block" v-if="errors.has('供应商全称:is_exist')">
+                      该机构已经注册过了，点此 <a href="login.html">登录系统</a>。</br>
+                      如果您不记得账号，点此
+                      <router-link to="/forget-account">找回账户</router-link>
+                      。</br>
+                      如果您不记得密码，点此
+                      <router-link to="/forget-password">重置密码</router-link>
+                      。
+                    </p>
+                  </div>
+                </div>
+
+                <div class="form-group" v-render.r="'注册帐号'">
+                  <label class="control-label col-md-2">注册帐号</label>
+                  <div class="col-md-4">
+                    <input type="text" class="form-control" v-model.trim="user.account" v-validate="'required'" name="注册帐号" @blur="validAccount">
+                  </div>
+                  <div class="col-md-6">
+                    <p class="help-block">只能输入3-20个字母或者数字的组合字串且不包含空格</p>
+                  </div>
+                </div>
+
+                <div class="form-group" v-render.r="'密码'">
+                  <label class="control-label col-md-2">密码</label>
+                  <div class="col-md-4">
+                    <input type="password" class="form-control" v-model="user.password" v-validate="'required'" name="密码">
+                  </div>
+                  <div class="col-md-6">
+                    <p class="help-block">请输入6-20位字母加数字或符号!</p>
+                  </div>
+                </div>
+
+                <div class="form-group" v-render.r="'确认密码'">
+                  <label class="control-label col-md-2">确认密码</label>
+                  <div class="col-md-4">
+                    <input type="password" class="form-control" v-model="user.passwordConfirm" v-validate="'required|confirmed:密码'" name="确认密码">
+                  </div>
+                  <div class="col-md-6">
+                    <p class="help-block">请再次输入密码!</p>
+                  </div>
+                </div>
+
+                <div class="form-group" v-render.r="'联系电话'">
+                  <label class="control-label col-md-2">联系电话</label>
+                  <div class="col-md-4">
+                    <input type="text" class="form-control" v-model.trim="user.mobile" v-validate="'required'" name="联系电话" maxlength="11">
+                  </div>
+                  <div class="col-md-6">
+                    <p class="help-block"></p>
+                  </div>
+                </div>
+
+                <div class="form-group" v-render.r="'邮箱'">
+                  <label class="control-label col-md-2">邮箱</label>
+                  <div class="col-md-4">
+                    <input type="text" class="form-control" v-model.trim="user.email" v-validate="'required|email'" name="邮箱" maxlength="50">
+                  </div>
+                  <div class="col-md-6">
+                    <p class="help-block">请输入验证邮箱，您可通过该邮箱找回账号或者密码!</p>
+                  </div>
+                </div>
+
+                <div class="form-group" v-render="'验证码'">
+                  <label class="control-label col-md-2">验证码</label>
+                  <div class="col-md-2">
+                    <input type="text" class="form-control" v-model.trim="user.validCode" v-validate="'required'" name="验证码" maxlength="6">
+                  </div>
+                  <div class="col-md-2">
+                    <button type="button" class="btn btn-primary" @click="sendVerifyCode" :class="{ disabled : leftTime > 0}">
+                      发送验证码
+                      <template v-if="leftTime > 0">({{ leftTime }})</template>
+                    </button>
+                  </div>
+                  <div class="col-md-6">
+                    <p class="help-block" v-if="validCodeMessage">{{ validCodeMessage }}</p>
+                  </div>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
 
-        <div class="form-group" v-render.r="'密码'">
-          <label class="control-label col-md-2">密码</label>
-          <div class="col-md-4">
-            <input type="password" class="form-control" v-model="user.password" v-validate="'required'" name="密码">
-          </div>
-          <div class="col-md-6">
-            <p class="help-block">请输入6-20位字母加数字或符号!</p>
-          </div>
-        </div>
-
-        <div class="form-group" v-render.r="'确认密码'">
-          <label class="control-label col-md-2">确认密码</label>
-          <div class="col-md-4">
-            <input type="password" class="form-control" v-model="user.passwordConfirm" v-validate="'required|confirmed:密码'" name="确认密码">
-          </div>
-          <div class="col-md-6">
-            <p class="help-block">请再次输入密码!</p>
-          </div>
-        </div>
-
-        <div class="form-group" v-render.r="'联系电话'">
-          <label class="control-label col-md-2">联系电话</label>
-          <div class="col-md-4">
-            <input type="text" class="form-control" v-model.trim="user.mobile" v-validate="'required'" name="联系电话" maxlength="11">
-          </div>
-          <div class="col-md-6">
-            <p class="help-block"></p>
-          </div>
-        </div>
-
-        <div class="form-group" v-render.r="'邮箱'">
-          <label class="control-label col-md-2">邮箱</label>
-          <div class="col-md-4">
-            <input type="text" class="form-control" v-model.trim="user.email" v-validate="'required|email'" name="邮箱" maxlength="50">
-          </div>
-          <div class="col-md-6">
-            <p class="help-block">请输入验证邮箱，您可通过该邮箱找回账号或者密码!</p>
-          </div>
-        </div>
-
-        <div class="form-group" v-render="'验证码'">
-          <label class="control-label col-md-2">验证码</label>
-          <div class="col-md-2">
-            <input type="text" class="form-control" v-model.trim="user.validCode" v-validate="'required'" name="验证码" maxlength="6">
-          </div>
-          <div class="col-md-2">
-            <button type="button" class="btn btn-primary" @click="sendVerifyCode" :class="{ disabled : leftTime > 0}">
-              发送验证码
-              <template v-if="leftTime > 0">({{ leftTime }})</template>
-            </button>
-          </div>
-          <div class="col-md-6">
-            <p class="help-block" v-if="validCodeMessage">{{ validCodeMessage }}</p>
-          </div>
-        </div>
-      </form>
-
-      <div class="box-footer">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="col-md-5"></div>
-            <div class="col-md-2">
-              <button type="button" class="btn btn-block btn-primary" @click="registry">
-                注 册
-              </button>
+        <div class="box-footer">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="col-md-5"></div>
+              <div class="col-md-2">
+                <button type="button" class="btn btn-block btn-primary" @click="registry">
+                  注 册
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -105,8 +129,15 @@
   </div>
 </template>
 
+
 <script>
+  import Step from '../step/Step'
+  import StepItem from '../step/StepItem'
   export default {
+    components: {
+      Step,
+      StepItem
+    },
     data: function () {
       return {
         leftTime: 0,
@@ -185,8 +216,8 @@
         this.$validator.validateAll().then(() => {
           this.$http.post('/one/a/rest/user/supplierRegistry/registryUserInfo', JSON.stringify(this.user)).then(function (response) {
             let result = response.body
-            if (result.ok) {
-              this.$emit('next', result.data)
+            if (result.ok && result.data) {
+              this.$router.push('/step2/' + result.data)
             } else {
               this.handlerError(result)
             }
