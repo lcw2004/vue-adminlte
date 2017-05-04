@@ -3,7 +3,7 @@
     <div class="form-group" v-render.r="'供应商全称'">
       <label class="control-label col-md-2">供应商全称</label>
       <div class="col-md-4">
-        <input type="text" class="form-control" v-model="user.supplierName" v-validate="'required'" name="供应商全称" maxlength="50" @blur="validSupplierName">
+        <input type="text" class="form-control" v-model.trim="user.supplierName" v-validate="'required'" name="供应商全称" maxlength="50" @blur="validSupplierName">
       </div>
       <div class="col-md-6">
         <p class="help-block">供应商全称必须与公司公章相符，不得含其它字符!</p>
@@ -18,7 +18,7 @@
     <div class="form-group" v-render.r="'注册帐号'">
       <label class="control-label col-md-2">注册帐号</label>
       <div class="col-md-4">
-        <input type="text" class="form-control" v-model="user.account" v-validate="'required'" name="注册帐号" @blur="validAccount">
+        <input type="text" class="form-control" v-model.trim="user.account" v-validate="'required'" name="注册帐号" @blur="validAccount">
       </div>
       <div class="col-md-6">
         <p class="help-block">只能输入3-20个字母或者数字的组合字串且不包含空格</p>
@@ -48,7 +48,7 @@
     <div class="form-group" v-render.r="'联系电话'">
       <label class="control-label col-md-2">联系电话</label>
       <div class="col-md-4">
-        <input type="text" class="form-control" v-model="user.mobile" v-validate="'required'" name="联系电话">
+        <input type="text" class="form-control" v-model.trim="user.mobile" v-validate="'required'" name="联系电话">
       </div>
       <div class="col-md-6">
         <p class="help-block"></p>
@@ -58,7 +58,7 @@
     <div class="form-group" v-render.r="'邮箱'">
       <label class="control-label col-md-2">邮箱</label>
       <div class="col-md-4">
-        <input type="text" class="form-control" v-model="user.email" v-validate="'required|email'" name="邮箱">
+        <input type="text" class="form-control" v-model.trim="user.email" v-validate="'required|email'" name="邮箱">
       </div>
       <div class="col-md-6">
         <p class="help-block">请输入验证邮箱，您可通过该邮箱找回账号或者密码!</p>
@@ -130,7 +130,7 @@ export default {
       })
     },
     validSupplierName () {
-      if (!this.user.supplierName) {
+      if (!this.user.supplierName.trim()) {
         return
       }
       this.$http.get('/one/a/rest/user/supplierRegistry/validName?name=' + this.user.supplierName).then(function (response) {
@@ -143,13 +143,13 @@ export default {
       })
     },
     validAccount () {
-      if (!this.user.account) {
+      if (!this.user.account.trim()) {
         return
       }
       this.$http.get('/one/a/rest/user/supplierRegistry/validAccount?account=' + this.user.account).then(function (response) {
         let result = response.body
         if (result.ok) {
-          this.errors.remove('注册帐号', 'is_exist')
+          this.errors.remove('', 'is_exist')
         } else {
           this.errors.add('注册帐号', '账户已经存在', 'is_exist')
         }
