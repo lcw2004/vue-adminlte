@@ -31,6 +31,17 @@
                     <div class="row">
                       <div class="col-md-6">
                         <div class="form-group">
+                          <label class="control-label col-md-4">公司名称</label>
+                          <div class="col-md-8">
+                            <input type="text" class="form-control" v-model="supplier.name" maxlength="50" disabled>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
                           <label class="control-label col-md-4">公司曾用户名称</label>
                           <div class="col-md-8">
                             <input type="text" class="form-control" v-model="supplier.usedName" maxlength="50">
@@ -236,7 +247,92 @@
                     <h3 class="panel-title">联系人信息</h3>
                   </div>
                   <div class="panel-body">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="control-label col-md-4">姓名</label>
+                          <div class="col-md-8">
+                            <input type="text" class="form-control" v-model="supplier.principalUser.name" disabled>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="control-label col-md-4">电子邮箱</label>
+                          <div class="col-md-8">
+                            <input type="text" class="form-control" v-model="supplier.principalUser.userContactInfo.email" disabled>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
 
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="control-label col-md-4">身份证号</label>
+                          <div class="col-md-8">
+                            <input type="text" class="form-control" v-model="supplier.principalUser.identityNumber">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="control-label col-md-4">性别</label>
+                          <div class="col-md-8">
+                            <div class="controls">
+                              <div class="radio inline">
+                                <label><input type="radio" value="1" v-model="supplier.principalUser.gender">男</label>
+                              </div>
+                              <div class="radio inline">
+                                <label><input type="radio" value="2" v-model="supplier.principalUser.gender">女</label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="control-label col-md-4">所属部门</label>
+                          <div class="col-md-8">
+                            <input type="text" class="form-control">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="control-label col-md-4">职位</label>
+                          <div class="col-md-8">
+                            <input type="text" class="form-control">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="control-label col-md-4">手机号码</label>
+                          <div class="col-md-8">
+                            <input type="text" class="form-control" v-model="supplier.principalUser.userContactInfo.mobile">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="control-label col-md-4">电话号码</label>
+                          <div class="col-md-8">
+                            <input type="text" class="form-control" v-model="supplier.principalUser.userContactInfo.phone">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+
+                    </div>
                   </div>
                 </div>
 
@@ -300,50 +396,7 @@
 
 
 
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label class="control-label col-md-4">联系人身份证号</label>
-                      <div class="col-md-8">
-                        <input type="text" class="form-control" v-model="supplier.principalUserNumber">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label class="control-label col-md-4">联系人性别</label>
-                      <div class="col-md-8">
-                        <div class="controls">
-                          <div class="radio inline">
-                            <label><input type="radio" value="1" v-model="supplier.principalUserGender">男</label>
-                          </div>
-                          <div class="radio inline">
-                            <label><input type="radio" value="2" v-model="supplier.principalUserGender">女</label>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
 
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label class="control-label col-md-4">所属部门</label>
-                      <div class="col-md-8">
-                        <input type="text" class="form-control" v-model="supplier.principalUserDepartment">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label class="control-label col-md-4">职位</label>
-                      <div class="col-md-8">
-                        <input type="text" class="form-control" v-model="supplier.principalUserPosition">
-                      </div>
-                    </div>
-                  </div>
-                </div>
               </form>
             </div>
           </div>
@@ -354,7 +407,7 @@
             <div class="col-md-12">
               <div class="col-md-5"></div>
               <div class="col-md-2">
-                <button type="button" class="btn btn-block btn-primary">
+                <button type="button" class="btn btn-block btn-primary" @click="save">
                   保 存
                 </button>
               </div>
@@ -379,7 +432,7 @@
       return {
         actions: {
           get: { method: 'get', url: '/one/a/rest/user/supplierRegistry/getUserSupplierInfo?id={id}' },
-          save: { method: 'post', url: '/one/a/rest/sys/menu' }
+          save: { method: 'post', url: '/one/a/rest/user/supplierRegistry/saveUserSupplierEO' }
         },
 
         supplier: {
@@ -399,6 +452,17 @@
             var result = response.body
             if (result.ok && result.data) {
               this.supplier = result.data
+            }
+          })
+        }
+      },
+      save: function () {
+        let id = this.$route.params.id
+        if (id) {
+          this.resource.save(null, JSON.stringify(this.supplier)).then(function (response) {
+            var result = response.body
+            if (result.ok) {
+              this.$notify.success('保存成功')
             }
           })
         }
