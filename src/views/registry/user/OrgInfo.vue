@@ -22,141 +22,243 @@
           <div class="row">
             <div class="col-md-12">
               <form class="form-horizontal">
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="form-group">
-                      <label class="control-label col-md-2">供应商全称({{ userId }})</label>
-                      <div class="col-md-4">
-                        <p class="form-control-static">某某科技有限公司</p>
+
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h3 class="panel-title">公司信息</h3>
+                  </div>
+                  <div class="panel-body">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="control-label col-md-4">公司曾用户名称</label>
+                          <div class="col-md-8">
+                            <input type="text" class="form-control" v-model="supplier.usedName" maxlength="50">
+                          </div>
+                        </div>
                       </div>
                       <div class="col-md-6">
-                        <p class="help-block">供应商全称必须与公司公章相符，不得含其它字符!</p>
+                        <div class="form-group">
+                          <label class="control-label col-md-4">公司简称</label>
+                          <div class="col-md-8">
+                            <input type="text" class="form-control" v-model="supplier.shortName" maxlength="50">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-6" v-render.r="'法人姓名'">
+                        <div class="form-group">
+                          <label class="control-label required col-md-4">法人姓名</label>
+                          <div class="col-md-8">
+                            <input type="text" class="form-control" v-model="supplier.legalPersonName" v-validate="'required'" name="法人姓名" maxlength="50">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6" v-render.r="'法人身份证号码'">
+                        <div class="form-group">
+                          <label class="control-label required col-md-4">法人身份证号码</label>
+                          <div class="col-md-8">
+                            <input type="text" class="form-control" v-model="supplier.legalPersonName" v-validate="'required'" name="法人姓名" maxlength="20">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="control-label col-md-4">开户银行</label>
+                          <div class="col-md-8">
+                            <input type="text" class="form-control" v-model="supplier.bankName" >
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="control-label col-md-4">银行账户</label>
+                          <div class="col-md-8">
+                            <input type="text" class="form-control" v-model="supplier.bankAccount">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="control-label col-md-4">所属地区</label>
+                          <div class="col-md-8">
+                            <input type="text" class="form-control">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="control-label col-md-4">供货区域</label>
+                          <div class="col-md-8">
+                            <input type="text" class="form-control" v-model="supplier.supplyArea">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="control-label col-md-4">通讯地址</label>
+                          <div class="col-md-8">
+                            <input type="text" class="form-control" v-model="supplier.officeAddress">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="control-label col-md-4">邮政编码</label>
+                          <div class="col-md-8">
+                            <input type="text" class="form-control" v-model="supplier.zipCode">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="control-label required col-md-4">联系电话</label>
+                          <div class="col-md-8">
+                            <input type="text" class="form-control" v-model="supplier.telephone">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="control-label col-md-4">公司邮箱</label>
+                          <div class="col-md-8">
+                            <input type="text" class="form-control" v-model="supplier.email">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="control-label col-md-4">单位类型</label>
+                          <div class="col-md-8">
+                            <input type="text" class="form-control" v-model="supplier.officeType">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="control-label col-md-4">单位性质</label>
+                          <div class="col-md-8">
+                            <input type="text" class="form-control" v-model="supplier.officeNature">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="control-label col-md-4">所属行业</label>
+                          <div class="col-md-8">
+                            <input type="text" class="form-control" v-model="supplier.businessType">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="control-label col-md-4">注册类型</label>
+                          <div class="col-md-8">
+                            <input type="text" class="form-control" v-model="supplier.registerType">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="control-label col-md-4">注册资金</label>
+                          <div class="col-md-8">
+                            <input type="text" class="form-control" v-model="supplier.registerCapital">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="control-label col-md-4">从业人数</label>
+                          <div class="col-md-8">
+                            <input type="text" class="form-control" v-model="supplier.emploeeCount">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="control-label col-md-4">企业规模</label>
+                          <div class="col-md-8">
+                            <input type="text" class="form-control" v-model="supplier.enterpriseScale">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="control-label col-md-4">主营业务</label>
+                          <div class="col-md-8">
+                            <input type="text" class="form-control" v-model="supplier.mainBusiness">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="control-label col-md-4">业绩简介</label>
+                          <div class="col-md-8">
+                            <input type="text" class="form-control" v-model="supplier.businessProfile">
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label class="control-label col-md-4">公司曾用户名称</label>
-                      <div class="col-md-8">
-                        <input type="text" class="form-control">
-                      </div>
-                    </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h3 class="panel-title">联系人信息</h3>
                   </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label class="control-label col-md-4">公司简称</label>
-                      <div class="col-md-8">
-                        <input type="text" class="form-control">
-                      </div>
-                    </div>
+                  <div class="panel-body">
+
                   </div>
                 </div>
 
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label class="control-label required col-md-4">法人姓名</label>
-                      <div class="col-md-8">
-                        <input type="text" class="form-control">
-                      </div>
-                    </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h3 class="panel-title">投标类别</h3>
                   </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label class="control-label required col-md-4">法人身份证号码</label>
-                      <div class="col-md-8">
-                        <input type="text" class="form-control">
-                      </div>
-                    </div>
+                  <div class="panel-body">
+
                   </div>
                 </div>
 
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label class="control-label col-md-4">开户银行</label>
-                      <div class="col-md-8">
-                        <input type="text" class="form-control">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label class="control-label col-md-4">银行账户</label>
-                      <div class="col-md-8">
-                        <input type="text" class="form-control">
-                      </div>
-                    </div>
-                  </div>
-                </div>
 
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label class="control-label col-md-4">所属地区</label>
-                      <div class="col-md-8">
-                        <input type="text" class="form-control">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label class="control-label col-md-4">供货区域</label>
-                      <div class="col-md-8">
-                        <input type="text" class="form-control">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label class="control-label col-md-4">通讯地址</label>
-                      <div class="col-md-8">
-                        <input type="text" class="form-control">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label class="control-label col-md-4">邮政编码</label>
-                      <div class="col-md-8">
-                        <input type="text" class="form-control">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label class="control-label required col-md-4">联系电话</label>
-                      <div class="col-md-8">
-                        <input type="text" class="form-control">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label class="control-label col-md-4">公司邮箱</label>
-                      <div class="col-md-8">
-                        <input type="text" class="form-control">
-                      </div>
-                    </div>
-                  </div>
-                </div>
 
                 <div class="form-group">
                   <label class="control-label required col-md-2">统一社会信用代码</label>
                   <div class="col-md-4">
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" v-model="supplier.officeCode">
                   </div>
                 </div>
 
+                <!--
                 <div class="form-group">
                   <label class="control-label col-md-2">三证合一</label>
                   <div class="col-md-4">
@@ -194,21 +296,31 @@
                     <input type="text" class="form-control">
                   </div>
                 </div>
+                -->
+
+
 
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label class="control-label col-md-4">单位类型</label>
+                      <label class="control-label col-md-4">联系人身份证号</label>
                       <div class="col-md-8">
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" v-model="supplier.principalUserNumber">
                       </div>
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label class="control-label col-md-4">单位性质</label>
+                      <label class="control-label col-md-4">联系人性别</label>
                       <div class="col-md-8">
-                        <input type="text" class="form-control">
+                        <div class="controls">
+                          <div class="radio inline">
+                            <label><input type="radio" value="1" v-model="supplier.principalUserGender">男</label>
+                          </div>
+                          <div class="radio inline">
+                            <label><input type="radio" value="2" v-model="supplier.principalUserGender">女</label>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -217,116 +329,9 @@
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label class="control-label col-md-4">所属行业</label>
+                      <label class="control-label col-md-4">所属部门</label>
                       <div class="col-md-8">
-                        <input type="text" class="form-control">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label class="control-label col-md-4">注册类型</label>
-                      <div class="col-md-8">
-                        <input type="text" class="form-control">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label class="control-label col-md-4">注册资金</label>
-                      <div class="col-md-8">
-                        <input type="text" class="form-control">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label class="control-label col-md-4">从业人数</label>
-                      <div class="col-md-8">
-                        <input type="text" class="form-control">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label class="control-label col-md-4">企业规模</label>
-                      <div class="col-md-8">
-                        <input type="text" class="form-control">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label class="control-label col-md-4">主营业务</label>
-                      <div class="col-md-8">
-                        <input type="text" class="form-control">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label class="control-label col-md-4">业绩简介</label>
-                      <div class="col-md-8">
-                        <input type="text" class="form-control">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label class="control-label col-md-4">业务联系人</label>
-                      <div class="col-md-8">
-                        <input type="text" class="form-control">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label class="control-label col-md-4">性别</label>
-                      <div class="col-md-8">
-                        <input type="text" class="form-control">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label class="control-label col-md-4">业务联系人</label>
-                      <div class="col-md-8">
-                        <input type="text" class="form-control">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label class="control-label col-md-4">身份证号</label>
-                      <div class="col-md-8">
-                        <input type="text" class="form-control">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label class="control-label col-md-4">部门</label>
-                      <div class="col-md-8">
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" v-model="supplier.principalUserDepartment">
                       </div>
                     </div>
                   </div>
@@ -334,63 +339,11 @@
                     <div class="form-group">
                       <label class="control-label col-md-4">职位</label>
                       <div class="col-md-8">
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" v-model="supplier.principalUserPosition">
                       </div>
                     </div>
                   </div>
                 </div>
-
-
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label class="control-label col-md-4">性别</label>
-                      <div class="col-md-8">
-                        <input type="text" class="form-control">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label class="control-label col-md-4">手机</label>
-                      <div class="col-md-8">
-                        <input type="text" class="form-control">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label class="control-label col-md-4">电话</label>
-                      <div class="col-md-8">
-                        <input type="text" class="form-control">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label class="control-label col-md-4">部门</label>
-                      <div class="col-md-8">
-                        <input type="text" class="form-control">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label class="control-label col-md-4">电子邮件</label>
-                      <div class="col-md-8">
-                        <input type="text" class="form-control">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-
               </form>
             </div>
           </div>
@@ -423,8 +376,33 @@
       StepItem
     },
     data: function () {
-      return {}
+      return {
+        actions: {
+          get: { method: 'get', url: '/one/a/rest/user/supplierRegistry/getUserSupplierInfo?id={id}' },
+          save: { method: 'post', url: '/one/a/rest/sys/menu' }
+        },
+
+        supplier: {
+
+        }
+      }
     },
-    methods: {}
+    mounted: function () {
+      this.resource = this.$resource(null, {}, this.actions)
+      this.load()
+    },
+    methods: {
+      load: function () {
+        let id = this.$route.params.id
+        if (id) {
+          this.resource.get({id: id}).then(function (response) {
+            var result = response.body
+            if (result.ok && result.data) {
+              this.supplier = result.data
+            }
+          })
+        }
+      }
+    }
   }
 </script>

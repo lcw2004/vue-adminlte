@@ -72,10 +72,30 @@
                   </div>
                 </div>
 
-                <div class="form-group" v-render.r="'联系电话'">
-                  <label class="control-label col-md-2">联系电话</label>
+                <div class="form-group" v-render.r="'联系人姓名'">
+                  <label class="control-label col-md-2">联系人姓名</label>
                   <div class="col-md-4">
-                    <input type="text" class="form-control" v-model.trim="user.mobile" v-validate="'required'" name="联系电话" maxlength="11">
+                    <input type="text" class="form-control" v-model.trim="user.userName" v-validate="'required'" name="联系人姓名" maxlength="20">
+                  </div>
+                  <div class="col-md-6">
+                    <p class="help-block"></p>
+                  </div>
+                </div>
+
+                <div class="form-group" v-render.r="'手机号码'">
+                  <label class="control-label col-md-2">手机号码</label>
+                  <div class="col-md-4">
+                    <input type="text" class="form-control" v-model.trim="user.mobile" v-validate="'required'" name="手机号码" maxlength="11">
+                  </div>
+                  <div class="col-md-6">
+                    <p class="help-block"></p>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="control-label col-md-2">电话</label>
+                  <div class="col-md-4">
+                    <input type="text" class="form-control" v-model.trim="user.phone" maxlength="12">
                   </div>
                   <div class="col-md-6">
                     <p class="help-block"></p>
@@ -149,7 +169,9 @@
           account: '',
           password: '',
           passwordConfirm: '',
+          userName: '',
           mobile: '',
+          phone: '',
           email: '',
           validCode: ''
         }
