@@ -4,7 +4,7 @@
     <div class="col-md-12">
       <div class="box">
         <div class="box-header">
-          <SupplierQueryCondition></SupplierQueryCondition>
+          <SupplierQueryCondition v-model="param"></SupplierQueryCondition>
         </div>
 
         <div class="box-body">
@@ -91,8 +91,6 @@ export default {
         start: { method: 'put', url: '/one/a/rest/user/supplier{/id}/start' }
       },
       param: {
-        type: '',
-        description: ''
       },
       dictTypeList: []
     }

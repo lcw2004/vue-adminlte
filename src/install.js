@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import VueRouter from 'vue-router'
+import ElementUI from 'element-ui'
 
 // 引入资源css资源文件
 import 'admin-lte/bootstrap/css/bootstrap.css'
@@ -22,6 +23,7 @@ import initVueResource from './utils/init/initVueResource.js'
 function install () {
   Vue.use(Vuex)
   Vue.use(VueRouter)
+  Vue.use(ElementUI)
 
   // VeeValidate locale
   initVeeValidate()
