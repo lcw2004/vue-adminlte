@@ -37,6 +37,15 @@
                           </div>
                         </div>
                       </div>
+                      <div class="col-md-6" v-render.r="'统一社会信用代码'">
+                        <div class="form-group">
+                          <label class="control-label col-md-4">统一社会信用代码</label>
+                          <div class="col-md-8">
+                            <input type="text" class="form-control" v-model="supplier.officeCode" v-validate="'required'" name="统一社会信用代码">
+                            <p class="help-block"></p>
+                          </div>
+                        </div>
+                      </div>
                     </div>
 
                     <div class="row">
@@ -61,17 +70,19 @@
                     <div class="row">
                       <div class="col-md-6" v-render.r="'法人姓名'">
                         <div class="form-group">
-                          <label class="control-label required col-md-4">法人姓名</label>
+                          <label class="control-label col-md-4">法人姓名</label>
                           <div class="col-md-8">
                             <input type="text" class="form-control" v-model="supplier.legalPersonName" v-validate="'required'" name="法人姓名" maxlength="50">
+                            <p class="help-block"></p>
                           </div>
                         </div>
                       </div>
-                      <div class="col-md-6" v-render.r="'法人身份证号码'">
+                      <div class="col-md-6" v-render.r="'法人身份证'">
                         <div class="form-group">
-                          <label class="control-label required col-md-4">法人身份证号码</label>
+                          <label class="control-label col-md-4">法人身份证</label>
                           <div class="col-md-8">
-                            <input type="text" class="form-control" v-model="supplier.legalPersonName" v-validate="'required'" name="法人姓名" maxlength="20">
+                            <input type="text" class="form-control" v-model="supplier.legalPersonNumber" v-validate="'required'" name="法人身份证" maxlength="20">
+                            <p class="help-block"></p>
                           </div>
                         </div>
                       </div>
@@ -137,7 +148,7 @@
                     <div class="row">
                       <div class="col-md-6">
                         <div class="form-group">
-                          <label class="control-label required col-md-4">联系电话</label>
+                          <label class="control-label col-md-4">公司电话</label>
                           <div class="col-md-8">
                             <input type="text" class="form-control" v-model="supplier.telephone">
                           </div>
@@ -279,13 +290,9 @@
                         <div class="form-group">
                           <label class="control-label col-md-4">性别</label>
                           <div class="col-md-8">
-                            <div class="controls">
-                              <div class="radio inline">
-                                <label><input type="radio" value="1" v-model="supplier.principalUser.gender">男</label>
-                              </div>
-                              <div class="radio inline">
-                                <label><input type="radio" value="2" v-model="supplier.principalUser.gender">女</label>
-                              </div>
+                            <div>
+                              <label class="radio-inline"><input type="radio" value="1" v-model="supplier.principalUser.gender"> 男</label>
+                              <label class="radio-inline"><input type="radio" value="2" v-model="supplier.principalUser.gender"> 女</label>
                             </div>
                           </div>
                         </div>
@@ -347,12 +354,7 @@
 
 
 
-                <div class="form-group">
-                  <label class="control-label required col-md-2">统一社会信用代码</label>
-                  <div class="col-md-4">
-                    <input type="text" class="form-control" v-model="supplier.officeCode">
-                  </div>
-                </div>
+
 
                 <!--
                 <div class="form-group">
@@ -457,15 +459,18 @@
         }
       },
       save: function () {
-        let id = this.$route.params.id
-        if (id) {
-          this.resource.save(null, JSON.stringify(this.supplier)).then(function (response) {
-            var result = response.body
-            if (result.ok) {
-              this.$notify.success('保存成功')
-            }
-          })
-        }
+        this.$validator.validateAll().then(() => {
+          let id = this.$route.params.id
+          if (id) {
+            this.resource.save(null, JSON.stringify(this.supplier)).then(function (response) {
+              var result = response.body
+              if (result.ok) {
+                this.$notify.success('保存成功')
+              }
+            })
+          }
+        }).catch(() => {
+        })
       }
     }
   }

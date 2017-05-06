@@ -29,15 +29,15 @@ export default {
 
     let bindName = binding.value
     let vm = vnode.context
-    // filded 失败一次之后触发，errors 实时触发
-    let isFailded = vm.fields.failed(bindName) || vm.errors.has(bindName)
+    // failed 失败一次之后触发，errors 实时触发
+    let isFailed = vm.fields.failed(bindName) || vm.errors.has(bindName)
     let isPassed = vm.fields.passed(bindName)
 
     console.log(vm.errors)
-    if (isFailded) {
+    if (isFailed) {
       let errorMsg = vm.errors.first(bindName)
       handlerError(el, isWithIcon, errorMsg)
-      console.log('valid filded')
+      console.log('valid failed')
       console.log(errorMsg)
     } else if (isPassed) {
       console.log('valid pass')

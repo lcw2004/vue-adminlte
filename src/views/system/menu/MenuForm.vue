@@ -38,8 +38,10 @@
         <div class="form-group">
           <label class="col-sm-2 control-label">图标</label>
           <div class="col-sm-4">
-            <button class="btn btn-info" type="button" @click="iconModalConfig.show = true">选择</button>
-            <i v-if="obj.icon" :class="obj.icon" style="font-size: 25px"></i>
+            <p class="form-control-static">
+              <i v-if="obj.icon" :class="obj.icon" style="font-size: 25px"></i>
+              <button class="btn btn-info btn-sm" type="button" @click="iconModalConfig.show = true">选择</button>
+            </p>
           </div>
         </div>
         <div class="form-group">
