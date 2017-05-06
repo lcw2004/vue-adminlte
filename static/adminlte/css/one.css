@@ -42,3 +42,13 @@ ul, li {
 .icon-danger {
   color: #dd4b39
 }
+
+.query {
+}
+.query input {
+  height: 30px;
+  font-size: 12px;
+}
+.query .col-md-4 {
+  margin-bottom: 10px
+}

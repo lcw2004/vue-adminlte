@@ -4,16 +4,7 @@
     <div class="col-md-12">
       <div class="box">
         <div class="box-header">
-          <form class="form-inline">
-            <div class="row">
-              <div class="col-md-12">
-                <div class="col-md-3">
-                  <input type="text" placeholder="公司名/简称/曾用名称" class="form-control inline-block">
-                </div>
-              </div>
-            </div>
-            <SupplierQueryCondition></SupplierQueryCondition>
-          </form>
+          <SupplierQueryCondition></SupplierQueryCondition>
         </div>
 
         <div class="box-body">

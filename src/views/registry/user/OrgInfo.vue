@@ -410,7 +410,7 @@
               <div class="col-md-5"></div>
               <div class="col-md-2">
                 <button type="button" class="btn btn-block btn-primary" @click="save">
-                  保 存
+                  提 交
                 </button>
               </div>
             </div>
@@ -465,7 +465,8 @@
             this.resource.save(null, JSON.stringify(this.supplier)).then(function (response) {
               var result = response.body
               if (result.ok) {
-                this.$notify.success('保存成功')
+                /* eslint-disable */
+                alert('保存成功')
               }
             })
           }
