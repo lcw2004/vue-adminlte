@@ -33,7 +33,7 @@ let vueRouter = new VueRouter(router)
 // init router end
 
 // init css start
-import 'admin-lte/bootstrap/css/bootstrap.css'
+// import 'admin-lte/bootstrap/css/bootstrap.css'
 import 'admin-lte/dist/css/AdminLTE.css'
 import 'admin-lte/dist/css/skins/_all-skins.min.css'
 import 'font-awesome/css/font-awesome.css'

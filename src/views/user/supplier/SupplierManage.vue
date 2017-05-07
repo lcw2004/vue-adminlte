@@ -27,7 +27,50 @@
                   <router-link :to='"/user/supplier/" + obj.supplierId + "/view"'>{{ obj.name }}</router-link>
                 </td>
                 <td><span v-text="obj.createTime"></span></td>
-                <td><span v-text="obj.principalUser.name"></span></td>
+                <td>
+                  {{ obj.principalUser.name }}
+                  <PopoverContainer>
+                     <div>
+                       <p>Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+                     </div>
+                  </PopoverContainer>
+                  <!--
+                  <div style="position: relative">
+
+                    <div class="popover bottom">
+                      <div class="arrow"></div>
+                      <h3 class="popover-title">Popover 顶部</h3>
+
+                      <div class="popover-content">
+                        <p>Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+                      </div>
+                    </div>
+                  </div>
+                   -->
+                  <!--
+                  <div style="position: relative">
+                    <img src="../../../assets/image/buysell_arr.png" class="parameter_time_img">
+                    <i class="fa fa-fw fa-angle-up"></i>
+                    <div class="one-tip">
+                      <div class="box box-solid">
+                        <div class="box-header with-border">
+                          <i class="fa fa-text-width"></i>
+                          <h3 class="box-title">Text Emphasis</h3>
+                        </div>
+                        <div class="box-body">
+                          <p class="lead">Lead to emphasize importance</p>
+                          <p class="text-green">Text green to emphasize success</p>
+                          <p class="text-aqua">Text aqua to emphasize info</p>
+                          <p class="text-light-blue">Text light blue to emphasize info (2)</p>
+                          <p class="text-red">Text red to emphasize danger</p>
+                          <p class="text-yellow">Text yellow to emphasize warning</p>
+                          <p class="text-muted">Text muted to emphasize general</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                   -->
+                </td>
                 <td><span v-text="obj.principalUser.userContactInfo.phone"></span></td>
                 <td>
                   <span v-if="obj.status == -1">{{ obj.statusCn }}</span>
@@ -137,3 +180,16 @@ export default {
   }
 }
 </script>
+
+<style>
+.one-tip {
+  position: absolute;
+  z-index: 100;
+  width: 400px;
+  border: 1px solid #e6e6e6;
+  border-radius: 4px;
+  box-shadow: 1px 0 6px rgba(0,0,0,.1);
+  right: -200px;
+  top: 9px;
+}
+</style>

@@ -59,8 +59,8 @@
         <label class="control-label col-md-4">注册时间</label>
         <div class="col-md-8">
           <div style="width: 100%">
-            <TimeRangePicker :from="param.registTimeFrom" :to="param.registTimeTo"
-              @from="param.registTimeFrom = arguments[0]" @to="param.registTimeTo = arguments[0]"/>
+            <TimeRangePicker :from="param.registryTimeFrom" :to="param.registryTimeTo"
+              @from="param.registryTimeFrom = arguments[0]" @to="param.registryTimeTo = arguments[0]"/>
           </div>
         </div>
       </div>
@@ -97,8 +97,8 @@ export default {
         principalUserLikeName: '',
         officeCode: '',
         supplierStatus: '',
-        registTimeFrom: '',
-        registTimeTo: '',
+        registryTimeFrom: '',
+        registryTimeTo: '',
         officeAddress: '',
         supplyArea: ''
       }

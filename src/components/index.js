@@ -8,6 +8,7 @@ import DictRadio from './dict/DictRadio'
 import VerifyCodeImg from './base/VerifyCodeImg'
 import Checkbox from './base/Checkbox'
 import FixedContainer from './container/FixedContainer'
+import PopoverContainer from './container/PopoverContainer'
 
 // 分页
 import Pagination from './pagination/Pagination'
@@ -58,6 +59,7 @@ function initGlobalComponents () {
   Vue.component(VerifyCodeImg.name, VerifyCodeImg)
   Vue.component(Checkbox.name, Checkbox)
   Vue.component(FixedContainer.name, FixedContainer)
+  Vue.component(PopoverContainer.name, PopoverContainer)
 
   // pagination
   Vue.component(Pagination.name, Pagination)
