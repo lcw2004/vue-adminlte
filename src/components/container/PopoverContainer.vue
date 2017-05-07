@@ -1,22 +1,25 @@
 <template>
-  <span style="position: relative" >
-    <i :class="iconClass" @click="isShow = !isShow"></i>
-    <transition name="fade">
-      <div class="popover bottom" :style="popoverStyle" v-if="isShow">
-        <div class="arrow"></div>
-        <h3 class="popover-title">Popover 顶部</h3>
-        <div class="popover-content">
-          <slot></slot>
-        </div>
+<span style="position: relative">
+  <i :class="iconClass" @click="isShow = !isShow"></i>
+  <transition name="fade">
+    <div class="popover bottom" :style="popoverStyle" v-if="isShow">
+      <div class="arrow"></div>
+      <h3 class="popover-title">{{ title }}</h3>
+      <div class="popover-content">
+        <slot></slot>
       </div>
-    </transition>
-  </span>
+    </div>
+  </transition>
+</span>
 </template>
 
 <script>
 export default {
   name: 'PopoverContainer',
   props: {
+    title: {
+      type: String
+    },
     width: {
       type: Number,
       default: 500
@@ -56,11 +59,5 @@ i {
 }
 i:hover {
   font-weight: bold;
-}
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .5s
-}
-.fade-enter, .fade-leave-to {
-  opacity: 0
 }
 </style>
