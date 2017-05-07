@@ -1,41 +1,77 @@
+<!--
+
+使用示例：<TimeRangePicker :from="param.registTimeFrom" :to="param.registTimeTo"
+          @from="param.registTimeFrom = arguments[0]" @to="param.registTimeTo = arguments[0]"/>
+
+ -->
+
 <template>
-  <div id="reportrange" class="input-group">
-    <input type="text" class="form-control" :id="id">
-    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-  </div>
+  <el-date-picker v-model="timeRange" type="daterange" align="right" placeholder="选择日期范围" :picker-options="pickerOptions">
+  </el-date-picker>
 </template>
 
 <script>
-import 'bootstrap-daterangepicker'
 import moment from 'moment'
-let $ = require('jquery')
 
 export default {
   name: 'TimeRangePicker',
+  props: ['from', 'to'],
   data: function () {
     return {
-      id: new Date().getTime()
+      time: '',
+      pickerOptions: {
+        shortcuts: [{
+          text: '最近一周',
+          onClick (picker) {
+            const end = new Date()
+            const start = new Date()
+            start.setTime(start.getTime() - 3600 * 1000 * 24 * 7)
+            picker.$emit('pick', [start, end])
+          }
+        }, {
+          text: '最近一个月',
+          onClick (picker) {
+            const end = new Date()
+            const start = new Date()
+            start.setTime(start.getTime() - 3600 * 1000 * 24 * 30)
+            picker.$emit('pick', [start, end])
+          }
+        }, {
+          text: '最近三个月',
+          onClick (picker) {
+            const end = new Date()
+            const start = new Date()
+            start.setTime(start.getTime() - 3600 * 1000 * 24 * 90)
+            picker.$emit('pick', [start, end])
+          }
+        }]
+      }
     }
   },
-  mounted: function () {
-    this.picker = $('#' + this.id)
-
-    var start = moment().subtract(29, 'days')
-    var end = moment()
-
-    this.picker.daterangepicker({
-      startDate: start,
-      endDate: end,
-      ranges: {
-        '今天': [moment(), moment()],
-        '昨天': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-        '一周前': [moment().subtract(6, 'days'), moment()],
-        '这个月': [moment().startOf('month'), moment().endOf('month')],
-        '上个月': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+  computed: {
+    timeRange: {
+      get: function () {
+        let timeRange = []
+        if (this.from && this.to) {
+          timeRange.push(moment(this.from).toDate())
+          timeRange.push(moment(this.to).toDate())
+        } else {
+          timeRange = ''
+        }
+        return timeRange
+      },
+      set: function (newValue) {
+        if (newValue && newValue.length === 2 && newValue[0] && newValue[1]) {
+          let from = moment(newValue[0]).format('YYYY-MM-DD')
+          let to = moment(newValue[1]).format('YYYY-MM-DD')
+          this.$emit('from', from)
+          this.$emit('to', to)
+        } else {
+          this.$emit('from', '')
+          this.$emit('to', '')
+        }
       }
-    })
-
-    console.log(moment().format())
+    }
   }
 }
 </script>

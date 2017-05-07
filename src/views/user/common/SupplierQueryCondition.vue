@@ -58,8 +58,10 @@
       <div class="col-md-4">
         <label class="control-label col-md-4">注册时间</label>
         <div class="col-md-8">
-          <el-date-picker v-model="param.registTime" type="daterange" align="right" placeholder="选择日期范围" :picker-options="pickerOptions2">
-          </el-date-picker>
+          <div style="width: 100%">
+            <TimeRangePicker :from="param.registTimeFrom" :to="param.registTimeTo"
+              @from="param.registTimeFrom = arguments[0]" @to="param.registTimeTo = arguments[0]"/>
+          </div>
         </div>
       </div>
 
@@ -95,37 +97,10 @@ export default {
         principalUserLikeName: '',
         officeCode: '',
         supplierStatus: '',
-        registTime: '',
+        registTimeFrom: '',
+        registTimeTo: '',
         officeAddress: '',
         supplyArea: ''
-      },
-
-      pickerOptions2: {
-        shortcuts: [{
-          text: '最近一周',
-          onClick (picker) {
-            const end = new Date()
-            const start = new Date()
-            start.setTime(start.getTime() - 3600 * 1000 * 24 * 7)
-            picker.$emit('pick', [start, end])
-          }
-        }, {
-          text: '最近一个月',
-          onClick (picker) {
-            const end = new Date()
-            const start = new Date()
-            start.setTime(start.getTime() - 3600 * 1000 * 24 * 30)
-            picker.$emit('pick', [start, end])
-          }
-        }, {
-          text: '最近三个月',
-          onClick (picker) {
-            const end = new Date()
-            const start = new Date()
-            start.setTime(start.getTime() - 3600 * 1000 * 24 * 90)
-            picker.$emit('pick', [start, end])
-          }
-        }]
       }
     }
   },
