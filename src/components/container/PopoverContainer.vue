@@ -1,7 +1,6 @@
 <template>
 <span style="position: relative">
   <i :class="iconClass" @click="isShow = !isShow"></i>
-  <!-- <transition name="rotate"> -->
   <OneTransition>
     <div class="popover bottom" :style="popoverStyle" v-if="isShow">
       <div class="arrow"></div>
@@ -11,7 +10,6 @@
       </div>
     </div>
   </OneTransition>
-  <!-- </transition> -->
 </span>
 </template>
 

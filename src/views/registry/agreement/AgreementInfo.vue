@@ -30,9 +30,9 @@
             </button>
           </div>
           <div class="col-md-2">
-            <button type="button" class="btn btn-block btn-default">
+            <a class="btn btn-block btn-default" href="login.html">
               取消注册
-            </button>
+            </a>
           </div>
         </div>
       </div>
@@ -57,16 +57,9 @@ export default {
   methods: {
     agree: function () {
       if (this.isAgree) {
-        this.$router.push('/step1')
+        this.$router.push('/registry')
       }
     }
   }
 }
 </script>
-
-<style>
-.margin20 {
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-</style>

@@ -49,13 +49,13 @@
                 <div class="form-group">
                   <label class="col-md-3 control-label">开户银行名称</label>
                   <div class="col-md-9">
-                    <p class="form-control-static">建设银行</p>
+                    <p class="form-control-static">{{ obj.bankName }}</p>
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="col-md-3 control-label">开户银行账号</label>
                   <div class="col-md-9">
-                    <p class="form-control-static">yyyyyyyyyyyyyyyyyy</p>
+                    <p class="form-control-static">{{ obj.bankAccount }}</p>
                   </div>
                 </div>
               </div>
@@ -64,25 +64,25 @@
                 <div class="form-group">
                   <label class="col-md-3 control-label">所属地区</label>
                   <div class="col-md-9">
-                    <p class="form-control-static">河南省</p>
+                    <p class="form-control-static">{{ obj.areaId }}</p>
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="col-md-3 control-label">单位地址</label>
                   <div class="col-md-9">
-                    <p class="form-control-static">河南省起重工业园区.巨人大道6号</p>
+                    <p class="form-control-static">{{ obj.officeAddress }}</p>
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="col-md-3 control-label">邮编</label>
                   <div class="col-md-9">
-                    <p class="form-control-static">453400</p>
+                    <p class="form-control-static">{{ obj.zipCode }}</p>
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="col-md-3 control-label">供货区域</label>
                   <div class="col-md-9">
-                    <p class="form-control-static">河南省周边</p>
+                    <p class="form-control-static">{{ obj.supplyArea }}</p>
                   </div>
                 </div>
               </div>

@@ -5,20 +5,11 @@
       <div class="box box-solid">
         <div class="box-header">
           <div class="text-center registry-title">
-            <h3 class="box-title">供应商注册</h3>
+            <h1 class="box-title">供应商注册</h1>
           </div>
         </div>
 
         <div class="box-body">
-          <div class="row row-margin-bottom">
-            <div class="col-md-12">
-              <Step>
-                <StepItem index="1" name="注册账户" width="49" :is-active="1==1"/>
-                <StepItem index="2" name="完善机构信息" width="49" :is-active="1!=1"/>
-              </Step>
-            </div>
-          </div>
-
           <div class="row">
             <div class="col-md-12">
               <form class="form-horizontal">
@@ -32,20 +23,16 @@
                     <p class="help-block">供应商全称必须与公司公章相符，不得含其它字符!</p>
                     <p class="help-block" v-if="errors.has('供应商全称:is_exist')">
                       该机构已经注册过了，点此 <a href="login.html">登录系统</a>。</br>
-                      如果您不记得账号，点此
-                      <router-link to="/forget-account">找回账户</router-link>
-                      。</br>
-                      如果您不记得密码，点此
-                      <router-link to="/forget-password">重置密码</router-link>
-                      。
+                      如果您不记得账号，点此<router-link to="/forget-account">找回账户</router-link>。</br>
+                      如果您不记得密码，点此<router-link to="/forget-password">重置密码</router-link>。
                     </p>
                   </div>
                 </div>
 
-                <div class="form-group" v-render.r="'注册帐号'">
-                  <label class="control-label col-md-2">注册帐号</label>
+                <div class="form-group" v-render.r="'登录帐号'">
+                  <label class="control-label col-md-2">登录帐号</label>
                   <div class="col-md-4">
-                    <input type="text" class="form-control" v-model.trim="user.account" v-validate="'required'" name="注册帐号" @blur="validAccount">
+                    <input type="text" class="form-control" v-model.trim="user.account" v-validate="'required'" name="登录帐号" @blur="validAccount">
                   </div>
                   <div class="col-md-6">
                     <p class="help-block">只能输入3-20个字母或者数字的组合字串且不包含空格</p>
@@ -259,15 +246,3 @@
     }
   }
 </script>
-
-<style>
-  .required:before {
-    font-family: 'Times New Roman';
-    font-size: 14px;
-    content: "* ";
-    color: #dd4b39;
-    position: relative;
-    top: 3px;
-    right: 3px;
-  }
-</style>
