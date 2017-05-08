@@ -13,7 +13,8 @@ initDirectives()
 
 // init router start
 import AgreementInfo from './agreement/AgreementInfo'
-import UserInfo from './user/UserInfo'
+import RegistryUser from './user/RegistryUser'
+import RegistrySuccess from './user/RegistrySuccess'
 import OrgInfo from './user/OrgInfo'
 import ForgetAccount from './forget-account/ForgetAccount'
 import ForgetPassword from './forget-password/ForgetPassword'
@@ -21,7 +22,8 @@ import ForgetPassword from './forget-password/ForgetPassword'
 let router = {
   routes: [
     { path: '/', component: AgreementInfo },
-    { path: '/registry', component: UserInfo },
+    { path: '/registry', component: RegistryUser },
+    { path: '/registry/success', component: RegistrySuccess },
     { path: '/step2/:id', component: OrgInfo },
     { path: '/forget-account', component: ForgetAccount },
     { path: '/forget-password', component: ForgetPassword }
