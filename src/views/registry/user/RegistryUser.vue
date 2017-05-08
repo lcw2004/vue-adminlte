@@ -226,7 +226,7 @@
           this.$http.post('/one/a/rest/user/supplierRegistry/registryUserInfo', JSON.stringify(this.user)).then(function (response) {
             let result = response.body
             if (result.ok && result.data) {
-              this.$router.push('/step2/' + result.data)
+              this.$router.push('/registry/success')
             } else {
               this.handlerError(result)
             }
