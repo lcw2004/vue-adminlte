@@ -1,22 +1,26 @@
 <template>
-<div class="modal" v-show="isShow" style="display: block" :class="modalStyle">
-  <div class="modal-dialog" :class="modelSize">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close" @click="close()">
-          <span aria-hidden="true">×</span>
-        </button>
-        <h4 class="modal-title">{{ title }}</h4>
-      </div>
-      <div class="modal-body">
-        {{ message }}
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn" :class="cancelBtnStyle" data-dismiss="modal" @click="cancel()">{{ cancelBtnText }}</button>
-        <button type="button" class="btn" :class="okBtnStyle" @click="ok()">{{ okBtnText }}</button>
+<div>
+  <OneTransition>
+    <div class="modal" v-if="isShow" style="display: block" :class="modalStyle">
+      <div class="modal-dialog" :class="modelSize">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" @click="close()">
+              <span aria-hidden="true">×</span>
+            </button>
+            <h4 class="modal-title">{{ title }}</h4>
+          </div>
+          <div class="modal-body">
+            {{ message }}
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn" :class="cancelBtnStyle" data-dismiss="modal" @click="cancel()">{{ cancelBtnText }}</button>
+            <button type="button" class="btn" :class="okBtnStyle" @click="ok()">{{ okBtnText }}</button>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
+  </OneTransition>
 </div>
 </template>
 
@@ -114,3 +118,34 @@ export default {
   }
 }
 </script>
+
+<style>
+.bounce-enter-active {
+  animation: bounce-in .5s;
+}
+.bounce-leave-active {
+  animation: bounce-out .5s;
+}
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes bounce-out {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+</style>

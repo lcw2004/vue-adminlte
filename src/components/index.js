@@ -10,6 +10,8 @@ import Checkbox from './base/Checkbox'
 import FixedContainer from './container/FixedContainer'
 import PopoverContainer from './container/PopoverContainer'
 
+import OneTransition from './transition/OneTransition'
+
 // 分页
 import Pagination from './pagination/Pagination'
 
@@ -60,6 +62,8 @@ function initGlobalComponents () {
   Vue.component(Checkbox.name, Checkbox)
   Vue.component(FixedContainer.name, FixedContainer)
   Vue.component(PopoverContainer.name, PopoverContainer)
+
+  Vue.component(OneTransition.name, OneTransition)
 
   // pagination
   Vue.component(Pagination.name, Pagination)

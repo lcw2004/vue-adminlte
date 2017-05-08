@@ -1,36 +1,38 @@
 <template>
-<div class="modal" v-show="config.show" style="display: block">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close" @click="config.show = false">
-          <span aria-hidden="true">×</span>
-        </button>
-        <h4 class="modal-title" v-text="config.title"></h4>
-      </div>
-      <div class="modal-body modal-scrollable">
-        <div class="row">
-          <div class="col-md-12 icon"  v-for="icons of iconList">
-            <h2>{{ icons.type }}</h2>
+<transition name="zoom">
+  <div class="modal" v-show="config.show" style="display: block">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" @click="config.show = false">
+            <span aria-hidden="true">×</span>
+          </button>
+          <h4 class="modal-title" v-text="config.title"></h4>
+        </div>
+        <div class="modal-body modal-scrollable">
+          <div class="row">
+            <div class="col-md-12 icon"  v-for="icons of iconList">
+              <h2>{{ icons.type }}</h2>
 
-            <ul class="bs-glyphicons">
-              <li v-for="icon of icons.iconList" @click="selected = icon">
-                <i :class="['fa', icon]"></i>
-              </li>
-            </ul>
+              <ul class="bs-glyphicons">
+                <li v-for="icon of icons.iconList" @click="selected = icon">
+                  <i :class="['fa', icon]"></i>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="modal-footer">
-        <div class="pull-left">
-          选中 <span v-if="selected" class="icon-selected"><i :class="['fa', selected]"></i></span>
+        <div class="modal-footer">
+          <div class="pull-left">
+            选中 <span v-if="selected" class="icon-selected"><i :class="['fa', selected]"></i></span>
+          </div>
+          <button type="button" class="btn btn-default " data-dismiss="modal" @click="config.show = false">取消</button>
+          <button type="button" class="btn btn-primary" @click="ok()">确认</button>
         </div>
-        <button type="button" class="btn btn-default " data-dismiss="modal" @click="config.show = false">取消</button>
-        <button type="button" class="btn btn-primary" @click="ok()">确认</button>
       </div>
     </div>
   </div>
-</div>
+</transition>
 </template>
 
 <script>

@@ -1,7 +1,8 @@
 <template>
 <span style="position: relative">
   <i :class="iconClass" @click="isShow = !isShow"></i>
-  <transition name="fade">
+  <!-- <transition name="rotate"> -->
+  <OneTransition>
     <div class="popover bottom" :style="popoverStyle" v-if="isShow">
       <div class="arrow"></div>
       <h3 class="popover-title">{{ title }}</h3>
@@ -9,7 +10,8 @@
         <slot></slot>
       </div>
     </div>
-  </transition>
+  </OneTransition>
+  <!-- </transition> -->
 </span>
 </template>
 
