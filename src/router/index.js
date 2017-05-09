@@ -1,25 +1,10 @@
 import VueRouter from 'vue-router'
-import Desktop from '../views/layout/Desktop'
-
-import bidding from './bidding'
-import biddingOfSupplier from './bidding-of-supplier'
-import biddingOfExpert from './bidding-of-expert'
-import biddingOfSupervisor from './bidding-of-supervisor'
-import system from './system'
-import user from './user'
-import personal from './personal'
+import home from './home'
 
 const router = {
   routes: [
-    { path: '/', component: Desktop },
-
-    ...bidding,
-    ...biddingOfSupplier,
-    ...biddingOfSupervisor,
-    ...biddingOfExpert,
-    ...system,
-    ...user,
-    ...personal
+    // 包含菜单结构的页码
+    home
   ]
 }
 

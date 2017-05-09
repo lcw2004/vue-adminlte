@@ -145,7 +145,7 @@ export default {
   },
   methods: {
     deleteData (obj) {
-      this.$confirm('确认删除吗？', () => {
+      this.$confirm('确认删除供应商吗？', () => {
         this.resource.delete({id: obj.supplierId}).then(function (response) {
           if (response.body.ok) {
             this.query()
@@ -185,16 +185,3 @@ export default {
   }
 }
 </script>
-
-<style>
-.one-tip {
-  position: absolute;
-  z-index: 100;
-  width: 400px;
-  border: 1px solid #e6e6e6;
-  border-radius: 4px;
-  box-shadow: 1px 0 6px rgba(0,0,0,.1);
-  right: -200px;
-  top: 9px;
-}
-</style>

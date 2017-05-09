@@ -10,15 +10,6 @@
         </div>
 
         <div class="box-body">
-          <div class="row row-margin-bottom">
-            <div class="col-md-12">
-              <Step>
-                <StepItem index="1" name="注册账户" width="49" :is-active="1!=1"/>
-                <StepItem index="2" name="完善机构信息" width="49" :is-active="1==1"/>
-              </Step>
-            </div>
-          </div>
-
           <div class="row">
             <div class="col-md-12">
               <form class="form-horizontal">
@@ -421,15 +412,8 @@
   </div>
 </template>
 
-
 <script>
-  import Step from '../step/Step'
-  import StepItem from '../step/StepItem'
   export default {
-    components: {
-      Step,
-      StepItem
-    },
     data: function () {
       return {
         actions: {
