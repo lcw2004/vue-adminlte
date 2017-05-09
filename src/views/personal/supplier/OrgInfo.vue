@@ -343,7 +343,35 @@
                     <h3 class="panel-title">投标类别</h3>
                   </div>
                   <div class="panel-body">
-
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="pull-right" style="margin-bottom: 10px;">
+                          <button type="button" class="btn btn-primary" @click="purchaseTypeConfig.show = true">
+                            添加投标类别
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <table class="table table-bordered table-hover">
+                          <tbody>
+                            <tr>
+                              <th style="width: 10px">#</th>
+                              <th>投标类别</th>
+                              <th>操作</th>
+                            </tr>
+                            <tr v-for="(purchaseType, index) of supplier.purchaseTypeList">
+                              <td>{{ index + 1}}</td>
+                              <td>{{ purchaseType.name }}</td>
+                              <td>
+                                <a @click="deletePurchaseType(index)">删除</a>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
@@ -413,19 +441,30 @@
         </div>
       </div>
     </div>
+
+    <SelectPurchaseTypeModal :config="purchaseTypeConfig" v-model="purchaseType"/>
   </div>
 </template>
 
 <script>
+  import SelectPurchaseTypeModal from '../../system/modal/SelectPurchaseTypeModal'
   export default {
+    components: {
+      SelectPurchaseTypeModal
+    },
     data: function () {
       return {
         actions: {
           get: { method: 'get', url: '/one/a/rest/supplierInfo' },
-          save: { method: 'post', url: '/one/a/rest/user/supplierRegistry/saveUserSupplierEO' }
+          save: { method: 'post', url: '/one/a/rest/user/supplierRegistry/updateUserSupplierEO' }
         },
         supplier: {
-        }
+        },
+        purchaseTypeConfig: {
+          title: '选择投标类别',
+          show: false
+        },
+        purchaseType: {}
       }
     },
     mounted: function () {
@@ -446,12 +485,42 @@
           this.resource.save(null, JSON.stringify(this.supplier)).then(function (response) {
             var result = response.body
             if (result.ok) {
-              /* eslint-disable */
-              alert('保存成功')
+              this.$notify.success('提交成功，请等到工作人员审核')
+              this.$router.push('/')
             }
           })
         }).catch(() => {
         })
+      },
+      deletePurchaseType: function (index) {
+        this.supplier.purchaseTypeList.splice(index, 1)
+      },
+      addPurchaseType: function (purchaseType) {
+        if (this.indexOf(purchaseType) === -1) {
+          this.supplier.purchaseTypeList.push(purchaseType)
+        }
+      },
+      indexOf: function (purchaseType) {
+        let index = -1
+        for (var i = 0; i < this.supplier.purchaseTypeList.length; i++) {
+          let type = this.supplier.purchaseTypeList[i]
+          if (type.id === purchaseType.id) {
+            index = i
+            break
+          }
+        }
+        return index
+      }
+    },
+    watch: {
+      'purchaseType': {
+        handler: function () {
+          if (this.purchaseType.id) {
+            this.addPurchaseType(this.purchaseType)
+            this.purchaseType = {}
+          }
+        },
+        deep: true
       }
     }
   }
