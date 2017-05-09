@@ -40,7 +40,7 @@
                         <div class="form-group">
                           <label class="control-label col-md-4">统一社会信用代码</label>
                           <div class="col-md-8">
-                            <input type="text" class="form-control" v-model="supplier.officeCode" v-validate="'required'" name="统一社会信用代码">
+                            <input type="text" class="form-control" v-model="supplier.officeCode" v-validate="'required'" name="统一社会信用代码" maxlength="20">
                             <p class="help-block"></p>
                           </div>
                         </div>
@@ -52,7 +52,7 @@
                         <div class="form-group">
                           <label class="control-label col-md-4">公司曾用户名称</label>
                           <div class="col-md-8">
-                            <input type="text" class="form-control" v-model="supplier.usedName" maxlength="50">
+                            <input type="text" class="form-control" v-model="supplier.usedName" maxlength="50" maxlength="50">
                           </div>
                         </div>
                       </div>
@@ -100,7 +100,7 @@
                         <div class="form-group">
                           <label class="control-label col-md-4">银行账户</label>
                           <div class="col-md-8">
-                            <input type="text" class="form-control" v-model="supplier.bankAccount">
+                            <input type="text" class="form-control" v-model="supplier.bankAccount"  maxlength="20">
                           </div>
                         </div>
                       </div>
@@ -130,7 +130,7 @@
                         <div class="form-group">
                           <label class="control-label col-md-4">通讯地址</label>
                           <div class="col-md-8">
-                            <input type="text" class="form-control" v-model="supplier.officeAddress">
+                            <input type="text" class="form-control" v-model="supplier.officeAddress" maxlength="100">
                           </div>
                         </div>
                       </div>
@@ -138,7 +138,7 @@
                         <div class="form-group">
                           <label class="control-label col-md-4">邮政编码</label>
                           <div class="col-md-8">
-                            <input type="text" class="form-control" v-model="supplier.zipCode">
+                            <input type="text" class="form-control" v-model="supplier.zipCode" maxlength="10">
                           </div>
                         </div>
                       </div>
@@ -149,7 +149,7 @@
                         <div class="form-group">
                           <label class="control-label col-md-4">公司电话</label>
                           <div class="col-md-8">
-                            <input type="text" class="form-control" v-model="supplier.telephone">
+                            <input type="text" class="form-control" v-model="supplier.telephone" maxlength="12">
                           </div>
                         </div>
                       </div>
@@ -157,7 +157,7 @@
                         <div class="form-group">
                           <label class="control-label col-md-4">公司邮箱</label>
                           <div class="col-md-8">
-                            <input type="text" class="form-control" v-model="supplier.email">
+                            <input type="text" class="form-control" v-model="supplier.email" maxlength="50">
                           </div>
                         </div>
                       </div>
@@ -206,7 +206,7 @@
                         <div class="form-group">
                           <label class="control-label col-md-4">注册资金</label>
                           <div class="col-md-8">
-                            <input type="text" class="form-control" v-model="supplier.registerCapital">
+                            <input type="number" class="form-control" v-model="supplier.registerCapital" maxlength="10">
                           </div>
                         </div>
                       </div>
@@ -225,7 +225,7 @@
                         <div class="form-group">
                           <label class="control-label col-md-4">企业规模</label>
                           <div class="col-md-8">
-                            <input type="text" class="form-control" v-model="supplier.enterpriseScale">
+                            <input type="text" class="form-control" v-model="supplier.enterpriseScale" maxlength="10">
                           </div>
                         </div>
                       </div>
@@ -233,7 +233,7 @@
                         <div class="form-group">
                           <label class="control-label col-md-4">主营业务</label>
                           <div class="col-md-8">
-                            <input type="text" class="form-control" v-model="supplier.mainBusiness">
+                            <input type="text" class="form-control" v-model="supplier.mainBusiness" maxlength="100">
                           </div>
                         </div>
                       </div>
@@ -244,7 +244,7 @@
                         <div class="form-group">
                           <label class="control-label col-md-2">业绩简介</label>
                           <div class="col-md-10">
-                            <textarea class="form-control" rows="3" v-model="supplier.businessProfile"></textarea>
+                            <textarea class="form-control" rows="3" v-model="supplier.businessProfile" maxlength="500"></textarea>
                           </div>
                         </div>
                       </div>
@@ -281,7 +281,7 @@
                         <div class="form-group">
                           <label class="control-label col-md-4">身份证号</label>
                           <div class="col-md-8">
-                            <input type="text" class="form-control" v-model="supplier.principalUser.identityNumber">
+                            <input type="text" class="form-control" v-model="supplier.principalUser.identityNumber" maxlength="20">
                           </div>
                         </div>
                       </div>
@@ -303,7 +303,7 @@
                         <div class="form-group">
                           <label class="control-label col-md-4">所属部门</label>
                           <div class="col-md-8">
-                            <input type="text" class="form-control" v-model="supplier.principalUserInfo.department">
+                            <input type="text" class="form-control" v-model="supplier.principalUserInfo.department" maxlength="50">
                           </div>
                         </div>
                       </div>
@@ -311,7 +311,7 @@
                         <div class="form-group">
                           <label class="control-label col-md-4">职位</label>
                           <div class="col-md-8">
-                            <input type="text" class="form-control" v-model="supplier.principalUserInfo.position">
+                            <input type="text" class="form-control" v-model="supplier.principalUserInfo.position" maxlength="50">
                           </div>
                         </div>
                       </div>
@@ -322,7 +322,7 @@
                         <div class="form-group">
                           <label class="control-label col-md-4">手机号码</label>
                           <div class="col-md-8">
-                            <input type="text" class="form-control" v-model="supplier.principalUser.userContactInfo.mobile">
+                            <input type="text" class="form-control" v-model="supplier.principalUser.userContactInfo.mobile" maxlength="11">
                           </div>
                         </div>
                       </div>
@@ -330,7 +330,7 @@
                         <div class="form-group">
                           <label class="control-label col-md-4">电话号码</label>
                           <div class="col-md-8">
-                            <input type="text" class="form-control" v-model="supplier.principalUser.userContactInfo.phone">
+                            <input type="text" class="form-control" v-model="supplier.principalUser.userContactInfo.phone" maxlength="12">
                           </div>
                         </div>
                       </div>
