@@ -22,15 +22,15 @@
 
     <div class="row" v-if="isShow">
       <div class="col-md-4">
-        <label class="control-label col-md-4">法人</label>
+        <label class="control-label col-md-4">联系人</label>
         <div class="col-md-8">
-          <input type=" text" class="form-control" placeholder="姓名/身份证" v-model="param.legalPersonLikeName" />
+          <input type=" text" class="form-control" placeholder="姓名/账号/手机号码/邮箱" v-model="param.principalUserLikeName" />
         </div>
       </div>
       <div class="col-md-4">
-        <label class="control-label col-md-4">联系人</label>
+        <label class="control-label col-md-4">法人</label>
         <div class="col-md-8">
-          <input type=" text" class="form-control" placeholder="姓名/身份证/登录名" v-model="param.principalUserLikeName" />
+          <input type=" text" class="form-control" placeholder="姓名/身份证" v-model="param.legalPersonLikeName" />
         </div>
       </div>
       <div class="col-md-4">

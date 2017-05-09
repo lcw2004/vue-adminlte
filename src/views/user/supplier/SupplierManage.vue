@@ -30,21 +30,50 @@
                 <td>
                   {{ obj.principalUser.name }}
                   <PopoverContainer :title="obj.principalUser.name">
-                    <div class="box box-solid">
-                      <div class="box-header with-border">
-                        <i class="fa fa-text-width"></i>
-                        <h3 class="box-title">Text Emphasis</h3>
+                    <form class="form-horizontal">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label class="col-md-5 control-label">姓名</label>
+                            <div class="col-md-7">
+                              <p class="form-control-static">{{ obj.principalUser.name }}</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label class="col-md-5 control-label">登录账号</label>
+                            <div class="col-md-7">
+                              <p class="form-control-static">{{ obj.principalUser.account }}</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label class="col-md-5 control-label">手机</label>
+                            <div class="col-md-7">
+                              <p class="form-control-static">{{ obj.principalUser.userContactInfo.mobile }}</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label class="col-md-5 control-label">电话</label>
+                            <div class="col-md-7">
+                              <p class="form-control-static">{{ obj.principalUser.userContactInfo.phone }}</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label class="col-md-5 control-label">邮箱</label>
+                            <div class="col-md-7">
+                              <p class="form-control-static">{{ obj.principalUser.userContactInfo.email }}</p>
+                            </div>
+                          </div>
+                        </div>
                       </div>
-                      <div class="box-body">
-                        <p class="lead">Lead to emphasize importance</p>
-                        <p class="text-green">Text green to emphasize success</p>
-                        <p class="text-aqua">Text aqua to emphasize info</p>
-                        <p class="text-light-blue">Text light blue to emphasize info (2)</p>
-                        <p class="text-red">Text red to emphasize danger</p>
-                        <p class="text-yellow">Text yellow to emphasize warning</p>
-                        <p class="text-muted">Text muted to emphasize general</p>
-                      </div>
-                    </div>
+                    </form>
                   </PopoverContainer>
                 </td>
                 <td><span v-text="obj.principalUser.userContactInfo.phone"></span></td>
