@@ -1,5 +1,5 @@
 <template>
-  <router-view></router-view>
+  <router-view v-if="initOk"></router-view>
 </template>
 
 <script>
@@ -9,10 +9,16 @@ export default {
   components: {
     Home
   },
+  data: function () {
+    return {
+      initOk: false
+    }
+  },
   mounted () {
     this.loadMenu()
     this.loadDict()
     this.loadUserInfo()
+    this.isNeedPerfectSupplierInfo()
   },
   methods: {
     loadMenu () {
@@ -42,6 +48,24 @@ export default {
           this.$store.dispatch('initUserInfo', result.data)
         }
       })
+    },
+    isNeedPerfectSupplierInfo () {
+      // TODO 需要将这个判断放到全局，未完善信息的不允许访问到其他功能
+      this.$http.get('/one/a/rest/isNeedPerfectSupplierInfo').then(function (response) {
+        let result = response.body
+        if (result.ok) {
+          let isNeed = result.data
+          if (isNeed) {
+            this.$router.push('/prefect-info')
+          }
+        }
+        this.initOk = true
+      })
+    }
+  },
+  computed: {
+    userInfo: function () {
+      return this.$store.state.system.userInfo
     }
   }
 }

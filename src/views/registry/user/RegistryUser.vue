@@ -32,7 +32,7 @@
                 <div class="form-group" v-render.r="'登录帐号'">
                   <label class="control-label col-md-2">登录帐号</label>
                   <div class="col-md-4">
-                    <input type="text" class="form-control" v-model.trim="user.account" v-validate="'required'" name="登录帐号" @blur="validAccount">
+                    <input type="text" class="form-control" v-model.trim="user.account" v-validate="'required'" name="登录帐号" @blur="validAccount" maxlength="50">
                   </div>
                   <div class="col-md-6">
                     <p class="help-block">只能输入3-20个字母或者数字的组合字串且不包含空格</p>
@@ -42,7 +42,7 @@
                 <div class="form-group" v-render.r="'密码'">
                   <label class="control-label col-md-2">密码</label>
                   <div class="col-md-4">
-                    <input type="password" class="form-control" v-model="user.password" v-validate="'required'" name="密码">
+                    <input type="password" class="form-control" v-model="user.password" v-validate="'required'" name="密码" maxlength="50">
                   </div>
                   <div class="col-md-6">
                     <p class="help-block">请输入6-20位字母加数字或符号!</p>
@@ -52,7 +52,7 @@
                 <div class="form-group" v-render.r="'确认密码'">
                   <label class="control-label col-md-2">确认密码</label>
                   <div class="col-md-4">
-                    <input type="password" class="form-control" v-model="user.passwordConfirm" v-validate="'required|confirmed:密码'" name="确认密码">
+                    <input type="password" class="form-control" v-model="user.passwordConfirm" v-validate="'required|confirmed:密码'" name="确认密码" maxlength="50">
                   </div>
                   <div class="col-md-6">
                     <p class="help-block">请再次输入密码!</p>

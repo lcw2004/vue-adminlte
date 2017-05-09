@@ -1,10 +1,11 @@
 import VueRouter from 'vue-router'
 import home from './home'
+import PrefectOrgInfo from '../views/personal/supplier/OrgInfo'
 
 const router = {
   routes: [
-    // 包含菜单结构的页码
-    home
+    home,
+    { path: '/prefect-info', component: PrefectOrgInfo }
   ]
 }
 
