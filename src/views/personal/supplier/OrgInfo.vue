@@ -52,7 +52,7 @@
                         <div class="form-group">
                           <label class="control-label col-md-4">公司曾用户名称</label>
                           <div class="col-md-8">
-                            <input type="text" class="form-control" v-model="supplier.usedName" maxlength="50" maxlength="50">
+                            <input type="text" class="form-control" v-model="supplier.usedName" maxlength="50">
                           </div>
                         </div>
                       </div>
