@@ -33,11 +33,13 @@
               <tr v-for="(obj, index) of page.list">
                 <td><span v-text="index + 1"></span></td>
                 <td><span v-text="obj.name"></span></td>
-                <td><span v-text="obj.dataScope"></span></td>
+                <td>
+                  <DictLabel type="sys_data_scope" :value="obj.dataScope"></DictLabel>
+                </td>
                 <td><span v-text="obj.remarks"></span></td>
                 <td>
                   <router-link :to='"/system/role/" + obj.id + "/form"'>修改</router-link>
-                  <a @click="deleteData(obj.id)">删除</a>
+                  <a @click="deleteData(obj.id)" v-if="obj.isDefault == 0">删除</a>
                 </td>
               </tr>
             </tbody>

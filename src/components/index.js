@@ -3,12 +3,15 @@ import Vue from 'vue'
 // base
 import FullScreenBtn from './base/FullScreenBtn'
 import RightPanel from './base/RightPanel'
-import DictSelect from './dict/DictSelect'
-import DictRadio from './dict/DictRadio'
 import VerifyCodeImg from './base/VerifyCodeImg'
 import Checkbox from './base/Checkbox'
 import FixedContainer from './container/FixedContainer'
 import PopoverContainer from './container/PopoverContainer'
+
+// dict
+import DictSelect from './dict/DictSelect'
+import DictRadio from './dict/DictRadio'
+import DictLabel from './dict/DictLabel'
 
 import OneTransition from './transition/OneTransition'
 
@@ -56,12 +59,15 @@ function initGlobalComponents () {
   // base
   Vue.component(FullScreenBtn.name, FullScreenBtn)
   Vue.component(RightPanel.name, RightPanel)
-  Vue.component(DictSelect.name, DictSelect)
-  Vue.component(DictRadio.name, DictRadio)
   Vue.component(VerifyCodeImg.name, VerifyCodeImg)
   Vue.component(Checkbox.name, Checkbox)
   Vue.component(FixedContainer.name, FixedContainer)
   Vue.component(PopoverContainer.name, PopoverContainer)
+
+  // dicit
+  Vue.component(DictSelect.name, DictSelect)
+  Vue.component(DictRadio.name, DictRadio)
+  Vue.component(DictLabel.name, DictLabel)
 
   Vue.component(OneTransition.name, OneTransition)
 

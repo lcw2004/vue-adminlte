@@ -65,7 +65,8 @@ export default {
         name: '',
         dataScope: '',
         remarks: '',
-        menuIdList: []
+        isDefault: 0,
+        sysMenuEOIdList: []
       },
 
       topMenu: {},
@@ -80,7 +81,7 @@ export default {
     this.loadMenu()
   },
   methods: {
-    loadMenu: function () {
+    loadMenu () {
       this.resource.getMenuTree().then(function (response) {
         let result = response.body
         if (result.ok) {
