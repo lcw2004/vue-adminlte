@@ -367,7 +367,7 @@
                             </tr>
                             <tr v-for="(purchaseType, index) of supplier.purchaseTypeList">
                               <td>{{ index + 1}}</td>
-                              <td>{{ purchaseType.name }}</td>
+                              <td>{{ purchaseType.basePurchaseType.name }}</td>
                               <td>
                                 <a @click="deletePurchaseType(index)">删除</a>
                               </td>
@@ -500,15 +500,20 @@
         this.supplier.purchaseTypeList.splice(index, 1)
       },
       addPurchaseType: function (purchaseType) {
+        debugger
         if (this.indexOf(purchaseType) === -1) {
-          this.supplier.purchaseTypeList.push(purchaseType)
+          let purchaseTypePK = {
+            purchaseTypeId: purchaseType.id,
+            basePurchaseType: purchaseType
+          }
+          this.supplier.purchaseTypeList.push(purchaseTypePK)
         }
       },
       indexOf: function (purchaseType) {
         let index = -1
         for (var i = 0; i < this.supplier.purchaseTypeList.length; i++) {
           let type = this.supplier.purchaseTypeList[i]
-          if (type.id === purchaseType.id) {
+          if (type.basePurchaseType.id === purchaseType.id) {
             index = i
             break
           }

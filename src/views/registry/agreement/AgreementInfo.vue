@@ -18,7 +18,7 @@
       <div class="row row-margin-bottom">
         <div class="col-md-12">
           <div class="text-center margin20">
-            <input type="checkbox" v-model="isAgree">我已阅读，并确认以上信息
+            <input type="checkbox" v-model="isAgree"> 我已阅读，并确认以上信息
           </div>
         </div>
       </div>
