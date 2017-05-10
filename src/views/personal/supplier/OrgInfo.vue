@@ -378,54 +378,6 @@
                     </div>
                   </div>
                 </div>
-
-
-
-
-
-                <!--
-                <div class="form-group">
-                  <label class="control-label col-md-2">三证合一</label>
-                  <div class="col-md-4">
-                    <select class="form-control">
-                      <option value="1">是</option>
-                      <option value="2">否</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label class="control-label required col-md-2">统一社会信用代码</label>
-                  <div class="col-md-4">
-                    <input type="text" class="form-control">
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label class="control-label required col-md-2">组织机构代码证</label>
-                  <div class="col-md-4">
-                    <input type="text" class="form-control">
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label class="control-label required col-md-2">营业执照注册</label>
-                  <div class="col-md-4">
-                    <input type="text" class="form-control">
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label class="control-label required col-md-2">税务登记证</label>
-                  <div class="col-md-4">
-                    <input type="text" class="form-control">
-                  </div>
-                </div>
-                -->
-
-
-
-
               </form>
             </div>
           </div>

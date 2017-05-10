@@ -161,10 +161,16 @@
                     <tr>
                       <th style="width: 10px">#</th>
                       <th>投标类别</th>
+                      <th>状态</th>
                     </tr>
                     <tr v-for="(purchaseType, index) of obj.purchaseTypeList">
                       <td>{{ index + 1}}</td>
-                      <td>{{ purchaseType.name }}</td>
+                      <td>{{ purchaseType.basePurchaseType.name }}</td>
+                      <td>
+                        <span v-if="purchaseType.status == 1" class="label label-success">{{ purchaseType.statusCN }}</span>
+                        <span v-if="purchaseType.status == 2" class="label label-primary">{{ purchaseType.statusCN }}</span>
+                        <span v-if="purchaseType.status == 3" class="label label-warning">{{ purchaseType.statusCN }}</span>
+                      </td>
                     </tr>
                   </tbody>
                 </table>
