@@ -206,7 +206,11 @@
                         <div class="form-group">
                           <label class="control-label col-md-4">注册资金</label>
                           <div class="col-md-8">
-                            <input type="number" class="form-control" v-model="supplier.registerCapital" maxlength="10">
+                            <div class="input-group">
+                              <div class="input-group-addon">$</div>
+                              <input type="number" class="form-control" v-model="supplier.registerCapital" maxlength="10">
+                              <div class="input-group-addon">万元</div>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -485,7 +489,7 @@
           this.resource.save(null, JSON.stringify(this.supplier)).then(function (response) {
             var result = response.body
             if (result.ok) {
-              this.$notify.success('提交成功，请等到工作人员审核')
+              this.$notify.success('提交成功，请等待工作人员审核')
               this.$router.push('/')
             }
           })
