@@ -22,9 +22,9 @@
 </template>
 
 <script>
-import SupplierBaseInfo from './SupplierBaseInfo'
-import PrincipalUserInfo from './PrincipalUserInfo'
-import PurchaseTypeInfo from './PurchaseTypeInfo'
+import SupplierBaseInfo from './baseInfo/SupplierBaseInfo'
+import PrincipalUserInfo from './baseInfo/PrincipalUserInfo'
+import PurchaseTypeInfo from './baseInfo/PurchaseTypeInfo'
 
 export default {
   components: {

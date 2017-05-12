@@ -1,5 +1,6 @@
 import SupplierManage from '../../views/user/supplier/SupplierManage'
 import SupplierView from '../../views/user/supplier/SupplierView'
+import SupplierEdit from '../../views/user/supplier/SupplierEdit'
 import SupplierPurchaseAuditList from '../../views/user/supplier/SupplierPurchaseAuditList'
 import SupplierPurchaseAuditView from '../../views/user/supplier/audit/SupplierPurchaseAuditView'
 import SupplierPurchaseDetail from '../../views/user/supplier/audit/SupplierPurchaseDetail'
@@ -14,6 +15,7 @@ export default [
   // Done
   { path: '/user/supplier/manage', component: SupplierManage },
   { path: '/user/supplier/:id/view', component: SupplierView },
+  { path: '/user/supplier/:id/edit', component: SupplierEdit },
   { path: '/user/supplier/purchase-audit', component: SupplierPurchaseAuditList },
   { path: '/user/supplier/purchase-audit/:id', component: SupplierPurchaseAuditView },
 

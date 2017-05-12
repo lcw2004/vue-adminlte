@@ -40,7 +40,7 @@
                   <span v-if="obj.status == 5">{{ obj.statusCn }}</span>
                 </td>
                 <td>
-                  <router-link :to='"/user/supplier/" + obj.supplierId + "/form"'>修改</router-link>
+                  <router-link :to='"/user/supplier/" + obj.supplierId + "/edit"'>修改</router-link>
                   <a @click="deleteData(obj)">删除</a>
                   <a v-if="obj.status == 4" @click="start(obj)">启用</a>
                   <a v-if="obj.status == 2" @click="stop(obj)">停用</a>

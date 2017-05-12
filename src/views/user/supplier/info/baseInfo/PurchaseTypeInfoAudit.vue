@@ -39,7 +39,7 @@
 </template>
 
 <script>
-import AuditReject from '../../../modal/AuditReject'
+import AuditReject from '../../../../modal/AuditReject'
 
 export default {
   components: {
