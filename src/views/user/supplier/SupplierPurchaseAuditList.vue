@@ -54,8 +54,8 @@
 </template>
 
 <script>
-import PageMixin from '../../../../mixins/PageMixin.js'
-import UserInfoSimpleView from '../../common/UserInfoSimpleView'
+import PageMixin from '../../../mixins/PageMixin.js'
+import UserInfoSimpleView from '../common/UserInfoSimpleView'
 
 export default {
   mixins: [PageMixin],

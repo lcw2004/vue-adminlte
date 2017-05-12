@@ -30,13 +30,13 @@
 </template>
 
 <script>
-import FormMixin from '../../../mixins/FormMixin.js'
-import BaseInfoWithAudit from './info/BaseInfoWithAudit'
-import Contracts from './info/Contracts'
-import AuditLog from './info/AuditLog'
-import Biddings from './info/Biddings'
-import Qualifications from './info/Qualifications'
-import QuestionnaireInfo from './info/QuestionnaireInfo'
+import FormMixin from '../../../../mixins/FormMixin.js'
+import BaseInfoWithAudit from '../info/BaseInfoWithAudit'
+import Contracts from '../info/Contracts'
+import AuditLog from '../info/AuditLog'
+import Biddings from '../info/Biddings'
+import Qualifications from '../info/Qualifications'
+import QuestionnaireInfo from '../info/QuestionnaireInfo'
 
 export default {
   mixins: [FormMixin],
