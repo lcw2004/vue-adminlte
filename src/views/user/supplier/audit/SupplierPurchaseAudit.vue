@@ -40,7 +40,7 @@
                     <span v-if="obj.status == 5">{{ obj.statusCn }}</span>
                   </td>
                   <td>
-
+                    <router-link :to='"/user/supplier/purchase-audit/" + obj.supplierId'>审核</router-link>
                   </td>
                 </tr>
               </tbody>
@@ -49,8 +49,6 @@
         </div>
       </div>
     </div>
-
-    <AuditReject :config="config"></AuditReject>
   </section>
 </template>
 
@@ -71,11 +69,6 @@ export default {
       param: {
       },
       dictTypeList: []
-    }
-  },
-  methods: {
-    ok () {
-      this.$confirm('确认审核通过吗？', () => this.$notify.success('提交成功，请等待审核！'))
     }
   },
   watch: {

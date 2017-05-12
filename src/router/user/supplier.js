@@ -4,6 +4,7 @@ import SupplierPurchaseDetail from '../../views/user/supplier/audit/SupplierPurc
 import SupplierManage from '../../views/user/supplier/SupplierManage'
 import SupplierBlackList from '../../views/user/supplier/SupplierBlackList'
 import SupplierView from '../../views/user/supplier/SupplierView'
+import SupplierPurchaseAuditView from '../../views/user/supplier/SupplierPurchaseAuditView'
 import SupplierLevel from '../../views/user/supplier/SupplierLevel'
 import Questionnaire from '../../views/user/supplier/Questionnaire'
 
@@ -11,6 +12,7 @@ export default [
   { path: '/user/supplier/manage', component: SupplierManage },
   { path: '/user/supplier/audit', component: SupplierAudit },
   { path: '/user/supplier/purchase-audit', component: SupplierPurchaseAudit },
+  { path: '/user/supplier/purchase-audit/:id', component: SupplierPurchaseAuditView },
   { path: '/user/supplier/purchase-audit/detail', component: SupplierPurchaseDetail },
   { path: '/user/supplier/blacklist', component: SupplierBlackList },
 
