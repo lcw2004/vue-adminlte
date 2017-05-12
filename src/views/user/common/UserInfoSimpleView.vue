@@ -3,44 +3,19 @@
     <form class="form-horizontal">
       <div class="row">
         <div class="col-md-6">
-          <div class="form-group">
-            <label class="col-md-5 control-label">姓名</label>
-            <div class="col-md-7">
-              <p class="form-control-static">{{ user.name }}</p>
-            </div>
-          </div>
+          <FormGroupStatic width="5" label="姓名">{{ user.name }}</FormGroupStatic>
         </div>
         <div class="col-md-6">
-          <div class="form-group">
-            <label class="col-md-5 control-label">登录账号</label>
-            <div class="col-md-7">
-              <p class="form-control-static">{{ user.account }}</p>
-            </div>
-          </div>
+          <FormGroupStatic width="5" label="登录账号">{{ user.account }}</FormGroupStatic>
         </div>
         <div class="col-md-6">
-          <div class="form-group">
-            <label class="col-md-5 control-label">手机</label>
-            <div class="col-md-7">
-              <p class="form-control-static">{{ user.userContactInfo.mobile }}</p>
-            </div>
-          </div>
+          <FormGroupStatic width="5" label="手机">{{ user.userContactInfo.mobile }}</FormGroupStatic>
         </div>
         <div class="col-md-6">
-          <div class="form-group">
-            <label class="col-md-5 control-label">电话</label>
-            <div class="col-md-7">
-              <p class="form-control-static">{{ user.userContactInfo.phone }}</p>
-            </div>
-          </div>
+          <FormGroupStatic width="5" label="电话">{{ user.userContactInfo.phone }}</FormGroupStatic>
         </div>
         <div class="col-md-6">
-          <div class="form-group">
-            <label class="col-md-5 control-label">邮箱</label>
-            <div class="col-md-7">
-              <p class="form-control-static">{{ user.userContactInfo.email }}</p>
-            </div>
-          </div>
+          <FormGroupStatic width="5" label="邮箱">{{ user.userContactInfo.email }}</FormGroupStatic>
         </div>
       </div>
     </form>

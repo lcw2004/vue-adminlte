@@ -30,7 +30,6 @@
 <script>
 import FormMixin from '../../../mixins/FormMixin.js'
 import BaseInfo from './info/BaseInfo'
-import Contracts from './info/Contracts'
 import AuditLog from './info/AuditLog'
 import Biddings from './info/Biddings'
 import QuestionnaireInfo from './info/QuestionnaireInfo'
@@ -39,7 +38,6 @@ export default {
   mixins: [FormMixin],
   components: {
     BaseInfo,
-    Contracts,
     AuditLog,
     Biddings,
     QuestionnaireInfo
