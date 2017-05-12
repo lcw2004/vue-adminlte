@@ -4,11 +4,6 @@
 
 <script>
 export default {
-  name: 'FormControlStatic',
-  props: {
-    value: {
-      type: String
-    }
-  }
+  name: 'FormControllStatic'
 }
 </script>

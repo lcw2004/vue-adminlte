@@ -52,8 +52,9 @@ import confirm from './confirm'
 import progress from './progress'
 
 // Form
-import FormControlStatic from './form/FormControlStatic'
 import FormGroup from './form/FormGroup'
+import FormGroupStatic from './form/FormGroupStatic'
+import FormControllStatic from './form/FormControllStatic'
 
 function initGlobalComponents () {
   // base
@@ -105,7 +106,8 @@ function initGlobalComponents () {
 
   // form
   Vue.component(FormGroup.name, FormGroup)
-  Vue.component(FormControlStatic.name, FormControlStatic)
+  Vue.component(FormGroupStatic.name, FormGroupStatic)
+  Vue.component(FormControllStatic.name, FormControllStatic)
 
   // message
   Vue.prototype.$notify = notify
