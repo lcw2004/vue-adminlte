@@ -51,7 +51,7 @@ export default {
   data: function () {
     return {
       actions: {
-        get: { method: 'get', url: '/one/a/rest/user/supplier{/id}' }
+        get: { method: 'get', url: '/one/a/rest/user/supplier/audit{/id}' }
       },
 
       obj: {},

@@ -177,8 +177,10 @@
                       </td>
                       <td>{{ purchaseType.remark }}</td>
                       <td>
-                        <a @click="pass(purchaseType)">通过</a>
-                        <a @click="reject(purchaseType)">驳回</a>
+                        <template v-if="purchaseType.status == 1 && purchaseType.canAudit">
+                          <a @click="pass(purchaseType)">通过</a>
+                          <a @click="reject(purchaseType)">驳回</a>
+                        </template>
                       </td>
                     </tr>
                   </tbody>
@@ -210,7 +212,7 @@ export default {
   data: function () {
     return {
       config: {
-        show: true,
+        show: false,
         callback: Function
       },
       actions: {
