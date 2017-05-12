@@ -12,7 +12,7 @@
         </ul>
         <div class="tab-content">
           <div class="tab-pane active">
-            <BaseInfo v-if="step == 1" :obj="obj" />
+            <BaseInfo v-if="step == 1" :obj="obj" type="1"/>
             <Qualifications v-if="step == 2" :obj="obj" />
             <AuditLog v-if="step == 3" :obj="obj" />
             <Biddings v-if="step == 4" :obj="obj" />
