@@ -2,21 +2,21 @@
 <div class='row'>
   <div class='col-md-6'>
     <ul class='pagination'>
-      <li>
-        <a @click='pageNo = lastPageNo'>上一页</a>
+      <li :class="{'disabled' : pageNo <= 1}">
+        <a @click='goLastPage'>上一页</a>
       </li>
       <li v-for='showPageNo of showPageNos' :class="{'active': showPageNo == page.pageNo}">
         <a @click='pageNo = showPageNo'>{{ showPageNo }}</a>
       </li>
-      <li>
-        <a @click='pageNo = nextPageNo'>下一页</a>
+      <li :class="{'disabled' : pageNo >= pageCount}">
+        <a @click='goNextPage'>下一页</a>
       </li>
     </ul>
   </div>
   <div class='col-md-6'>
     <ul class='pagination pull-right navbar-static-top'>
       <li>
-        共 {{ page.count }} 条，每页
+        共 {{ count }} 条，每页
         <label>
           <select class="form-control input-sm" v-model="pageSize">
             <option value="10">10</option>
@@ -50,7 +50,7 @@ export default {
     pageNo: {
       get: function () {
         let pageNo = 1
-        if (this.page) {
+        if (this.page.pageNo) {
           pageNo = this.page.pageNo
         }
         return pageNo
@@ -61,8 +61,8 @@ export default {
     },
     pageSize: {
       get: function () {
-        let pageSize = 1
-        if (this.page) {
+        let pageSize = 10
+        if (this.page.pageSize) {
           pageSize = this.page.pageSize
         }
         return pageSize
@@ -70,6 +70,20 @@ export default {
       set: function (newValue) {
         this.$emit('page-size', newValue)
       }
+    },
+    count: function () {
+      let count = 0
+      if (this.page.count) {
+        count = this.page.count
+      }
+      return count
+    },
+    pageCount: function () {
+      let pageCount = 0
+      if (this.page.pageCount) {
+        pageCount = this.page.pageCount
+      }
+      return pageCount
     },
     lastPageNo: function () {
       // 上一页
@@ -103,6 +117,22 @@ export default {
         showPageNos.push(i)
       }
       return showPageNos
+    }
+  },
+  methods: {
+    goLastPage () {
+      if (this.pageNo <= 1) {
+        return
+      } else {
+        this.pageNo = this.lastPageNo
+      }
+    },
+    goNextPage () {
+      if (this.pageNo >= this.pageCount) {
+        return
+      } else {
+        this.pageNo = this.nextPageNo
+      }
     }
   }
 }

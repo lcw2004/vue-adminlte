@@ -212,6 +212,7 @@ export default {
   data: function () {
     return {
       config: {
+        title: '供应商审核',
         show: false,
         callback: Function
       },
