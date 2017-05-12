@@ -30,8 +30,6 @@ export default {
     let isFailed = vm.fields.failed(bindName) || vm.errors.has(bindName)
     let isPassed = vm.fields.passed(bindName)
 
-    /* eslint-disable */
-    debugger
     console.log(vm.errors)
     if (isFailed) {
       let errorMsg = vm.errors.first(bindName)

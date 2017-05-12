@@ -434,11 +434,11 @@
 </template>
 
 <script>
-  import SelectPurchaseTypeModal from '../../system/modal/SelectPurchaseTypeModal'
+  import SupplierAddPurchaseTypeMixin from './SupplierAddPurchaseTypeMixin'
+  import SupplierFormMixin from './SupplierFormMixin'
+
   export default {
-    components: {
-      SelectPurchaseTypeModal
-    },
+    mixins: [SupplierAddPurchaseTypeMixin, SupplierFormMixin],
     data: function () {
       return {
         actions: {
@@ -446,13 +446,6 @@
           getQualificationType: { method: 'get', url: '/one/a/rest/qualificationType/supplier' },
           save: { method: 'post', url: '/one/a/rest/user/supplierRegistry/updateUserSupplierEO' }
         },
-        supplier: {
-        },
-        purchaseTypeConfig: {
-          title: '选择投标类别',
-          show: false
-        },
-        purchaseType: {},
         qualificationTypeList: []
       }
     },
@@ -462,14 +455,6 @@
       this.loadQualificationType()
     },
     methods: {
-      load () {
-        this.resource.get().then(function (response) {
-          var result = response.body
-          if (result.ok && result.data) {
-            this.supplier = result.data
-          }
-        })
-      },
       loadQualificationType () {
         this.resource.getQualificationType().then(function (response) {
           var result = response.body
@@ -477,52 +462,6 @@
             this.qualificationTypeList = result.data
           }
         })
-      },
-      save () {
-        this.$validator.validateAll().then(() => {
-          this.resource.save(null, JSON.stringify(this.supplier)).then(function (response) {
-            var result = response.body
-            if (result.ok) {
-              this.$notify.success('提交成功，请等待工作人员审核')
-              this.$router.push('/')
-            }
-          })
-        }).catch(() => {
-        })
-      },
-      deletePurchaseType (index) {
-        this.supplier.purchaseTypeList.splice(index, 1)
-      },
-      addPurchaseType (purchaseType) {
-        if (this.indexOf(purchaseType) === -1) {
-          let purchaseTypePK = {
-            purchaseTypeId: purchaseType.id,
-            basePurchaseType: purchaseType
-          }
-          this.supplier.purchaseTypeList.push(purchaseTypePK)
-        }
-      },
-      indexOf (purchaseType) {
-        let index = -1
-        for (var i = 0; i < this.supplier.purchaseTypeList.length; i++) {
-          let type = this.supplier.purchaseTypeList[i]
-          if (type.basePurchaseType.id === purchaseType.id) {
-            index = i
-            break
-          }
-        }
-        return index
-      }
-    },
-    watch: {
-      'purchaseType': {
-        handler: function () {
-          if (this.purchaseType.id) {
-            this.addPurchaseType(this.purchaseType)
-            this.purchaseType = {}
-          }
-        },
-        deep: true
       }
     }
   }
