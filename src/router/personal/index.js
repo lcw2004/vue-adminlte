@@ -7,5 +7,5 @@ export default [
   { path: '/task/todo', component: TaskList },
   { path: '/personal/user-info', component: UserInfo },
   { path: '/personal/password', component: Password },
-  { path: '/personal/supplier/office-info', component: SupplierOfficeInfo }
+  { path: '/personal/office-info', component: SupplierOfficeInfo }
 ]
