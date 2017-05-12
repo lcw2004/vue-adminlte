@@ -1,7 +1,7 @@
 <template>
   <div class="form-group">
     <label class="control-label" :class="labelWidth">{{ label }}</label>
-    <div :class="labelWidth">
+    <div :class="formWidth">
       <slot></slot>
     </div>
   </div>
