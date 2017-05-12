@@ -16,8 +16,8 @@
               <td>{{ purchaseType.basePurchaseType.name }}</td>
               <td>{{ purchaseType.userInfoEO == null ? '' : purchaseType.userInfoEO.name }}</td>
               <td>
-                <span v-if="purchaseType.status == 1" class="label label-success">{{ purchaseType.statusCN }}</span>
-                <span v-if="purchaseType.status == 2" class="label label-primary">{{ purchaseType.statusCN }}</span>
+                <span v-if="purchaseType.status == 1" class="label label-primary">{{ purchaseType.statusCN }}</span>
+                <span v-if="purchaseType.status == 2" class="label label-success">{{ purchaseType.statusCN }}</span>
                 <span v-if="purchaseType.status == 3" class="label label-warning">{{ purchaseType.statusCN }}</span>
               </td>
               <td>{{ purchaseType.remark }}</td>

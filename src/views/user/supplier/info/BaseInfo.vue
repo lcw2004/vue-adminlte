@@ -10,17 +10,39 @@
     <div class="row">
       <div class="col-md-12">
         <section>
-          <h4 class="page-header">基本信息</h4>
-          <SupplierBaseInfo :obj="obj" :editable="type == '2'"/>
+          <div class="page-header">
+            <div class="row">
+              <div class="col-md-4">
+                <h4>基本信息</h4>
+              </div>
+              <div class="col-md-8" v-if="type == '2'">
+                <button type="button" class="btn btn-primary btn-xs pull-right">
+                  <i class="fa fa-fw fa-edit"></i>修改
+                </button>
+              </div>
+            </div>
+          </div>
+          <SupplierBaseInfo :obj="obj" />
         </section>
 
         <section>
-          <h4 class="page-header">联系人</h4>
+          <div class="page-header">
+            <h4>联系人</h4>
+          </div>
           <PrincipalUserInfo :obj="obj" />
         </section>
 
         <section>
-          <h4 class="page-header">可参与投标类别</h4>
+          <div class="page-header">
+            <h4>资质文件</h4>
+          </div>
+          <QualificationInfo :obj="obj" />
+        </section>
+
+        <section>
+          <div class="page-header">
+            <h4>可参与投标类别</h4>
+          </div>
           <PurchaseTypeInfo :obj="obj" v-if="type != '3'"/>
           <PurchaseTypeInfoAudit :obj="obj" v-if="type == '3'"/>
         </section>
@@ -34,13 +56,15 @@ import SupplierBaseInfo from './baseInfo/SupplierBaseInfo'
 import PrincipalUserInfo from './baseInfo/PrincipalUserInfo'
 import PurchaseTypeInfo from './baseInfo/PurchaseTypeInfo'
 import PurchaseTypeInfoAudit from './baseInfo/PurchaseTypeInfoAudit'
+import QualificationInfo from './baseInfo/QualificationInfo'
 
 export default {
   components: {
     SupplierBaseInfo,
     PrincipalUserInfo,
     PurchaseTypeInfo,
-    PurchaseTypeInfoAudit
+    PurchaseTypeInfoAudit,
+    QualificationInfo
   },
   props: {
     obj: {
@@ -48,7 +72,7 @@ export default {
       required: true
     },
     type: {
-      type: Number,
+      type: String,
       required: true
     }
   },
