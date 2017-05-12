@@ -48,6 +48,7 @@
               </tr>
             </tbody>
           </table>
+          <Pagination :page="page" @page="handlerPage(arguments)"></Pagination>
         </div>
       </div>
     </div>
