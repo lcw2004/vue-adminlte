@@ -66,7 +66,7 @@ export default {
   data: function () {
     return {
       actions: {
-        list: { method: 'get', url: '/one/a/rest/user/supplier/forAuditPurchaseType' }
+        list: { method: 'get', url: '/one/a/rest/user/supplier/audit' }
       },
       param: {
       },
