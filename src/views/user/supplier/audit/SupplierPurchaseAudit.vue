@@ -4,22 +4,12 @@
       <div class="col-md-12">
         <div class="box">
           <div class="box-header">
-            <form class="form-inline">
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="col-md-3">
-                    <input type="text" placeholder="公司名/简称/曾用名称" class="form-control inline-block">
-                  </div>
-                </div>
-              </div>
-
-              <SupplierQueryCondition></SupplierQueryCondition>
-            </form>
+            <SupplierQueryCondition v-model="param"></SupplierQueryCondition>
           </div>
 
           <div class="box-body">
             <table class="table table-bordered table-hover">
-              <tbody>
+              <thead>
                 <tr>
                   <th style="width: 10px">#</th>
                   <th>供应商名称</th>
@@ -29,27 +19,29 @@
                   <th>状态</th>
                   <th>操作</th>
                 </tr>
-                <tr>
-                  <td>1</td>
-                  <td><router-link to="/supplier/info">某某有限公司</router-link></td>
-                  <td>2017-01-01</td>
-                  <td><a>张三</a></td>
-                  <td>13999999999</td>
+              </thead>
+              <tbody>
+                <tr v-for="(obj, index) of page.list">
+                  <td>{{ index + 1}}</td>
                   <td>
-                    共1个投标类别<span class="label label-warning">待审核</span>
+                    <router-link :to='"/user/supplier/" + obj.supplierId + "/view"'>{{ obj.name }}</router-link>
                   </td>
-                  <td><router-link to="/supplier/purchase-audit/detail">处理</router-link></td>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td><router-link to="/supplier/info">某某有限公司1</router-link></td>
-                  <td>2017-01-01</td>
-                  <td><a>张三</a></td>
-                  <td>13999999999</td>
+                  <td><span v-text="obj.createTime"></span></td>
                   <td>
-                    共5个投标类别<span class="label label-warning">待审核</span>
+                    {{ obj.principalUser.name }}<UserInfoSimpleView :user="obj.principalUser"/>
                   </td>
-                  <td><router-link to="/supplier/purchase-audit/detail">处理</router-link></td>
+                  <td><span v-text="obj.principalUser.userContactInfo.phone"></span></td>
+                  <td>
+                    <span v-if="obj.status == -1">{{ obj.statusCn }}</span>
+                    <span v-if="obj.status == 1" class="label label-primary">{{ obj.statusCn }}</span>
+                    <span v-if="obj.status == 2" class="label label-success">{{ obj.statusCn }}</span>
+                    <span v-if="obj.status == 3" class="label label-warning">{{ obj.statusCn }}</span>
+                    <span v-if="obj.status == 4" class="label label-default">{{ obj.statusCn }}</span>
+                    <span v-if="obj.status == 5">{{ obj.statusCn }}</span>
+                  </td>
+                  <td>
+
+                  </td>
                 </tr>
               </tbody>
             </table>
@@ -63,20 +55,35 @@
 </template>
 
 <script>
+import PageMixin from '../../../../mixins/PageMixin.js'
+import UserInfoSimpleView from '../../common/UserInfoSimpleView'
+
 export default {
+  mixins: [PageMixin],
   components: {
+    UserInfoSimpleView
   },
   data: function () {
     return {
-      config: {
-        show: false,
-        title: '驳回原因'
-      }
+      actions: {
+        list: { method: 'get', url: '/one/a/rest/user/supplier/forAuditPurchaseType' }
+      },
+      param: {
+      },
+      dictTypeList: []
     }
   },
   methods: {
     ok () {
       this.$confirm('确认审核通过吗？', () => this.$notify.success('提交成功，请等待审核！'))
+    }
+  },
+  watch: {
+    'param': {
+      handler: function () {
+        this.query()
+      },
+      deep: true
     }
   }
 }
