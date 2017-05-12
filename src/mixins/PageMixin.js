@@ -8,7 +8,7 @@
 * 使用：
 *   1. 定义actions
 *   2. 定义param，如果没有则不需要定义
-*   3. 引入分页组件：<Pagination :page="page" @page-no="pageNo = arguments[0]" @page-size="pageSize = arguments[0]"></Pagination>
+*   3. 引入分页组件：<Pagination :page="page" @page="handlerPage(arguments)"></Pagination>
 */
 
 let PageMixin = {
@@ -22,20 +22,6 @@ let PageMixin = {
       pageNo: 1,
       pageSize: 10,
       page: {}
-    }
-  },
-  watch: {
-    'pageNo': {
-      handler: function () {
-        this.queryForPage()
-      },
-      deep: true
-    },
-    'pageSize': {
-      handler: function () {
-        this.queryForPage()
-      },
-      deep: true
     }
   },
   methods: {
@@ -69,6 +55,12 @@ let PageMixin = {
     */
     query () {
       this.queryByPageAndParam(1, this.pageSize)
+    },
+
+    handlerPage (args) {
+      this.pageNo = args[0]
+      this.pageSize = args[1]
+      this.queryForPage()
     }
   }
 }

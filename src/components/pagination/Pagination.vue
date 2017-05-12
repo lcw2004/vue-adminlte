@@ -56,7 +56,7 @@ export default {
         return pageNo
       },
       set: function (newValue) {
-        this.$emit('page-no', newValue)
+        this.$emit('page', newValue, this.pageSize)
       }
     },
     pageSize: {
@@ -68,7 +68,8 @@ export default {
         return pageSize
       },
       set: function (newValue) {
-        this.$emit('page-size', newValue)
+        // 切换每页显示条数的时候，清空页码
+        this.$emit('page', 1, newValue)
       }
     },
     count: function () {

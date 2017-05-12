@@ -8,7 +8,7 @@
 * 使用：
 *   1. 定义actions
 *   2. 定义param，如果没有则不需要定义
-*   3. 引入分页组件：<Pagination :page="page" @page-no="pageNo = arguments[0]" @page-size="pageSize = arguments[0]"></Pagination>
+*   3. 引入分页组件：<Pagination :page="page" @page="handlerPage(arguments)"></Pagination>
 */
 
 let FormMixin = {

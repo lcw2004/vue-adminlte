@@ -54,7 +54,7 @@
             </tbody>
           </table>
 
-          <Pagination :page="page" @page-no="pageNo = arguments[0]" @page-size="pageSize = arguments[0]"></Pagination>
+          <Pagination :page="page" @page="handlerPage(arguments)"></Pagination>
         </div>
       </div>
     </div>
