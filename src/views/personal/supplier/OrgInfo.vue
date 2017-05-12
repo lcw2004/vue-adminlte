@@ -258,6 +258,37 @@
 
                 <div class="panel panel-default">
                   <div class="panel-heading">
+                    <h3 class="panel-title">资质文件</h3>
+                  </div>
+                  <div class="panel-body">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <table class="table table-bordered table-hover">
+                          <tbody>
+                            <tr>
+                              <th style="width: 10px">#</th>
+                              <th>资质名称</th>
+                              <th>颁发机构</th>
+                              <th>颁发日期</th>
+                              <th>失效日期</th>
+                              <th>操作</th>
+                            </tr>
+                            <tr v-for="(obj, index) of qualificationTypeList">
+                              <td>{{ index + 1}}</td>
+                              <td>{{ obj.qualificationName }}</td>
+                              <td>
+                                <a @click="deletePurchaseType(index)">删除</a>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="panel panel-default">
+                  <div class="panel-heading">
                     <h3 class="panel-title">联系人信息</h3>
                   </div>
                   <div class="panel-body">
@@ -412,6 +443,7 @@
       return {
         actions: {
           get: { method: 'get', url: '/one/a/rest/supplierInfo' },
+          getQualificationType: { method: 'get', url: '/one/a/rest/qualificationType/supplier' },
           save: { method: 'post', url: '/one/a/rest/user/supplierRegistry/updateUserSupplierEO' }
         },
         supplier: {
@@ -420,15 +452,17 @@
           title: '选择投标类别',
           show: false
         },
-        purchaseType: {}
+        purchaseType: {},
+        qualificationTypeList: []
       }
     },
     mounted: function () {
       this.resource = this.$resource(null, {}, this.actions)
       this.load()
+      this.loadQualificationType()
     },
     methods: {
-      load: function () {
+      load () {
         this.resource.get().then(function (response) {
           var result = response.body
           if (result.ok && result.data) {
@@ -436,7 +470,15 @@
           }
         })
       },
-      save: function () {
+      loadQualificationType () {
+        this.resource.getQualificationType().then(function (response) {
+          var result = response.body
+          if (result.ok && result.data) {
+            this.qualificationTypeList = result.data
+          }
+        })
+      },
+      save () {
         this.$validator.validateAll().then(() => {
           this.resource.save(null, JSON.stringify(this.supplier)).then(function (response) {
             var result = response.body
@@ -448,11 +490,10 @@
         }).catch(() => {
         })
       },
-      deletePurchaseType: function (index) {
+      deletePurchaseType (index) {
         this.supplier.purchaseTypeList.splice(index, 1)
       },
-      addPurchaseType: function (purchaseType) {
-        debugger
+      addPurchaseType (purchaseType) {
         if (this.indexOf(purchaseType) === -1) {
           let purchaseTypePK = {
             purchaseTypeId: purchaseType.id,
@@ -461,7 +502,7 @@
           this.supplier.purchaseTypeList.push(purchaseTypePK)
         }
       },
-      indexOf: function (purchaseType) {
+      indexOf (purchaseType) {
         let index = -1
         for (var i = 0; i < this.supplier.purchaseTypeList.length; i++) {
           let type = this.supplier.purchaseTypeList[i]
