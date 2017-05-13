@@ -32,7 +32,8 @@
                 </td>
                 <td><span v-text="obj.principalUser.userContactInfo.phone"></span></td>
                 <td>
-                  <span v-if="obj.status == -1">{{ obj.statusCn }}</span>
+                  <span v-if="obj.status == -2" class="label label-default">{{ obj.statusCn }}</span>
+                  <span v-if="obj.status == -1" class="label label-default">{{ obj.statusCn }}</span>
                   <span v-if="obj.status == 1" class="label label-primary">{{ obj.statusCn }}</span>
                   <span v-if="obj.status == 2" class="label label-success">{{ obj.statusCn }}</span>
                   <span v-if="obj.status == 3" class="label label-warning">{{ obj.statusCn }}</span>
@@ -42,37 +43,13 @@
                 <td>
                   <router-link :to='"/user/supplier/" + obj.supplierId + "/edit"'>修改</router-link>
                   <a @click="deleteData(obj)">删除</a>
-                  <a v-if="obj.status == 4" @click="start(obj)">启用</a>
+                  <a v-if="obj.status == -2" @click="start(obj)">启用</a>
                   <a v-if="obj.status == 2" @click="stop(obj)">停用</a>
                 </td>
               </tr>
             </tbody>
           </table>
           <Pagination :page="page" @page="handlerPage(arguments)"></Pagination>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-12">
-      <div class="box box-solid">
-        <div class="box-header with-border">
-          <i class="fa fa-text-width"></i>
-          <h3 class="box-title">备注</h3>
-        </div>
-        <div class="box-body">
-          <ol>
-            <li>用户有如下几种状态
-              <ol>
-                <li>1 - 正常（只有该状态的供应商可以参与投标），（修改资料 停用 删除 黑名单）</li>
-                <li>2 - 待审核（修改资料 删除）</li>
-                <li>3 - 审核驳回（修改资料 删除）</li>
-                <li>-1 - 已删除</li>
-                <li>-2 - 停用（ 修改资料 启用 删除）</li>
-              </ol>
-            </li>
-          </ol>
         </div>
       </div>
     </div>
