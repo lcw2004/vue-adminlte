@@ -4,13 +4,7 @@
       <div class="col-md-6">
         <FormGroupStatic label="公司名称">
           {{ obj.name }}
-          <span v-if="obj.status == -2" class="label label-default">{{ obj.statusCn }}</span>
-          <span v-if="obj.status == -1" class="label label-default">{{ obj.statusCn }}</span>
-          <span v-if="obj.status == 1" class="label label-primary">{{ obj.statusCn }}</span>
-          <span v-if="obj.status == 2" class="label label-success">{{ obj.statusCn }}</span>
-          <span v-if="obj.status == 3" class="label label-warning">{{ obj.statusCn }}</span>
-          <span v-if="obj.status == 4" class="label label-default">{{ obj.statusCn }}</span>
-          <span v-if="obj.status == 5">{{ obj.statusCn }}</span>
+          <UserStatusLabel :status="obj.status" :desc="obj.statusCn" />
         </FormGroupStatic>
       </div>
       <div class="col-md-6">
@@ -84,7 +78,12 @@
 </template>
 
 <script>
+import UserStatusLabel from '../../../common/UserStatusLabel'
+
 export default {
+  components: {
+    UserStatusLabel
+  },
   props: {
     obj: {
       type: Object,

@@ -32,13 +32,7 @@
                 </td>
                 <td><span v-text="obj.principalUser.userContactInfo.phone"></span></td>
                 <td>
-                  <span v-if="obj.status == -2" class="label label-default">{{ obj.statusCn }}</span>
-                  <span v-if="obj.status == -1" class="label label-default">{{ obj.statusCn }}</span>
-                  <span v-if="obj.status == 1" class="label label-primary">{{ obj.statusCn }}</span>
-                  <span v-if="obj.status == 2" class="label label-success">{{ obj.statusCn }}</span>
-                  <span v-if="obj.status == 3" class="label label-warning">{{ obj.statusCn }}</span>
-                  <span v-if="obj.status == 4" class="label label-default">{{ obj.statusCn }}</span>
-                  <span v-if="obj.status == 5">{{ obj.statusCn }}</span>
+                  <UserStatusLabel :status="obj.status" :desc="obj.statusCn" />
                 </td>
                 <td>
                   <router-link :to='"/user/supplier/" + obj.supplierId + "/edit"'>修改</router-link>
@@ -60,11 +54,13 @@
 <script>
 import PageMixin from '../../../mixins/PageMixin.js'
 import UserInfoSimpleView from '../common/UserInfoSimpleView'
+import UserStatusLabel from '../common/UserStatusLabel'
 
 export default {
   mixins: [PageMixin],
   components: {
-    UserInfoSimpleView
+    UserInfoSimpleView,
+    UserStatusLabel
   },
   data: function () {
     return {
