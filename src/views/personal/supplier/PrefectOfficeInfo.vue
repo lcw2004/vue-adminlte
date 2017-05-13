@@ -198,15 +198,24 @@
                           <tbody>
                             <tr>
                               <th style="width: 10px">#</th>
-                              <th>资质名称</th>
+                              <th>资质类型</th>
                               <th>颁发机构</th>
                               <th>颁发日期</th>
-                              <th>失效日期</th>
+                              <th>有效日期</th>
+                              <th>影印件</th>
+                              <th>备注</th>
                               <th>操作</th>
                             </tr>
-                            <tr v-for="(obj, index) of qualificationTypeList">
+                            <tr v-for="(q, index) of qualificationTypeList">
                               <td>{{ index + 1}}</td>
-                              <td>{{ obj.qualificationName }}</td>
+                              <td>{{ q.type.qualificationName }}</td>
+                              <td>{{ q.issueAgency }}</td>
+                              <td>{{ q.issueDate }}</td>
+                              <td>{{ q.invalidDate }}</td>
+                              <td>
+                                <a>查看</a>
+                              </td>
+                              <td>{{ q.remark }}</td>
                               <td>
                                 <a @click="deletePurchaseType(index)">删除</a>
                               </td>

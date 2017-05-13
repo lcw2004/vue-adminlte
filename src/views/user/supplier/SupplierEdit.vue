@@ -11,7 +11,7 @@
         </ul>
         <div class="tab-content">
           <div class="tab-pane active">
-            <BaseInfo v-if="step == 1" :obj="obj" type="2"/>
+            <BaseInfoEdit v-if="step == 1" :obj="obj" type="2"/>
             <AuditLog v-if="step == 2" :obj="obj" />
             <Biddings v-if="step == 3" :obj="obj" />
             <QuestionnaireInfo v-if="step == 4" :obj="obj" />
@@ -29,7 +29,7 @@
 
 <script>
 import FormMixin from '../../../mixins/FormMixin.js'
-import BaseInfo from './info/BaseInfo'
+import BaseInfoEdit from './info/BaseInfoEdit'
 import AuditLog from './info/AuditLog'
 import Biddings from './info/Biddings'
 import QuestionnaireInfo from './info/QuestionnaireInfo'
@@ -37,7 +37,7 @@ import QuestionnaireInfo from './info/QuestionnaireInfo'
 export default {
   mixins: [FormMixin],
   components: {
-    BaseInfo,
+    BaseInfoEdit,
     AuditLog,
     Biddings,
     QuestionnaireInfo

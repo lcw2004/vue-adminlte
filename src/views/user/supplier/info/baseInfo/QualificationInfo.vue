@@ -6,7 +6,6 @@
         <tr>
           <th style="width: 10px">#</th>
           <th>资质类型</th>
-          <th>证书编号</th>
           <th>颁发机构</th>
           <th>颁发日期</th>
           <th>有效日期</th>
@@ -16,7 +15,6 @@
         <tr v-for="(q, index) of obj.qualificationList">
           <td>{{ index + 1}}</td>
           <td>{{ q.type.qualificationName }}</td>
-          <td>{{ q.qualificationCode }}</td>
           <td>{{ q.issueAgency }}</td>
           <td>{{ q.issueDate }}</td>
           <td>{{ q.invalidDate }}</td>
