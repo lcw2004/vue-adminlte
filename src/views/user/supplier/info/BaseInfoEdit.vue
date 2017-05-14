@@ -1,3 +1,10 @@
+<!--
+描述：修改供应商信息（在管理员修改界面以及供应商自己的修改界面调用）
+入参：
+  obj:  供应商对象
+  onSave: 保存成功之后的回掉
+-->
+
 <template>
 <section class="content">
   <div class="row">
