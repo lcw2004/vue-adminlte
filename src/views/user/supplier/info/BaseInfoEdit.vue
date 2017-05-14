@@ -289,7 +289,7 @@
                     </td>
                     <td>{{ purchaseType.remark }}</td>
                     <td>
-                      <a @click="deletePurchaseType(index)">删除</a>
+                      <a @click="deletePurchaseType(index)" v-if="purchaseType.status != 2">删除</a>
                     </td>
                   </tr>
                 </tbody>
