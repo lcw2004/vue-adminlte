@@ -294,6 +294,12 @@
     </form>
   </div>
 
+  <div class="row">
+    <div class="col-md-12">
+      <div class="col-md-2 col-sm-0"></div>
+      <div class="col-md-2 col-sm-2"><button class="btn btn-block btn-primary" @click="save">提 交</button></div>
+    </div>
+  </div>
 
   <SelectPurchaseTypeModal :config="purchaseTypeConfig" v-model="purchaseType" />
 </section>
@@ -309,15 +315,14 @@ export default {
       type: Object,
       required: true
     },
-    type: {
-      type: String,
+    onSave: {
+      type: Function,
       required: true
     }
   },
   data: function () {
     return {
       actions: {
-        get: { method: 'get', url: '/one/a/rest/supplierInfo' },
         getQualificationType: { method: 'get', url: '/one/a/rest/qualificationType/supplier' },
         save: { method: 'post', url: '/one/a/rest/user/supplierRegistry/updateUserSupplierEO' }
       },
@@ -340,6 +345,21 @@ export default {
         if (result.ok && result.data) {
           this.qualificationTypeList = result.data
         }
+      })
+    },
+
+    save () {
+      this.$validator.validateAll().then(() => {
+        this.resource.save(null, JSON.stringify(this.supplier)).then(function (response) {
+          var result = response.body
+          if (result.ok) {
+            this.$notify.success('提交成功，请等待工作人员审核')
+            if (this.onSave) {
+              this.onSave()
+            }
+          }
+        })
+      }).catch(() => {
       })
     }
   }

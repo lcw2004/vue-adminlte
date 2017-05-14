@@ -11,7 +11,7 @@
         </ul>
         <div class="tab-content">
           <div class="tab-pane active">
-            <BaseInfoEdit v-if="step == 1" :obj="obj" type="2"/>
+            <BaseInfoEdit v-if="step == 1" :obj="obj" type="2" :onSave="goBack"/>
             <AuditLog v-if="step == 2" :obj="obj" />
             <Biddings v-if="step == 3" :obj="obj" />
             <QuestionnaireInfo v-if="step == 4" :obj="obj" />
@@ -51,6 +51,11 @@ export default {
       obj: {},
 
       step: 1
+    }
+  },
+  methods: {
+    goBack: function () {
+      this.$router.go(-1)
     }
   }
 }
