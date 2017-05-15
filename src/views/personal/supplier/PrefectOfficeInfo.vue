@@ -192,7 +192,7 @@
                     <h3 class="panel-title">资质文件</h3>
                   </div>
                   <div class="panel-body">
-                    <QualificationListEdit :supplier="supplier" />
+                    <QualificationListEdit :supplier="supplier" :qualificationList="supplier.qualificationList"/>
                   </div>
                 </div>
 
@@ -315,7 +315,6 @@
     </div>
 
     <SelectPurchaseTypeModal :config="purchaseTypeConfig" v-model="purchaseType"/>
-    <AddQualificationModal :config="qualificationTypeConfig" v-model="qualification"/>
   </div>
 </template>
 

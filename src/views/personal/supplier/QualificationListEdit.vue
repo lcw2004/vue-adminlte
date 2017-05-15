@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md-12">
       <div class="pull-right" style="margin-bottom: 10px;">
-        <button type="button" class="btn btn-primary" @click="addQualification">
+        <button type="button" class="btn btn-primary" @click="qualificationTypeConfig.show = true">
           添加资质文件
         </button>
       </div>
@@ -21,7 +21,7 @@
             <th>备注</th>
             <th>操作</th>
           </tr>
-          <tr v-for="(q, index) of supplier.qualificationList">
+          <tr v-for="(q, index) of qualificationList">
             <td>{{ index + 1}}</td>
             <td>{{ q.type.qualificationName }}</td>
             <td>{{ q.issueAgency }}</td>
@@ -39,49 +39,64 @@
         </tbody>
       </table>
     </div>
+
+    <AddQualificationModal :config="qualificationTypeConfig" v-model="qualification"/>
   </div>
 </template>
 
 <script>
+import AddQualificationModal from '../../user/supplier/info/AddQualificationModal'
+
 export default {
+  components: {
+    AddQualificationModal
+  },
   props: {
-    supplier: {}
+    qualificationList: {
+      type: Array
+    }
   },
   data: function () {
     return {
-      actions: {
-        getQualificationType: { method: 'get', url: '/one/a/rest/qualificationType/supplier' }
+      qualificationTypeConfig: {
+        title: '上传投标资质文件',
+        show: true
       },
-      qualificationTypeList: []
+      qualification: {}
     }
   },
-  mounted: function () {
-    this.resource = this.$resource(null, {}, this.actions)
-    this.loadQualificationType()
-  },
   methods: {
-    loadQualificationType () {
-      this.resource.getQualificationType().then(function (response) {
-        var result = response.body
-        if (result.ok && result.data) {
-          this.qualificationTypeList = result.data
-        }
-      })
-    },
-    addQualification () {
-      let q = {
-        type: {},
-        issueAgency: '',
-        issueDate: '',
-        invalidDate: '',
-        remark: '',
-        fileId: '',
-        editable: true
-      }
-      this.supplier.qualificationList.push(q)
-    },
     deleteQualification (index) {
-      this.supplier.qualificationList.splice(index, 1)
+      this.qualificationList.splice(index, 1)
+    },
+    addQualification (qualification) {
+      if (this.indexOf(qualification) === -1) {
+        this.qualificationList.push(qualification)
+      }
+    },
+    indexOf (qualification) {
+      let index = -1
+      for (var i = 0; i < this.qualificationList.length; i++) {
+        let type = this.qualificationList[i]
+        if (type.qualificationCode === qualification.qualificationCode) {
+          index = i
+          break
+        }
+      }
+      return index
+    }
+  },
+  watch: {
+    'qualification': {
+      handler: function () {
+        debugger
+        this.qualification.qualificationCode = this.qualification.type.qualificationCode
+        if (this.qualification.qualificationCode) {
+          this.addQualification(this.purchaseType)
+          this.qualification = {}
+        }
+      },
+      deep: true
     }
   }
 }

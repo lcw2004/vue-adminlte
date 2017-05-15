@@ -15,7 +15,6 @@ export default {
       type: String
     },
     width: {
-      type: Number,
       default: 4
     }
   },
