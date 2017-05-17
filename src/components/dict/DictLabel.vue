@@ -9,7 +9,6 @@ export default {
   name: 'DictLabel',
   computed: {
     label: function () {
-      debugger
       if (!this.dictList) {
         return '--'
       }

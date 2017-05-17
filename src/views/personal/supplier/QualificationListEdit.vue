@@ -89,7 +89,6 @@ export default {
   watch: {
     'qualification': {
       handler: function () {
-        debugger
         this.qualification.qualificationCode = this.qualification.type.qualificationCode
         if (this.qualification.qualificationCode) {
           this.addQualification(this.purchaseType)
